@@ -1,5 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import { FaRoute } from "react-icons/fa";
 import "./Home.css";
 
 export default function Home() {
@@ -7,57 +8,47 @@ export default function Home() {
 
   return (
     <div className="home-container">
-      <div className="home-header">
+      <header className="home-header">
         <div className="logo">Faz Teu Nome</div>
         <div className="header-buttons">
           <button onClick={() => navigate("/login")}>Login</button>
           <button onClick={() => navigate("/cadastro")}>Cadastro</button>
         </div>
-      </div>
+      </header>
 
-      <div className="home-main">
-        <h1>Explore as trilhas disponíveis</h1>
+      <main className="home-main">
+        <h1>Decole rumo ao seu próprio futuro</h1>
         <p className="home-subtitle">
-          Construa seu próprio Projeto de Vida, desenvolva habilidades essenciais e conheça oportunidades reais através de um lugar feito pra você
+          Construa seu próprio Projeto de Vida, desenvolva habilidades essenciais
+          e conheça oportunidades reais através de um lugar feito pra você
         </p>
 
         <div className="trilhas-container">
           <div className="trilha-card">
-            <div className="trilha-icon">💡</div>
-            <h2>Trilha da Criatividade</h2>
-            <div className="progress-bar">
-              <div className="progress" style={{ width: "40%" }}></div>
+            <div className="trilha-icon">⏰</div>
+            <h2>Descubra seu propósito</h2>
+          </div>
+
+          <div className="trilha-card middle-card">
+            <div className="trilha-icon">
+              <FaRoute size={72} color="#ff7f00" />
             </div>
-            <span>40% concluído</span>
+            <h2>Construa seu caminho</h2>
           </div>
 
           <div className="trilha-card">
-            <div className="trilha-icon">📚</div>
-            <h2>Trilha do Conhecimento</h2>
-            <div className="progress-bar">
-              <div className="progress" style={{ width: "70%" }}></div>
-            </div>
-            <span>70% concluído</span>
-          </div>
-
-          <div className="trilha-card">
-            <div className="trilha-icon">🚀</div>
-            <h2>Trilha da Aventura</h2>
-            <div className="progress-bar">
-              <div className="progress" style={{ width: "25%" }}></div>
-            </div>
-            <span>25% concluído</span>
+            <div className="trilha-icon">🏆</div>
+            <h2>Faz Teu Nome</h2>
           </div>
         </div>
-   <button
-  className="start-journey-btn"
-  onClick={() => navigate("/dashboard")}
->
-  Comece sua jornada agora
-</button>
 
-
-      </div>
+        <button
+          className="start-journey-btn"
+          onClick={() => navigate("/dashboard")}
+        >
+          Comece sua jornada agora
+        </button>
+      </main>
     </div>
   );
 }

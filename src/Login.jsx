@@ -11,14 +11,15 @@ export default function Login() {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  function irParaHome() {
-    if (!form.email || !form.senha) {
-      alert("Preencha todos os campos.");
-      return;
-    }
-
-    navigate("/home");
+ function irParaHome() {
+  if (!form.email || !form.senha) {
+    alert("Preencha todos os campos.");
+    return;
   }
+
+  navigate("/dashboard");
+}
+
 
   return (
     <div className="login-container">
@@ -27,7 +28,6 @@ export default function Login() {
         <h1 className="titulo-login">Bem-vindo</h1>
         <p className="subtitulo-login">Acesse sua jornada de desenvolvimento</p>
 
-        {/* EMAIL */}
         <div className="input-group">
           <label>Email</label>
           <input
@@ -39,7 +39,6 @@ export default function Login() {
           />
         </div>
 
-        {/* SENHA */}
         <div className="input-group">
           <label>Senha</label>
           <input
@@ -51,19 +50,16 @@ export default function Login() {
           />
         </div>
 
-        {/* BOTÃO ENTRAR */}
         <button className="entrar-btn" onClick={irParaHome}>
           Entrar
         </button>
 
-        {/* ESQUECI MINHA SENHA */}
         <div className="forgot-password-text">
           <span onClick={() => navigate("/recuperarsenha")}>
             Esqueci minha senha
           </span>
         </div>
 
-        {/* CADASTRO */}
         <p className="cadastro-text">
           Não tem conta?
           <span className="cadastro-link" onClick={() => navigate("/cadastro")}>

@@ -7,7 +7,7 @@
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  max-width: 1200px;
+  max-width: 1500px;
   margin: 0 auto;
   padding: 0 20px;
   font-family: Arial, sans-serif;
@@ -68,11 +68,11 @@
   border-radius: 12px;
   color: white;
   display: flex;
-  border: 3px solid #f9f9f95d;
   flex-direction: column;
   align-items: flex-start;
   font-size: 15px;
   font-weight: 500;
+  border: 3px solid #f9f9f95d;
 }
 
 .progress-box span:first-child {
@@ -112,7 +112,6 @@
   display: flex;
   gap: 12px;
   align-items: center;
-  position: relative;
   border: 1px solid #e7e7e7;
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.12);
 }
@@ -131,15 +130,13 @@
   color: #0f6fa1;
   font-size: 18px;
   font-weight: bold;
-  margin: 0 0 4px 0;
-  position: relative;
-  z-index: 1;
+  margin: 0 0 4px;
 }
 
 .path-card p {
   font-size: 14px;
   color: #333;
-  margin: 0 0 6px 0;
+  margin: 0 0 6px;
 }
 
 .progress-bar {
@@ -311,11 +308,20 @@
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
+  padding: 0 60px;
   gap: 40px;
 }
 
 .footer-col {
   max-width: 250px;
+}
+
+.footer-col:first-child {
+  margin-left: 0px;
+}
+
+.footer-col:nth-child(4) {
+  margin-left: -40px;
 }
 
 .footer-col ul {
@@ -325,9 +331,15 @@
 }
 
 .footer-col h4 {
-  font-size: 16px;
+  font-size: 18px;
   font-weight: bold;
-  margin-bottom: 12px;
+  margin-top: -10px;
+  margin-bottom: 14px;
+}
+
+.footer-links {
+  display: flex;
+  gap: 20px;
 }
 
 .footer-bottom {

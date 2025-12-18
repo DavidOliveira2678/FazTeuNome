@@ -45,7 +45,7 @@ export default function Cadastro() {
           </div>
 
           <div className="input-group">
-            <label>Email</label>
+            <label>E-mail</label>
             <input type="email" name="email" value={form.email} onChange={handleChange} />
           </div>
 
@@ -86,13 +86,13 @@ export default function Cadastro() {
             onClick={() => navigate("/login")}
             style={{ cursor: "pointer", color: "#0b4870", fontWeight: "bold" }}
           >
-            Entrar
+            Faça login
           </span>
         </div>
       </div>
 
       <div className="cadastro-footer">
-        © 2025 Faz Teu Nome. Todos os direitos reservados.
+        Junte-se a milhares de estudantes construindo seu futuro.
       </div>
     </div>
   );

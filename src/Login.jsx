@@ -4,55 +4,57 @@ import "./Login.css";
 
 export default function Login() {
   const navigate = useNavigate();
-
   const [form, setForm] = useState({ email: "", senha: "" });
 
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
- function irParaHome() {
-  if (!form.email || !form.senha) {
-    alert("Preencha todos os campos.");
-    return;
-  }
-
-  navigate("/dashboard");
-}
-
+  const irParaHome = (e) => {
+    e.preventDefault();
+    if (!form.email || !form.senha) {
+      alert("Preencha todos os campos.");
+      return;
+    }
+    localStorage.setItem("email", form.email);
+    navigate("/dashboard");
+  };
 
   return (
     <div className="login-container">
       <div className="login-card">
-
         <h1 className="titulo-login">Bem-vindo</h1>
         <p className="subtitulo-login">Acesse sua jornada de desenvolvimento</p>
 
-        <div className="input-group">
-          <label>Email</label>
-          <input
-            type="email"
-            name="email"
-            placeholder="Digite seu email"
-            value={form.email}
-            onChange={handleChange}
-          />
-        </div>
+        <form onSubmit={irParaHome}>
+          <div className="input-group">
+            <label>Email</label>
+            <input
+              type="email"
+              name="email"
+              placeholder="Digite seu email"
+              value={form.email}
+              onChange={handleChange}
+            />
+          </div>
 
-        <div className="input-group">
-          <label>Senha</label>
-          <input
-            type="password"
-            name="senha"
-            placeholder="Digite sua senha"
-            value={form.senha}
-            onChange={handleChange}
-          />
-        </div>
+          <div className="input-group">
+            <label>Senha</label>
+            <input
+              type="password"
+              name="senha"
+              placeholder="Digite sua senha"
+              value={form.senha}
+              onChange={handleChange}
+            />
+          </div>
 
-        <button className="entrar-btn" onClick={irParaHome}>
-          Entrar
-        </button>
+          <button className="entrar-btn" type="submit">
+            Entrar
+          </button>
+        </form>
+
+        <div style={{ height: "20px" }}></div>
 
         <div className="forgot-password-text">
           <span onClick={() => navigate("/recuperarsenha")}>
@@ -66,9 +68,7 @@ export default function Login() {
             Cadastre-se
           </span>
         </p>
-
       </div>
     </div>
   );
 }
-

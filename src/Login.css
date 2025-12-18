@@ -82,12 +82,17 @@
 }
 
 .forgot-password-text {
-  margin-top: 12px; 
+  display: block;
+  margin-top: 8px;
+  text-align: center;
   font-size: 13px;
   color: #0b4870;
+  cursor: pointer;
 }
 
 .forgot-password-text span {
-  cursor: pointer;
   text-decoration: underline;
 }
+
+
+

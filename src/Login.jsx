@@ -11,19 +11,46 @@ export default function Login() {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  function irParaHome() {
+  async function handleLogin(e) {
+    e.preventDefault();
+
     if (!form.email || !form.senha) {
       alert("Preencha todos os campos.");
       return;
     }
 
-    navigate("/home");
+    try {
+      const response = await fetch("http://localhost:5000/api/usuarios/login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          email: form.email,
+          senha: form.senha
+        })
+      });
+
+      if (!response.ok) {
+        throw new Error("Credenciais inválidas");
+      }
+
+      const data = await response.json();
+      console.log("Login bem-sucedido:", data);
+
+      // Se o back retornar token, você pode salvar:
+      // localStorage.setItem("token", data.token);
+
+      navigate("/home"); // redireciona para home após login
+    } catch (error) {
+      console.error("Erro no login:", error);
+      alert("Email ou senha incorretos.");
+    }
   }
 
   return (
     <div className="login-container">
       <div className="login-card">
-
         <h1 className="titulo-login">Bem-vindo</h1>
         <p className="subtitulo-login">Acesse sua jornada de desenvolvimento</p>
 
@@ -52,7 +79,7 @@ export default function Login() {
         </div>
 
         {/* BOTÃO ENTRAR */}
-        <button className="entrar-btn" onClick={irParaHome}>
+        <button className="entrar-btn" onClick={handleLogin}>
           Entrar
         </button>
 
@@ -70,9 +97,7 @@ export default function Login() {
             Cadastre-se
           </span>
         </p>
-
       </div>
     </div>
   );
 }
-

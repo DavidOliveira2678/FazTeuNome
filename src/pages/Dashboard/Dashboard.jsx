@@ -1,18 +1,23 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import "./Dashboard.css";
 
 export default function Dashboard({ nome }) {
+  const navigate = useNavigate();
+
   return (
     <>
       <div className="dashboard-container">
         <nav className="dashboard-topbar">
           <div className="topbar-logo">FAZ TEU NOME</div>
+
           <div className="topbar-links">
             <span>Início</span>
             <span>Meu Perfil</span>
             <span>Comunidade</span>
             <span>Ranking</span>
           </div>
+
           <div className="topbar-user">
             👤
             <span
@@ -55,21 +60,37 @@ export default function Dashboard({ nome }) {
           <div className="learning-path">
             <h3>Trilha de Aprendizagem</h3>
 
-            <div className="path-card">
+            <div
+              className="path-card"
+              onClick={() => navigate("/autoconhecimento")}
+              style={{ cursor: "pointer" }}
+            >
               <span className="icon">🧠</span>
               <div className="path-content">
                 <h4>Soft Skills</h4>
-                <p>Desenvolver inteligência emocional, liderança e empatia.</p>
-                <div className="progress-bar green" style={{ width: "150%" }} />
+                <p>
+                  Desenvolver inteligência emocional, liderança e empatia.
+                </p>
+                <div
+                  className="progress-bar green"
+                  style={{ width: "150%" }}
+                />
               </div>
             </div>
 
-            <div className="path-card">
+            <div
+              className="path-card"
+              onClick={() => navigate("/vocabulariode-negocios")}
+              style={{ cursor: "pointer" }}
+            >
               <span className="icon">⚡</span>
               <div className="path-content">
                 <h4>Hard Skills</h4>
                 <p>Dominar inglês profissional e ferramentas digitais.</p>
-                <div className="progress-bar red" style={{ width: "50%" }} />
+                <div
+                  className="progress-bar red"
+                  style={{ width: "50%" }}
+                />
               </div>
             </div>
 
@@ -80,9 +101,12 @@ export default function Dashboard({ nome }) {
                 <span className="dot end"></span>
               </div>
               <div className="path-content">
-                <h4>Trilha de Conhecimento</h4>
+                <h4>Projeto Vida</h4>
                 <p>Construa seu projeto de vida com reflexão crítica.</p>
-                <div className="progress-bar gray" style={{ width: "150%" }} />
+                <div
+                  className="progress-bar gray"
+                  style={{ width: "150%" }}
+                />
               </div>
             </div>
           </div>
@@ -135,14 +159,14 @@ export default function Dashboard({ nome }) {
               </div>
             </div>
 
-            <div className="side-box dica-container">
-              <div className="dica-titulo">
+            <div className="side-box sugestão-container">
+              <div className="sugestão-titulo">
                 <span className="icone-lampada">💡</span>
                 <h3>Dica</h3>
               </div>
               <p className="dica-texto">
-                Complete todas as lições para desbloquear a área de criação do seu
-                projeto vocacional.
+                Complete todas as lições para desbloquear a área de criação do
+                seu projeto vocacional.
               </p>
             </div>
           </div>

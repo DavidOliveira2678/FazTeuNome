@@ -8,6 +8,7 @@ export default function Cadastro() {
   const [form, setForm] = useState({
     nome: "",
     email: "",
+    telefone: "",
     escola: "",
     tipoUsuario: "",
     senha: "",
@@ -36,28 +37,60 @@ export default function Cadastro() {
 
       <div className="cadastro-card">
         <div className="cadastro-title">Cadastro</div>
-        <div className="cadastro-subtitle">Comece sua jornada de desenvolvimento agora</div>
+        <div className="cadastro-subtitle">
+          Comece sua jornada de desenvolvimento agora
+        </div>
 
-        <form>
+        <form onSubmit={handleCriarConta}>
           <div className="input-group">
             <label>Nome completo</label>
-            <input type="text" name="nome" value={form.nome} onChange={handleChange} />
+            <input
+              type="text"
+              name="nome"
+              value={form.nome}
+              onChange={handleChange}
+            />
           </div>
 
           <div className="input-group">
             <label>E-mail</label>
-            <input type="email" name="email" value={form.email} onChange={handleChange} />
+            <input
+              type="email"
+              name="email"
+              value={form.email}
+              onChange={handleChange}
+            />
+          </div>
+
+          <div className="input-group">
+            <label>Telefone</label>
+            <input
+              type="tel"
+              name="telefone"
+              value={form.telefone}
+              onChange={handleChange}
+              placeholder="(99) 99999-9999"
+            />
           </div>
 
           <div className="input-group">
             <label>Escola</label>
-            <input type="text" name="escola" value={form.escola} onChange={handleChange} />
+            <input
+              type="text"
+              name="escola"
+              value={form.escola}
+              onChange={handleChange}
+            />
           </div>
 
           <div className="input-group">
             <label>Tipo de usuário</label>
             <div className="select-wrapper">
-              <select name="tipoUsuario" value={form.tipoUsuario} onChange={handleChange}>
+              <select
+                name="tipoUsuario"
+                value={form.tipoUsuario}
+                onChange={handleChange}
+              >
                 <option value="">Selecione</option>
                 <option value="aluno">Aluno</option>
                 <option value="professor">Professor</option>
@@ -67,15 +100,25 @@ export default function Cadastro() {
 
           <div className="input-group">
             <label>Senha</label>
-            <input type="password" name="senha" value={form.senha} onChange={handleChange} />
+            <input
+              type="password"
+              name="senha"
+              value={form.senha}
+              onChange={handleChange}
+            />
           </div>
 
           <div className="input-group">
             <label>Confirmar senha</label>
-            <input type="password" name="confirmarSenha" value={form.confirmarSenha} onChange={handleChange} />
+            <input
+              type="password"
+              name="confirmarSenha"
+              value={form.confirmarSenha}
+              onChange={handleChange}
+            />
           </div>
 
-          <button type="submit" className="btn-criar-conta" onClick={handleCriarConta}>
+          <button type="submit" className="btn-criar-conta">
             Criar Conta
           </button>
         </form>

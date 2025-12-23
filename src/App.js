@@ -1,11 +1,18 @@
 import React from "react";
-import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Navigate
+} from "react-router-dom";
 
-import Home from "./Home";
-import Login from "./Login";
-import Cadastro from "./Cadastro";
-import Dashboard from "./Dashboard";
-import RecuperarSenha from "./Recuperarsenha";
+import Home from "./pages/Home/Home";
+import Login from "./pages/Login/Login";
+import Cadastro from "./pages/Cadastro/Cadastro";
+import Dashboard from "./pages/Dashboard/Dashboard";
+import RecuperarSenha from "./pages/Recuperarsenha/Recuperarsenha";
+import Autoconhecimento from "./pages/Autoconhecimento/Autoconhecimento";
+import VocabulariodeNegocios from "./pages/VocabulariodeNegocios/VocabulariodeNegocios";
 
 function App() {
   const usuarioLogado = true;
@@ -13,7 +20,6 @@ function App() {
   return (
     <Router>
       <Routes>
-
         <Route path="/" element={<Home />} />
         <Route path="/cadastro" element={<Cadastro />} />
         <Route path="/login" element={<Login />} />
@@ -30,8 +36,28 @@ function App() {
           }
         />
 
-        <Route path="*" element={<Navigate to="/" />} />
+        <Route
+          path="/autoconhecimento"
+          element={
+            usuarioLogado ? (
+              <Autoconhecimento />
+            ) : (
+              <Navigate to="/login" />
+            )
+          }
+        />
+        <Route
+          path="/vocabulariode-negocios"
+          element={
+            usuarioLogado ? (
+              <VocabulariodeNegocios />
+            ) : (
+              <Navigate to="/login" />
+            )
+          }
+        />
 
+        <Route path="*" element={<Navigate to="/" />} />
       </Routes>
     </Router>
   );

@@ -1,0 +1,411 @@
+* {
+  box-sizing: border-box;
+  user-select: none;
+}
+
+.VocabulariodeNegocios-container {
+  max-width: 4000px;
+  margin: 0 auto;
+  padding: 0 20px;
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; 
+}
+
+.VocabulariodeNegocios-topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 22px;
+  border-bottom: 2px solid #dcdcdc;
+  background: #ffffff;
+}
+
+.topbar-logo {
+  font-size: 16px;
+  font-weight: bold;
+  color: #0f6fa1;
+}
+
+.topbar-links {
+  display: flex;
+  gap: 35px;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.topbar-links span {
+  cursor: pointer;
+}
+
+.topbar-links span:hover {
+  color: #0f6fa1;
+}
+
+.topbar-user {
+  font-size: 22px;
+}
+
+.VocabulariodeNegocios-header {
+  background: #96A93F;
+  color: #ffffff;
+  padding: 28px;
+  border-radius: 14px;
+  margin-top: 30px;
+}
+
+.header-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.header-left {
+  max-width: 70%;
+}
+
+.softskills-label {
+  font-size: 13px;
+  opacity: 0.9;
+}
+
+.header-left h2 {
+  margin: 4px 0 6px;
+  font-size: 26px;
+}
+
+.header-left p {
+  margin: 1;
+  font-size: 15px;
+}
+
+.progress-info {
+  display: flex;
+}
+
+.VocabulariodeNegocios-container .progress-box {
+  background: rgba(165, 96, 96, 0.183);
+  border: 3px solid rgba(216, 118, 118, 0.221);
+  padding: 10px 16px;
+  border-radius: 14px;
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #ffffff;
+}
+
+
+.progress-box span:first-child {
+  font-size: 14px;
+  opacity: 0.9;
+}
+
+.progress-box span:last-child {
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 6px;
+}
+
+.progress-bar {
+  height: 6px;
+  border-radius: 4px;
+}
+
+.progress-bar.gray {
+  background-color: #9ca3af;
+  width: 100%;
+  overflow: hidden;
+}
+
+.progress-bar.white {
+  background-color: #ffffff;
+  height: 100%;
+  border-radius: 4px;
+}
+
+.main-row {
+  margin-top: 30px;
+  flex: 1;
+}
+
+.learning-path h3 {
+  color: #0f6fa1;
+  margin-bottom: 10px;
+}
+
+.learning-path p {
+  font-size: 15px;
+  color: #333;
+  line-height: 1.5;
+}
+
+.content-row {
+  display: flex;
+  gap: 32px;
+  margin-top: 30px;
+}
+
+.content-left {
+  flex: 2;
+}
+
+.content-left h3 {
+  margin-top: 6px;
+}
+
+.Termos-container {
+  border: 2px solid #eceae8da;
+  border-radius: 12px;
+  padding: 20px;
+  background-color: #8dcea027;
+  margin-bottom: 20px;
+}
+
+.Termos-container label {
+  color: #0f6fa1; 
+  font-weight: 600;
+  margin-bottom: 6px;
+  display: block;
+}
+
+textarea {
+  width: 100%;
+  min-height: 40px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  padding: 10px;
+  resize: none;
+}
+
+.aplicacao-real {
+  border: 2px solid #eeecea;
+  border-radius: 14px;
+  padding: 8px 40px 80px 20px; 
+  background-color: #98c3a52b;
+  margin-top: 20px;
+  max-width: 1000px;
+}
+
+.aplicacao-real h3 {
+  color: #0f6fa1; 
+  margin-bottom: 8px;
+}
+
+.aplicacao-real p {
+  font-size: 14px;
+  color: #131313;  
+  margin-bottom: 12px;
+}
+
+.aplicacao-real textarea {
+  width: 100%;
+  min-height: 100px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  padding: 20px 10px 80px 20px; 
+  resize: none;
+}
+
+.content-right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px; 
+}
+
+.Agora-container {
+  border: 1px solid #d3d3d3; 
+  border-radius: 14px;
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  background-color: #ffffff; 
+}
+
+.Agora-card h4 {
+  color: #0f6fa1; 
+  margin: 0 0 6px 0;
+  font-weight: 600;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #d3d3d3;
+}
+
+.Agora-card hr {
+  border: none;
+  border-top: 1px solid #0f6fa1; 
+  margin: 6px 0 12px 0;
+}
+
+.Agora-card h5 {
+  margin: 0;
+  font-weight: 600;
+  color: #0f6fa1; 
+}
+
+.btn-voltar {
+  background: #0f6fa1;
+  color: white;
+  border: none;
+  padding: 6px 14px;
+  border-radius: 20px;
+  cursor: pointer;
+  margin-bottom: 16px;
+}
+
+.btn-continuar {
+  margin-top: 30px;
+  margin-left: auto;
+  margin-right: auto;
+  background: #7ca31b;
+  color: white;
+  border: none;
+  padding: 16px 26px;
+  border-radius: 20px;
+  cursor: pointer;
+  display: block;
+
+  transform: translateX(400px); 
+}
+
+.btn-duvidas {
+  margin-top: 10px;
+  border: 2px solid #0f6fa1;
+  background: rgba(128, 128, 128, 0.084);
+  color: #0f6fa1;
+  padding: 8px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.interrogacao {
+  color: #0f6fa1; 
+  font-weight: bold;
+}
+
+.VocabulariodeNegocios-footer {
+  width: 100%;
+  background: #0f6fa1;
+  color: #ffffff;
+  padding: 28px 24px;
+  margin-top: 40px;
+  box-sizing: border-box;
+  flex-shrink: 0; 
+}
+
+.footer-columns {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 40px;
+  padding: 0 60px;
+}
+
+.footer-col {
+  max-width: 250px;
+}
+
+.footer-col h4 {
+  margin-bottom: 14px;
+  font-size: 18px;
+}
+
+.footer-col ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-bottom {
+  margin-top: 30px;
+  padding-top: 15px;
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.footer-links {
+  display: flex;
+  gap: 20px;
+}
+.exercicio-pratico {
+  border: none; 
+  border-radius: 14px;
+  padding: 20px;
+  background-color: #fff;
+  margin-top: 20px; 
+  max-width: 1000px;
+}
+
+.exercicio-pratico h3 {
+  color: #0f6fa1; 
+  margin-bottom: 6px;
+}
+
+.exercicio-pratico p {
+  font-size: 14px;
+  color: #0f6fa1; 
+  margin-bottom: 12px;
+}
+
+.exercicio-pratico label {
+  font-weight: 600;
+  margin-top: 14px;
+  margin-bottom: 6px;
+  color: #0f6fa1; 
+  display: block;
+}
+
+.exercicio-pratico textarea {
+  width: 100%;
+  min-height: 40px; 
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  padding: 10px;
+  resize: none;
+  margin-bottom: 12px; 
+}
+.action-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.btn-secondary {
+  background: rgba(85, 85, 86, 0.039);
+  color: #5f9dbf;
+  border: 2px solid #d6dee2bd;
+  padding: 8px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.btn-secondary:hover {
+  background: #0f6ea191;
+  color: white;
+}
+
+.btn-primary {
+  background: #ff7a00;
+  color: white;
+  border: none;
+  padding: 8px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.btn-primary:hover {
+  opacity: 0.9;
+}
+.jogo-papeis {
+  font-size: 18px;
+  font-weight: bold;
+  color: #0f6fa1;
+  margin-top: 8px;
+}

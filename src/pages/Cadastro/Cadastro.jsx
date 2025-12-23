@@ -6,11 +6,11 @@ export default function Cadastro() {
   const navigate = useNavigate();
 
   const [form, setForm] = useState({
-    nome: "",
+    nome_completo: "",
     email: "",
     telefone: "",
     escola: "",
-    tipoUsuario: "",
+    tipo_usuario: "",
     senha: "",
     confirmarSenha: "",
   });
@@ -19,15 +19,55 @@ export default function Cadastro() {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  const handleCriarConta = (e) => {
+  async function handleCriarConta(e) {
     e.preventDefault();
+
     if (form.senha !== form.confirmarSenha) {
       alert("Senhas não coincidem!");
       return;
     }
-    console.log("Cadastro enviado:", form);
-    alert("Conta criada com sucesso!");
-  };
+
+    try {
+      // 🔎 Verificar se email já existe antes de cadastrar
+      const checkResponse = await fetch(
+        `http://localhost:5000/api/usuarios/verificar-email?email=${form.email}`
+      );
+      const checkData = await checkResponse.json();
+
+      if (checkData.existe) {
+        alert("Este email já está cadastrado!");
+        return;
+      }
+
+      // 🚀 Criar usuário
+      const response = await fetch("http://localhost:5000/api/usuarios", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          nome_completo: form.nome_completo,
+          email: form.email,
+          escola: form.escola,
+          tipo_usuario: form.tipo_usuario,
+          senha: form.senha,
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error("Erro ao cadastrar usuário");
+      }
+
+      const data = await response.json();
+      console.log("Usuário cadastrado:", data);
+
+      alert("Conta criada com sucesso!");
+      navigate("/login"); // redireciona para login após cadastro
+    } catch (error) {
+      console.error("Erro no cadastro:", error);
+      alert("Erro ao cadastrar usuário.");
+    }
+  }
 
   return (
     <div className="cadastro-container">
@@ -40,7 +80,11 @@ export default function Cadastro() {
         <div className="cadastro-subtitle">
           Comece sua jornada de desenvolvimento agora
         </div>
+        <div className="cadastro-subtitle">
+          Comece sua jornada de desenvolvimento agora
+        </div>
 
+        <form onSubmit={handleCriarConta}>
         <form onSubmit={handleCriarConta}>
           <div className="input-group">
             <label>Nome completo</label>
@@ -81,6 +125,12 @@ export default function Cadastro() {
               value={form.escola}
               onChange={handleChange}
             />
+            <input
+              type="text"
+              name="escola"
+              value={form.escola}
+              onChange={handleChange}
+            />
           </div>
 
           <div className="input-group">
@@ -106,6 +156,12 @@ export default function Cadastro() {
               value={form.senha}
               onChange={handleChange}
             />
+            <input
+              type="password"
+              name="senha"
+              value={form.senha}
+              onChange={handleChange}
+            />
           </div>
 
           <div className="input-group">
@@ -116,8 +172,15 @@ export default function Cadastro() {
               value={form.confirmarSenha}
               onChange={handleChange}
             />
+            <input
+              type="password"
+              name="confirmarSenha"
+              value={form.confirmarSenha}
+              onChange={handleChange}
+            />
           </div>
 
+          <button type="submit" className="btn-criar-conta">
           <button type="submit" className="btn-criar-conta">
             Criar Conta
           </button>

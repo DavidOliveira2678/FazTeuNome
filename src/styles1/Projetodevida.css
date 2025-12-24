@@ -1,0 +1,306 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+:root {
+  --primary-purple: #d460ae;
+  --dark-blue: #1b5382;
+  --orange: #ff7e33;
+  --bg-light: #f9fafb;
+  --card-hover: #e2e8f0;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+}
+
+.pagina-container {
+  background-color: white;
+  min-height: 100vh;
+}
+
+/* NAVBAR */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 8%;
+  background: white;
+  border-bottom: 1px solid #eee;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 700;
+  color: var(--dark-blue);
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #333;
+  margin: 0 15px;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.user-nav {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.avatar {
+  width: 35px;
+  height: 35px;
+  background: #eee;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* HERO CARD (PURPLE) */
+.content-wrapper {
+  max-width: 1100px;
+  margin: 20px auto;
+  padding: 0 20px;
+}
+
+.hero-card-vida {
+  background: linear-gradient(90deg, #b84c9c 0%, #e67bbd 100%);
+  border-radius: 20px;
+  padding: 40px;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.hero-content h1 {
+  font-size: 2.2rem;
+  margin-bottom: 8px;
+}
+
+.hero-content p {
+  font-size: 1rem;
+  opacity: 0.95;
+  margin-bottom: 30px;
+}
+
+.progresso-container {
+  width: 100%;
+  max-width: 700px;
+}
+
+.barra-fundo {
+  background: rgba(255, 255, 255, 0.3);
+  height: 8px;
+  border-radius: 10px;
+  margin-top: 10px;
+}
+
+.barra-preenchimento {
+  background: white;
+  height: 100%;
+  border-radius: 10px;
+}
+
+.badge-concluido-vida {
+  background: #f9c4ea;
+  color: #b84c9c;
+  padding: 20px;
+  border-radius: 15px;
+  text-align: center;
+  min-width: 120px;
+}
+
+.badge-concluido-vida strong {
+  display: block;
+  font-size: 1.8rem;
+}
+
+/* UI ELEMENTS */
+.btn-voltar {
+  background: var(--dark-blue);
+  color: white;
+  border: none;
+  padding: 8px 20px;
+  border-radius: 20px;
+  margin: 25px 0;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.85rem;
+}
+
+.main-layout {
+  display: grid;
+  grid-template-columns: 1.8fr 1fr;
+  gap: 30px;
+}
+
+h2 {
+  color: var(--dark-blue);
+  margin-bottom: 20px;
+}
+
+/* LISTA DE LIÇÕES */
+.card-licao {
+  background: white;
+  border: 1px solid #eee;
+  border-radius: 12px;
+  padding: 20px;
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  margin-bottom: 15px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.active-card {
+  background: #e2e8f0;
+  border-color: #cbd5e1;
+}
+
+.card-licao:hover {
+  border-color: #ccc;
+}
+
+.texto h3 {
+  color: var(--dark-blue);
+  font-size: 1.1rem;
+  margin-bottom: 5px;
+}
+
+.texto p {
+  color: #666;
+  font-size: 0.85rem;
+  line-height: 1.5;
+}
+
+.circle-indicator-orange {
+  width: 18px;
+  height: 18px;
+  border: 2px solid var(--orange);
+  border-radius: 50%;
+  flex-shrink: 0;
+  margin-top: 3px;
+}
+
+.status-icons {
+  margin-left: auto;
+  color: var(--dark-blue);
+  font-weight: bold;
+}
+
+/* SIDEBAR DETALHES */
+.detalhes-card {
+  background: white;
+  border-radius: 15px;
+  border: 1px solid #eee;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  overflow: hidden;
+  height: fit-content;
+}
+
+.detalhe-header {
+  padding: 15px;
+  border-bottom: 1px solid #eee;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.detalhe-body {
+  padding: 25px;
+}
+
+.detalhe-body h3 {
+  color: var(--dark-blue);
+  margin-bottom: 15px;
+}
+
+.detalhe-body .desc {
+  font-size: 0.9rem;
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 25px;
+}
+
+.btn-comecar {
+  width: 100%;
+  background: var(--orange);
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 10px;
+  font-weight: 700;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+.btn-duvidas-outlined {
+  width: 100%;
+  background: #f0f7ff;
+  color: var(--dark-blue);
+  border: 1px solid #bcd0f7;
+  padding: 10px;
+  border-radius: 10px;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+/* FOOTER */
+.footer {
+  background: var(--dark-blue);
+  color: white;
+  padding: 60px 8% 20px;
+  margin-top: 100px;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 40px;
+  padding-bottom: 40px;
+}
+
+.footer h4 {
+  margin-bottom: 20px;
+  font-size: 1.1rem;
+}
+
+.footer p, .footer li {
+  font-size: 0.85rem;
+  opacity: 0.8;
+  line-height: 1.6;
+}
+
+.footer ul { list-style: none; }
+.footer li { margin-bottom: 10px; }
+
+.footer-bottom {
+  border-top: 1px solid rgba(255,255,255,0.1);
+  padding-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.75rem;
+  opacity: 0.7;
+}
+
+.footer-links a {
+  color: white;
+  text-decoration: none;
+  margin-left: 15px;
+}
+
+@media (max-width: 768px) {
+  .main-layout { grid-template-columns: 1fr; }
+  .footer-grid { grid-template-columns: 1fr 1fr; }
+}

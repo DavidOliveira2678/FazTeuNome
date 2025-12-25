@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./Cadastro.css";
+import "../Cadastro/Cadastro.css";
 import { useNavigate } from "react-router-dom";
 
 export default function Cadastro() {
@@ -48,6 +48,7 @@ export default function Cadastro() {
         body: JSON.stringify({
           nome_completo: form.nome_completo,
           email: form.email,
+          telefone: form.telefone,
           escola: form.escola,
           tipo_usuario: form.tipo_usuario,
           senha: form.senha,
@@ -156,6 +157,7 @@ export default function Cadastro() {
               onChange={handleChange}
             />
           </div>
+
           <button type="submit" className="btn-criar-conta">
             Criar Conta
           </button>

@@ -44,10 +44,11 @@ export default function Home() {
 
         <button
           className="start-journey-btn"
-          onClick={() => navigate("/dashboard")}
-        >
+          onClick={() => navigate("/login")}
+         >
           Comece sua jornada agora
         </button>
+
       </main>
     </div>
   );

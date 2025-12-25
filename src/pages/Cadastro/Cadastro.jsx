@@ -80,18 +80,13 @@ export default function Cadastro() {
         <div className="cadastro-subtitle">
           Comece sua jornada de desenvolvimento agora
         </div>
-        <div className="cadastro-subtitle">
-          Comece sua jornada de desenvolvimento agora
-        </div>
-
-        <form onSubmit={handleCriarConta}>
         <form onSubmit={handleCriarConta}>
           <div className="input-group">
             <label>Nome completo</label>
             <input
               type="text"
-              name="nome"
-              value={form.nome}
+              name="nome_completo"
+              value={form.nome_completo}
               onChange={handleChange}
             />
           </div>
@@ -125,20 +120,14 @@ export default function Cadastro() {
               value={form.escola}
               onChange={handleChange}
             />
-            <input
-              type="text"
-              name="escola"
-              value={form.escola}
-              onChange={handleChange}
-            />
           </div>
 
           <div className="input-group">
             <label>Tipo de usuário</label>
             <div className="select-wrapper">
               <select
-                name="tipoUsuario"
-                value={form.tipoUsuario}
+                name="tipo_usuario"
+                value={form.tipo_usuario}
                 onChange={handleChange}
               >
                 <option value="">Selecione</option>
@@ -156,12 +145,6 @@ export default function Cadastro() {
               value={form.senha}
               onChange={handleChange}
             />
-            <input
-              type="password"
-              name="senha"
-              value={form.senha}
-              onChange={handleChange}
-            />
           </div>
 
           <div className="input-group">
@@ -172,15 +155,7 @@ export default function Cadastro() {
               value={form.confirmarSenha}
               onChange={handleChange}
             />
-            <input
-              type="password"
-              name="confirmarSenha"
-              value={form.confirmarSenha}
-              onChange={handleChange}
-            />
           </div>
-
-          <button type="submit" className="btn-criar-conta">
           <button type="submit" className="btn-criar-conta">
             Criar Conta
           </button>

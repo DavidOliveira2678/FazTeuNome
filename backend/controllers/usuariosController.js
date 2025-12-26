@@ -5,7 +5,7 @@ const jwt = require('jsonwebtoken');
 // 📌 Listar todos os usuários
 exports.getUsuarios = (req, res) => {
   db.query(
-    'SELECT id, nome_completo, email, escola, tipo_usuario, telefone, endereco FROM usuarios',
+    'SELECT id, nome_completo, email, escola, tipo_usuario, telefone,',
     (err, results) => {
       if (err) return res.status(500).json(err);
       res.json(results);
@@ -25,20 +25,20 @@ exports.createUsuario = async (req, res) => {
     const senha_hash = await bcrypt.hash(senha, 10);
 
     db.query(
-      'INSERT INTO usuarios (nome_completo, email, escola, tipo_usuario, senha_hash, telefone, endereco) VALUES (?, ?, ?, ?, ?, ?, ?)',
-      [nome_completo, email, escola, tipo_usuario, senha_hash, telefone],
-      (err, results) => {
-        if (err) return res.status(500).json(err);
-        res.status(201).json({
-          id: results.insertId,
-          nome_completo,
-          email,
-          escola,
-          tipo_usuario,
-          telefone,
-        });
-      }
-    );
+     'INSERT INTO usuarios (nome_completo, email, escola, tipo_usuario, senha_hash, telefone) VALUES (?, ?, ?, ?, ?, ?)',
+  [nome_completo, email, escola, tipo_usuario, senha_hash, telefone],
+  (err, results) => {
+    if (err) return res.status(500).json(err);
+    res.status(201).json({
+      id: results.insertId,
+      nome_completo,
+      email,
+      escola,
+      tipo_usuario,
+      telefone,
+    });
+  }
+);  
   } catch (err) {
     res.status(500).json({ erro: err.message });
   }
@@ -112,8 +112,8 @@ exports.updateUsuario = (req, res) => {
   const { nome_completo, email, escola, tipo_usuario, telefone, endereco } = req.body;
 
   db.query(
-    'UPDATE usuarios SET nome_completo = ?, email = ?, escola = ?, tipo_usuario = ?, telefone = ?, endereco = ? WHERE id = ?',
-    [nome_completo, email, escola, tipo_usuario, telefone, endereco, id],
+    'UPDATE usuarios SET nome_completo = ?, email = ?, escola = ?, tipo_usuario = ?, telefone = ?, WHERE id = ?',
+    [nome_completo, email, escola, tipo_usuario, telefone, id],
     (err, results) => {
       if (err) return res.status(500).json(err);
 

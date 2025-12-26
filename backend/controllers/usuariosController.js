@@ -109,7 +109,7 @@ exports.deleteUsuario = (req, res) => {
 // 📌 Atualizar usuário pelo ID
 exports.updateUsuario = (req, res) => {
   const { id } = req.params;
-  const { nome_completo, email, escola, tipo_usuario, telefone, endereco } = req.body;
+  const { nome_completo, email, escola, tipo_usuario, telefone,} = req.body;
 
   db.query(
     'UPDATE usuarios SET nome_completo = ?, email = ?, escola = ?, tipo_usuario = ?, telefone = ?, WHERE id = ?',

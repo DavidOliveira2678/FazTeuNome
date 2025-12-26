@@ -5,7 +5,7 @@ const jwt = require('jsonwebtoken');
 // 📌 Listar todos os usuários
 exports.getUsuarios = (req, res) => {
   db.query(
-    'SELECT id, nome_completo, email, escola, tipo_usuario FROM usuarios',
+    'SELECT id, nome_completo, email, escola, tipo_usuario, telefone, endereco FROM usuarios',
     (err, results) => {
       if (err) return res.status(500).json(err);
       res.json(results);
@@ -16,7 +16,7 @@ exports.getUsuarios = (req, res) => {
 // 📌 Criar novo usuário (com hash de senha)
 exports.createUsuario = async (req, res) => {
   try {
-    const { nome_completo, email, escola, tipo_usuario, senha } = req.body;
+    const { nome_completo, email, escola, tipo_usuario, senha, telefone } = req.body;
 
     if (!senha || senha.length < 6) {
       return res.status(400).json({ erro: 'Senha deve ter pelo menos 6 caracteres' });
@@ -25,11 +25,18 @@ exports.createUsuario = async (req, res) => {
     const senha_hash = await bcrypt.hash(senha, 10);
 
     db.query(
-      'INSERT INTO usuarios (nome_completo, email, escola, tipo_usuario, senha_hash) VALUES (?, ?, ?, ?, ?)',
-      [nome_completo, email, escola, tipo_usuario, senha_hash],
+      'INSERT INTO usuarios (nome_completo, email, escola, tipo_usuario, senha_hash, telefone, endereco) VALUES (?, ?, ?, ?, ?, ?, ?)',
+      [nome_completo, email, escola, tipo_usuario, senha_hash, telefone],
       (err, results) => {
         if (err) return res.status(500).json(err);
-        res.status(201).json({ id: results.insertId, nome_completo, email, escola, tipo_usuario });
+        res.status(201).json({
+          id: results.insertId,
+          nome_completo,
+          email,
+          escola,
+          tipo_usuario,
+          telefone,
+        });
       }
     );
   } catch (err) {
@@ -52,7 +59,6 @@ exports.loginUsuario = (req, res) => {
       return res.status(401).json({ erro: 'Senha incorreta' });
     }
 
-    // 🔑 Gerar token JWT
     const token = jwt.sign(
       { id: usuario.id, email: usuario.email },
       process.env.JWT_SECRET,
@@ -67,7 +73,8 @@ exports.loginUsuario = (req, res) => {
         nome_completo: usuario.nome_completo,
         email: usuario.email,
         escola: usuario.escola,
-        tipo_usuario: usuario.tipo_usuario
+        tipo_usuario: usuario.tipo_usuario,
+        telefone: usuario.telefone,
       }
     });
   });
@@ -102,11 +109,11 @@ exports.deleteUsuario = (req, res) => {
 // 📌 Atualizar usuário pelo ID
 exports.updateUsuario = (req, res) => {
   const { id } = req.params;
-  const { nome_completo, email, escola, tipo_usuario } = req.body;
+  const { nome_completo, email, escola, tipo_usuario, telefone, endereco } = req.body;
 
   db.query(
-    'UPDATE usuarios SET nome_completo = ?, email = ?, escola = ?, tipo_usuario = ? WHERE id = ?',
-    [nome_completo, email, escola, tipo_usuario, id],
+    'UPDATE usuarios SET nome_completo = ?, email = ?, escola = ?, tipo_usuario = ?, telefone = ?, endereco = ? WHERE id = ?',
+    [nome_completo, email, escola, tipo_usuario, telefone, endereco, id],
     (err, results) => {
       if (err) return res.status(500).json(err);
 
@@ -118,6 +125,7 @@ exports.updateUsuario = (req, res) => {
     }
   );
 };
+
 // 📌 Verificar se email já existe
 exports.verificarEmail = (req, res) => {
   const { email } = req.query;
@@ -125,10 +133,6 @@ exports.verificarEmail = (req, res) => {
   db.query("SELECT id FROM usuarios WHERE email = ?", [email], (err, results) => {
     if (err) return res.status(500).json(err);
 
-    if (results.length > 0) {
-      return res.json({ existe: true });
-    } else {
-      return res.json({ existe: false });
-    }
+    res.json({ existe: results.length > 0 });
   });
 };

@@ -1,7 +1,9 @@
 import React from "react";
-import "../styles/Comunidade.css";
+import { useNavigate } from "react-router-dom";
+import "./Comunidade.css";
 
 const Comunidade = () => {
+  const navigate = useNavigate();
   const posts = [
     {
       id: 1,
@@ -42,16 +44,24 @@ const Comunidade = () => {
         <div className="logo">
           <span className="rocket-icon">🚀</span> Faz Teu Nome
         </div>
-        <div className="nav-links">
-          <a href="#">Início</a>
-          <a href="#">Meu Perfil</a>
-          <a href="#" className="active">Comunidade</a>
-          <a href="#">Ranking</a>
-        </div>
-        <div className="user-nav">
-          <div className="avatar-circle">👤</div>
-          <span className="logout-icon">🚪</span>
-        </div>
+        <div className="topbar-links">
+  <span style={{ cursor: "pointer" }} onClick={() => navigate("/dashboard")}>Início</span>
+  <span style={{ cursor: "pointer" }} onClick={() => navigate("/perfil")}>Meu Perfil</span>
+  <span style={{ cursor: "pointer", fontWeight: "bold" }} onClick={() => navigate("/comunidade")}>Comunidade</span>
+  <span style={{ cursor: "pointer" }} onClick={() => navigate("/ranking")}>Ranking</span>
+</div>
+
+<div className="topbar-user">
+  👤
+  <span
+    style={{ marginLeft: "8px", cursor: "pointer" }}
+    title="Sair"
+    onClick={() => navigate("/login")}
+  >
+    ⬅
+  </span>
+</div>
+
       </nav>
 
       <div className="container main-layout">
@@ -60,7 +70,13 @@ const Comunidade = () => {
           <header className="comunidade-header">
             <h1>Comunidade</h1>
             <p>Conecte-se com colegas, compartilhe experiências e inspire outros</p>
-            <button className="btn-voltar">Voltar</button>
+          <button
+  className="btn-voltar"
+  onClick={() => navigate("/dashboard")}
+>
+  Voltar
+</button>
+
           </header>
 
           {/* Área de Novo Post */}

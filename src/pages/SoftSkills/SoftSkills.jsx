@@ -1,8 +1,10 @@
 import React from "react";
-import "../styles/SoftSkills.css";
+import { useNavigate } from "react-router-dom";
+import "./SoftSkills.css";
 
 const SoftSkills = () => {
-  // Ícones SVG Inline para substituir o Lucide
+  const navigate = useNavigate();
+
   const Icons = {
     Rocket: () => (
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ff7e33" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.71.79-1.81.79-1.81l-1.98-1.98s-1.1.08-1.81.79z"/><path d="M15 8s-4 4-7 1c-1-1-4-1-4-1s2-4 2-5c3-3 7-1 7-1z"/><path d="M12 12l9 9"/><path d="M18.5 5.5s-4 4-7 1c-1-1-4-1-4-1s2-4 2-5c3-3 7-1 7-1z"/></svg>
@@ -29,19 +31,39 @@ const SoftSkills = () => {
       {/* Navbar */}
       <nav className="navbar">
         <div className="logo">
-          <Icons.Rocket />
-          <span>Faz Teu Nome</span>
+🚀 <span>FAZ TEU NOME</span>
         </div>
-        <div className="nav-links">
-          <a href="#">Início</a>
-          <a href="#">Meu Perfil</a>
-          <a href="#">Comunidade</a>
-          <a href="#">Ranking</a>
-        </div>
-        <div className="user-nav">
-          <div className="avatar">👤</div>
-          <span className="logout-icon">🚪</span>
-        </div>
+        <div className="topbar-links">
+  <span style={{ cursor: "pointer" }} onClick={() => navigate("/dashboard")}>
+    Início
+  </span>
+
+  <span style={{ cursor: "pointer" }} onClick={() => navigate("/profile")}>
+    Meu Perfil
+  </span>
+
+  <span style={{ cursor: "pointer" }} onClick={() => navigate("/comunidade")}>
+    Comunidade
+  </span>
+
+  <span style={{ cursor: "pointer" }} onClick={() => navigate("/ranking")}>
+    Ranking
+  </span>
+</div>
+
+
+<div className="topbar-user">
+  👤
+  <span
+    style={{ marginLeft: "8px", cursor: "pointer" }}
+    title="Sair"
+    onClick={() => navigate("/login")}
+  >
+    ⬅
+  </span>
+</div>
+
+
       </nav>
 
       <div className="content-wrapper">
@@ -64,14 +86,25 @@ const SoftSkills = () => {
   </div>
 </section>
 
-        <button className="btn-voltar">Voltar</button>
+        <button
+  className="btn-voltar"
+  onClick={() => navigate("/dashboard")}
+>
+  Voltar
+</button>
+
 
         <main className="main-layout">
           {/* Lista de Lições */}
           <section className="coluna-licoes">
             <h2>Lições</h2>
             
-            <div className="card-licao">
+            <div
+  className="card-licao"
+  style={{ cursor: "pointer" }}
+  onClick={() => navigate("/autoconhecimento")}
+>
+
               <Icons.Clock />
               <div className="texto">
                 <h3>Autoconhecimento</h3>
@@ -126,40 +159,51 @@ const SoftSkills = () => {
             </div>
 
             <button className="btn-revisar">Revisar</button>
-            <button className="btn-duvidas">❓ Dúvidas</button>
+   <button
+  className="btn-duvidas"
+  onClick={() => navigate("/PaginaEmConstrucao")}
+>
+  ❓ Dúvidas
+</button>
+
+
           </aside>
         </main>
       </div>
 
       {/* Footer */}
-      <footer className="footer">
-        <div className="footer-grid">
-          <div>
-            <h4>Faz Teu Nome</h4>
-            <p>Plataforma pedagógica para protagonismo juvenil e construção de projeto de vida.</p>
-          </div>
-          <div>
-            <h4>Plataforma</h4>
-            <ul><li>Trilha de aprendizagem</li><li>Comunidade</li><li>Hackaton</li></ul>
-          </div>
-          <div>
-            <h4>Recursos</h4>
-            <ul><li>Guia do Professor</li><li>FAQ</li><li>Contato</li></ul>
-          </div>
-          <div>
-            <h4>Igarassu</h4>
-            <p>Desenvolvimento com escuta ativa e protagonismo juvenil para o município de Igarassu - PE.</p>
-          </div>
-        </div>
-        <div className="footer-bottom">
-          <span>© 2025 Faz Teu Nome. Todos os direitos reservados.</span>
-          <div className="footer-links">
-            <a href="#">Privacidade</a>
-            <a href="#">Termos</a>
-            <a href="#">Acessibilidade</a>
-          </div>
-        </div>
-      </footer>
+<footer className="footer">
+  <div className="footer-grid">
+    <div>
+      <h4>Faz Teu Nome</h4>
+      <p>Plataforma pedagógica para protagonismo juvenil e construção de projeto de vida.</p>
+    </div>
+    <div>
+      <h4>Plataforma</h4>
+      <ul>
+        <li>Trilha de aprendizagem</li>
+        <li>Comunidade</li>
+        <li>Hackaton</li>
+      </ul>
+    </div>
+    <div>
+      <h4>Recursos</h4>
+      <ul>
+        <li>Guia do Professor</li>
+        <li>FAQ</li>
+        <li>Contato</li>
+      </ul>
+    </div>
+    <div>
+      <h4>Igarassu</h4>
+      <p>Desenvolvimento com escuta ativa e protagonismo juvenil para o município de Igarassu - PE.</p>
+    </div>
+  </div>
+  <div className="footer-bottom">
+    <span>© 2025 Faz Teu Nome. Todos os direitos reservados.</span>
+  </div>
+</footer>
+
     </div>
   );
 };

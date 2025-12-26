@@ -1,7 +1,12 @@
 import React from "react";
-import "../styles/Ranking.css";
+import { useNavigate } from "react-router-dom";
+import "./Ranking.css";
 
 const Ranking = () => {
+  const navigate = useNavigate();
+  const handleVoltar = () => {
+  navigate("/dashboard");
+};
   const rankingData = [
     { pos: "1º", nome: "Pedro Oliveira", pontos: "8.540", seq: 15, conquistas: 8, medal: "🥇" },
     { pos: "2º", nome: "Marina Silva", pontos: "7.920", seq: 12, conquistas: 7, medal: "🥈" },
@@ -18,23 +23,46 @@ const Ranking = () => {
         <div className="logo">
           <span className="rocket-icon">🚀</span> Faz Teu Nome
         </div>
-        <div className="nav-links">
-          <a href="#">Início</a>
-          <a href="#">Meu Perfil</a>
-          <a href="#">Comunidade</a>
-          <a href="#" className="active">Ranking</a>
-        </div>
-        <div className="user-nav">
-          <div className="avatar">👤</div>
-          <span className="logout">🚪</span>
-        </div>
+        <div className="topbar-links">
+  <span style={{ cursor: "pointer" }} onClick={() => navigate("/dashboard")}>
+    Início
+  </span>
+
+  <span style={{ cursor: "pointer" }} onClick={() => navigate("/profile")}>
+    Meu Perfil
+  </span>
+
+  <span style={{ cursor: "pointer" }} onClick={() => navigate("/comunidade")}>
+    Comunidade
+  </span>
+
+  <span style={{ cursor: "pointer" }} onClick={() => navigate("/ranking")}>
+    Ranking
+  </span>
+</div>
+
+
+<div className="topbar-user">
+  👤
+  <span
+    style={{ marginLeft: "8px", cursor: "pointer" }}
+    title="Sair"
+    onClick={() => navigate("/login")}
+  >
+    ⬅
+  </span>
+</div>
+
       </nav>
 
       <div className="container">
         <header className="ranking-header">
           <h1><span>🏆</span> Ranking de Protagonismo</h1>
           <p>Veja como você está se comparando aos seus colegas</p>
-          <button className="btn-voltar">Voltar</button>
+         <button className="btn-voltar" onClick={handleVoltar}>
+  Voltar
+</button>
+
         </header>
 
         <div className="filters">

@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from "react";
-import "../styles/HardSkills.css";
+import { useNavigate } from "react-router-dom";
+import "./HardSkills.css";
 
 const HardSkills = () => {
+  const navigate = useNavigate();
   const [progresso, setProgresso] = useState(0);
 
   useEffect(() => {
@@ -27,17 +29,35 @@ const HardSkills = () => {
           <span className="icon-emoji-large">🚀</span> 
           <span>Faz Teu Nome</span>
         </div>
-        <div className="nav-links">
-          <a href="#">Início</a>
-          <a href="#">Meu Perfil</a>
-          <a href="#">Comunidade</a>
-          <a href="#">Ranking</a>
-        </div>
-        <div className="user-nav">
-          <div className="avatar">👤</div>
-          {/* Substituído LogOut por Emoji */}
-          <span className="logout-icon-emoji">🚪</span>
-        </div>
+        <div className="topbar-links">
+  <span style={{ cursor: "pointer" }} onClick={() => navigate("/dashboard")}>
+    Início
+  </span>
+
+  <span style={{ cursor: "pointer" }} onClick={() => navigate("/profile")}>
+    Meu Perfil
+  </span>
+
+  <span style={{ cursor: "pointer" }} onClick={() => navigate("/comunidade")}>
+    Comunidade
+  </span>
+
+  <span style={{ cursor: "pointer" }} onClick={() => navigate("/ranking")}>
+    Ranking
+  </span>
+</div>
+
+
+<div className="topbar-user">
+  👤
+  <span
+    style={{ marginLeft: "8px", cursor: "pointer" }}
+    title="Sair"
+    onClick={() => navigate("/login")}
+  >
+    ⬅
+  </span>
+</div>
       </nav>
 
       <div className="content-wrapper">
@@ -59,18 +79,28 @@ const HardSkills = () => {
   </div>
 </section>
 
-        <button className="btn-voltar">Voltar</button>
+        <button
+  className="btn-voltar"
+  onClick={() => navigate("/dashboard")}
+>
+  Voltar
+</button>
+
 
         <main className="main-layout">
           {/* Seção de Lições (Cards Empilhados) */}
           <section className="coluna-licoes">
             <h2>Lições</h2>
             
-            <div className="card-licao">
-              {/* Substituído Clock por Emoji */}
-              <span className="icon-emoji">🕒</span>
-              <div className="texto">
-                <h3>Vocabulário de Negócios</h3>
+            <div
+  className="card-licao"
+  style={{ cursor: "pointer" }}
+  onClick={() => navigate("/vocabulariode-negocios")}
+>
+  <span className="icon-emoji">🕒</span>
+  <div className="texto">
+    <h3>Vocabulário de Negócios</h3>
+
                 <p>Vocabulário essencial para e-mails e reuniões (e.g., Deadline, Follow-up, Kick-off, Budget).</p>
               </div>
               <div className="status-icons">
@@ -124,7 +154,7 @@ const HardSkills = () => {
             </div>
 
             <button className="btn-revisar">Revisar</button>
-            <button className="btn-duvidas">❓ Dúvidas</button>
+            
           </aside>
         </main>
       </div>

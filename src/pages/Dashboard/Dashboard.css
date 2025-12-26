@@ -63,7 +63,9 @@
   gap: 14px;
   margin-top: 20px;
 }
-
+.dashboard-header h2 {
+  color: white;
+}
 .progress-box {
   background: rgba(255, 255, 255, 0.25);
   padding: 10px 16px;

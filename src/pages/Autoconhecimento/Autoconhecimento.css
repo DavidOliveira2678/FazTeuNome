@@ -44,6 +44,9 @@
   border-radius: 14px;
   margin-top: 30px;
 }
+.Autoconhecimento-header h2 {
+  color: white;
+}
 
 .header-top {
   display: flex;

@@ -1,7 +1,9 @@
 import React from "react";
-import "../styles/Profile.css";
+import { useNavigate } from "react-router-dom";
+import "./Profile.css";
 
 const Profile = () => {
+  const navigate = useNavigate();
   return (
     <div className="profile-page">
       <div className="container">
@@ -76,7 +78,13 @@ const Profile = () => {
               </div>
             </section>
             
-            <button className="btn-voltar">Voltar</button>
+            <button
+  className="btn-voltar"
+  onClick={() => navigate("/dashboard")}
+>
+  Voltar
+</button>
+
           </main>
 
           {/* Sidebar */}

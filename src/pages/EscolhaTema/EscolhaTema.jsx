@@ -1,7 +1,9 @@
 import React from "react";
-import "../styles/EscolhaTema.css";
+import { useNavigate } from "react-router-dom";
+import "./EscolhaTema.css";
 
 const EscolhaTema = () => {
+  const navigate = useNavigate();
   return (
     <div className="pagina-container">
       {/* Navbar */}
@@ -9,13 +11,35 @@ const EscolhaTema = () => {
         <div className="logo">
           <span style={{fontSize: '20px'}}>🚀</span> <span>Faz Teu Nome</span>
         </div>
-        <div className="nav-links">
-          <a href="#">Início</a>
-          <a href="#">Meu Perfil</a>
-          <a href="#">Comunidade</a>
-          <a href="#">Ranking</a>
-        </div>
-        <div className="user-nav">👤 🚪</div>
+        <div className="topbar-links">
+  <span style={{ cursor: "pointer" }} onClick={() => navigate("/dashboard")}>
+    Início
+  </span>
+
+  <span style={{ cursor: "pointer" }} onClick={() => navigate("/profile")}>
+    Meu Perfil
+  </span>
+
+  <span style={{ cursor: "pointer" }} onClick={() => navigate("/comunidade")}>
+    Comunidade
+  </span>
+
+  <span style={{ cursor: "pointer" }} onClick={() => navigate("/ranking")}>
+    Ranking
+  </span>
+</div>
+
+          
+          <div className="topbar-user">
+            👤
+            <span
+              style={{ marginLeft: "8px", cursor: "pointer" }}
+              title="Sair"
+              onClick={() => (window.location.href = "/login")}
+            >
+              ⬅
+            </span>
+          </div>
       </nav>
 
       <div className="content-wrapper">
@@ -34,7 +58,12 @@ const EscolhaTema = () => {
           </div>
         </section>
 
-        <button className="btn-voltar">Voltar</button>
+        <button
+  className="btn-voltar"
+  onClick={() => navigate("/projetodevida")}
+>
+  Voltar
+</button>
 
         <div className="introducao-selecao">
           <h2>Qual desses temas mais se conecta com quem você é hoje?</h2>

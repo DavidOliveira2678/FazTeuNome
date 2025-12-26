@@ -6,20 +6,34 @@ export default function Autoconhecimento({ nome }) {
   const navigate = useNavigate(); 
 
   const handleVoltar = () => {
-    navigate("/dashboard"); 
+    navigate("/SoftSkills"); 
   };
 
   return (
     <>
       <div className="Autoconhecimento-container">
         <nav className="Autoconhecimento-topbar">
-          <div className="topbar-logo">FAZ TEU NOME</div>
+<div className="topbar-logo">
+  🚀 <span>FAZ TEU NOME</span>
+</div>
           <div className="topbar-links">
-            <span>Início</span>
-            <span>Meu Perfil</span>
-            <span>Comunidade</span>
-            <span>Ranking</span>
-          </div>
+  <span style={{ cursor: "pointer" }} onClick={() => navigate("/dashboard")}>
+    Início
+  </span>
+
+  <span style={{ cursor: "pointer" }} onClick={() => navigate("/profile")}>
+    Meu Perfil
+  </span>
+
+  <span style={{ cursor: "pointer" }} onClick={() => navigate("/comunidade")}>
+    Comunidade
+  </span>
+
+  <span style={{ cursor: "pointer" }} onClick={() => navigate("/ranking")}>
+    Ranking
+  </span>
+</div>
+
           
           <div className="topbar-user">
             👤
@@ -58,8 +72,9 @@ export default function Autoconhecimento({ nome }) {
         <div className="main-row">
           <div className="learning-path">
             <button className="btn-voltar" onClick={handleVoltar}>
-              Voltar
-            </button>
+  Voltar
+</button>
+
 
             <div className="content-row">
               <div className="content-left">
@@ -157,10 +172,13 @@ export default function Autoconhecimento({ nome }) {
                   </p>
                 </div>
                  
-               <button className="btn-duvidas" >
-                Dúvidas
-              </button>
-                </div>
+               <button 
+    className="btn-duvidas"
+    onClick={() => navigate("/PaginaEmConstrucao")}
+  >
+    Dúvidas
+  </button>
+</div>
 
               </div>
             </div>

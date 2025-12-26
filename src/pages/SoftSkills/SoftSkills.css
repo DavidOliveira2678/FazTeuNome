@@ -1,11 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
 :root {
-  --primary-purple: #d460ae;
+  --primary-orange: #d35400;
+  --secondary-orange: #e67e22;
   --dark-blue: #1b5382;
-  --orange: #ff7e33;
-  --bg-light: #f9fafb;
-  --card-hover: #e2e8f0;
+  --bg-light: #f8f9fa;
+  --text-gray: #666;
 }
 
 * {
@@ -17,7 +17,6 @@
 
 .pagina-container {
   background-color: white;
-  min-height: 100vh;
 }
 
 /* NAVBAR */
@@ -55,51 +54,54 @@
 .avatar {
   width: 35px;
   height: 35px;
-  background: #eee;
+  background: #ddd;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-/* HERO CARD (PURPLE) */
+/* HERO CARD (ORANGE) */
 .content-wrapper {
-  max-width: 1100px;
+  max-width: 1500px;
   margin: 20px auto;
   padding: 0 20px;
 }
 
-.hero-card-vida {
-  background: linear-gradient(90deg, #b84c9c 0%, #e67bbd 100%);
-  border-radius: 20px;
-  padding: 40px;
+.hero-card-soft {
+  background-color: #d35400; 
+  border-radius: 12px; 
+  padding: 22px;
   color: white;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-top: 18px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
-.hero-content h1 {
-  font-size: 2.2rem;
-  margin-bottom: 8px;
+.hero-card-soft h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: white; 
 }
 
-.hero-content p {
+.hero-card-soft p {
   font-size: 1rem;
   opacity: 0.95;
-  margin-bottom: 30px;
 }
 
 .progresso-container {
   width: 100%;
-  max-width: 700px;
+  max-width: 400px;
+  margin-top: 12px;
 }
 
 .barra-fundo {
-  background: rgba(255, 255, 255, 0.3);
+  background: rgba(255,255,255,0.25);
   height: 8px;
   border-radius: 10px;
-  margin-top: 10px;
 }
 
 .barra-preenchimento {
@@ -108,33 +110,41 @@
   border-radius: 10px;
 }
 
-.badge-concluido-vida {
-  background: #f9c4ea;
-  color: #b84c9c;
-  padding: 20px;
+.badge-concluido-soft {
+  background-color: #b34700; /* laranja mais escuro */
+  padding: 16px;
   border-radius: 15px;
   text-align: center;
-  min-width: 120px;
+  min-width: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
-.badge-concluido-vida strong {
-  display: block;
-  font-size: 1.8rem;
+.badge-concluido-soft strong {
+  font-size: 2rem;
 }
 
-/* UI ELEMENTS */
+.badge-concluido-soft small {
+  font-size: 0.8rem;
+  opacity: 0.9;
+}
+
+/* VOLTAR BUTTON */
 .btn-voltar {
   background: var(--dark-blue);
   color: white;
   border: none;
   padding: 8px 20px;
   border-radius: 20px;
-  margin: 25px 0;
+  margin: 20px 0;
   cursor: pointer;
   font-weight: 600;
-  font-size: 0.85rem;
 }
 
+/* LAYOUT GRID */
 .main-layout {
   display: grid;
   grid-template-columns: 1.8fr 1fr;
@@ -146,7 +156,7 @@ h2 {
   margin-bottom: 20px;
 }
 
-/* LISTA DE LIÇÕES */
+/* CARDS DE LIÇÃO */
 .card-licao {
   background: white;
   border: 1px solid #eee;
@@ -156,44 +166,47 @@ h2 {
   align-items: flex-start;
   gap: 15px;
   margin-bottom: 15px;
-  cursor: pointer;
-  transition: all 0.2s;
+  position: relative;
 }
 
-.active-card {
-  background: #e2e8f0;
-  border-color: #cbd5e1;
-}
-
-.card-licao:hover {
-  border-color: #ccc;
+.card-licao.locked {
+  opacity: 0.7;
 }
 
 .texto h3 {
   color: var(--dark-blue);
-  font-size: 1.1rem;
   margin-bottom: 5px;
 }
 
 .texto p {
-  color: #666;
   font-size: 0.85rem;
-  line-height: 1.5;
+  color: var(--text-gray);
+  margin-bottom: 8px;
 }
 
-.circle-indicator-orange {
-  width: 18px;
-  height: 18px;
-  border: 2px solid var(--orange);
-  border-radius: 50%;
-  flex-shrink: 0;
-  margin-top: 3px;
+.duracao {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.75rem;
+  color: #888;
 }
 
 .status-icons {
   margin-left: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 10px;
   color: var(--dark-blue);
-  font-weight: bold;
+}
+
+.circle-indicator {
+  width: 18px;
+  height: 18px;
+  border: 2px solid var(--secondary-orange);
+  border-radius: 50%;
+  margin-top: 4px;
 }
 
 /* SIDEBAR DETALHES */
@@ -201,59 +214,72 @@ h2 {
   background: white;
   border-radius: 15px;
   border: 1px solid #eee;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-  overflow: hidden;
+  padding: 25px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
   height: fit-content;
 }
 
 .detalhe-header {
-  padding: 15px;
-  border-bottom: 1px solid #eee;
+  color: var(--secondary-orange);
+  font-size: 0.85rem;
+  font-weight: 700;
   display: flex;
-  justify-content: flex-start;
-}
-
-.detalhe-body {
-  padding: 25px;
-}
-
-.detalhe-body h3 {
-  color: var(--dark-blue);
+  align-items: center;
+  gap: 5px;
   margin-bottom: 15px;
 }
 
-.detalhe-body .desc {
-  font-size: 0.9rem;
-  color: #555;
-  line-height: 1.6;
+.detalhes-card h3 {
+  color: var(--dark-blue);
+  margin-bottom: 10px;
+}
+
+.detalhes-card .desc {
+  font-size: 0.85rem;
+  color: var(--text-gray);
+  line-height: 1.5;
   margin-bottom: 25px;
 }
 
-.btn-comecar {
+.recursos h4 {
+  color: var(--dark-blue);
+  font-size: 0.9rem;
+  margin-bottom: 10px;
+}
+
+.recurso-item {
+  background: #f1f3f5;
+  padding: 10px;
+  border-radius: 8px;
+  margin-bottom: 8px;
+  font-size: 0.85rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.btn-revisar {
   width: 100%;
-  background: var(--orange);
+  background: var(--secondary-orange);
   color: white;
   border: none;
   padding: 12px;
   border-radius: 10px;
   font-weight: 700;
+  margin-top: 15px;
   cursor: pointer;
-  margin-bottom: 10px;
 }
 
-.btn-duvidas-outlined {
+.btn-duvidas {
   width: 100%;
   background: #f0f7ff;
   color: var(--dark-blue);
   border: 1px solid #bcd0f7;
   padding: 10px;
   border-radius: 10px;
+  margin-top: 10px;
   font-weight: 700;
   cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
 }
 
 /* FOOTER */
@@ -261,27 +287,18 @@ h2 {
   background: var(--dark-blue);
   color: white;
   padding: 60px 8% 20px;
-  margin-top: 100px;
+  margin-top: 80px;
 }
 
 .footer-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 40px;
-  padding-bottom: 40px;
+  margin-bottom: 40px;
 }
 
-.footer h4 {
-  margin-bottom: 20px;
-  font-size: 1.1rem;
-}
-
-.footer p, .footer li {
-  font-size: 0.85rem;
-  opacity: 0.8;
-  line-height: 1.6;
-}
-
+.footer h4 { margin-bottom: 20px; font-size: 1.1rem;}
+.footer p, .footer li { font-size: 0.85rem; opacity: 0.8; line-height: 1.6;}
 .footer ul { list-style: none; }
 .footer li { margin-bottom: 10px; }
 
@@ -290,9 +307,18 @@ h2 {
   padding-top: 20px;
   display: flex;
   justify-content: space-between;
+  align-items: center;  /* garante alinhamento vertical */
+  flex-wrap: nowrap;    /* impede quebra de linha */
   font-size: 0.75rem;
   opacity: 0.7;
 }
+
+.footer-links {
+  display: flex;
+  gap: 15px;
+  flex-wrap: nowrap;    
+}
+
 
 .footer-links a {
   color: white;

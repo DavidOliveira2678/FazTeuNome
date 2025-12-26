@@ -6,7 +6,7 @@ export default function VocabulariodeNegocios({ nome }) {
   const navigate = useNavigate(); 
 
   const handleVoltar = () => {
-    navigate("/dashboard"); 
+    navigate("/HardSkills"); 
   };
 
   return (
@@ -16,11 +16,23 @@ export default function VocabulariodeNegocios({ nome }) {
         <nav className="VocabulariodeNegocios-topbar">
           <div className="topbar-logo">FAZ TEU NOME</div>
           <div className="topbar-links">
-            <span>Início</span>
-            <span>Meu Perfil</span>
-            <span>Comunidade</span>
-            <span>Ranking</span>
-          </div>
+  <span style={{ cursor: "pointer" }} onClick={() => navigate("/dashboard")}>
+    Início
+  </span>
+
+  <span style={{ cursor: "pointer" }} onClick={() => navigate("/profile")}>
+    Meu Perfil
+  </span>
+
+  <span style={{ cursor: "pointer" }} onClick={() => navigate("/comunidade")}>
+    Comunidade
+  </span>
+
+  <span style={{ cursor: "pointer" }} onClick={() => navigate("/ranking")}>
+    Ranking
+  </span>
+</div>
+
           <div className="topbar-user">
             👤
             <span
@@ -57,9 +69,10 @@ export default function VocabulariodeNegocios({ nome }) {
 
         <div className="main-row">
           <div className="learning-path">
-            <button className="btn-voltar" onClick={handleVoltar}>
-              Voltar
-            </button>
+           <button className="btn-voltar" onClick={handleVoltar}>
+  Voltar
+</button>
+
 
             <h3>Comunicação Profissional?</h3>
             <p>

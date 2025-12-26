@@ -1,5 +1,5 @@
 import React from "react";
-import "../styles/Oportunidades.css";
+import "./Oportunidades.css";
 
 const Oportunidades = () => {
   const cards = [

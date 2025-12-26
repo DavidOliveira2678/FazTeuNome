@@ -9,14 +9,38 @@ export default function Dashboard({ nome }) {
     <>
       <div className="dashboard-container">
         <nav className="dashboard-topbar">
-          <div className="topbar-logo">FAZ TEU NOME</div>
+         <div className="topbar-logo">
+  🚀 <span>FAZ TEU NOME</span>
+</div>
 
-          <div className="topbar-links">
-            <span>Início</span>
-            <span>Meu Perfil</span>
-            <span>Comunidade</span>
-            <span>Ranking</span>
-          </div>
+
+<div className="topbar-links">
+  <span style={{ cursor: "pointer" }}>
+    Início
+  </span>
+
+  <span
+    style={{ cursor: "pointer" }}
+    onClick={() => navigate("/profile")}
+  >
+    Meu Perfil
+  </span>
+
+  <span
+    style={{ cursor: "pointer" }}
+    onClick={() => navigate("/comunidade")}
+  >
+    Comunidade
+  </span>
+
+  <span
+    style={{ cursor: "pointer" }}
+    onClick={() => navigate("/ranking")}
+  >
+    Ranking
+  </span>
+</div>
+
 
           <div className="topbar-user">
             👤
@@ -62,7 +86,7 @@ export default function Dashboard({ nome }) {
 
             <div
               className="path-card"
-              onClick={() => navigate("/Autoconhecimento")}
+              onClick={() => navigate("/SoftSkills")}
               style={{ cursor: "pointer" }}
             >
               <span className="icon">🧠</span>
@@ -80,7 +104,7 @@ export default function Dashboard({ nome }) {
 
             <div
               className="path-card"
-              onClick={() => navigate("/vocabulariode-negocios")}
+              onClick={() => navigate("/HardSkills")}
               style={{ cursor: "pointer" }}
             >
               <span className="icon">⚡</span>
@@ -94,7 +118,12 @@ export default function Dashboard({ nome }) {
               </div>
             </div>
 
-            <div className="path-card">
+            <div
+              className="path-card"
+              onClick={() => navigate("/projetodevida")}
+              style={{ cursor: "pointer" }}
+            >
+
               <div className="path-icon">
                 <span className="dot start"></span>
                 <span className="line"></span>

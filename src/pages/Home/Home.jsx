@@ -7,6 +7,7 @@ export default function Home() {
   const navigate = useNavigate();
 
   return (
+  <div className="home-bg">
     <div className="home-container">
       <header className="home-header">
         <div className="logo">Faz Teu Nome</div>
@@ -45,11 +46,11 @@ export default function Home() {
         <button
           className="start-journey-btn"
           onClick={() => navigate("/login")}
-         >
+        >
           Comece sua jornada agora
         </button>
-
       </main>
     </div>
-  );
+  </div>
+);
 }

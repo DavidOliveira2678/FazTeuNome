@@ -62,7 +62,7 @@ export default function Dashboard({ nome }) {
 
             <div
               className="path-card"
-              onClick={() => navigate("/autoconhecimento")}
+              onClick={() => navigate("/Autoconhecimento")}
               style={{ cursor: "pointer" }}
             >
               <span className="icon">🧠</span>

@@ -3,13 +3,6 @@
   user-select: none;
 }
 
-.Autoconhecimento-container {
-  max-width: 1500px;
-  margin: 0 auto;
-  padding: 0 20px;
-  font-family: Arial, sans-serif;
-}
-
 .Autoconhecimento-topbar {
   display: flex;
   justify-content: space-between;
@@ -253,14 +246,16 @@ textarea {
   cursor: pointer;
 }
 .Autoconhecimento-container {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh; 
-  max-width: 4000px;
+  width: 100%;
+  max-width: 1500px;
+  min-height: 100vh;
   margin: 0 auto;
   padding: 0 20px;
+  display: flex;
+  flex-direction: column;
   font-family: Arial, sans-serif;
 }
+
 .main-row {
   flex: 1; 
 }

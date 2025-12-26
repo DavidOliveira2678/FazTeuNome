@@ -4,14 +4,16 @@
 }
 
 .VocabulariodeNegocios-container {
-  max-width: 4000px;
+  width: 100%;
+  max-width: 1500px;
+  min-height: 100vh;
   margin: 0 auto;
   padding: 0 20px;
-  font-family: Arial, sans-serif;
   display: flex;
   flex-direction: column;
-  min-height: 100vh; 
+  font-family: Arial, sans-serif;
 }
+
 
 .VocabulariodeNegocios-topbar {
   display: flex;

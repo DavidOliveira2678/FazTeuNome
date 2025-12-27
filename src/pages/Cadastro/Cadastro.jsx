@@ -28,7 +28,7 @@ export default function Cadastro() {
     }
 
     try {
-      // 🔎 Verificar se email já existe antes de cadastrar
+
       const checkResponse = await fetch(
         `http://localhost:5000/api/usuarios/verificar-email?email=${form.email}`
       );
@@ -39,7 +39,7 @@ export default function Cadastro() {
         return;
       }
 
-      // 🚀 Criar usuário
+
       const response = await fetch("http://localhost:5000/api/usuarios", {
         method: "POST",
         headers: {
@@ -63,7 +63,7 @@ export default function Cadastro() {
       console.log("Usuário cadastrado:", data);
 
       alert("Conta criada com sucesso!");
-      navigate("/login"); // redireciona para login após cadastro
+      navigate("/login"); 
     } catch (error) {
       console.error("Erro no cadastro:", error);
       alert("Erro ao cadastrar usuário.");

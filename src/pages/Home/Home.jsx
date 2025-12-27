@@ -10,7 +10,7 @@ export default function Home() {
   <div className="home-bg">
     <div className="home-container">
       <header className="home-header">
-        <div className="logo">Faz Teu Nome</div>
+        <h2 className="brand-orange">Faz Teu Nome</h2>
         <div className="header-buttons">
           <button onClick={() => navigate("/login")}>Login</button>
           <button onClick={() => navigate("/cadastro")}>Cadastro</button>

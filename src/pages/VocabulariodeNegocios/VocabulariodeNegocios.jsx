@@ -134,10 +134,12 @@ export default function VocabulariodeNegocios({ nome }) {
                   <button className="btn-primary">Começar</button>
                 </div>
 
-               <button className="btn-duvidas" >
-                 <span className="icone-duvida"> ? </span>
-                 Dúvidas
-                 </button>
+                  <button 
+    className="btn-duvidas"
+    onClick={() => navigate("/PaginaEmConstrucao")}
+  >
+    Dúvidas
+  </button>
 
                 </div>
                 

@@ -1,6 +1,7 @@
 import React from "react"; 
 import { useNavigate, Link } from "react-router-dom"; 
 import "./PaginaEmConstrucao.css";
+import imagemConstrucao from "../../assets/imagemconstrucao.png";
 
 function PaginaEmConstrucao() {
   const navigate = useNavigate(); 
@@ -43,12 +44,11 @@ function PaginaEmConstrucao() {
           </p>
         </div>
 
-        <div className="container1">
-          <img
-            src="/assets/imagemconstrucao.png"
-            alt="Imagem central"
-          />
-        </div>
+<div className="container1">
+  <img src={imagemConstrucao} alt="Página em construção" />
+</div>
+
+
 
         <div className="container-botao">
           <button 

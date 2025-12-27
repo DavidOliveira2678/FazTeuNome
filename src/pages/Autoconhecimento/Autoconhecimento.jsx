@@ -1,40 +1,40 @@
 import React from "react";
-import { useNavigate } from "react-router-dom"; 
+import { useNavigate } from "react-router-dom";
 import "./Autoconhecimento.css";
 
 export default function Autoconhecimento({ nome }) {
-  const navigate = useNavigate(); 
+  const navigate = useNavigate();
 
   const handleVoltar = () => {
-    navigate("/SoftSkills"); 
+    navigate("/SoftSkills");
   };
 
   return (
     <>
       <div className="Autoconhecimento-container">
         <nav className="Autoconhecimento-topbar">
-<div className="topbar-logo">
-  🚀 <span>FAZ TEU NOME</span>
-</div>
+          <div className="topbar-logo">
+            🚀 <span>FAZ TEU NOME</span>
+          </div>
           <div className="topbar-links">
-  <span style={{ cursor: "pointer" }} onClick={() => navigate("/dashboard")}>
-    Início
-  </span>
+            <span style={{ cursor: "pointer" }} onClick={() => navigate("/dashboard")}>
+              Início
+            </span>
 
-  <span style={{ cursor: "pointer" }} onClick={() => navigate("/profile")}>
-    Meu Perfil
-  </span>
+            <span style={{ cursor: "pointer" }} onClick={() => navigate("/profile")}>
+              Meu Perfil
+            </span>
 
-  <span style={{ cursor: "pointer" }} onClick={() => navigate("/comunidade")}>
-    Comunidade
-  </span>
+            <span style={{ cursor: "pointer" }} onClick={() => navigate("/comunidade")}>
+              Comunidade
+            </span>
 
-  <span style={{ cursor: "pointer" }} onClick={() => navigate("/ranking")}>
-    Ranking
-  </span>
-</div>
+            <span style={{ cursor: "pointer" }} onClick={() => navigate("/ranking")}>
+              Ranking
+            </span>
+          </div>
 
-          
+
           <div className="topbar-user">
             👤
             <span
@@ -72,18 +72,18 @@ export default function Autoconhecimento({ nome }) {
         <div className="main-row">
           <div className="learning-path">
             <button className="btn-voltar" onClick={handleVoltar}>
-  Voltar
-</button>
+              Voltar
+            </button>
 
 
             <div className="content-row">
               <div className="content-left">
                 <h3>Quem você é?</h3>
-            <p>
-              O autoconhecimento é a base para todas as escolhas que você fará ao longo da sua vida pessoal e profissional.
-              <br />
-              Quando você conhece suas forças, seus valores e suas áreas de desenvolvimento, você consegue tomar decisões mais conscientes e alinhadas com quem você realmente é.
-            </p>
+                <p>
+                  O autoconhecimento é a base para todas as escolhas que você fará ao longo da sua vida pessoal e profissional.
+                  <br />
+                  Quando você conhece suas forças, seus valores e suas áreas de desenvolvimento, você consegue tomar decisões mais conscientes e alinhadas com quem você realmente é.
+                </p>
                 <div className="reflexao-container">
                   <h3>Reflexão Guiada</h3>
                   <label>Quais são suas principais fortalezas?</label>
@@ -163,22 +163,22 @@ export default function Autoconhecimento({ nome }) {
                 <div className="dica-container" >
                   <h4>💡 Dica</h4>
                   <div className="dica-card">
-                  <p>Respire fundo e pense em situações em que você se sentiu orgulhoso de si.</p>
-                </div>
+                    <p>Respire fundo e pense em situações em que você se sentiu orgulhoso de si.</p>
+                  </div>
 
-                <div className="dica-card">
-                  <p>
-                    Aquilo que você gostaria de mudar ou melhorar em si mesmo pode indicar áreas importantes para o seu desenvolvimento.
-                  </p>
+                  <div className="dica-card">
+                    <p>
+                      Aquilo que você gostaria de mudar ou melhorar em si mesmo pode indicar áreas importantes para o seu desenvolvimento.
+                    </p>
+                  </div>
+
+                  <button
+                    className="btn-duvidas"
+                    onClick={() => navigate("/PaginaEmConstrucao")}
+                  >
+                    Dúvidas
+                  </button>
                 </div>
-                 
-               <button 
-    className="btn-duvidas"
-    onClick={() => navigate("/PaginaEmConstrucao")}
-  >
-    Dúvidas
-  </button>
-</div>
 
               </div>
             </div>

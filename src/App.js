@@ -25,6 +25,7 @@ import PortalProfessor from "./pages/PortalProfessor/PortalProfessor";
 import EscolhaTema from "./pages/EscolhaTema/EscolhaTema";
 import Oportunidades from "./pages/Oportunidades/Oportunidades";
 import PaginaEmConstrucao from "./pages/PaginaEmConstrucao/PaginaEmConstrucao";
+import Editar from "./pages/Editar/Editar";
 
 function App() {
   const usuarioLogado = true;
@@ -32,7 +33,6 @@ function App() {
   return (
     <Router>
       <Routes>
-        {/* Públicas */}
         <Route path="/" element={<Home />} />
         <Route path="/cadastro" element={<Cadastro />} />
         <Route path="/login" element={<Login />} />
@@ -72,6 +72,10 @@ function App() {
         <Route
           path="/profile"
           element={usuarioLogado ? <Profile /> : <Navigate to="/login" />}
+        />
+        <Route
+          path="/editar-perfil"
+          element={usuarioLogado ? <Editar /> : <Navigate to="/login" />}
         />
 
         <Route

@@ -20,7 +20,13 @@ const Profile = () => {
             </div>
           </div>
           <div className="banner-actions">
-            <button className="btn-white">Editar</button>
+           <button
+  className="btn-white"
+  onClick={() => navigate("/editar-perfil")}
+>
+  Editar
+</button>
+
 
           </div>
         </header>

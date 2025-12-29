@@ -7,53 +7,46 @@ export default function Dashboard({ nome }) {
 
   return (
     <>
+      <nav className="dashboard-topbar">
+        <div className="topbar-logo">
+          🚀 <span>FAZ TEU NOME</span>
+        </div>
+
+        <div className="topbar-links">
+          <span style={{ cursor: "pointer" }}>Início</span>
+
+          <span style={{ cursor: "pointer" }} onClick={() => navigate("/profile")}>
+            Meu Perfil
+          </span>
+
+          <span
+            style={{ cursor: "pointer" }}
+            onClick={() => navigate("/comunidade")}
+          >
+            Comunidade
+          </span>
+
+          <span
+            style={{ cursor: "pointer" }}
+            onClick={() => navigate("/ranking")}
+          >
+            Ranking
+          </span>
+        </div>
+
+        <div className="topbar-user">
+          👤
+          <span
+            style={{ marginLeft: "8px", cursor: "pointer" }}
+            title="Sair"
+            onClick={() => (window.location.href = "/login")}
+          >
+            ⬅
+          </span>
+        </div>
+      </nav>
+
       <div className="dashboard-container">
-        <nav className="dashboard-topbar">
-         <div className="topbar-logo">
-  🚀 <span>FAZ TEU NOME</span>
-</div>
-
-
-<div className="topbar-links">
-  <span style={{ cursor: "pointer" }}>
-    Início
-  </span>
-
-  <span
-    style={{ cursor: "pointer" }}
-    onClick={() => navigate("/profile")}
-  >
-    Meu Perfil
-  </span>
-
-  <span
-    style={{ cursor: "pointer" }}
-    onClick={() => navigate("/comunidade")}
-  >
-    Comunidade
-  </span>
-
-  <span
-    style={{ cursor: "pointer" }}
-    onClick={() => navigate("/ranking")}
-  >
-    Ranking
-  </span>
-</div>
-
-
-          <div className="topbar-user">
-            👤
-            <span
-              style={{ marginLeft: "8px", cursor: "pointer" }}
-              title="Sair"
-              onClick={() => (window.location.href = "/login")}
-            >
-              ⬅
-            </span>
-          </div>
-        </nav>
-
         <div className="dashboard-header">
           <h2>Bem-vindo à sua jornada</h2>
           <p>
@@ -95,10 +88,7 @@ export default function Dashboard({ nome }) {
                 <p>
                   Desenvolver inteligência emocional, liderança e empatia.
                 </p>
-                <div
-                  className="progress-bar green"
-                  style={{ width: "150%" }}
-                />
+                <div className="progress-bar green" style={{ width: "150%" }} />
               </div>
             </div>
 
@@ -111,10 +101,7 @@ export default function Dashboard({ nome }) {
               <div className="path-content">
                 <h4>Hard Skills</h4>
                 <p>Dominar inglês profissional e ferramentas digitais.</p>
-                <div
-                  className="progress-bar red"
-                  style={{ width: "50%" }}
-                />
+                <div className="progress-bar red" style={{ width: "50%" }} />
               </div>
             </div>
 
@@ -123,7 +110,6 @@ export default function Dashboard({ nome }) {
               onClick={() => navigate("/projetodevida")}
               style={{ cursor: "pointer" }}
             >
-
               <div className="path-icon">
                 <span className="dot start"></span>
                 <span className="line"></span>
@@ -132,10 +118,7 @@ export default function Dashboard({ nome }) {
               <div className="path-content">
                 <h4>Projeto Vida</h4>
                 <p>Construa seu projeto de vida com reflexão crítica.</p>
-                <div
-                  className="progress-bar gray"
-                  style={{ width: "150%" }}
-                />
+                <div className="progress-bar gray" style={{ width: "150%" }} />
               </div>
             </div>
           </div>
@@ -241,8 +224,7 @@ export default function Dashboard({ nome }) {
 
         <div className="footer-bottom">
           <span>
-            © {new Date().getFullYear()} Faz Teu Nome — Todos os direitos
-            reservados.
+            © {new Date().getFullYear()} Faz Teu Nome — Todos os direitos reservados.
           </span>
           <div className="footer-links">
             <span>Privacidade</span>

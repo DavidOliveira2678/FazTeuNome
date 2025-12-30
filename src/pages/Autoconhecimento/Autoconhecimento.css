@@ -363,6 +363,36 @@ textarea {
   cursor: pointer;
 }
 
+.escala-numeros span.ativo {
+  font-weight: bold;    
+  color: #ff7e33;       
+}
+.escala-numeros {
+  display: flex;
+  gap: 8px; 
+}
+
+.escala-numero {
+  padding: 8px 12px; 
+  border-radius: 4px; 
+  background: #ffffff;  
+  text-align: center;
+  cursor: pointer;
+  user-select: none;
+  transition: background 0.2s;
+}
+
+.escala-numero:hover {
+  background: #f9f9f9; 
+}
+
+.escala-numero.ativo {
+  background: #ff7e33; 
+  color: white;         
+  font-weight: bold;
+}
+
+
 .reflexao-container {
   border: 2px solid #eceae8da;
   border-radius: 12px;

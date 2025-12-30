@@ -1,13 +1,25 @@
-import React from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./Autoconhecimento.css";
 
 export default function Autoconhecimento({ nome }) {
   const navigate = useNavigate();
+  const [respostas, setRespostas] = useState({}); 
 
   const handleVoltar = () => {
     navigate("/SoftSkills");
   };
+const handleSalvar = () => {
+  console.log(respostas); 
+  navigate("/SoftSkills"); 
+};
+
+  const handleClick = (item, valor) => {
+  setRespostas((prev) => ({
+    ...prev,
+    [item]: prev[item] === valor ? null : valor, 
+  }));
+};
 
   return (
     <>
@@ -66,9 +78,9 @@ export default function Autoconhecimento({ nome }) {
               Voltar
             </button>
 
-                <div className="content-row">
-                  <div className="content-left quem-voce-e">
-                  <h3>Quem você é?</h3>
+            <div className="content-row">
+              <div className="content-left quem-voce-e">
+                <h3>Quem você é?</h3>
                 <p>
                   O autoconhecimento é a base para todas as escolhas que você fará
                   ao longo da sua vida pessoal e profissional.
@@ -106,18 +118,27 @@ export default function Autoconhecimento({ nome }) {
                   ].map((texto, index) => (
                     <div className="escala-item" key={index}>
                       <span className="texto">{texto}</span>
-                      <div className="escala-numeros">
-                        <span>1</span>
-                        <span>2</span>
-                        <span>3</span>
-                        <span>4</span>
-                        <span>5</span>
-                      </div>
+<div className="escala-numeros">
+  {[1, 2, 3, 4, 5].map((num) => (
+    <span
+      key={num}
+      className={`escala-numero ${respostas[texto] === num ? "ativo" : ""}`}
+      onClick={() => handleClick(texto, num)}
+    >
+      {num}
+    </span>
+  ))}
+</div>
+
+
                     </div>
                   ))}
                 </div>
 
-                <button className="btn-salvar">Salvar e Continuar</button>
+                <button className="btn-salvar" onClick={handleSalvar}>
+                 Salvar e Continuar
+                </button>
+
               </div>
 
               <div className="content-right">

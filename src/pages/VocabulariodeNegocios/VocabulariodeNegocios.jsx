@@ -8,6 +8,10 @@ export default function VocabulariodeNegocios({ nome }) {
   const handleVoltar = () => {
     navigate("/HardSkills");
   };
+const handleSalvar = () => {
+  console.log("Respostas do usuário"); 
+  navigate("/HardSkills"); 
+};
 
   return (
     <>
@@ -123,7 +127,10 @@ export default function VocabulariodeNegocios({ nome }) {
                   <textarea placeholder="Exemplo: Na última reunião, discutimos os KPIs do trimestre com todos os stakeholders." />
                 </div>
 
-                <button className="btn-continuar">Salvar e Continuar</button>
+                 <button className="btn-continuar" onClick={handleSalvar}>
+                   Salvar e Continuar
+                 </button>
+
               </div>
 
               <div className="content-right">

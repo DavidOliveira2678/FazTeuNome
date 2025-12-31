@@ -1,7 +1,9 @@
 import React from "react";
-import "../styles/Comunidade.css";
+import { useNavigate } from "react-router-dom";
+import "../styles1/Comunidade.css";
 
 const Comunidade = () => {
+    const navigate = useNavigate();
   const posts = [
     {
       id: 1,
@@ -40,17 +42,24 @@ const Comunidade = () => {
       {/* Navbar */}
       <nav className="navbar">
         <div className="logo">
-          <span className="rocket-icon">🚀</span> Faz Teu Nome
+          <div className="topbar-logo" onClick={() => navigate("/dashboard")}> 🚀 Faz Teu Nome</div>
         </div>
-        <div className="nav-links">
-          <a href="#">Início</a>
-          <a href="#">Meu Perfil</a>
-          <a href="#" className="active">Comunidade</a>
-          <a href="#">Ranking</a>
+         <div className="nav-links">
+          <a onClick={() => navigate("/dashboard")}>Início</a>
+          <a onClick={() => navigate("/profile")}>Meu Perfil</a>
+          <a onClick={() => navigate("/comunidade")}>Comunidade</a>
+          <a onClick={() => navigate("/ranking")}>Ranking</a>
         </div>
-        <div className="user-nav">
-          <div className="avatar-circle">👤</div>
-          <span className="logout-icon">🚪</span>
+
+         <div className="topbar-user" onClick={() => navigate("/profile")} style={{ marginLeft: "8px", cursor: "pointer" }}>
+          👤
+          <span
+            style={{ marginLeft: "8px", cursor: "pointer" }}
+            title="Sair"
+            onClick={() => (window.location.href = "/login")}
+          >
+            ⬅
+          </span>
         </div>
       </nav>
 
@@ -60,7 +69,7 @@ const Comunidade = () => {
           <header className="comunidade-header">
             <h1>Comunidade</h1>
             <p>Conecte-se com colegas, compartilhe experiências e inspire outros</p>
-            <button className="btn-voltar">Voltar</button>
+            <button className="btn-voltar"onClick={() => navigate("/dashboard")}>Voltar</button>
           </header>
 
           {/* Área de Novo Post */}
@@ -132,7 +141,11 @@ const Comunidade = () => {
       </div>
 
       {/* Footer */}
-      <footer className="footer">
+      <footer
+        className="footer"
+        onClick={() => navigate("/em-construcao")}
+        style={{ cursor: "pointer" }}
+      >
         <div className="footer-grid">
           <div>
             <h4>Faz Teu Nome</h4>
@@ -140,19 +153,11 @@ const Comunidade = () => {
           </div>
           <div>
             <h4>Plataforma</h4>
-            <ul>
-              <li>Trilha de aprendizagem</li>
-              <li>Comunidade</li>
-              <li>Hackaton</li>
-            </ul>
+            <ul><li>Trilha de aprendizagem</li><li>Comunidade</li><li>Hackaton</li></ul>
           </div>
           <div>
             <h4>Recursos</h4>
-            <ul>
-              <li>Guia do Professor</li>
-              <li>FAQ</li>
-              <li>Contato</li>
-            </ul>
+            <ul><li>Guia do Professor</li><li>FAQ</li><li>Contato</li></ul>
           </div>
           <div>
             <h4>Igarassu</h4>
@@ -160,11 +165,11 @@ const Comunidade = () => {
           </div>
         </div>
         <div className="footer-bottom">
-          <p>© 2025 Faz Teu Nome. Todos os direitos reservados.</p>
+          <span>© 2025 Faz Teu Nome. Todos os direitos reservados.</span>
           <div className="footer-links">
-            <span>Privacidade</span>
-            <span>Termos</span>
-            <span>Acessibilidade</span>
+            <a href="#">Privacidade</a>
+            <a href="#">Termos</a>
+            <a href="#">Acessibilidade</a>
           </div>
         </div>
       </footer>

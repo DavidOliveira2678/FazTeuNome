@@ -1,21 +1,34 @@
 import React from "react";
-import "../styles/EscolhaTema.css";
+import { useNavigate } from "react-router-dom";
+import "../styles1/EscolhaTema.css";
 
 const EscolhaTema = () => {
+  const navigate = useNavigate();
   return (
     <div className="pagina-container">
       {/* Navbar */}
       <nav className="navbar">
         <div className="logo">
-          <span style={{fontSize: '20px'}}>🚀</span> <span>Faz Teu Nome</span>
+          <div className="topbar-logo" onClick={() => navigate("/dashboard")}> 🚀 Faz Teu Nome</div>
         </div>
         <div className="nav-links">
-          <a href="#">Início</a>
-          <a href="#">Meu Perfil</a>
-          <a href="#">Comunidade</a>
-          <a href="#">Ranking</a>
+          <a onClick={() => navigate("/dashboard")}>Início</a>
+          <a onClick={() => navigate("/profile")}>Meu Perfil</a>
+          <a onClick={() => navigate("/comunidade")}>Comunidade</a>
+          <a onClick={() => navigate("/ranking")}>Ranking</a>
         </div>
-        <div className="user-nav">👤 🚪</div>
+
+        <div className="topbar-user" onClick={() => navigate("/profile")} style={{ marginLeft: "8px", cursor: "pointer" }}>
+          👤
+          <span
+            style={{ marginLeft: "8px", cursor: "pointer" }}
+            title="Sair"
+            onClick={() => (window.location.href = "/login")}
+          >
+            ⬅
+          </span>
+        </div>
+
       </nav>
 
       <div className="content-wrapper">
@@ -24,17 +37,16 @@ const EscolhaTema = () => {
             <small>Projeto Vida</small>
             <h1>Escolha seu tema</h1>
             <p>Este é um momento importante da sua jornada. Escolha um tema que mais se conecta com seus interesses, curiosidades e objetivos atuais.</p>
-            <div className="progresso-container">
-              <div className="barra-fundo"><div className="barra-preenchimento" style={{width: '0%'}}></div></div>
             </div>
-          </div>
-          <div className="badge-concluido">
-            <strong>0%</strong>
-            <small>Concluído</small>
-          </div>
         </section>
 
-        <button className="btn-voltar">Voltar</button>
+        <button
+          type="button"
+          className="btn-voltar"
+          onClick={() => navigate("/projetodevida")}
+          style={{ cursor: "pointer" }}
+        >Voltar
+        </button>
 
         <div className="introducao-selecao">
           <h2>Qual desses temas mais se conecta com quem você é hoje?</h2>
@@ -46,7 +58,7 @@ const EscolhaTema = () => {
           <article className="theme-card industria">
             <div className="theme-header">
               <div className="theme-icon-svg">
-                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2"><path d="M2 20V9l4-2v13M6 20V5l4-2v17M10 20V9l4-2v13M14 20V5l4-2v17M18 20V9l4-2v13"/></svg>
+                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2"><path d="M2 20V9l4-2v13M6 20V5l4-2v17M10 20V9l4-2v13M14 20V5l4-2v17M18 20V9l4-2v13" /></svg>
               </div>
               <h3>Indústria</h3>
             </div>
@@ -62,7 +74,8 @@ const EscolhaTema = () => {
               <div className="para-quem">
                 <strong>Para quem:</strong> Ideal para quem tem interesse em processos, organização e quer fazer parte da transformação da indústria.
               </div>
-              <button className="btn-select">Escolher Indústria</button>
+              <button className="btn-select" onClick={() => navigate("/oportunidades")}
+          style={{ cursor: "pointer" }}>Escolher Indústria</button>
             </div>
           </article>
 
@@ -70,7 +83,7 @@ const EscolhaTema = () => {
           <article className="theme-card tecnologia">
             <div className="theme-header">
               <div className="theme-icon-svg">
-                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm0 18a8 8 0 1 1 8-8 8 8 0 0 1-8 8z"/><path d="M12 6v6l4 2"/></svg>
+                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm0 18a8 8 0 1 1 8-8 8 8 0 0 1-8 8z" /><path d="M12 6v6l4 2" /></svg>
               </div>
               <h3>Tecnologia</h3>
             </div>
@@ -86,7 +99,8 @@ const EscolhaTema = () => {
               <div className="para-quem">
                 <strong>Para quem:</strong> Perfeito para quem gosta de resolver problemas de forma criativa e quer criar soluções que impactam o mundo.
               </div>
-              <button className="btn-select">Escolher Tecnologia</button>
+              <button className="btn-select" onClick={() => navigate("/oportunidades")}
+          style={{ cursor: "pointer" }}>Escolher Tecnologia</button>
             </div>
           </article>
 
@@ -94,7 +108,7 @@ const EscolhaTema = () => {
           <article className="theme-card enem">
             <div className="theme-header">
               <div className="theme-icon-svg">
-                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c0 2 2.7 4 6 4s6-2 6-4v-5"/></svg>
+                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z" /><path d="M6 12v5c0 2 2.7 4 6 4s6-2 6-4v-5" /></svg>
               </div>
               <h3>ENEM e Vestibular</h3>
             </div>
@@ -110,21 +124,26 @@ const EscolhaTema = () => {
               <div className="para-quem">
                 <strong>Para quem:</strong> Indicado para quem pretende ingressar no ensino superior e busca orientação para organizar os estudos e fazer escolhas conscientes.
               </div>
-              <button className="btn-select">Escolher Vestibular</button>
+              <button className="btn-select" onClick={() => navigate("/oportunidades")}
+          style={{ cursor: "pointer" }}>Escolher Vestibular</button>
             </div>
           </article>
         </main>
 
         <section className="attention-section">
           <div className="attention-icon">
-             <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#333" strokeWidth="1.5"><path d="M9 21h6M9 18h6M10 15H9a7 7 0 1 1 6 0h-1v-3H10v3z"/></svg>
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#333" strokeWidth="1.5"><path d="M9 21h6M9 18h6M10 15H9a7 7 0 1 1 6 0h-1v-3H10v3z" /></svg>
           </div>
           <h3>Atenção</h3>
           <p>A escolha que você faz agora não define sua profissão futura. Ela apenas orienta o percurso de aprendizagem neste momento do seu Projeto de Vida. Você terá liberdade para explorar, experimentar e, se necessário, mudar de direção ao longo da jornada.</p>
         </section>
       </div>
 
-      <footer className="footer">
+     <footer
+        className="footer"
+        onClick={() => navigate("/em-construcao")}
+        style={{ cursor: "pointer" }}
+      >
         <div className="footer-grid">
           <div>
             <h4>Faz Teu Nome</h4>
@@ -144,9 +163,11 @@ const EscolhaTema = () => {
           </div>
         </div>
         <div className="footer-bottom">
-          <span>2025 Faz Teu Nome. Todos os direitos reservados.</span>
+          <span>© 2025 Faz Teu Nome. Todos os direitos reservados.</span>
           <div className="footer-links">
-            <a href="#">Privacidade</a> <a href="#">Termos</a> <a href="#">Acessibilidade</a>
+            <a href="#">Privacidade</a>
+            <a href="#">Termos</a>
+            <a href="#">Acessibilidade</a>
           </div>
         </div>
       </footer>

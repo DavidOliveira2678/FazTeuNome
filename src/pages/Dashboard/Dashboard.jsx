@@ -9,16 +9,17 @@ export default function Dashboard({ nome }) {
     <>
       <div className="dashboard-container">
         <nav className="dashboard-topbar">
-          <div className="topbar-logo">FAZ TEU NOME</div>
+          <div className="topbar-logo" onClick={() => navigate("/dashboard")}> 🚀 Faz Teu Nome</div>
 
-          <div className="topbar-links">
-            <span>Início</span>
-            <span>Meu Perfil</span>
-            <span>Comunidade</span>
-            <span>Ranking</span>
+          <div className="nav-links">
+            <a onClick={() => navigate("/dashboard")}>Início</a>
+            <a onClick={() => navigate("/profile")}>Meu Perfil</a>
+            <a onClick={() => navigate("/comunidade")}>Comunidade</a>
+            <a onClick={() => navigate("/ranking")}>Ranking</a>
           </div>
 
-          <div className="topbar-user">
+
+          <div className="topbar-user" onClick={() => navigate("/profile")} style={{ marginLeft: "8px", cursor: "pointer" }}>
             👤
             <span
               style={{ marginLeft: "8px", cursor: "pointer" }}
@@ -31,12 +32,13 @@ export default function Dashboard({ nome }) {
         </nav>
 
         <div className="dashboard-header">
-          <h2>Bem-vindo à sua jornada</h2>
+          <h2>Bem-vindo à sua jornada!</h2>
           <p>
             Chegou a hora de descobrir talentos, desenvolver habilidades que fazem
-            a diferença e construir um futuro com impacto. O futuro começa agora,
-            por isso Faz teu Nome!
-          </p>
+            a diferença e construir um futuro com impacto. </p>
+          <p> O futuro começa agora,
+            por isso Faz teu Nome!</p><br></br>
+
 
           <div className="progress-info">
             <div className="progress-box adjusted">
@@ -62,14 +64,14 @@ export default function Dashboard({ nome }) {
 
             <div
               className="path-card"
-              onClick={() => navigate("/autoconhecimento")}
+              onClick={() => navigate("/softskills")}
               style={{ cursor: "pointer" }}
             >
               <span className="icon">🧠</span>
               <div className="path-content">
                 <h4>Soft Skills</h4>
                 <p>
-                  Desenvolver inteligência emocional, liderança e empatia.
+                  Desenvolva inteligência emocional, liderança e empatia.
                 </p>
                 <div
                   className="progress-bar green"
@@ -80,13 +82,13 @@ export default function Dashboard({ nome }) {
 
             <div
               className="path-card"
-              onClick={() => navigate("/vocabulariode-negocios")}
+              onClick={() => navigate("/hardskills")}
               style={{ cursor: "pointer" }}
             >
               <span className="icon">⚡</span>
               <div className="path-content">
                 <h4>Hard Skills</h4>
-                <p>Dominar inglês profissional e ferramentas digitais.</p>
+                <p>Construa habilidades aplicáveis ao mercado, aprendendo ferramentas, processos e boas práticas usadas no dia a dia profissional. </p>
                 <div
                   className="progress-bar red"
                   style={{ width: "50%" }}
@@ -94,7 +96,10 @@ export default function Dashboard({ nome }) {
               </div>
             </div>
 
-            <div className="path-card">
+            <div className="path-card"
+              onClick={() => navigate("/projetodevida")}
+              style={{ cursor: "pointer" }}
+            >
               <div className="path-icon">
                 <span className="dot start"></span>
                 <span className="line"></span>
@@ -173,7 +178,11 @@ export default function Dashboard({ nome }) {
         </div>
       </div>
 
-      <footer className="dashboard-footer">
+      <footer
+        className="footer"
+        onClick={() => navigate("/em-construcao")}
+        style={{ cursor: "pointer" }}
+      >
         <div className="footer-columns">
           <div className="footer-col">
             <h4>Faz Teu Nome</h4>

@@ -1,8 +1,11 @@
 import React, { useState, useEffect } from "react";
-import "../styles/HardSkills.css";
+import { useNavigate } from "react-router-dom";
+import "../styles1/HardSkills.css";
+
 
 const HardSkills = () => {
   const [progresso, setProgresso] = useState(0);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const calcularRolagem = () => {
@@ -22,22 +25,23 @@ const HardSkills = () => {
     <div className="pagina-container">
       {/* Navbar Superior */}
       <nav className="navbar">
-        <div className="logo">
-          {/* Substituído Rocket por Emoji */}
-          <span className="icon-emoji-large">🚀</span> 
-          <span>Faz Teu Nome</span>
-        </div>
+        <div className="topbar-logo"onClick={() => navigate("/dashboard")}> 🚀 Faz Teu Nome</div>
         <div className="nav-links">
-          <a href="#">Início</a>
-          <a href="#">Meu Perfil</a>
-          <a href="#">Comunidade</a>
-          <a href="#">Ranking</a>
-        </div>
-        <div className="user-nav">
-          <div className="avatar">👤</div>
-          {/* Substituído LogOut por Emoji */}
-          <span className="logout-icon-emoji">🚪</span>
-        </div>
+  <a onClick={() => navigate("/dashboard")}>Início</a>
+  <a onClick={() => navigate("/profile")}>Meu Perfil</a>
+  <a onClick={() => navigate("/comunidade")}>Comunidade</a>
+  <a onClick={() => navigate("/ranking")}>Ranking</a>
+</div> 
+         <div className="topbar-user"onClick={() => navigate("/profile")}style={{ marginLeft: "8px", cursor: "pointer" }}>
+            👤
+            <span
+              style={{ marginLeft: "8px", cursor: "pointer" }}
+              title="Sair"
+              onClick={() => (window.location.href = "/login")}
+            >
+             ⬅ 
+            </span>
+          </div>
       </nav>
 
       <div className="content-wrapper">
@@ -59,7 +63,7 @@ const HardSkills = () => {
   </div>
 </section>
 
-        <button className="btn-voltar">Voltar</button>
+        <button className="btn-voltar"onClick={() => navigate("/dashboard")}>Voltar</button>
 
         <main className="main-layout">
           {/* Seção de Lições (Cards Empilhados) */}
@@ -69,7 +73,8 @@ const HardSkills = () => {
             <div className="card-licao">
               {/* Substituído Clock por Emoji */}
               <span className="icon-emoji">🕒</span>
-              <div className="texto">
+              <div className="texto"onClick={() => navigate("/vocabulario-negocios")}
+  style={{ cursor: "pointer" }}>
                 <h3>Vocabulário de Negócios</h3>
                 <p>Vocabulário essencial para e-mails e reuniões (e.g., Deadline, Follow-up, Kick-off, Budget).</p>
               </div>
@@ -118,35 +123,48 @@ const HardSkills = () => {
             <div className="recursos">
               <h4>Recursos Disponíveis:</h4>
               {/* Substituído Flame por Emoji */}
-              <div className="recurso-item"><span>🔥</span> Vídeo explicativo</div>
               <div className="recurso-item"><span>🔥</span> Exercício reflexivo</div>
               <div className="recurso-item"><span>🔥</span> Quiz interativo</div>
             </div>
 
-            <button className="btn-revisar">Revisar</button>
-            <button className="btn-duvidas">❓ Dúvidas</button>
+           <button className="btn-revisar"onClick={() => navigate("/vocabulario-negocios")}
+  style={{ cursor: "pointer" }} >Revisar</button>
+            <button className="btn-duvidas"onClick={() => navigate("/em-construcao")}
+  style={{ cursor: "pointer" }}>❓ Dúvidas</button>
           </aside>
         </main>
       </div>
 
       {/* Footer Azul */}
-      <footer className="footer">
+     <footer
+  className="footer"
+  onClick={() => navigate("/em-construcao")}
+  style={{ cursor: "pointer" }}
+>
         <div className="footer-grid">
           <div>
             <h4>Faz Teu Nome</h4>
-            <p>Plataforma pedagógica para protagonismo juvenil.</p>
+            <p>Plataforma pedagógica para protagonismo juvenil e construção de projeto de vida.</p>
           </div>
           <div>
             <h4>Plataforma</h4>
-            <ul><li>Trilha</li><li>Comunidade</li></ul>
+            <ul><li>Trilha de aprendizagem</li><li>Comunidade</li><li>Hackaton</li></ul>
           </div>
           <div>
             <h4>Recursos</h4>
-            <ul><li>FAQ</li><li>Contato</li></ul>
+            <ul><li>Guia do Professor</li><li>FAQ</li><li>Contato</li></ul>
           </div>
           <div>
             <h4>Igarassu</h4>
-            <p>Desenvolvimento para o município de Igarassu - PE.</p>
+            <p>Desenvolvimento com escuta ativa e protagonismo juvenil para o município de Igarassu - PE.</p>
+          </div>
+        </div>
+        <div className="footer-bottom">
+          <span>© 2025 Faz Teu Nome. Todos os direitos reservados.</span>
+          <div className="footer-links">
+            <a href="#">Privacidade</a>
+            <a href="#">Termos</a>
+            <a href="#">Acessibilidade</a>
           </div>
         </div>
       </footer>

@@ -1,5 +1,5 @@
 import React from "react";
-import "../styles/PortalProfessor.css";
+import "../styles1/PortalProfessor.css";
 
 const PortalProfessor = () => {
   const alunos = [

@@ -79,11 +79,14 @@
   position: relative;
 }
 
+
 .hero-content h1 {
   font-size: 2.5rem;
   font-weight: 700;
   margin-bottom: 10px;
+  color: #fcfcfc; /* Escolha a cor desejada (exemplo: tom coral) */
 }
+
 
 .hero-content p {
    font-size: 1rem;

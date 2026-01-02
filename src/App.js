@@ -15,6 +15,7 @@ import Autoconhecimento from "./pages/Autoconhecimento/Autoconhecimento";
 import VocabulariodeNegocios from "./pages/VocabulariodeNegocios/VocabulariodeNegocios";
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 // NOVAS TELAS
 import Projetodevida from "./pages/Projetodevida/Projetodevida";
 import Comunidade from "./pages/Comunidade/Comunidade";

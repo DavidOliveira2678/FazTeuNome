@@ -7,9 +7,14 @@ export default function VocabulariodeNegocios({ nome }) {
 
   const handleVoltar = () => {
 <<<<<<< HEAD
+    navigate("/HardSkills"); 
+=======
+<<<<<<< HEAD
     navigate("/HardSkills");
 =======
     navigate("/dashboard");
+>>>>>>> f36b5ed420d234882cb438c3895c52e99342abe7
+  };
 >>>>>>> f36b5ed420d234882cb438c3895c52e99342abe7
   };
 const handleSalvar = () => {
@@ -19,13 +24,15 @@ const handleSalvar = () => {
 
   return (
     <>
-      <nav className="VocabulariodeNegocios-topbar">
-        <div className="topbar-logo">🚀 <span>FAZ TEU NOME</span></div>
+      <div className="VocabulariodeNegocios-container">
 
-        <div className="topbar-links">
-          <span style={{ cursor: "pointer" }} onClick={() => navigate("/dashboard")}>
-            Início
-          </span>
+        <nav className="VocabulariodeNegocios-topbar">
+<<<<<<< HEAD
+          <div className="topbar-logo">FAZ TEU NOME</div>
+          <div className="topbar-links">
+  <span style={{ cursor: "pointer" }} onClick={() => navigate("/dashboard")}>
+    Início
+  </span>
 
           <span style={{ cursor: "pointer" }} onClick={() => navigate("/profile")}>
             Meu Perfil
@@ -40,6 +47,16 @@ const handleSalvar = () => {
           </span>
         </div>
 
+          <div className="topbar-user">
+            👤
+            <span
+              style={{ marginLeft: "8px", cursor: "pointer" }}
+              title="Sair"
+              onClick={() => (window.location.href = "/login")}
+            >
+              ⬅
+            </span>
+=======
         <div className="topbar-user">
           👤
           <span
@@ -64,6 +81,7 @@ const handleSalvar = () => {
             <a onClick={() => navigate("/profile")}>Meu Perfil</a>
             <a onClick={() => navigate("/comunidade")}>Comunidade</a>
             <a onClick={() => navigate("/ranking")}>Ranking</a>
+>>>>>>> f36b5ed420d234882cb438c3895c52e99342abe7
           </div>
 
           <div className="topbar-user" onClick={() => navigate("/profile")} style={{ marginLeft: "8px", cursor: "pointer" }}>
@@ -103,10 +121,17 @@ const handleSalvar = () => {
 
         <div className="main-row">
           <div className="learning-path">
+<<<<<<< HEAD
+           <button className="btn-voltar" onClick={handleVoltar}>
+  Voltar
+</button>
+
+=======
             <button className="btn-voltar" onClick={() => navigate("/hardskills")}
               style={{ cursor: "pointer" }}>
               Voltar
             </button>
+>>>>>>> f36b5ed420d234882cb438c3895c52e99342abe7
 
             <h3>Comunicação Profissional</h3>
             <p>
@@ -217,11 +242,20 @@ const handleSalvar = () => {
   style={{ cursor: "pointer" }}>Começar</button>
                   </div>
 
+<<<<<<< HEAD
+                  <button 
+    className="btn-duvidas"
+    onClick={() => navigate("/PaginaEmConstrucao")}
+  >
+    Dúvidas
+  </button>
+=======
                   <button className="btn-duvidas"onClick={() => navigate("/em-construcao")}
   style={{ cursor: "pointer" }}>
                     <span className="icone-duvida"> ? </span>
                     Dúvidas
                   </button>
+>>>>>>> f36b5ed420d234882cb438c3895c52e99342abe7
 
                 </div>
 

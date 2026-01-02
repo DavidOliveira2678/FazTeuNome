@@ -57,6 +57,7 @@ const Profile = () => {
             </div>
           </div>
           <div className="banner-actions">
+<<<<<<< HEAD
 <<<<<<< HEAD:src/pages/Profile/Profile.jsx
            <button
   className="btn-white"
@@ -68,6 +69,12 @@ const Profile = () => {
 
 =======
             <button className="btn-white">Editar</button>
+=======
+            <button className="btn-white">Editar</button>
+<<<<<<< HEAD:src/pages/Profile/Profile.jsx
+
+=======
+>>>>>>> bebe156812c92e826f7da2118f04b80b0440bd47
 >>>>>>> f36b5ed420d234882cb438c3895c52e99342abe7:src/pages1/Profile.jsx
           </div>
         </header>
@@ -77,6 +84,15 @@ const Profile = () => {
           onClick={handleBack}
         >Voltar
         </button>
+
+        <div className="btn-voltar-wrapper">
+                <button
+                 className="btn-voltar"
+                  onClick={() => navigate("/dashboard")}
+                >
+                  Voltar
+               </button>
+              </div>
 
         <div className="profile-grid">
           {/* Coluna Principal */}
@@ -123,15 +139,18 @@ const Profile = () => {
             <section className="profile-card">
               <h3>Minha Galeria</h3>
               <div className="gallery-grid">
-                {[1, 2, 3, 4].map((i) => (
+                {[1, 2, 3, 4, 5, 6].map((i) => (
                   <div key={i} className="upload-box">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
                   </div>
                 ))}
               </div>
+
+              
             </section>
             
 <<<<<<< HEAD:src/pages/Profile/Profile.jsx
+<<<<<<< HEAD
             <button
   className="btn-voltar"
   onClick={() => navigate("/dashboard")}
@@ -139,6 +158,9 @@ const Profile = () => {
   Voltar
 </button>
 
+=======
+                     
+>>>>>>> bebe156812c92e826f7da2118f04b80b0440bd47
 =======
             
 >>>>>>> f36b5ed420d234882cb438c3895c52e99342abe7:src/pages1/Profile.jsx
@@ -197,6 +219,7 @@ const Profile = () => {
         </div>
       </div>
 
+      
       {/* Footer */}
     <footer
         className="footer"

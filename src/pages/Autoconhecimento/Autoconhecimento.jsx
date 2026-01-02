@@ -31,6 +31,31 @@ const handleSalvar = () => {
 =======
       <div className="Autoconhecimento-container">
         <nav className="Autoconhecimento-topbar">
+<<<<<<< HEAD
+          <div className="topbar-logo">
+            🚀 <span>FAZ TEU NOME</span>
+          </div>
+          <div className="topbar-links">
+            <span style={{ cursor: "pointer" }} onClick={() => navigate("/dashboard")}>
+              Início
+            </span>
+
+            <span style={{ cursor: "pointer" }} onClick={() => navigate("/profile")}>
+              Meu Perfil
+            </span>
+
+            <span style={{ cursor: "pointer" }} onClick={() => navigate("/comunidade")}>
+              Comunidade
+            </span>
+
+            <span style={{ cursor: "pointer" }} onClick={() => navigate("/ranking")}>
+              Ranking
+            </span>
+          </div>
+
+
+          <div className="topbar-user">
+=======
           <div className="topbar-logo"onClick={() => navigate("/dashboard")}> 🚀 Faz Teu Nome</div>
           <div className="nav-links">
   <a onClick={() => navigate("/dashboard")}>Início</a>
@@ -70,6 +95,17 @@ const handleSalvar = () => {
           </span>
         </div>
       </nav>
+>>>>>>> f36b5ed420d234882cb438c3895c52e99342abe7
+            👤
+            <span
+              style={{ marginLeft: "8px", cursor: "pointer" }}
+              title="Sair"
+              onClick={() => (window.location.href = "/login")}
+            >
+             ⬅ 
+            </span>
+          </div>
+        </nav>
 
       <div className="Autoconhecimento-container">
         <div className="Autoconhecimento-header">
@@ -195,6 +231,13 @@ const handleSalvar = () => {
                       pode indicar áreas importantes para o seu desenvolvimento.
                     </p>
                   </div>
+
+                  <button
+                    className="btn-duvidas"
+                    onClick={() => navigate("/PaginaEmConstrucao")}
+                  >
+                    Dúvidas
+                  </button>
 =======
                 <div className="dica-card">
                   <p>
@@ -206,6 +249,7 @@ const handleSalvar = () => {
   style={{ cursor: "pointer" }} >
                 Dúvidas
               </button>
+>>>>>>> f36b5ed420d234882cb438c3895c52e99342abe7
                 </div>
 >>>>>>> f36b5ed420d234882cb438c3895c52e99342abe7
 

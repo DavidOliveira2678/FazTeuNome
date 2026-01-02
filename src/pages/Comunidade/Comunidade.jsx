@@ -18,9 +18,10 @@ const Comunidade = () => {
       tempo: "há 2 horas",
       categoria: "Soft Skills",
       avatar: "👩‍🏫",
-      conteudo: "Acabei de terminar o módulo de Soft Skills, aprendi muito sobre inteligência emocional. Alguém mais já completou?",
+      conteudo:
+        "Acabei de terminar o módulo de Soft Skills, aprendi muito sobre inteligência emocional. Alguém mais já completou?",
       likes: 24,
-      comentarios: 8
+      comentarios: 8,
     },
     {
       id: 2,
@@ -28,9 +29,10 @@ const Comunidade = () => {
       tempo: "há 5 horas",
       categoria: "Oportunidades",
       avatar: "👨‍💻",
-      conteudo: "Dica: Assistam o webinário sobre carreiras em tecnologia amanhã às 14h. Vai ser incrível!",
+      conteudo:
+        "Dica: Assistam o webinário sobre carreiras em tecnologia amanhã às 14h. Vai ser incrível!",
       likes: 45,
-      comentarios: 12
+      comentarios: 12,
     },
     {
       id: 3,
@@ -38,10 +40,11 @@ const Comunidade = () => {
       tempo: "há 1 dia",
       categoria: "Projetos",
       avatar: "👩‍🎨",
-      conteudo: "Estou desenvolvendo um projeto de app para simplificar o acesso a informações sobre emprego. Alguém quer colaborar?",
+      conteudo:
+        "Estou desenvolvendo um projeto de app para simplificar o acesso a informações sobre emprego. Alguém quer colaborar?",
       likes: 67,
-      comentarios: 19
-    }
+      comentarios: 19,
+    },
   ];
 
   return (
@@ -53,12 +56,18 @@ const Comunidade = () => {
         </div>
 <<<<<<< HEAD:src/pages/Comunidade/Comunidade.jsx
         <div className="topbar-links">
-  <span style={{ cursor: "pointer" }} onClick={() => navigate("/dashboard")}>Início</span>
-  <span style={{ cursor: "pointer" }} onClick={() => navigate("/perfil")}>Meu Perfil</span>
-  <span style={{ cursor: "pointer", fontWeight: "bold" }} onClick={() => navigate("/comunidade")}>Comunidade</span>
-  <span style={{ cursor: "pointer" }} onClick={() => navigate("/ranking")}>Ranking</span>
-</div>
+          <span onClick={() => navigate("/dashboard")}>Início</span>
+          <span onClick={() => navigate("/perfil")}>Meu Perfil</span>
+          <span
+            style={{ fontWeight: "bold" }}
+            onClick={() => navigate("/comunidade")}
+          >
+            Comunidade
+          </span>
+          <span onClick={() => navigate("/ranking")}>Ranking</span>
+        </div>
 
+<<<<<<< HEAD
 <div className="topbar-user">
   👤
   <span
@@ -70,6 +79,14 @@ const Comunidade = () => {
   </span>
 </div>
 
+=======
+        <div className="topbar-user">
+          👤
+          <span
+            style={{ marginLeft: "8px" }}
+            title="Sair"
+            onClick={() => navigate("/login")}
+>>>>>>> bebe156812c92e826f7da2118f04b80b0440bd47
 =======
          <div className="nav-links">
           <a onClick={() => navigate("/dashboard")}>Início</a>
@@ -84,19 +101,39 @@ const Comunidade = () => {
             style={{ marginLeft: "8px", cursor: "pointer" }}
             title="Sair"
             onClick={() => (window.location.href = "/login")}
+>>>>>>> f36b5ed420d234882cb438c3895c52e99342abe7:src/pages1/Comunidade.jsx
           >
             ⬅
           </span>
         </div>
+<<<<<<< HEAD
 >>>>>>> f36b5ed420d234882cb438c3895c52e99342abe7:src/pages1/Comunidade.jsx
+=======
+>>>>>>> bebe156812c92e826f7da2118f04b80b0440bd47
       </nav>
 
       <div className="container main-layout">
         {/* Coluna Principal (Feed) */}
         <main className="feed-column">
+<<<<<<< HEAD:src/pages/Comunidade/Comunidade.jsx
+  <header className="comunidade-header">
+    <h1>Comunidade</h1>
+    <p>Conecte-se com colegas, compartilhe experiências e inspire outros</p>
+  </header>
+
+
+          {/* Botão Voltar alinhado à esquerda */}
+           <div className="voltar-wrapper">
+    <button className="btn-voltar" onClick={() => navigate("/dashboard")}>
+      Voltar
+    </button>
+  </div>
+
+=======
           <header className="comunidade-header">
             <h1>Comunidade</h1>
             <p>Conecte-se com colegas, compartilhe experiências e inspire outros</p>
+<<<<<<< HEAD
 <<<<<<< HEAD:src/pages/Comunidade/Comunidade.jsx
           <button
   className="btn-voltar"
@@ -108,15 +145,20 @@ const Comunidade = () => {
 =======
             <button className="btn-voltar"onClick={() => navigate("/dashboard")}>Voltar</button>
 >>>>>>> f36b5ed420d234882cb438c3895c52e99342abe7:src/pages1/Comunidade.jsx
+=======
+            <button className="btn-voltar"onClick={() => navigate("/dashboard")}>Voltar</button>
+>>>>>>> bebe156812c92e826f7da2118f04b80b0440bd47
           </header>
+>>>>>>> f36b5ed420d234882cb438c3895c52e99342abe7:src/pages1/Comunidade.jsx
 
           {/* Área de Novo Post */}
           <div className="novo-post-card">
-            <div className="avatar-post">👦</div>
-            <div className="input-placeholder">
-              Compartilhe suas experiências, dúvidas ou inspirações...
-            </div>
-          </div>
+    <div className="avatar-post">😊</div>
+    <div className="input-placeholder">
+      Compartilhe suas experiências, dúvidas ou inspirações...
+    </div>
+  </div>
+
 
           {/* Lista de Posts */}
           <div className="posts-list">
@@ -187,7 +229,9 @@ const Comunidade = () => {
         <div className="footer-grid">
           <div>
             <h4>Faz Teu Nome</h4>
-            <p>Plataforma pedagógica para protagonismo juvenil e construção de projeto de vida.</p>
+            <p>
+              Plataforma pedagógica para protagonismo juvenil e construção de projeto de vida.
+            </p>
           </div>
           <div>
             <h4>Plataforma</h4>
@@ -199,7 +243,9 @@ const Comunidade = () => {
           </div>
           <div>
             <h4>Igarassu</h4>
-            <p>Desenvolvimento com escuta ativa e protagonismo juvenil para o município de Igarassu - PE.</p>
+            <p>
+              Desenvolvimento com escuta ativa e protagonismo juvenil para o município de Igarassu - PE.
+            </p>
           </div>
         </div>
         <div className="footer-bottom">

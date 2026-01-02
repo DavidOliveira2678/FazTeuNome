@@ -11,6 +11,13 @@ export default function Dashboard({ nome }) {
         <div className="topbar-logo">
           🚀 <span>FAZ TEU NOME</span>
         </div>
+      <div className="dashboard-container">
+        <nav className="dashboard-topbar">
+<<<<<<< HEAD
+         <div className="topbar-logo">
+  🚀 <span>FAZ TEU NOME</span>
+</div>
+
 
         <div className="topbar-links">
           <span style={{ cursor: "pointer" }}>Início</span>
@@ -50,6 +57,7 @@ export default function Dashboard({ nome }) {
 <<<<<<< HEAD
 =======
         <nav className="dashboard-topbar">
+=======
           <div className="topbar-logo" onClick={() => navigate("/dashboard")}> 🚀 Faz Teu Nome</div>
 
           <div className="nav-links">
@@ -58,6 +66,7 @@ export default function Dashboard({ nome }) {
             <a onClick={() => navigate("/comunidade")}>Comunidade</a>
             <a onClick={() => navigate("/ranking")}>Ranking</a>
           </div>
+>>>>>>> f36b5ed420d234882cb438c3895c52e99342abe7
 
 
           <div className="topbar-user" onClick={() => navigate("/profile")} style={{ marginLeft: "8px", cursor: "pointer" }}>
@@ -152,11 +161,20 @@ export default function Dashboard({ nome }) {
               </div>
             </div>
 
+<<<<<<< HEAD
+            <div
+              className="path-card"
+              onClick={() => navigate("/projetodevida")}
+              style={{ cursor: "pointer" }}
+            >
+
+=======
             <div className="path-card"
 >>>>>>> f36b5ed420d234882cb438c3895c52e99342abe7
               onClick={() => navigate("/projetodevida")}
               style={{ cursor: "pointer" }}
             >
+>>>>>>> f36b5ed420d234882cb438c3895c52e99342abe7
               <div className="path-icon">
                 <span className="dot start"></span>
                 <span className="line"></span>

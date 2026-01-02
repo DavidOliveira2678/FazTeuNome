@@ -25,6 +25,15 @@ const Profile = () => {
           </div>
         </header>
 
+        <div className="btn-voltar-wrapper">
+                <button
+                 className="btn-voltar"
+                  onClick={() => navigate("/dashboard")}
+                >
+                  Voltar
+               </button>
+              </div>
+
         <div className="profile-grid">
           {/* Coluna Principal */}
           <main className="profile-main">
@@ -70,21 +79,17 @@ const Profile = () => {
             <section className="profile-card">
               <h3>Minha Galeria</h3>
               <div className="gallery-grid">
-                {[1, 2, 3, 4].map((i) => (
+                {[1, 2, 3, 4, 5, 6].map((i) => (
                   <div key={i} className="upload-box">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
                   </div>
                 ))}
               </div>
+
+              
             </section>
             
-            <button
-  className="btn-voltar"
-  onClick={() => navigate("/dashboard")}
->
-  Voltar
-</button>
-
+                     
           </main>
 
           {/* Sidebar */}
@@ -144,6 +149,7 @@ const Profile = () => {
         </div>
       </div>
 
+      
       {/* Footer */}
       <footer className="footer">
         <div className="footer-grid">

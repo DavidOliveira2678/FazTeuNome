@@ -11,9 +11,10 @@ const Comunidade = () => {
       tempo: "há 2 horas",
       categoria: "Soft Skills",
       avatar: "👩‍🏫",
-      conteudo: "Acabei de terminar o módulo de Soft Skills, aprendi muito sobre inteligência emocional. Alguém mais já completou?",
+      conteudo:
+        "Acabei de terminar o módulo de Soft Skills, aprendi muito sobre inteligência emocional. Alguém mais já completou?",
       likes: 24,
-      comentarios: 8
+      comentarios: 8,
     },
     {
       id: 2,
@@ -21,9 +22,10 @@ const Comunidade = () => {
       tempo: "há 5 horas",
       categoria: "Oportunidades",
       avatar: "👨‍💻",
-      conteudo: "Dica: Assistam o webinário sobre carreiras em tecnologia amanhã às 14h. Vai ser incrível!",
+      conteudo:
+        "Dica: Assistam o webinário sobre carreiras em tecnologia amanhã às 14h. Vai ser incrível!",
       likes: 45,
-      comentarios: 12
+      comentarios: 12,
     },
     {
       id: 3,
@@ -31,10 +33,11 @@ const Comunidade = () => {
       tempo: "há 1 dia",
       categoria: "Projetos",
       avatar: "👩‍🎨",
-      conteudo: "Estou desenvolvendo um projeto de app para simplificar o acesso a informações sobre emprego. Alguém quer colaborar?",
+      conteudo:
+        "Estou desenvolvendo um projeto de app para simplificar o acesso a informações sobre emprego. Alguém quer colaborar?",
       likes: 67,
-      comentarios: 19
-    }
+      comentarios: 19,
+    },
   ];
 
   return (
@@ -45,47 +48,54 @@ const Comunidade = () => {
           <span className="rocket-icon">🚀</span> Faz Teu Nome
         </div>
         <div className="topbar-links">
-  <span style={{ cursor: "pointer" }} onClick={() => navigate("/dashboard")}>Início</span>
-  <span style={{ cursor: "pointer" }} onClick={() => navigate("/perfil")}>Meu Perfil</span>
-  <span style={{ cursor: "pointer", fontWeight: "bold" }} onClick={() => navigate("/comunidade")}>Comunidade</span>
-  <span style={{ cursor: "pointer" }} onClick={() => navigate("/ranking")}>Ranking</span>
-</div>
+          <span onClick={() => navigate("/dashboard")}>Início</span>
+          <span onClick={() => navigate("/perfil")}>Meu Perfil</span>
+          <span
+            style={{ fontWeight: "bold" }}
+            onClick={() => navigate("/comunidade")}
+          >
+            Comunidade
+          </span>
+          <span onClick={() => navigate("/ranking")}>Ranking</span>
+        </div>
 
-<div className="topbar-user">
-  👤
-  <span
-    style={{ marginLeft: "8px", cursor: "pointer" }}
-    title="Sair"
-    onClick={() => navigate("/login")}
-  >
-    ⬅
-  </span>
-</div>
-
+        <div className="topbar-user">
+          👤
+          <span
+            style={{ marginLeft: "8px" }}
+            title="Sair"
+            onClick={() => navigate("/login")}
+          >
+            ⬅
+          </span>
+        </div>
       </nav>
 
       <div className="container main-layout">
         {/* Coluna Principal (Feed) */}
         <main className="feed-column">
-          <header className="comunidade-header">
-            <h1>Comunidade</h1>
-            <p>Conecte-se com colegas, compartilhe experiências e inspire outros</p>
-          <button
-  className="btn-voltar"
-  onClick={() => navigate("/dashboard")}
->
-  Voltar
-</button>
+  <header className="comunidade-header">
+    <h1>Comunidade</h1>
+    <p>Conecte-se com colegas, compartilhe experiências e inspire outros</p>
+  </header>
 
-          </header>
+
+          {/* Botão Voltar alinhado à esquerda */}
+           <div className="voltar-wrapper">
+    <button className="btn-voltar" onClick={() => navigate("/dashboard")}>
+      Voltar
+    </button>
+  </div>
+
 
           {/* Área de Novo Post */}
           <div className="novo-post-card">
-            <div className="avatar-post">👦</div>
-            <div className="input-placeholder">
-              Compartilhe suas experiências, dúvidas ou inspirações...
-            </div>
-          </div>
+    <div className="avatar-post">😊</div>
+    <div className="input-placeholder">
+      Compartilhe suas experiências, dúvidas ou inspirações...
+    </div>
+  </div>
+
 
           {/* Lista de Posts */}
           <div className="posts-list">
@@ -152,7 +162,9 @@ const Comunidade = () => {
         <div className="footer-grid">
           <div>
             <h4>Faz Teu Nome</h4>
-            <p>Plataforma pedagógica para protagonismo juvenil e construção de projeto de vida.</p>
+            <p>
+              Plataforma pedagógica para protagonismo juvenil e construção de projeto de vida.
+            </p>
           </div>
           <div>
             <h4>Plataforma</h4>
@@ -172,7 +184,9 @@ const Comunidade = () => {
           </div>
           <div>
             <h4>Igarassu</h4>
-            <p>Desenvolvimento com escuta ativa e protagonismo juvenil para o município de Igarassu - PE.</p>
+            <p>
+              Desenvolvimento com escuta ativa e protagonismo juvenil para o município de Igarassu - PE.
+            </p>
           </div>
         </div>
         <div className="footer-bottom">

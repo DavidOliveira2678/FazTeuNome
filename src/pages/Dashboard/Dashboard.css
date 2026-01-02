@@ -327,12 +327,10 @@
   max-width: 250px;
 }
 
-.footer-col:first-child {
-  margin-left: 0px;
-}
-
-.footer-col:nth-child(4) {
-  margin-left: -40px;
+@media (min-width: 769px) {
+  .footer-col:nth-child(4) {
+    margin-left: -40px;
+  }
 }
 
 .footer-col ul {

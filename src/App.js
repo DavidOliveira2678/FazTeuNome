@@ -1,5 +1,4 @@
 import React from "react";
-
 import {
   BrowserRouter as Router,
   Routes,
@@ -7,6 +6,7 @@ import {
   Navigate
 } from "react-router-dom";
 
+// IMPORT DAS PÁGINAS BÁSICAS
 import Home from "./pages/Home/Home";
 import Login from "./pages/Login/Login";
 import Cadastro from "./pages/Cadastro/Cadastro";
@@ -15,33 +15,35 @@ import RecuperarSenha from "./pages/Recuperarsenha/Recuperarsenha";
 import Autoconhecimento from "./pages/Autoconhecimento/Autoconhecimento";
 import VocabulariodeNegocios from "./pages/VocabulariodeNegocios/VocabulariodeNegocios";
 
-
-// IMPORT DAS PÁGINAS DE SKILLS
-import SoftSkills from "./pages/SoftSkills/SoftSkills.jsx";
+// IMPORT DAS PÁGINAS DE SKILLS E CONTEÚDO
+import SoftSkills from "./pages/SoftSkills/SoftSkills";
 import HardSkills from "./pages/HardSkills/HardSkills";
 import Projetodevida from "./pages/Projetodevida/Projetodevida";
-import PaginaEmConstrucao from "./pages/PaginaEmConstrucao/PaginaEmConstrucao";
 import Profile from "./pages/Profile/Profile";
 import Comunidade from "./pages/Comunidade/Comunidade";
 import Ranking from "./pages/Ranking/Ranking";
-import EscolhaTema from "./pages/EscolhaTema/EscolhaTema.jsx";
+import EscolhaTema from "./pages/EscolhaTema/EscolhaTema";
 import Oportunidades from "./pages/Oportunidades/Oportunidades";
+import PaginaEmConstrucao from "./pages/PaginaEmConstrucao/PaginaEmConstrucao";
 
-
+// Se houver uma página de edição ou portal do professor, importe-as aqui:
+// import Editar from "./pages/Editar/Editar";
+// import PortalProfessor from "./pages/PortalProfessor/PortalProfessor";
 
 function App() {
+  // Nota: Em uma aplicação real, você usaria um estado ou Context API para verificar o login
   const usuarioLogado = true;
 
   return (
     <Router>
       <Routes>
-        {/* Públicas */}
+        {/* Rotas Públicas */}
         <Route path="/" element={<Home />} />
         <Route path="/cadastro" element={<Cadastro />} />
         <Route path="/login" element={<Login />} />
         <Route path="/recuperarsenha" element={<RecuperarSenha />} />
 
-        {/* Protegidas */}
+        {/* Rotas Protegidas (Exigem Login) */}
         <Route
           path="/dashboard"
           element={usuarioLogado ? <Dashboard nome="Faz Teu Nome" /> : <Navigate to="/login" />}
@@ -73,11 +75,6 @@ function App() {
         />
 
         <Route
-          path="/em-construcao"
-          element={usuarioLogado ? <PaginaEmConstrucao /> : <Navigate to="/login" />}
-        />
-
-        <Route
           path="/profile"
           element={usuarioLogado ? <Profile /> : <Navigate to="/login" />}
         />
@@ -97,13 +94,18 @@ function App() {
           element={usuarioLogado ? <EscolhaTema /> : <Navigate to="/login" />}
         />
 
-        
         <Route
           path="/oportunidades"
           element={usuarioLogado ? <Oportunidades /> : <Navigate to="/login" />}
         />
 
-               <Route path="*" element={<Navigate to="/" />} />
+        <Route
+          path="/em-construcao"
+          element={usuarioLogado ? <PaginaEmConstrucao /> : <Navigate to="/login" />}
+        />
+
+        {/* Fallback: Redireciona qualquer rota não encontrada para a Home */}
+        <Route path="*" element={<Navigate to="/" />} />
       </Routes>
     </Router>
   );

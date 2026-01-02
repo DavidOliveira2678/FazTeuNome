@@ -414,3 +414,11 @@ textarea {
   color: #0f6fa1;
   margin-top: 8px;
 }
+
+@media (max-width: 768px) {
+  .btn-continuar {
+    transform: translateX(0);   
+    margin-left: auto;
+    margin-right: auto;
+  }
+}

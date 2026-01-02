@@ -120,7 +120,7 @@
 }
 
 .main-row {
-  margin-top: 30px;
+  margin-top: 0px;
 }
 
 .learning-path h3 {
@@ -136,12 +136,16 @@
 
 .content-row {
   display: flex;
-  gap: 32px;
-  margin-top: 30px;
+  gap: 33px;
+  margin-top: 2px;
 }
 
 .content-left h3 {
   margin-top: 6px;
+}
+.quem-voce-e {
+  margin-top: -8px;
+  transform: translateY(-40px);
 }
 
 .escala-container h3 {
@@ -229,7 +233,7 @@ textarea {
 .btn-salvar {
   margin-top: 30px;
   margin-left: auto;
-  margin-right: auto;
+  margin-right: 0;
   background: #ff7a00;
   color: white;
   border: none;
@@ -237,8 +241,6 @@ textarea {
   border-radius: 20px;
   cursor: pointer;
   display: block;
-
-  transform: translateX(400px); 
 }
 
 .btn-duvidas {
@@ -363,6 +365,36 @@ textarea {
   cursor: pointer;
 }
 
+.escala-numeros span.ativo {
+  font-weight: bold;    
+  color: #ff7e33;       
+}
+.escala-numeros {
+  display: flex;
+  gap: 8px; 
+}
+
+.escala-numero {
+  padding: 8px 12px; 
+  border-radius: 4px; 
+  background: #ffffff;  
+  text-align: center;
+  cursor: pointer;
+  user-select: none;
+  transition: background 0.2s;
+}
+
+.escala-numero:hover {
+  background: #f9f9f9; 
+}
+
+.escala-numero.ativo {
+  background: #ff7e33; 
+  color: white;         
+  font-weight: bold;
+}
+
+
 .reflexao-container {
   border: 2px solid #eceae8da;
   border-radius: 12px;
@@ -389,4 +421,66 @@ textarea {
   background: transparent; 
   padding: 0; 
   border-radius: 0; 
+}
+@media (max-width: 768px) {
+
+  .Autoconhecimento-topbar {
+    flex-wrap: wrap;
+  }
+
+  .topbar-links {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 18px;
+  }
+
+  .header-top {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .header-left {
+    max-width: 100%;
+  }
+
+  .Autoconhecimento-header {
+    padding: 20px 18px;
+    margin-top: 20px;
+  }
+
+  .progress-box {
+    box-sizing: border-box;
+    width: 100%;
+  }
+
+  .progress-bar.gray {
+    max-width: 100%;
+  }
+
+  .content-row {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .content-left,
+  .content-right {
+    width: 100%;
+  }
+
+  .quem-voce-e {
+    transform: translateY(0);
+    margin-top: 0;
+  }
+
+  .footer-columns {
+    flex-direction: column;
+    padding: 0;
+    gap: 30px;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    gap: 12px;
+    text-align: center;
+  }
 }

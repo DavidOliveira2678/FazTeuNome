@@ -1,7 +1,9 @@
-import React, { useState } from 'react';
-import './Editar.css';
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import "./Editar.css";
 
 const EditProfile = () => {
+const navigate = useNavigate();
   const [bio, setBio] = useState(
     "Sou uma pessoa curiosa e criativa, apaixonada por tecnologia, mas também por arte, dança e fotografia. Gosto de explorar novas ferramentas e entender como as coisas funcionam, sempre buscando unir o lado técnico com o lado artístico."
   );
@@ -67,7 +69,13 @@ const EditProfile = () => {
                 <polyline points="12 19 5 12 12 5"></polyline>
               </svg>
             </button>
-            <h1>Editar Perfil</h1>
+            <h1
+              style={{ cursor: "pointer" }}
+              onClick={() => navigate("/profile")}
+            >
+             Editar Perfil
+            </h1>
+
           </div>
 
           {/* Card 1: Foto de Perfil */}

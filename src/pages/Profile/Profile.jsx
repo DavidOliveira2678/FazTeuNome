@@ -5,24 +5,23 @@ import "./Profile.css";
 const Profile = () => {
   const navigate = useNavigate();
 
-  const handleBack = () => {
-    navigate(-1);
-  };
-
   return (
     <div className="profile-page">
       {/* Navbar */}
       <nav className="navbar">
         <div className="logo">
-          <div className="topbar-logo" onClick={() => navigate("/dashboard")} style={{ cursor: "pointer" }}>
+          <div 
+            className="topbar-logo" 
+            onClick={() => navigate("/dashboard")} 
+            style={{ cursor: "pointer" }}
+          >
             🚀 Faz Teu Nome
           </div>
         </div>
 
         <div className="nav-links">
-          {/* Usei span para evitar comportamentos inesperados de tags <a> sem href */}
           <span onClick={() => navigate("/dashboard")}>Início</span>
-          <span onClick={() => navigate("/profile")}>Meu Perfil</span>
+          <span onClick={() => navigate("/profile")} style={{ fontWeight: "bold" }}>Meu Perfil</span>
           <span onClick={() => navigate("/comunidade")}>Comunidade</span>
           <span onClick={() => navigate("/ranking")}>Ranking</span>
         </div>
@@ -30,7 +29,7 @@ const Profile = () => {
         <div className="topbar-user" onClick={() => navigate("/profile")} style={{ marginLeft: "8px", cursor: "pointer" }}>
           👤
           <span
-            style={{ marginLeft: "8px", cursor: "pointer" }}
+            style={{ marginLeft: "15px", cursor: "pointer" }}
             title="Sair"
             onClick={(e) => {
               e.stopPropagation(); // Impede de navegar para o perfil ao clicar em sair
@@ -51,17 +50,16 @@ const Profile = () => {
             </div>
             <div className="user-details">
               <h1>{`{Nome do Usuario}`}</h1>
-              <p>3 Ano do Ensino Médio</p>
+              <p>3º Ano do Ensino Médio</p>
               <small>Escola Municipal de Igarassu - Igarassu PE</small>
             </div>
           </div>
           <div className="banner-actions">
-            {/* --- ALTERAÇÃO AQUI: Adicionado o onClick para navegar para /editar --- */}
             <button 
               className="btn-white" 
-              onClick={() => navigate("/editar")}
+              onClick={() => navigate("/editar-perfil")}
             >
-              Editar
+              Editar Perfil
             </button>
           </div>
         </header>
@@ -71,7 +69,7 @@ const Profile = () => {
             className="btn-voltar"
             onClick={() => navigate("/dashboard")}
           >
-            Voltar
+            Voltar ao Início
           </button>
         </div>
 
@@ -84,7 +82,7 @@ const Profile = () => {
                 <h3>Sobre mim</h3>
                 <span>❯</span>
               </div>
-              <p>Sou uma pessoa curiosa e criativa, apaixonada por tecnologia, mas também por arte, dança e fotografia. Gosto de explorar novas ferramentas e entender como as coisas funcionam, sempre buscando unir o lado técnico com o lado artístico.</p>
+              <p>Sou uma pessoa curiosa e criativa, apaixonada por tecnologia, arte, dança e fotografia. Gosto de explorar novas ferramentas e entender como as coisas funcionam, sempre buscando unir o lado técnico com o artístico.</p>
             </section>
 
             {/* Meus Interesses */}
@@ -98,7 +96,7 @@ const Profile = () => {
                 <span className="tag">Arte</span>
                 <span className="tag">Tecnologia</span>
                 <span className="tag">Fotografia</span>
-                <span className="tag">Musica</span>
+                <span className="tag">Música</span>
                 <span className="tag">Programação</span>
               </div>
             </section>
@@ -110,9 +108,18 @@ const Profile = () => {
                 <span>❯</span>
               </div>
               <div className="skills-bars">
-                <div className="skill-item"><div className="bar orange" style={{ width: '90%' }}></div></div>
-                <div className="skill-item"><div className="bar dark" style={{ width: '65%' }}></div></div>
-                <div className="skill-item"><div className="bar orange" style={{ width: '80%' }}></div></div>
+                <div className="skill-item">
+                   <label>Criatividade</label>
+                   <div className="bar-bg"><div className="bar orange" style={{ width: '90%' }}></div></div>
+                </div>
+                <div className="skill-item">
+                   <label>Liderança</label>
+                   <div className="bar-bg"><div className="bar dark" style={{ width: '65%' }}></div></div>
+                </div>
+                <div className="skill-item">
+                   <label>Resolução de Problemas</label>
+                   <div className="bar-bg"><div className="bar orange" style={{ width: '80%' }}></div></div>
+                </div>
               </div>
             </section>
 
@@ -121,8 +128,12 @@ const Profile = () => {
               <h3>Minha Galeria</h3>
               <div className="gallery-grid">
                 {[1, 2, 3, 4, 5, 6].map((i) => (
-                  <div key={i} className="upload-box">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" /><polyline points="17 8 12 3 7 8" /><line x1="12" y1="3" x2="12" y2="15" /></svg>
+                  <div key={i} className="upload-box" style={{ cursor: 'pointer' }}>
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                      <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                      <polyline points="17 8 12 3 7 8" />
+                      <line x1="12" y1="3" x2="12" y2="15" />
+                    </svg>
                   </div>
                 ))}
               </div>
@@ -182,11 +193,7 @@ const Profile = () => {
       </div>
 
       {/* Footer */}
-      <footer
-        className="footer"
-        onClick={() => navigate("/em-construcao")}
-        style={{ cursor: "pointer" }}
-      >
+      <footer className="footer" onClick={() => navigate("/em-construcao")} style={{ cursor: "pointer" }}>
         <div className="footer-grid">
           <div>
             <h4>Faz Teu Nome</h4>
@@ -202,16 +209,11 @@ const Profile = () => {
           </div>
           <div>
             <h4>Igarassu</h4>
-            <p>Desenvolvimento com escuta ativa e protagonismo juvenil para o município de Igarassu - PE.</p>
+            <p>Desenvolvimento para o município de Igarassu - PE.</p>
           </div>
         </div>
         <div className="footer-bottom">
-          <span>© 2025 Faz Teu Nome. Todos os direitos reservados.</span>
-          <div className="footer-links">
-            <a href="#">Privacidade</a>
-            <a href="#">Termos</a>
-            <a href="#">Acessibilidade</a>
-          </div>
+          <span>© 2026 Faz Teu Nome. Todos os direitos reservados.</span>
         </div>
       </footer>
     </div>

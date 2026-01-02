@@ -69,14 +69,14 @@ const Comunidade = () => {
         </div>
 
         <div className="topbar-user">
-          <span
-            onClick={() => navigate("/profile")}
+          <span 
+            onClick={() => navigate("/profile")} 
             style={{ cursor: "pointer" }}
           >
             👤
           </span>
           <span
-            style={{ marginLeft: "8px", cursor: "pointer" }}
+            style={{ marginLeft: "15px", cursor: "pointer" }}
             title="Sair"
             onClick={() => navigate("/login")}
           >
@@ -91,14 +91,12 @@ const Comunidade = () => {
           <header className="comunidade-header">
             <h1>Comunidade</h1>
             <p>Conecte-se com colegas, compartilhe experiências e inspire outros</p>
-            <div className="voltar-wrapper">
-              <button
-                className="btn-voltar"
-                onClick={() => navigate("/dashboard")}
-              >
-                Voltar
-              </button>
-            </div>
+            <button
+              className="btn-voltar"
+              onClick={() => navigate("/dashboard")}
+            >
+              Voltar
+            </button>
           </header>
 
           {/* Área de Novo Post */}
@@ -114,7 +112,7 @@ const Comunidade = () => {
 
           {/* Barra de Pesquisa */}
           <div className="search-bar">
-            <input type="text" placeholder="Pesquisar comunidade" />
+            <input type="text" placeholder="Pesquisar na comunidade..." />
             <span className="search-icon">🔍</span>
           </div>
 
@@ -140,7 +138,7 @@ const Comunidade = () => {
                     <span>❤️ {post.likes}</span>
                     <span>💬 {post.comentarios}</span>
                   </div>
-                  <div className="share-icon">🔗</div>
+                  <div className="share-icon" style={{ cursor: "pointer" }}>🔗</div>
                 </div>
               </div>
             ))}
@@ -152,7 +150,7 @@ const Comunidade = () => {
           <div className="sidebar-card">
             <h3>Estatísticas</h3>
             <div className="stat-item">
-              <div className="stat-label">👥 Membros salvos</div>
+              <div className="stat-label">👥 Membros</div>
               <div className="stat-value">248</div>
             </div>
             <div className="stat-item">
@@ -182,9 +180,7 @@ const Comunidade = () => {
         <div className="footer-grid">
           <div>
             <h4>Faz Teu Nome</h4>
-            <p>
-              Plataforma pedagógica para protagonismo juvenil e construção de projeto de vida.
-            </p>
+            <p>Plataforma pedagógica para protagonismo juvenil e projeto de vida.</p>
           </div>
           <div>
             <h4>Plataforma</h4>
@@ -204,17 +200,15 @@ const Comunidade = () => {
           </div>
           <div>
             <h4>Igarassu</h4>
-            <p>
-              Desenvolvimento com escuta ativa e protagonismo juvenil para o município de Igarassu - PE.
-            </p>
+            <p>Desenvolvimento para o município de Igarassu - PE.</p>
           </div>
         </div>
         <div className="footer-bottom">
-          <span>© 2025 Faz Teu Nome. Todos os direitos reservados.</span>
+          <span>© 2026 Faz Teu Nome. Todos os direitos reservados.</span>
           <div className="footer-links">
-            <a href="#">Privacidade</a>
-            <a href="#">Termos</a>
-            <a href="#">Acessibilidade</a>
+            <span>Privacidade</span>
+            <span>Termos</span>
+            <span>Acessibilidade</span>
           </div>
         </div>
       </footer>

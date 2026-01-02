@@ -6,60 +6,70 @@ export default function Dashboard({ nome }) {
   const navigate = useNavigate();
 
   return (
-    <>
-      <div className="dashboard-container">
-        <nav className="dashboard-topbar">
-          <div className="topbar-logo" onClick={() => navigate("/dashboard")}> 🚀 Faz Teu Nome</div>
+    <div className="dashboard-page-wrapper">
+      {/* NAVBAR */}
+      <nav className="dashboard-topbar">
+        <div 
+          className="topbar-logo" 
+          onClick={() => navigate("/dashboard")} 
+          style={{ cursor: "pointer" }}
+        >
+          🚀 <span>FAZ TEU NOME</span>
+        </div>
 
-          <div className="nav-links">
-            <a onClick={() => navigate("/dashboard")}>Início</a>
-            <a onClick={() => navigate("/profile")}>Meu Perfil</a>
-            <a onClick={() => navigate("/comunidade")}>Comunidade</a>
-            <a onClick={() => navigate("/ranking")}>Ranking</a>
-          </div>
+        <div className="nav-links">
+          <span onClick={() => navigate("/dashboard")}>Início</span>
+          <span onClick={() => navigate("/profile")}>Meu Perfil</span>
+          <span onClick={() => navigate("/comunidade")}>Comunidade</span>
+          <span onClick={() => navigate("/ranking")}>Ranking</span>
+        </div>
 
-
-          <div className="topbar-user" onClick={() => navigate("/profile")} style={{ marginLeft: "8px", cursor: "pointer" }}>
+        <div className="topbar-user">
+          <span 
+            onClick={() => navigate("/profile")} 
+            style={{ cursor: "pointer" }}
+          >
             👤
-            <span
-              style={{ marginLeft: "8px", cursor: "pointer" }}
-              title="Sair"
-              onClick={() => (window.location.href = "/login")}
-            >
-              ⬅
-            </span>
-          </div>
-        </nav>
+          </span>
+          <span
+            style={{ marginLeft: "12px", cursor: "pointer" }}
+            title="Sair"
+            onClick={() => (window.location.href = "/login")}
+          >
+            ⬅
+          </span>
+        </div>
+      </nav>
 
-        <div className="dashboard-header">
-          <h2>Bem-vindo à sua jornada!</h2>
+      {/* CONTEÚDO PRINCIPAL */}
+      <div className="dashboard-container">
+        <header className="dashboard-header">
+          <h2>Bem-vindo à sua jornada, {nome || "estudante"}!</h2>
           <p>
             Chegou a hora de descobrir talentos, desenvolver habilidades que fazem
-            a diferença e construir um futuro com impacto. </p>
-          <p> O futuro começa agora,
-            por isso Faz teu Nome!</p><br></br>
-
+            a diferença e construir um futuro com impacto.
+          </p>
+          <p>O futuro começa agora, por isso <strong>Faz teu Nome!</strong></p>
 
           <div className="progress-info">
             <div className="progress-box adjusted">
               <span>Total de Progresso</span>
               <span>20%</span>
             </div>
-
             <div className="progress-box adjusted">
               <span>Conquistas</span>
               <span>2</span>
             </div>
-
             <div className="progress-box adjusted">
               <span>Classificação</span>
               <span>45°</span>
             </div>
           </div>
-        </div>
+        </header>
 
         <div className="main-row">
-          <div className="learning-path">
+          {/* TRILHA DE APRENDIZAGEM */}
+          <section className="learning-path">
             <h3>Trilha de Aprendizagem</h3>
 
             <div
@@ -70,13 +80,10 @@ export default function Dashboard({ nome }) {
               <span className="icon">🧠</span>
               <div className="path-content">
                 <h4>Soft Skills</h4>
-                <p>
-                  Desenvolva inteligência emocional, liderança e empatia.
-                </p>
-                <div
-                  className="progress-bar green"
-                  style={{ width: "150%" }}
-                />
+                <p>Desenvolva inteligência emocional, liderança e empatia.</p>
+                <div className="progress-container">
+                    <div className="progress-bar green" style={{ width: "60%" }} />
+                </div>
               </div>
             </div>
 
@@ -88,38 +95,33 @@ export default function Dashboard({ nome }) {
               <span className="icon">⚡</span>
               <div className="path-content">
                 <h4>Hard Skills</h4>
-                <p>Construa habilidades aplicáveis ao mercado, aprendendo ferramentas, processos e boas práticas usadas no dia a dia profissional. </p>
-                <div
-                  className="progress-bar red"
-                  style={{ width: "50%" }}
-                />
+                <p>Domine ferramentas digitais, processos e inglês profissional.</p>
+                <div className="progress-container">
+                    <div className="progress-bar red" style={{ width: "15%" }} />
+                </div>
               </div>
             </div>
 
-            <div className="path-card"
+            <div
+              className="path-card"
               onClick={() => navigate("/projetodevida")}
               style={{ cursor: "pointer" }}
             >
-              <div className="path-icon">
-                <span className="dot start"></span>
-                <span className="line"></span>
-                <span className="dot end"></span>
-              </div>
+              <span className="icon">🗺️</span>
               <div className="path-content">
-                <h4>Projeto Vida</h4>
+                <h4>Projeto de Vida</h4>
                 <p>Construa seu projeto de vida com reflexão crítica.</p>
-                <div
-                  className="progress-bar gray"
-                  style={{ width: "150%" }}
-                />
+                <div className="progress-container">
+                    <div className="progress-bar gray" style={{ width: "5%" }} />
+                </div>
               </div>
             </div>
-          </div>
+          </section>
 
-          <div className="side-column">
+          {/* COLUNA LATERAL */}
+          <aside className="side-column">
             <div className="side-box">
               <h3>Conquistas</h3>
-
               <div className="conquista-item desbloqueado">
                 <span className="icon">🚀</span>
                 <div>
@@ -127,7 +129,6 @@ export default function Dashboard({ nome }) {
                   <p>Desbloqueado</p>
                 </div>
               </div>
-
               <div className="conquista-item desbloqueado">
                 <span className="icon">⭐</span>
                 <div>
@@ -135,7 +136,6 @@ export default function Dashboard({ nome }) {
                   <p>Desbloqueado</p>
                 </div>
               </div>
-
               <div className="conquista-item bloqueado">
                 <span className="icon">👑</span>
                 <div>
@@ -147,25 +147,22 @@ export default function Dashboard({ nome }) {
 
             <div className="side-box">
               <h3>Próximos eventos</h3>
-
               <div className="evento-item">
                 <strong>Roda de Conversa</strong>
                 <p>Quinta, 14h</p>
               </div>
-
               <div className="evento-item">
                 <strong>Workshop de Design</strong>
                 <p>Sábado, 10h</p>
               </div>
-
               <div className="evento-item">
                 <strong>Hackathon Pedagógico</strong>
                 <p>15 de Novembro</p>
               </div>
             </div>
 
-            <div className="side-box sugestão-container">
-              <div className="sugestão-titulo">
+            <div className="side-box sugestao-container">
+              <div className="sugestao-titulo">
                 <span className="icone-lampada">💡</span>
                 <h3>Dica</h3>
               </div>
@@ -174,10 +171,11 @@ export default function Dashboard({ nome }) {
                 seu projeto vocacional.
               </p>
             </div>
-          </div>
+          </aside>
         </div>
       </div>
 
+      {/* FOOTER */}
       <footer
         className="footer"
         onClick={() => navigate("/em-construcao")}
@@ -186,43 +184,33 @@ export default function Dashboard({ nome }) {
         <div className="footer-columns">
           <div className="footer-col">
             <h4>Faz Teu Nome</h4>
-            <p>
-              Plataforma pedagógica para protagonismo juvenil e construção de
-              projeto de vida.
-            </p>
+            <p>Plataforma pedagógica para protagonismo juvenil.</p>
           </div>
-
           <div className="footer-col">
             <h4>Plataforma</h4>
             <ul>
-              <li>Trilha de Aprendizagem</li>
+              <li>Trilha</li>
               <li>Comunidade</li>
               <li>Hackaton</li>
             </ul>
           </div>
-
           <div className="footer-col">
             <h4>Recursos</h4>
             <ul>
-              <li>Guia do Professor</li>
+              <li>Guia</li>
               <li>FAQ</li>
               <li>Contato</li>
             </ul>
           </div>
-
           <div className="footer-col">
             <h4>Igarassu</h4>
-            <p>
-              Desenvolvimento com escuta ativa e protagonismo juvenil para o
-              município de Igarassu-PE.
-            </p>
+            <p>Desenvolvimento para o município de Igarassu-PE.</p>
           </div>
         </div>
 
         <div className="footer-bottom">
           <span>
-            © {new Date().getFullYear()} Faz Teu Nome — Todos os direitos
-            reservados.
+            © {new Date().getFullYear()} Faz Teu Nome — Todos os direitos reservados.
           </span>
           <div className="footer-links">
             <span>Privacidade</span>
@@ -231,6 +219,6 @@ export default function Dashboard({ nome }) {
           </div>
         </div>
       </footer>
-    </>
+    </div>
   );
 }

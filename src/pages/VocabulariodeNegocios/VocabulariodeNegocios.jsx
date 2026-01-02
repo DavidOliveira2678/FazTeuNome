@@ -6,11 +6,7 @@ export default function VocabulariodeNegocios({ nome }) {
   const navigate = useNavigate();
 
   const handleVoltar = () => {
-<<<<<<< HEAD
-    navigate("/HardSkills"); 
-=======
     navigate("/dashboard");
->>>>>>> f36b5ed420d234882cb438c3895c52e99342abe7
   };
 
   return (
@@ -18,36 +14,6 @@ export default function VocabulariodeNegocios({ nome }) {
       <div className="VocabulariodeNegocios-container">
 
         <nav className="VocabulariodeNegocios-topbar">
-<<<<<<< HEAD
-          <div className="topbar-logo">FAZ TEU NOME</div>
-          <div className="topbar-links">
-  <span style={{ cursor: "pointer" }} onClick={() => navigate("/dashboard")}>
-    Início
-  </span>
-
-  <span style={{ cursor: "pointer" }} onClick={() => navigate("/profile")}>
-    Meu Perfil
-  </span>
-
-  <span style={{ cursor: "pointer" }} onClick={() => navigate("/comunidade")}>
-    Comunidade
-  </span>
-
-  <span style={{ cursor: "pointer" }} onClick={() => navigate("/ranking")}>
-    Ranking
-  </span>
-</div>
-
-          <div className="topbar-user">
-            👤
-            <span
-              style={{ marginLeft: "8px", cursor: "pointer" }}
-              title="Sair"
-              onClick={() => (window.location.href = "/login")}
-            >
-              ⬅
-            </span>
-=======
           <div className="topbar-logo" onClick={() => navigate("/dashboard")}> 🚀 Faz Teu Nome</div>
 
           <div className="nav-links">
@@ -55,7 +21,6 @@ export default function VocabulariodeNegocios({ nome }) {
             <a onClick={() => navigate("/profile")}>Meu Perfil</a>
             <a onClick={() => navigate("/comunidade")}>Comunidade</a>
             <a onClick={() => navigate("/ranking")}>Ranking</a>
->>>>>>> f36b5ed420d234882cb438c3895c52e99342abe7
           </div>
 
           <div className="topbar-user" onClick={() => navigate("/profile")} style={{ marginLeft: "8px", cursor: "pointer" }}>
@@ -94,17 +59,10 @@ export default function VocabulariodeNegocios({ nome }) {
 
         <div className="main-row">
           <div className="learning-path">
-<<<<<<< HEAD
-           <button className="btn-voltar" onClick={handleVoltar}>
-  Voltar
-</button>
-
-=======
             <button className="btn-voltar" onClick={() => navigate("/hardskills")}
               style={{ cursor: "pointer" }}>
               Voltar
             </button>
->>>>>>> f36b5ed420d234882cb438c3895c52e99342abe7
 
             <h3>Comunicação Profissional?</h3>
             <p>
@@ -180,20 +138,11 @@ export default function VocabulariodeNegocios({ nome }) {
   style={{ cursor: "pointer" }}>Começar</button>
                   </div>
 
-<<<<<<< HEAD
-                  <button 
-    className="btn-duvidas"
-    onClick={() => navigate("/PaginaEmConstrucao")}
-  >
-    Dúvidas
-  </button>
-=======
                   <button className="btn-duvidas"onClick={() => navigate("/em-construcao")}
   style={{ cursor: "pointer" }}>
                     <span className="icone-duvida"> ? </span>
                     Dúvidas
                   </button>
->>>>>>> f36b5ed420d234882cb438c3895c52e99342abe7
 
                 </div>
 

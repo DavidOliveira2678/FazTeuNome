@@ -1,20 +1,10 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-<<<<<<< HEAD:src/pages/Ranking/Ranking.jsx
+
 import "./Ranking.css";
 
 const Ranking = () => {
-  const navigate = useNavigate();
-  const handleVoltar = () => {
-  navigate("/dashboard");
-};
-=======
-
-import "../styles1/Ranking.css";
-
-const Ranking = () => {
     const navigate = useNavigate();
->>>>>>> f36b5ed420d234882cb438c3895c52e99342abe7:src/pages1/Ranking.jsx
   const rankingData = [
     { pos: "1º", nome: "Pedro Oliveira", pontos: "8.540", seq: 15, conquistas: 8, medal: "🥇" },
     { pos: "2º", nome: "Marina Silva", pontos: "7.920", seq: 12, conquistas: 7, medal: "🥈" },
@@ -31,38 +21,6 @@ const Ranking = () => {
         <div className="logo">
           <div className="topbar-logo" onClick={() => navigate("/dashboard")}> 🚀 Faz Teu Nome</div>
         </div>
-<<<<<<< HEAD:src/pages/Ranking/Ranking.jsx
-        <div className="topbar-links">
-  <span style={{ cursor: "pointer" }} onClick={() => navigate("/dashboard")}>
-    Início
-  </span>
-
-  <span style={{ cursor: "pointer" }} onClick={() => navigate("/profile")}>
-    Meu Perfil
-  </span>
-
-  <span style={{ cursor: "pointer" }} onClick={() => navigate("/comunidade")}>
-    Comunidade
-  </span>
-
-  <span style={{ cursor: "pointer" }} onClick={() => navigate("/ranking")}>
-    Ranking
-  </span>
-</div>
-
-
-<div className="topbar-user">
-  👤
-  <span
-    style={{ marginLeft: "8px", cursor: "pointer" }}
-    title="Sair"
-    onClick={() => navigate("/login")}
-  >
-    ⬅
-  </span>
-</div>
-
-=======
         <div className="nav-links">
           <a onClick={() => navigate("/dashboard")}>Início</a>
           <a onClick={() => navigate("/profile")}>Meu Perfil</a>
@@ -80,20 +38,12 @@ const Ranking = () => {
             ⬅
           </span>
         </div>
->>>>>>> f36b5ed420d234882cb438c3895c52e99342abe7:src/pages1/Ranking.jsx
       </nav>
 
       <div className="container">
         <header className="ranking-header">
           <h1><span>🏆</span> Ranking de Protagonismo</h1>
           <p>Veja como você está se comparando aos seus colegas</p>
-<<<<<<< HEAD:src/pages/Ranking/Ranking.jsx
-         <button className="btn-voltar" onClick={handleVoltar}>
-  Voltar
-</button>
-
-=======
->>>>>>> f36b5ed420d234882cb438c3895c52e99342abe7:src/pages1/Ranking.jsx
         </header>
 <button
           type="button"

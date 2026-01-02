@@ -1,18 +1,10 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-<<<<<<< HEAD:src/pages/SoftSkills/SoftSkills.jsx
 import "./SoftSkills.css";
 
 const SoftSkills = () => {
   const navigate = useNavigate();
-
-=======
-import "../styles1/SoftSkills.css";
-
-const SoftSkills = () => {
-  const navigate = useNavigate();
   // Ícones SVG Inline para substituir o Lucide
->>>>>>> f36b5ed420d234882cb438c3895c52e99342abe7:src/pages1/SoftSkills.jsx
   const Icons = {
     Rocket: () => (
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ff7e33" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.71.79-1.81.79-1.81l-1.98-1.98s-1.1.08-1.81.79z" /><path d="M15 8s-4 4-7 1c-1-1-4-1-4-1s2-4 2-5c3-3 7-1 7-1z" /><path d="M12 12l9 9" /><path d="M18.5 5.5s-4 4-7 1c-1-1-4-1-4-1s2-4 2-5c3-3 7-1 7-1z" /></svg>
@@ -39,9 +31,6 @@ const SoftSkills = () => {
       {/* Navbar */}
       <nav className="navbar">
         <div className="logo">
-<<<<<<< HEAD:src/pages/SoftSkills/SoftSkills.jsx
-🚀 <span>FAZ TEU NOME</span>
-=======
           <Icons.Rocket />
           <div className="topbar-logo" onClick={() => navigate("/dashboard")}> 🚀 Faz Teu Nome</div>
         </div>
@@ -62,7 +51,6 @@ const SoftSkills = () => {
           >
             ⬅
           </span>
->>>>>>> f36b5ed420d234882cb438c3895c52e99342abe7:src/pages1/SoftSkills.jsx
         </div>
         <div className="topbar-links">
   <span style={{ cursor: "pointer" }} onClick={() => navigate("/dashboard")}>
@@ -120,40 +108,21 @@ const SoftSkills = () => {
         </section>
 
         <button
-<<<<<<< HEAD:src/pages/SoftSkills/SoftSkills.jsx
-  className="btn-voltar"
-  onClick={() => navigate("/dashboard")}
->
-  Voltar
-</button>
-
-=======
           type="button"
           className="btn-voltar"
           onClick={() => navigate("/dashboard")}
         >Voltar
         </button>
->>>>>>> f36b5ed420d234882cb438c3895c52e99342abe7:src/pages1/SoftSkills.jsx
 
         <main className="main-layout">
           {/* Lista de Lições */}
           <section className="coluna-licoes">
             <h2>Lições</h2>
-<<<<<<< HEAD:src/pages/SoftSkills/SoftSkills.jsx
-            
-            <div
-  className="card-licao"
-  style={{ cursor: "pointer" }}
-  onClick={() => navigate("/autoconhecimento")}
->
-
-=======
             <div
               className="card-licao"
               onClick={() => navigate("/autoconhecimento")}
               style={{ cursor: "pointer" }}
             >
->>>>>>> f36b5ed420d234882cb438c3895c52e99342abe7:src/pages1/SoftSkills.jsx
               <Icons.Clock />
               <div className="texto">
                 <h3>Autoconhecimento</h3>
@@ -206,61 +175,15 @@ const SoftSkills = () => {
               <div className="recurso-item"><Icons.Flame /> Quiz interativo</div>
             </div>
 
-<<<<<<< HEAD:src/pages/SoftSkills/SoftSkills.jsx
-            <button className="btn-revisar">Revisar</button>
-   <button
-  className="btn-duvidas"
-  onClick={() => navigate("/PaginaEmConstrucao")}
->
-  ❓ Dúvidas
-</button>
-
-
-=======
             <button className="btn-revisar" onClick={() => navigate("/autoconhecimento")}
               style={{ cursor: "pointer" }} >Revisar</button>
             <button className="btn-duvidas" onClick={() => navigate("/em-construcao")}
               style={{ cursor: "pointer" }}>❓ Dúvidas</button>
->>>>>>> f36b5ed420d234882cb438c3895c52e99342abe7:src/pages1/SoftSkills.jsx
           </aside>
         </main>
       </div>
 
       {/* Footer */}
-<<<<<<< HEAD:src/pages/SoftSkills/SoftSkills.jsx
-<footer className="footer">
-  <div className="footer-grid">
-    <div>
-      <h4>Faz Teu Nome</h4>
-      <p>Plataforma pedagógica para protagonismo juvenil e construção de projeto de vida.</p>
-    </div>
-    <div>
-      <h4>Plataforma</h4>
-      <ul>
-        <li>Trilha de aprendizagem</li>
-        <li>Comunidade</li>
-        <li>Hackaton</li>
-      </ul>
-    </div>
-    <div>
-      <h4>Recursos</h4>
-      <ul>
-        <li>Guia do Professor</li>
-        <li>FAQ</li>
-        <li>Contato</li>
-      </ul>
-    </div>
-    <div>
-      <h4>Igarassu</h4>
-      <p>Desenvolvimento com escuta ativa e protagonismo juvenil para o município de Igarassu - PE.</p>
-    </div>
-  </div>
-  <div className="footer-bottom">
-    <span>© 2025 Faz Teu Nome. Todos os direitos reservados.</span>
-  </div>
-</footer>
-
-=======
       <footer
         className="footer"
         onClick={() => navigate("/em-construcao")}
@@ -293,7 +216,6 @@ const SoftSkills = () => {
           </div>
         </div>
       </footer>
->>>>>>> f36b5ed420d234882cb438c3895c52e99342abe7:src/pages1/SoftSkills.jsx
     </div>
   );
 };

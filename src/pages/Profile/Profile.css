@@ -8,25 +8,15 @@
   --bg-light: #f8f9fa;
 }
 
-<<<<<<< HEAD:src/pages/Profile/Profile.css
-html, body {
-  height: 100%;
-}
-
-body {
-  overflow-x: hidden;
-  overflow-y: auto;
-=======
 * {
   margin: 0; 
   padding: 0;
   box-sizing: border-box;
   font-family: 'Inter', sans-serif;
->>>>>>> f36b5ed420d234882cb438c3895c52e99342abe7:src/styles1/Profile.css
 }
 
 .profile-page {
-  min-height: 100vh; /* 100% da altura da tela */
+  min-height: 100%; 
   display: flex;
   flex-direction: column;
   background-color: white;
@@ -52,17 +42,17 @@ body {
 .profile-banner {
   background: linear-gradient(to right, #245d8b, #3d7fb0);
   grid-column: 1 / 2;
-  width: 150%;
+  width: 100%;
   margin: 0;
   margin-left: 0;
-  padding: 30px;
+  padding: 15px 20px;
   display: flex;
   border-radius: 20px;
   box-sizing: border-box;
   justify-content: space-between;
   align-items: center;
   color: white;
-  margin-bottom: 50px;
+  margin-bottom: 30px;
 
 }
 

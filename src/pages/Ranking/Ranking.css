@@ -74,10 +74,10 @@ body {
 .ranking-header {
   display: flex;
   flex-direction: column;
-  align-items: flex-start; /* alinha tudo à direita */
-  text-align: left;     /* alinha o texto à direita */
+  align-items: flex-start; 
+  text-align: left;     
   margin-bottom: 30px;
-  gap: 10px;              /* espaçamento entre os elementos */
+  gap: 10px;              
 }
 
 .ranking-header h1 {
@@ -94,15 +94,15 @@ body {
 }
 
 .btn-voltar {
-  background: #1a5382;
+   background: var(--primary-blue);
   color: white;
   border: none;
-  padding: 8x 24px;
+  padding: 6px 20px;
   border-radius: 20px;
   cursor: pointer;
-  font-size: 0.85rem;
-  margin-top: 10px;
-  display: inline-block;
+  font-size: 0.8rem;
+  text-align: left;
+  align-self: flex-start;
 
 }
 

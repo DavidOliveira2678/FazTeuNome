@@ -58,8 +58,8 @@
 
 .topbar-user {
   display: flex;
-  align-items: center;
-  gap: 10px;
+  align-items: flex-start;
+  gap: 40px;
 }
 
 /* LAYOUT GRID */
@@ -207,7 +207,9 @@
 
 /* SIDEBAR */
 .sidebar-column {
+  align-self: flex-start;
   margin-top: 0;
+  flex: 1;
 }
 
 .search-bar {

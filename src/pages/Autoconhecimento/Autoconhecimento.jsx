@@ -13,31 +13,6 @@ export default function Autoconhecimento({ nome }) {
     <>
       <div className="Autoconhecimento-container">
         <nav className="Autoconhecimento-topbar">
-<<<<<<< HEAD
-          <div className="topbar-logo">
-            🚀 <span>FAZ TEU NOME</span>
-          </div>
-          <div className="topbar-links">
-            <span style={{ cursor: "pointer" }} onClick={() => navigate("/dashboard")}>
-              Início
-            </span>
-
-            <span style={{ cursor: "pointer" }} onClick={() => navigate("/profile")}>
-              Meu Perfil
-            </span>
-
-            <span style={{ cursor: "pointer" }} onClick={() => navigate("/comunidade")}>
-              Comunidade
-            </span>
-
-            <span style={{ cursor: "pointer" }} onClick={() => navigate("/ranking")}>
-              Ranking
-            </span>
-          </div>
-
-
-          <div className="topbar-user">
-=======
           <div className="topbar-logo"onClick={() => navigate("/dashboard")}> 🚀 Faz Teu Nome</div>
           <div className="nav-links">
   <a onClick={() => navigate("/dashboard")}>Início</a>
@@ -47,7 +22,6 @@ export default function Autoconhecimento({ nome }) {
 </div>
           
            <div className="topbar-user"onClick={() => navigate("/profile")}style={{ marginLeft: "8px", cursor: "pointer" }}>
->>>>>>> f36b5ed420d234882cb438c3895c52e99342abe7
             👤
             <span
               style={{ marginLeft: "8px", cursor: "pointer" }}
@@ -91,18 +65,10 @@ export default function Autoconhecimento({ nome }) {
             <div className="content-row">
               <div className="content-left">
                 <h3>Quem você é?</h3>
-<<<<<<< HEAD
-                <p>
-                  O autoconhecimento é a base para todas as escolhas que você fará ao longo da sua vida pessoal e profissional.
-                  <br />
-                  Quando você conhece suas forças, seus valores e suas áreas de desenvolvimento, você consegue tomar decisões mais conscientes e alinhadas com quem você realmente é.
-                </p>
-=======
             <p>
               O autoconhecimento é a base para todas as escolhas que você fará ao longo da sua vida pessoal e profissional.
               Quando você conhece suas forças, seus valores e suas áreas de desenvolvimento, você consegue tomar decisões mais conscientes e alinhadas com quem você realmente é.
             </p><br></br>
->>>>>>> f36b5ed420d234882cb438c3895c52e99342abe7
                 <div className="reflexao-container">
                   <h3>Reflexão Guiada</h3>
                   <label>Quais são suas principais fortalezas?</label>
@@ -186,20 +152,6 @@ export default function Autoconhecimento({ nome }) {
                     <p>Respire fundo e pense em situações em que você se sentiu orgulhoso de si.</p>
                   </div>
 
-<<<<<<< HEAD
-                  <div className="dica-card">
-                    <p>
-                      Aquilo que você gostaria de mudar ou melhorar em si mesmo pode indicar áreas importantes para o seu desenvolvimento.
-                    </p>
-                  </div>
-
-                  <button
-                    className="btn-duvidas"
-                    onClick={() => navigate("/PaginaEmConstrucao")}
-                  >
-                    Dúvidas
-                  </button>
-=======
                 <div className="dica-card">
                   <p>
                     Aquilo que você gostaria de mudar ou melhorar em si mesmo pode indicar áreas importantes para o seu desenvolvimento.
@@ -210,7 +162,6 @@ export default function Autoconhecimento({ nome }) {
   style={{ cursor: "pointer" }} >
                 Dúvidas
               </button>
->>>>>>> f36b5ed420d234882cb438c3895c52e99342abe7
                 </div>
 
               </div>

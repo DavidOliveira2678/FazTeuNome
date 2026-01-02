@@ -1,26 +1,16 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-<<<<<<< HEAD:src/pages/Projetodevida/Projetodevida.jsx
 import "./Projetodevida.css";
-
-const ProjetoVida = () => {
-  const navigate = useNavigate();
-=======
-import "../styles1/Projetodevida.css";
 
 const ProjetoVida = () => {
 const navigate = useNavigate();
 
 
->>>>>>> f36b5ed420d234882cb438c3895c52e99342abe7:src/pages1/Projetodevida.jsx
   return (
     <div className="pagina-container">
       {/* Navbar Superior */}
       <nav className="navbar">
         <div className="logo">
-<<<<<<< HEAD:src/pages/Projetodevida/Projetodevida.jsx
-         🚀 <span>FAZ TEU NOME</span>
-=======
          <div className="topbar-logo" onClick={() => navigate("/dashboard")}> 🚀 Faz Teu Nome</div>
         </div>
          <div className="nav-links">
@@ -38,7 +28,6 @@ const navigate = useNavigate();
           >
             ⬅
           </span>
->>>>>>> f36b5ed420d234882cb438c3895c52e99342abe7:src/pages1/Projetodevida.jsx
         </div>
         <div className="topbar-links">
   <span style={{ cursor: "pointer" }} onClick={() => navigate("/dashboard")}>
@@ -89,14 +78,6 @@ const navigate = useNavigate();
             <small>Concluído</small>
           </div>
         </section>
-<<<<<<< HEAD:src/pages/Projetodevida/Projetodevida.jsx
-<button
-  className="btn-voltar"
-  onClick={() => navigate("/dashboard")}
->
-  Voltar
-</button>
-=======
 
           <button
           type="button"
@@ -104,7 +85,6 @@ const navigate = useNavigate();
           onClick={() => navigate("/dashboard")}
         >Voltar
         </button>
->>>>>>> f36b5ed420d234882cb438c3895c52e99342abe7:src/pages1/Projetodevida.jsx
 
         <main className="main-layout">
           {/* Coluna de Lições */}
@@ -122,17 +102,8 @@ const navigate = useNavigate();
               </div>
             </div>
 
-<<<<<<< HEAD:src/pages/Projetodevida/Projetodevida.jsx
-          <div
-  className="card-licao"
-  onClick={() => navigate("/escolhatema")}
-  style={{ cursor: "pointer" }}
->
-
-=======
             <div className="card-licao"onClick={() => navigate("/escolhatema")}
               style={{ cursor: "pointer" }}>
->>>>>>> f36b5ed420d234882cb438c3895c52e99342abe7:src/pages1/Projetodevida.jsx
               <div className="circle-indicator-orange"></div>
               <div className="texto">
                 <h3>Escolha seu tema</h3>
@@ -164,21 +135,6 @@ const navigate = useNavigate();
               <h3>Teste Vocacional</h3>
               <p className="desc">Diagnóstico inicial: interesses, habilidades, estilo de aprendizagem. Feedback personalizado com pontos fortes e áreas de desenvolvimento.</p>
               
-<<<<<<< HEAD:src/pages/Projetodevida/Projetodevida.jsx
-              <button className="btn-comecar">Começar</button>
-              <button
-  className="btn-duvidas-outlined"
-  onClick={() => navigate("/PaginaEmConstrucao")}
->
-  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-    <circle cx="12" cy="12" r="10"/>
-    <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/>
-    <line x1="12" y1="17" x2="12.01" y2="17"/>
-  </svg>
-  Dúvidas
-</button>
-
-=======
               <button className="btn-comecar"onClick={() => navigate("/em-construcao")}
               style={{ cursor: "pointer" }}>Começar</button>
               <button className="btn-duvidas-outlined"onClick={() => navigate("/em-construcao")}
@@ -186,7 +142,6 @@ const navigate = useNavigate();
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
                 Dúvidas
               </button>
->>>>>>> f36b5ed420d234882cb438c3895c52e99342abe7:src/pages1/Projetodevida.jsx
             </div>
           </aside>
         </main>

@@ -1,10 +1,6 @@
 import React from "react";
-<<<<<<< HEAD:src/pages/Oportunidades/Oportunidades.jsx
-import "./Oportunidades.css";
-=======
 import { useNavigate } from "react-router-dom";
-import "../styles1/Oportunidades.css";
->>>>>>> f36b5ed420d234882cb438c3895c52e99342abe7:src/pages1/Oportunidades.jsx
+import "./Oportunidades.css";
 
 const Oportunidades = () => {
   const navigate = useNavigate();

@@ -1,9 +1,16 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+<<<<<<< HEAD:src/pages/Comunidade/Comunidade.jsx
 import "./Comunidade.css";
 
 const Comunidade = () => {
   const navigate = useNavigate();
+=======
+import "../styles1/Comunidade.css";
+
+const Comunidade = () => {
+    const navigate = useNavigate();
+>>>>>>> f36b5ed420d234882cb438c3895c52e99342abe7:src/pages1/Comunidade.jsx
   const posts = [
     {
       id: 1,
@@ -45,8 +52,9 @@ const Comunidade = () => {
       {/* Navbar */}
       <nav className="navbar">
         <div className="logo">
-          <span className="rocket-icon">🚀</span> Faz Teu Nome
+          <div className="topbar-logo" onClick={() => navigate("/dashboard")}> 🚀 Faz Teu Nome</div>
         </div>
+<<<<<<< HEAD:src/pages/Comunidade/Comunidade.jsx
         <div className="topbar-links">
           <span onClick={() => navigate("/dashboard")}>Início</span>
           <span onClick={() => navigate("/perfil")}>Meu Perfil</span>
@@ -65,6 +73,21 @@ const Comunidade = () => {
             style={{ marginLeft: "8px" }}
             title="Sair"
             onClick={() => navigate("/login")}
+=======
+         <div className="nav-links">
+          <a onClick={() => navigate("/dashboard")}>Início</a>
+          <a onClick={() => navigate("/profile")}>Meu Perfil</a>
+          <a onClick={() => navigate("/comunidade")}>Comunidade</a>
+          <a onClick={() => navigate("/ranking")}>Ranking</a>
+        </div>
+
+         <div className="topbar-user" onClick={() => navigate("/profile")} style={{ marginLeft: "8px", cursor: "pointer" }}>
+          👤
+          <span
+            style={{ marginLeft: "8px", cursor: "pointer" }}
+            title="Sair"
+            onClick={() => (window.location.href = "/login")}
+>>>>>>> f36b5ed420d234882cb438c3895c52e99342abe7:src/pages1/Comunidade.jsx
           >
             ⬅
           </span>
@@ -74,6 +97,7 @@ const Comunidade = () => {
       <div className="container main-layout">
         {/* Coluna Principal (Feed) */}
         <main className="feed-column">
+<<<<<<< HEAD:src/pages/Comunidade/Comunidade.jsx
   <header className="comunidade-header">
     <h1>Comunidade</h1>
     <p>Conecte-se com colegas, compartilhe experiências e inspire outros</p>
@@ -87,6 +111,13 @@ const Comunidade = () => {
     </button>
   </div>
 
+=======
+          <header className="comunidade-header">
+            <h1>Comunidade</h1>
+            <p>Conecte-se com colegas, compartilhe experiências e inspire outros</p>
+            <button className="btn-voltar"onClick={() => navigate("/dashboard")}>Voltar</button>
+          </header>
+>>>>>>> f36b5ed420d234882cb438c3895c52e99342abe7:src/pages1/Comunidade.jsx
 
           {/* Área de Novo Post */}
           <div className="novo-post-card">
@@ -158,7 +189,11 @@ const Comunidade = () => {
       </div>
 
       {/* Footer */}
-      <footer className="footer">
+      <footer
+        className="footer"
+        onClick={() => navigate("/em-construcao")}
+        style={{ cursor: "pointer" }}
+      >
         <div className="footer-grid">
           <div>
             <h4>Faz Teu Nome</h4>
@@ -168,19 +203,11 @@ const Comunidade = () => {
           </div>
           <div>
             <h4>Plataforma</h4>
-            <ul>
-              <li>Trilha de aprendizagem</li>
-              <li>Comunidade</li>
-              <li>Hackaton</li>
-            </ul>
+            <ul><li>Trilha de aprendizagem</li><li>Comunidade</li><li>Hackaton</li></ul>
           </div>
           <div>
             <h4>Recursos</h4>
-            <ul>
-              <li>Guia do Professor</li>
-              <li>FAQ</li>
-              <li>Contato</li>
-            </ul>
+            <ul><li>Guia do Professor</li><li>FAQ</li><li>Contato</li></ul>
           </div>
           <div>
             <h4>Igarassu</h4>
@@ -190,11 +217,11 @@ const Comunidade = () => {
           </div>
         </div>
         <div className="footer-bottom">
-          <p>© 2025 Faz Teu Nome. Todos os direitos reservados.</p>
+          <span>© 2025 Faz Teu Nome. Todos os direitos reservados.</span>
           <div className="footer-links">
-            <span>Privacidade</span>
-            <span>Termos</span>
-            <span>Acessibilidade</span>
+            <a href="#">Privacidade</a>
+            <a href="#">Termos</a>
+            <a href="#">Acessibilidade</a>
           </div>
         </div>
       </footer>

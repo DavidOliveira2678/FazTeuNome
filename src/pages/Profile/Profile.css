@@ -8,6 +8,7 @@
   --bg-light: #f8f9fa;
 }
 
+<<<<<<< HEAD:src/pages/Profile/Profile.css
 html, body {
   height: 100%;
 }
@@ -15,6 +16,13 @@ html, body {
 body {
   overflow-x: hidden;
   overflow-y: auto;
+=======
+* {
+  margin: 0; 
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+>>>>>>> f36b5ed420d234882cb438c3895c52e99342abe7:src/styles1/Profile.css
 }
 
 .profile-page {
@@ -121,6 +129,12 @@ body {
   line-height: 1.5;
   box-shadow: 0 0 10px rgba(0,0,0,0.05);
 }
+
+.profile-card {
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
 
 .card-header {
   display: flex;
@@ -291,4 +305,56 @@ body {
 @media (max-width: 768px) {
   .profile-grid { grid-template-columns: 1fr; }
   .footer-grid { grid-template-columns: 1fr 1fr; }
+}
+
+
+.badge-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+
+  padding: 14px;
+  border-radius: 14px;
+  cursor: pointer;
+
+  transition: 
+    transform 0.3s ease,
+    background-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+.badge-item:hover {
+  transform: scale(1.08);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+}
+
+.orange-bg {
+  background-color: #ff8c42;
+}
+
+.orange-bg:hover {
+  background-color: #ff6a00;
+}
+
+.yellow-bg {
+  background-color: #ffd166;
+}
+
+.yellow-bg:hover {
+  background-color: #ffbe0b;
+}
+.gray-bg {
+  background-color: #d1d1d1;
+}
+
+.gray-bg:hover {
+  background-color: #b5b5b5;
+}
+
+
+.user-details h1 {
+  color: #ffffff;
+  font-weight: 800;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
 }

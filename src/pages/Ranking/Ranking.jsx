@@ -1,5 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+<<<<<<< HEAD:src/pages/Ranking/Ranking.jsx
 import "./Ranking.css";
 
 const Ranking = () => {
@@ -7,6 +8,13 @@ const Ranking = () => {
   const handleVoltar = () => {
   navigate("/dashboard");
 };
+=======
+
+import "../styles1/Ranking.css";
+
+const Ranking = () => {
+    const navigate = useNavigate();
+>>>>>>> f36b5ed420d234882cb438c3895c52e99342abe7:src/pages1/Ranking.jsx
   const rankingData = [
     { pos: "1º", nome: "Pedro Oliveira", pontos: "8.540", seq: 15, conquistas: 8, medal: "🥇" },
     { pos: "2º", nome: "Marina Silva", pontos: "7.920", seq: 12, conquistas: 7, medal: "🥈" },
@@ -21,8 +29,9 @@ const Ranking = () => {
       {/* Navbar */}
       <nav className="navbar">
         <div className="logo">
-          <span className="rocket-icon">🚀</span> Faz Teu Nome
+          <div className="topbar-logo" onClick={() => navigate("/dashboard")}> 🚀 Faz Teu Nome</div>
         </div>
+<<<<<<< HEAD:src/pages/Ranking/Ranking.jsx
         <div className="topbar-links">
   <span style={{ cursor: "pointer" }} onClick={() => navigate("/dashboard")}>
     Início
@@ -53,22 +62,45 @@ const Ranking = () => {
   </span>
 </div>
 
+=======
+        <div className="nav-links">
+          <a onClick={() => navigate("/dashboard")}>Início</a>
+          <a onClick={() => navigate("/profile")}>Meu Perfil</a>
+          <a onClick={() => navigate("/comunidade")}>Comunidade</a>
+          <a onClick={() => navigate("/ranking")}>Ranking</a>
+        </div>
+
+       <div className="topbar-user" onClick={() => navigate("/profile")} style={{ marginLeft: "8px", cursor: "pointer" }}>
+          👤
+          <span
+            style={{ marginLeft: "8px", cursor: "pointer" }}
+            title="Sair"
+            onClick={() => (window.location.href = "/login")}
+          >
+            ⬅
+          </span>
+        </div>
+>>>>>>> f36b5ed420d234882cb438c3895c52e99342abe7:src/pages1/Ranking.jsx
       </nav>
 
       <div className="container">
         <header className="ranking-header">
           <h1><span>🏆</span> Ranking de Protagonismo</h1>
           <p>Veja como você está se comparando aos seus colegas</p>
+<<<<<<< HEAD:src/pages/Ranking/Ranking.jsx
          <button className="btn-voltar" onClick={handleVoltar}>
   Voltar
 </button>
 
+=======
+>>>>>>> f36b5ed420d234882cb438c3895c52e99342abe7:src/pages1/Ranking.jsx
         </header>
-
-        <div className="filters">
-          <button className="filter-btn active">Esta Semana</button>
-          <button className="filter-btn">Este Mês</button>
-        </div>
+<button
+          type="button"
+          className="btn-voltar"
+          onClick={() => navigate("/dashboard")}
+        >Voltar
+        </button>
 
         <div className="main-content">
           <div className="left-side">
@@ -138,7 +170,11 @@ const Ranking = () => {
       </div>
 
       {/* Footer */}
-      <footer className="footer">
+         <footer
+        className="footer"
+        onClick={() => navigate("/em-construcao")}
+        style={{ cursor: "pointer" }}
+      >
         <div className="footer-grid">
           <div>
             <h4>Faz Teu Nome</h4>
@@ -146,27 +182,19 @@ const Ranking = () => {
           </div>
           <div>
             <h4>Plataforma</h4>
-            <ul>
-              <li>Trilha de aprendizagem</li>
-              <li>Comunidade</li>
-              <li>Hackaton</li>
-            </ul>
+            <ul><li>Trilha de aprendizagem</li><li>Comunidade</li><li>Hackaton</li></ul>
           </div>
           <div>
             <h4>Recursos</h4>
-            <ul>
-              <li>Guia do Professor</li>
-              <li>FAQ</li>
-              <li>Contato</li>
-            </ul>
+            <ul><li>Guia do Professor</li><li>FAQ</li><li>Contato</li></ul>
           </div>
           <div>
             <h4>Igarassu</h4>
-            <p>Desenvolvimento com escuta ativa e protagonismo juvenil para o município de igarassu - PE.</p>
+            <p>Desenvolvimento com escuta ativa e protagonismo juvenil para o município de Igarassu - PE.</p>
           </div>
         </div>
         <div className="footer-bottom">
-          <p>© 2025 Faz Teu Nome. Todos os direitos reservados.</p>
+          <span>© 2025 Faz Teu Nome. Todos os direitos reservados.</span>
           <div className="footer-links">
             <a href="#">Privacidade</a>
             <a href="#">Termos</a>

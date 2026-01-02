@@ -13,6 +13,7 @@ export default function Autoconhecimento({ nome }) {
     <>
       <div className="Autoconhecimento-container">
         <nav className="Autoconhecimento-topbar">
+<<<<<<< HEAD
           <div className="topbar-logo">
             🚀 <span>FAZ TEU NOME</span>
           </div>
@@ -36,13 +37,24 @@ export default function Autoconhecimento({ nome }) {
 
 
           <div className="topbar-user">
+=======
+          <div className="topbar-logo"onClick={() => navigate("/dashboard")}> 🚀 Faz Teu Nome</div>
+          <div className="nav-links">
+  <a onClick={() => navigate("/dashboard")}>Início</a>
+  <a onClick={() => navigate("/profile")}>Meu Perfil</a>
+  <a onClick={() => navigate("/comunidade")}>Comunidade</a>
+  <a onClick={() => navigate("/ranking")}>Ranking</a>
+</div>
+          
+           <div className="topbar-user"onClick={() => navigate("/profile")}style={{ marginLeft: "8px", cursor: "pointer" }}>
+>>>>>>> f36b5ed420d234882cb438c3895c52e99342abe7
             👤
             <span
               style={{ marginLeft: "8px", cursor: "pointer" }}
               title="Sair"
               onClick={() => (window.location.href = "/login")}
             >
-              ⬅
+             ⬅ 
             </span>
           </div>
         </nav>
@@ -71,7 +83,7 @@ export default function Autoconhecimento({ nome }) {
 
         <div className="main-row">
           <div className="learning-path">
-            <button className="btn-voltar" onClick={handleVoltar}>
+            <button className="btn-voltar" onClick={() => navigate("/softskills")}>
               Voltar
             </button>
 
@@ -79,11 +91,18 @@ export default function Autoconhecimento({ nome }) {
             <div className="content-row">
               <div className="content-left">
                 <h3>Quem você é?</h3>
+<<<<<<< HEAD
                 <p>
                   O autoconhecimento é a base para todas as escolhas que você fará ao longo da sua vida pessoal e profissional.
                   <br />
                   Quando você conhece suas forças, seus valores e suas áreas de desenvolvimento, você consegue tomar decisões mais conscientes e alinhadas com quem você realmente é.
                 </p>
+=======
+            <p>
+              O autoconhecimento é a base para todas as escolhas que você fará ao longo da sua vida pessoal e profissional.
+              Quando você conhece suas forças, seus valores e suas áreas de desenvolvimento, você consegue tomar decisões mais conscientes e alinhadas com quem você realmente é.
+            </p><br></br>
+>>>>>>> f36b5ed420d234882cb438c3895c52e99342abe7
                 <div className="reflexao-container">
                   <h3>Reflexão Guiada</h3>
                   <label>Quais são suas principais fortalezas?</label>
@@ -156,7 +175,8 @@ export default function Autoconhecimento({ nome }) {
                   </div>
                 </div>
 
-                <button className="btn-salvar">Salvar e Continuar</button>
+                <button className="btn-salvar"onClick={() => navigate("/softskills")}
+  style={{ cursor: "pointer" }}>Salvar e Continuar</button>
               </div>
 
               <div className="content-right">
@@ -166,6 +186,7 @@ export default function Autoconhecimento({ nome }) {
                     <p>Respire fundo e pense em situações em que você se sentiu orgulhoso de si.</p>
                   </div>
 
+<<<<<<< HEAD
                   <div className="dica-card">
                     <p>
                       Aquilo que você gostaria de mudar ou melhorar em si mesmo pode indicar áreas importantes para o seu desenvolvimento.
@@ -178,6 +199,18 @@ export default function Autoconhecimento({ nome }) {
                   >
                     Dúvidas
                   </button>
+=======
+                <div className="dica-card">
+                  <p>
+                    Aquilo que você gostaria de mudar ou melhorar em si mesmo pode indicar áreas importantes para o seu desenvolvimento.
+                  </p>
+                </div>
+                 
+               <button className="btn-duvidas"onClick={() => navigate("/em-construcao")}
+  style={{ cursor: "pointer" }} >
+                Dúvidas
+              </button>
+>>>>>>> f36b5ed420d234882cb438c3895c52e99342abe7
                 </div>
 
               </div>
@@ -186,40 +219,36 @@ export default function Autoconhecimento({ nome }) {
         </div>
       </div>
 
-      <footer className="Autoconhecimento-footer">
-        <div className="footer-columns">
-          <div className="footer-col">
+      {/* Footer */}
+      <footer
+  className="footer"
+  onClick={() => navigate("/em-construcao")}
+  style={{ cursor: "pointer" }}
+>
+        <div className="footer-grid">
+          <div>
             <h4>Faz Teu Nome</h4>
             <p>Plataforma pedagógica para protagonismo juvenil e construção de projeto de vida.</p>
           </div>
-          <div className="footer-col">
+          <div>
             <h4>Plataforma</h4>
-            <ul>
-              <li>Trilha de Aprendizagem</li>
-              <li>Comunidade</li>
-              <li>Hackaton</li>
-            </ul>
+            <ul><li>Trilha de aprendizagem</li><li>Comunidade</li><li>Hackaton</li></ul>
           </div>
-          <div className="footer-col">
+          <div>
             <h4>Recursos</h4>
-            <ul>
-              <li>Guia do Professor</li>
-              <li>FAQ</li>
-              <li>Contato</li>
-            </ul>
+            <ul><li>Guia do Professor</li><li>FAQ</li><li>Contato</li></ul>
           </div>
-          <div className="footer-col">
+          <div>
             <h4>Igarassu</h4>
-            <p>Desenvolvimento com escuta ativa e protagonismo juvenil para o município de Igarassu-PE.</p>
+            <p>Desenvolvimento com escuta ativa e protagonismo juvenil para o município de Igarassu - PE.</p>
           </div>
         </div>
-
         <div className="footer-bottom">
-          <span>© {new Date().getFullYear()} Faz Teu Nome — Todos os direitos reservados.</span>
+          <span>© 2025 Faz Teu Nome. Todos os direitos reservados.</span>
           <div className="footer-links">
-            <span>Privacidade</span>
-            <span>Termos</span>
-            <span>Suporte</span>
+            <a href="#">Privacidade</a>
+            <a href="#">Termos</a>
+            <a href="#">Acessibilidade</a>
           </div>
         </div>
       </footer>

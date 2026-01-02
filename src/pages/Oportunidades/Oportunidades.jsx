@@ -1,7 +1,13 @@
 import React from "react";
+<<<<<<< HEAD:src/pages/Oportunidades/Oportunidades.jsx
 import "./Oportunidades.css";
+=======
+import { useNavigate } from "react-router-dom";
+import "../styles1/Oportunidades.css";
+>>>>>>> f36b5ed420d234882cb438c3895c52e99342abe7:src/pages1/Oportunidades.jsx
 
 const Oportunidades = () => {
+  const navigate = useNavigate();
   const cards = [
     { title: "Jovem Aprendiz em Tecnologia", company: "TechIgarassu", tags: ["Jovem Aprendiz", "Presencial"], loc: "Igarassu, PE" },
     { title: "Jovem Aprendiz Logística", company: "Prefeitura de Igarassu", tags: ["Jovem Aprendiz", "Presencial"], loc: "Igarassu, PE" },
@@ -16,17 +22,24 @@ const Oportunidades = () => {
       {/* Navbar */}
       <nav className="navbar">
         <div className="logo">
-          <span className="rocket-icon">🚀</span> Faz Teu Nome
+          <div className="topbar-logo" onClick={() => navigate("/dashboard")}> 🚀 Faz Teu Nome</div>
         </div>
-        <div className="nav-links">
-          <a href="#">Início</a>
-          <a href="#">Meu Perfil</a>
-          <a href="#">Comunidade</a>
-          <a href="#">Ranking</a>
+       <div className="nav-links">
+          <a onClick={() => navigate("/dashboard")}>Início</a>
+          <a onClick={() => navigate("/profile")}>Meu Perfil</a>
+          <a onClick={() => navigate("/comunidade")}>Comunidade</a>
+          <a onClick={() => navigate("/ranking")}>Ranking</a>
+
         </div>
-        <div className="user-nav">
-          <div className="avatar">👤</div>
-          <span className="logout">🚪</span>
+       <div className="topbar-user" onClick={() => navigate("/profile")} style={{ marginLeft: "8px", cursor: "pointer" }}>
+          👤
+          <span
+            style={{ marginLeft: "8px", cursor: "pointer" }}
+            title="Sair"
+          onClick={() => navigate("/login")}
+          >
+            ⬅
+          </span>
         </div>
       </nav>
 
@@ -50,7 +63,12 @@ const Oportunidades = () => {
           </div>
         </div>
 
-        <button className="btn-voltar">Voltar</button>
+       <button
+          type="button"
+          className="btn-voltar"
+          onClick={() => navigate("/projetodevida")}
+        >Voltar
+        </button> 
 
         {/* Grid de Cards */}
         <div className="opportunities-grid">
@@ -72,7 +90,11 @@ const Oportunidades = () => {
       </main>
 
       {/* Footer Padrão */}
-      <footer className="footer">
+         <footer
+        className="footer"
+        onClick={() => navigate("/em-construcao")}
+        style={{ cursor: "pointer" }}
+      >
         <div className="footer-grid">
           <div>
             <h4>Faz Teu Nome</h4>
@@ -80,31 +102,23 @@ const Oportunidades = () => {
           </div>
           <div>
             <h4>Plataforma</h4>
-            <ul>
-              <li>Trilha de aprendizagem</li>
-              <li>Comunidade</li>
-              <li>Hackaton</li>
-            </ul>
+            <ul><li>Trilha de aprendizagem</li><li>Comunidade</li><li>Hackaton</li></ul>
           </div>
           <div>
             <h4>Recursos</h4>
-            <ul>
-              <li>Guia do Professor</li>
-              <li>FAQ</li>
-              <li>Contato</li>
-            </ul>
+            <ul><li>Guia do Professor</li><li>FAQ</li><li>Contato</li></ul>
           </div>
           <div>
             <h4>Igarassu</h4>
-            <p>Desenvolvimento com escuta ativa e protagonismo juvenil para o município de igarassu - PE.</p>
+            <p>Desenvolvimento com escuta ativa e protagonismo juvenil para o município de Igarassu - PE.</p>
           </div>
         </div>
         <div className="footer-bottom">
-          <p>© 2025 Faz Teu Nome. Todos os direitos reservados.</p>
+          <span>© 2025 Faz Teu Nome. Todos os direitos reservados.</span>
           <div className="footer-links">
-            <span>Privacidade</span>
-            <span>Termos</span>
-            <span>Acessibilidade</span>
+            <a href="#">Privacidade</a>
+            <a href="#">Termos</a>
+            <a href="#">Acessibilidade</a>
           </div>
         </div>
       </footer>

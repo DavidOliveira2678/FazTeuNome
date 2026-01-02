@@ -64,8 +64,10 @@
 }
 
 .header-left h2 {
-  margin: 4px 0 6px;
-  font-size: 26px;
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: #fcfcfc; 
 }
 
 .header-left p {

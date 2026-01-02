@@ -9,6 +9,7 @@ export default function Dashboard({ nome }) {
     <>
       <div className="dashboard-container">
         <nav className="dashboard-topbar">
+<<<<<<< HEAD
          <div className="topbar-logo">
   🚀 <span>FAZ TEU NOME</span>
 </div>
@@ -41,8 +42,19 @@ export default function Dashboard({ nome }) {
   </span>
 </div>
 
+=======
+          <div className="topbar-logo" onClick={() => navigate("/dashboard")}> 🚀 Faz Teu Nome</div>
 
-          <div className="topbar-user">
+          <div className="nav-links">
+            <a onClick={() => navigate("/dashboard")}>Início</a>
+            <a onClick={() => navigate("/profile")}>Meu Perfil</a>
+            <a onClick={() => navigate("/comunidade")}>Comunidade</a>
+            <a onClick={() => navigate("/ranking")}>Ranking</a>
+          </div>
+>>>>>>> f36b5ed420d234882cb438c3895c52e99342abe7
+
+
+          <div className="topbar-user" onClick={() => navigate("/profile")} style={{ marginLeft: "8px", cursor: "pointer" }}>
             👤
             <span
               style={{ marginLeft: "8px", cursor: "pointer" }}
@@ -55,12 +67,13 @@ export default function Dashboard({ nome }) {
         </nav>
 
         <div className="dashboard-header">
-          <h2>Bem-vindo à sua jornada</h2>
+          <h2>Bem-vindo à sua jornada!</h2>
           <p>
             Chegou a hora de descobrir talentos, desenvolver habilidades que fazem
-            a diferença e construir um futuro com impacto. O futuro começa agora,
-            por isso Faz teu Nome!
-          </p>
+            a diferença e construir um futuro com impacto. </p>
+          <p> O futuro começa agora,
+            por isso Faz teu Nome!</p><br></br>
+
 
           <div className="progress-info">
             <div className="progress-box adjusted">
@@ -86,14 +99,18 @@ export default function Dashboard({ nome }) {
 
             <div
               className="path-card"
+<<<<<<< HEAD
               onClick={() => navigate("/SoftSkills")}
+=======
+              onClick={() => navigate("/softskills")}
+>>>>>>> f36b5ed420d234882cb438c3895c52e99342abe7
               style={{ cursor: "pointer" }}
             >
               <span className="icon">🧠</span>
               <div className="path-content">
                 <h4>Soft Skills</h4>
                 <p>
-                  Desenvolver inteligência emocional, liderança e empatia.
+                  Desenvolva inteligência emocional, liderança e empatia.
                 </p>
                 <div
                   className="progress-bar green"
@@ -104,13 +121,17 @@ export default function Dashboard({ nome }) {
 
             <div
               className="path-card"
+<<<<<<< HEAD
               onClick={() => navigate("/HardSkills")}
+=======
+              onClick={() => navigate("/hardskills")}
+>>>>>>> f36b5ed420d234882cb438c3895c52e99342abe7
               style={{ cursor: "pointer" }}
             >
               <span className="icon">⚡</span>
               <div className="path-content">
                 <h4>Hard Skills</h4>
-                <p>Dominar inglês profissional e ferramentas digitais.</p>
+                <p>Construa habilidades aplicáveis ao mercado, aprendendo ferramentas, processos e boas práticas usadas no dia a dia profissional. </p>
                 <div
                   className="progress-bar red"
                   style={{ width: "50%" }}
@@ -118,12 +139,19 @@ export default function Dashboard({ nome }) {
               </div>
             </div>
 
+<<<<<<< HEAD
             <div
               className="path-card"
               onClick={() => navigate("/projetodevida")}
               style={{ cursor: "pointer" }}
             >
 
+=======
+            <div className="path-card"
+              onClick={() => navigate("/projetodevida")}
+              style={{ cursor: "pointer" }}
+            >
+>>>>>>> f36b5ed420d234882cb438c3895c52e99342abe7
               <div className="path-icon">
                 <span className="dot start"></span>
                 <span className="line"></span>
@@ -202,7 +230,11 @@ export default function Dashboard({ nome }) {
         </div>
       </div>
 
-      <footer className="dashboard-footer">
+      <footer
+        className="footer"
+        onClick={() => navigate("/em-construcao")}
+        style={{ cursor: "pointer" }}
+      >
         <div className="footer-columns">
           <div className="footer-col">
             <h4>Faz Teu Nome</h4>

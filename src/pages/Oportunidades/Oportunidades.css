@@ -74,12 +74,17 @@
   font-size: 3rem;
   font-weight: 800;
   letter-spacing: 1px;
+  color: #ffffff;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+
 }
 
 .hero-banner h2 {
   font-size: 2.2rem;
   font-weight: 600;
   margin-bottom: 15px;
+   color: #ffffff;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
 }
 
 .hero-banner p {
@@ -139,15 +144,17 @@
 }
 
 .opportunity-card {
-  border: 1px solid var(--border-color);
-  border-radius: 15px;
-  padding: 25px;
-  position: relative;
-  transition: transform 0.2s;
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 16px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+  cursor: pointer;
 }
 
 .opportunity-card:hover {
-  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  transform: scale(1.05);
+  background-color: #b7c8f1;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
 }
 
 .card-badge {

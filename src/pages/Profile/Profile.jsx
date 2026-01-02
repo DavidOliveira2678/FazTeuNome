@@ -1,12 +1,49 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+<<<<<<< HEAD:src/pages/Profile/Profile.jsx
 import "./Profile.css";
 
 const Profile = () => {
   const navigate = useNavigate();
+=======
+import "../styles1/Profile.css";
+
+const Profile = () => {
+  const navigate = useNavigate();
+
+  const handleBack = () => {
+  navigate(-1);
+}; 
+
+>>>>>>> f36b5ed420d234882cb438c3895c52e99342abe7:src/pages1/Profile.jsx
   return (
     <div className="profile-page">
-      <div className="container">
+      {/* Navbar */}
+      <nav className="navbar">
+        <div className="logo">
+        
+          <div className="topbar-logo" onClick={() => navigate("/dashboard")}> 🚀 Faz Teu Nome</div>
+        </div>
+
+        <div className="nav-links">
+          <a onClick={() => navigate("/dashboard")}>Início</a>
+          <a onClick={() => navigate("/profile")}>Meu Perfil</a>
+          <a onClick={() => navigate("/comunidade")}>Comunidade</a>
+          <a onClick={() => navigate("/ranking")}>Ranking</a>
+        </div>
+
+        <div className="topbar-user" onClick={() => navigate("/profile")} style={{ marginLeft: "8px", cursor: "pointer" }}>
+          👤
+          <span
+            style={{ marginLeft: "8px", cursor: "pointer" }}
+            title="Sair"
+            onClick={() => (window.location.href = "/login")}
+          >
+            ⬅
+          </span>
+        </div>
+      </nav>
+ <div className="container">
         {/* Banner do Usuário */}
         <header className="profile-banner">
           <div className="banner-info">
@@ -20,6 +57,7 @@ const Profile = () => {
             </div>
           </div>
           <div className="banner-actions">
+<<<<<<< HEAD:src/pages/Profile/Profile.jsx
            <button
   className="btn-white"
   onClick={() => navigate("/editar-perfil")}
@@ -28,8 +66,17 @@ const Profile = () => {
 </button>
 
 
+=======
+            <button className="btn-white">Editar</button>
+>>>>>>> f36b5ed420d234882cb438c3895c52e99342abe7:src/pages1/Profile.jsx
           </div>
         </header>
+<button
+          type="button"
+          className="btn-voltar"
+          onClick={handleBack}
+        >Voltar
+        </button>
 
         <div className="profile-grid">
           {/* Coluna Principal */}
@@ -84,6 +131,7 @@ const Profile = () => {
               </div>
             </section>
             
+<<<<<<< HEAD:src/pages/Profile/Profile.jsx
             <button
   className="btn-voltar"
   onClick={() => navigate("/dashboard")}
@@ -91,6 +139,9 @@ const Profile = () => {
   Voltar
 </button>
 
+=======
+            
+>>>>>>> f36b5ed420d234882cb438c3895c52e99342abe7:src/pages1/Profile.jsx
           </main>
 
           {/* Sidebar */}
@@ -139,19 +190,19 @@ const Profile = () => {
               <div className="green-progress">
                 <span>Em Progresso <strong>30%</strong></span>
               </div>
-              <button className="btn-green">Ver Projeto</button>
+              <button className="btn-green" onClick={() => navigate("/projetodevida")}>Ver Projeto</button>
             </div>
 
-            <button className="btn-export">
-               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" style={{marginRight: '8px'}}><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
-               Exportar Perfil
-            </button>
           </aside>
         </div>
       </div>
 
       {/* Footer */}
-      <footer className="footer">
+    <footer
+        className="footer"
+        onClick={() => navigate("/em-construcao")}
+        style={{ cursor: "pointer" }}
+      >
         <div className="footer-grid">
           <div>
             <h4>Faz Teu Nome</h4>
@@ -167,7 +218,7 @@ const Profile = () => {
           </div>
           <div>
             <h4>Igarassu</h4>
-            <p>Desenvolvimento com escuta ativa e protagonismo juvenil para o município de igarassu - PE.</p>
+            <p>Desenvolvimento com escuta ativa e protagonismo juvenil para o município de Igarassu - PE.</p>
           </div>
         </div>
         <div className="footer-bottom">

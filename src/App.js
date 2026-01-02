@@ -14,6 +14,7 @@ import RecuperarSenha from "./pages/Recuperarsenha/Recuperarsenha";
 import Autoconhecimento from "./pages/Autoconhecimento/Autoconhecimento";
 import VocabulariodeNegocios from "./pages/VocabulariodeNegocios/VocabulariodeNegocios";
 
+<<<<<<< HEAD
 // NOVAS TELAS
 import Projetodevida from "./pages/Projetodevida/Projetodevida";
 import Comunidade from "./pages/Comunidade/Comunidade";
@@ -26,6 +27,20 @@ import EscolhaTema from "./pages/EscolhaTema/EscolhaTema";
 import Oportunidades from "./pages/Oportunidades/Oportunidades";
 import PaginaEmConstrucao from "./pages/PaginaEmConstrucao/PaginaEmConstrucao";
 import Editar from "./pages/Editar/Editar";
+=======
+// IMPORT DAS PÁGINAS DE SKILLS
+import SoftSkills from "./pages1/SoftSkills";
+import HardSkills from "./pages1/HardSkills";
+import Projetodevida from "./pages1/Projetodevida";
+import PaginaEmConstrucao from "./pages/FazTeuNome/PaginaEmConstrucao";
+import Profile from "./pages1/Profile";
+import Comunidade from "./pages1/Comunidade";
+import Ranking from "./pages1/Ranking";
+import EscolhaTema from "./pages1/EscolhaTema";
+import Oportunidades from "./pages1/Oportunidades";
+
+
+>>>>>>> f36b5ed420d234882cb438c3895c52e99342abe7
 
 function App() {
   const usuarioLogado = true;
@@ -47,11 +62,29 @@ function App() {
         <Route
           path="/autoconhecimento"
           element={usuarioLogado ? <Autoconhecimento /> : <Navigate to="/login" />}
+<<<<<<< HEAD
         />
 
         <Route
           path="/vocabulariode-negocios"
           element={usuarioLogado ? <VocabulariodeNegocios /> : <Navigate to="/login" />}
+=======
+        />
+
+        <Route
+          path="/vocabulario-negocios"
+          element={usuarioLogado ? <VocabulariodeNegocios /> : <Navigate to="/login" />}
+        />
+
+        <Route
+          path="/softskills"
+          element={usuarioLogado ? <SoftSkills /> : <Navigate to="/login" />}
+        />
+
+        <Route
+          path="/hardskills"
+          element={usuarioLogado ? <HardSkills /> : <Navigate to="/login" />}
+>>>>>>> f36b5ed420d234882cb438c3895c52e99342abe7
         />
 
         <Route
@@ -60,6 +93,19 @@ function App() {
         />
 
         <Route
+<<<<<<< HEAD
+=======
+          path="/em-construcao"
+          element={usuarioLogado ? <PaginaEmConstrucao /> : <Navigate to="/login" />}
+        />
+
+        <Route
+          path="/profile"
+          element={usuarioLogado ? <Profile /> : <Navigate to="/login" />}
+        />
+
+        <Route
+>>>>>>> f36b5ed420d234882cb438c3895c52e99342abe7
           path="/comunidade"
           element={usuarioLogado ? <Comunidade /> : <Navigate to="/login" />}
         />
@@ -70,6 +116,7 @@ function App() {
         />
 
         <Route
+<<<<<<< HEAD
           path="/profile"
           element={usuarioLogado ? <Profile /> : <Navigate to="/login" />}
         />
@@ -94,15 +141,22 @@ function App() {
         />
 
         <Route
+=======
+>>>>>>> f36b5ed420d234882cb438c3895c52e99342abe7
           path="/escolhatema"
           element={usuarioLogado ? <EscolhaTema /> : <Navigate to="/login" />}
         />
 
+<<<<<<< HEAD
+=======
+        
+>>>>>>> f36b5ed420d234882cb438c3895c52e99342abe7
         <Route
           path="/oportunidades"
           element={usuarioLogado ? <Oportunidades /> : <Navigate to="/login" />}
         />
 
+<<<<<<< HEAD
         {/* Página em construção */}
         <Route
           path="/PaginaEmConstrucao"
@@ -110,6 +164,10 @@ function App() {
         />
 
         {/* Fallback */}
+=======
+
+
+>>>>>>> f36b5ed420d234882cb438c3895c52e99342abe7
         <Route path="*" element={<Navigate to="/" />} />
       </Routes>
     </Router>

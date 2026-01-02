@@ -6,7 +6,11 @@ export default function VocabulariodeNegocios({ nome }) {
   const navigate = useNavigate();
 
   const handleVoltar = () => {
+<<<<<<< HEAD
     navigate("/HardSkills");
+=======
+    navigate("/dashboard");
+>>>>>>> f36b5ed420d234882cb438c3895c52e99342abe7
   };
 const handleSalvar = () => {
   console.log("Respostas do usuário"); 
@@ -49,6 +53,32 @@ const handleSalvar = () => {
       </nav>
 
       <div className="VocabulariodeNegocios-container">
+<<<<<<< HEAD
+=======
+
+        <nav className="VocabulariodeNegocios-topbar">
+          <div className="topbar-logo" onClick={() => navigate("/dashboard")}> 🚀 Faz Teu Nome</div>
+
+          <div className="nav-links">
+            <a onClick={() => navigate("/dashboard")}>Início</a>
+            <a onClick={() => navigate("/profile")}>Meu Perfil</a>
+            <a onClick={() => navigate("/comunidade")}>Comunidade</a>
+            <a onClick={() => navigate("/ranking")}>Ranking</a>
+          </div>
+
+          <div className="topbar-user" onClick={() => navigate("/profile")} style={{ marginLeft: "8px", cursor: "pointer" }}>
+          👤
+          <span
+            style={{ marginLeft: "8px", cursor: "pointer" }}
+            title="Sair"
+            onClick={() => (window.location.href = "/login")}
+          >
+            ⬅
+          </span>
+        </div>
+        </nav>
+
+>>>>>>> f36b5ed420d234882cb438c3895c52e99342abe7
         <div className="VocabulariodeNegocios-header">
           <div className="header-top">
             <div className="header-left">
@@ -73,7 +103,8 @@ const handleSalvar = () => {
 
         <div className="main-row">
           <div className="learning-path">
-            <button className="btn-voltar" onClick={handleVoltar}>
+            <button className="btn-voltar" onClick={() => navigate("/hardskills")}
+              style={{ cursor: "pointer" }}>
               Voltar
             </button>
 
@@ -91,6 +122,7 @@ const handleSalvar = () => {
                   <h3>Termos Essenciais</h3>
 
                   <label>Stakeholder</label>
+<<<<<<< HEAD
                   <textarea placeholder="Qualquer pessoa ou grupo que tem interesse no sucesso de uma empresa" />
 
                   <label>ROI (Return on Investment)</label>
@@ -101,6 +133,26 @@ const handleSalvar = () => {
 
                   <label>Deadline</label>
                   <textarea placeholder="Prazo final para conclusão de uma tarefa ou projeto" />
+=======
+                  <div className="termo-texto">
+                    Qualquer pessoa ou grupo que tem interesse no sucesso de uma empresa
+                  </div> <br></br>
+
+                  <label>ROI (Return on Investment)</label>
+                  <div className="termo-texto">
+                    Retorno sobre investimento, métrica que calcula a eficiência de um investimento
+                  </div><br></br>
+
+                  <label>KPI (Key Performance Indicator)</label>
+                  <div className="termo-texto">
+                    Indicador-chave de desempenho usado para medir o sucesso de uma atividade
+                  </div><br></br>
+
+                  <label>Deadline</label>
+                  <div className="termo-texto">
+                    Prazo final para conclusão de uma tarefa ou projeto
+                  </div><br></br>
+>>>>>>> f36b5ed420d234882cb438c3895c52e99342abe7
                 </div>
 
                 <div className="exercicio-pratico">
@@ -127,10 +179,15 @@ const handleSalvar = () => {
                   <textarea placeholder="Exemplo: Na última reunião, discutimos os KPIs do trimestre com todos os stakeholders." />
                 </div>
 
+<<<<<<< HEAD
                  <button className="btn-continuar" onClick={handleSalvar}>
                    Salvar e Continuar
                  </button>
 
+=======
+                <button className="btn-continuar" onClick={() => navigate("/hardskills")}
+              style={{ cursor: "pointer" }}>Salvar e Continuar</button>
+>>>>>>> f36b5ed420d234882cb438c3895c52e99342abe7
               </div>
 
               <div className="content-right">
@@ -139,17 +196,38 @@ const handleSalvar = () => {
                     <h4>✅ Agora é sua vez</h4>
                     <div className="jogo-papeis">Jogo dos Papéis</div>
                     <p>
+<<<<<<< HEAD
                       Chegou a hora de sair da teoria e entrar no jogo. Reúna-se com
                       seus colegas, forme uma equipe e enfrente desafios inspirados
                       em situações reais do mundo do trabalho.
+=======
+                      Chegou a hora de sair da teoria e entrar no jogo. Reúna-se com seus colegas, forme uma equipe e enfrente desafios inspirados em situações reais do mundo do trabalho.
+>>>>>>> f36b5ed420d234882cb438c3895c52e99342abe7
                     </p>
                   </div>
 
                   <div className="action-buttons">
                     <button className="btn-secondary">Visualizar meu papel</button>
                     <button className="btn-secondary">Visualizar minha missão</button>
+<<<<<<< HEAD
                     <button className="btn-primary">Começar</button>
                   </div>
+=======
+                    <button className="btn-primary"onClick={() => navigate("/em-construcao")}
+  style={{ cursor: "pointer" }}>Começar</button>
+                  </div>
+
+                  <button className="btn-duvidas"onClick={() => navigate("/em-construcao")}
+  style={{ cursor: "pointer" }}>
+                    <span className="icone-duvida"> ? </span>
+                    Dúvidas
+                  </button>
+
+                </div>
+
+
+              </div>
+>>>>>>> f36b5ed420d234882cb438c3895c52e99342abe7
 
                   <button
                     className="btn-duvidas"
@@ -161,8 +239,18 @@ const handleSalvar = () => {
             </div>
           </div>
         </div>
+<<<<<<< HEAD
      </div>
       <footer className="VocabulariodeNegocios-footer">
+=======
+      </div>
+
+      <footer
+        className="footer"
+        onClick={() => navigate("/em-construcao")}
+        style={{ cursor: "pointer" }}
+      >
+>>>>>>> f36b5ed420d234882cb438c3895c52e99342abe7
         <div className="footer-columns">
           <div className="footer-col">
             <h4>Faz Teu Nome</h4>
@@ -171,6 +259,7 @@ const handleSalvar = () => {
               projeto de vida.
             </p>
           </div>
+
           <div className="footer-col">
             <h4>Plataforma</h4>
             <ul>
@@ -179,6 +268,7 @@ const handleSalvar = () => {
               <li>Hackaton</li>
             </ul>
           </div>
+
           <div className="footer-col">
             <h4>Recursos</h4>
             <ul>
@@ -187,6 +277,7 @@ const handleSalvar = () => {
               <li>Contato</li>
             </ul>
           </div>
+
           <div className="footer-col">
             <h4>Igarassu</h4>
             <p>
@@ -198,7 +289,12 @@ const handleSalvar = () => {
 
         <div className="footer-bottom">
           <span>
+<<<<<<< HEAD
             © {new Date().getFullYear()} Faz Teu Nome — Todos os direitos reservados.
+=======
+            © {new Date().getFullYear()} Faz Teu Nome — Todos os direitos
+            reservados.
+>>>>>>> f36b5ed420d234882cb438c3895c52e99342abe7
           </span>
           <div className="footer-links">
             <span>Privacidade</span>
@@ -207,6 +303,7 @@ const handleSalvar = () => {
           </div>
         </div>
       </footer>
+
     </>
   );
 }

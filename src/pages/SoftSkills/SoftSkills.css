@@ -80,6 +80,7 @@
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
+<<<<<<< HEAD:src/pages/SoftSkills/SoftSkills.css
 .hero-card-soft h1 {
   font-size: 2rem;
   font-weight: 700;
@@ -89,6 +90,20 @@
 
 .hero-card-soft p {
   font-size: 1rem;
+=======
+
+.hero-content h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: #fcfcfc; /* Escolha a cor desejada (exemplo: tom coral) */
+}
+
+
+.hero-content p {
+   font-size: 1rem;
+  margin-bottom: 30px;
+>>>>>>> f36b5ed420d234882cb438c3895c52e99342abe7:src/styles1/SoftSkills.css
   opacity: 0.95;
 }
 

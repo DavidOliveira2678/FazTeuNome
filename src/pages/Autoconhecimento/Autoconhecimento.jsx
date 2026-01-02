@@ -23,10 +23,34 @@ const handleSalvar = () => {
 
   return (
     <>
+<<<<<<< HEAD
       <nav className="Autoconhecimento-topbar">
         <div className="topbar-logo">
           🚀 <span>FAZ TEU NOME</span>
         </div>
+=======
+      <div className="Autoconhecimento-container">
+        <nav className="Autoconhecimento-topbar">
+          <div className="topbar-logo"onClick={() => navigate("/dashboard")}> 🚀 Faz Teu Nome</div>
+          <div className="nav-links">
+  <a onClick={() => navigate("/dashboard")}>Início</a>
+  <a onClick={() => navigate("/profile")}>Meu Perfil</a>
+  <a onClick={() => navigate("/comunidade")}>Comunidade</a>
+  <a onClick={() => navigate("/ranking")}>Ranking</a>
+</div>
+          
+           <div className="topbar-user"onClick={() => navigate("/profile")}style={{ marginLeft: "8px", cursor: "pointer" }}>
+            👤
+            <span
+              style={{ marginLeft: "8px", cursor: "pointer" }}
+              title="Sair"
+              onClick={() => (window.location.href = "/login")}
+            >
+             ⬅ 
+            </span>
+          </div>
+        </nav>
+>>>>>>> f36b5ed420d234882cb438c3895c52e99342abe7
 
         <div className="topbar-links">
           <span onClick={() => navigate("/dashboard")}>Início</span>
@@ -74,13 +98,14 @@ const handleSalvar = () => {
 
         <div className="main-row">
           <div className="learning-path">
-            <button className="btn-voltar" onClick={handleVoltar}>
+            <button className="btn-voltar" onClick={() => navigate("/softskills")}>
               Voltar
             </button>
 
             <div className="content-row">
               <div className="content-left quem-voce-e">
                 <h3>Quem você é?</h3>
+<<<<<<< HEAD
                 <p>
                   O autoconhecimento é a base para todas as escolhas que você fará
                   ao longo da sua vida pessoal e profissional.
@@ -90,6 +115,12 @@ const handleSalvar = () => {
                   e alinhadas com quem você realmente é.
                 </p>
 
+=======
+            <p>
+              O autoconhecimento é a base para todas as escolhas que você fará ao longo da sua vida pessoal e profissional.
+              Quando você conhece suas forças, seus valores e suas áreas de desenvolvimento, você consegue tomar decisões mais conscientes e alinhadas com quem você realmente é.
+            </p><br></br>
+>>>>>>> f36b5ed420d234882cb438c3895c52e99342abe7
                 <div className="reflexao-container">
                   <h3>Reflexão Guiada</h3>
                   <label>Quais são suas principais fortalezas?</label>
@@ -135,10 +166,15 @@ const handleSalvar = () => {
                   ))}
                 </div>
 
+<<<<<<< HEAD
                 <button className="btn-salvar" onClick={handleSalvar}>
                  Salvar e Continuar
                 </button>
 
+=======
+                <button className="btn-salvar"onClick={() => navigate("/softskills")}
+  style={{ cursor: "pointer" }}>Salvar e Continuar</button>
+>>>>>>> f36b5ed420d234882cb438c3895c52e99342abe7
               </div>
 
               <div className="content-right">
@@ -152,12 +188,26 @@ const handleSalvar = () => {
                     </p>
                   </div>
 
+<<<<<<< HEAD
                   <div className="dica-card">
                     <p>
                       Aquilo que você gostaria de mudar ou melhorar em si mesmo
                       pode indicar áreas importantes para o seu desenvolvimento.
                     </p>
                   </div>
+=======
+                <div className="dica-card">
+                  <p>
+                    Aquilo que você gostaria de mudar ou melhorar em si mesmo pode indicar áreas importantes para o seu desenvolvimento.
+                  </p>
+                </div>
+                 
+               <button className="btn-duvidas"onClick={() => navigate("/em-construcao")}
+  style={{ cursor: "pointer" }} >
+                Dúvidas
+              </button>
+                </div>
+>>>>>>> f36b5ed420d234882cb438c3895c52e99342abe7
 
                   <button
                     className="btn-duvidas"
@@ -172,33 +222,39 @@ const handleSalvar = () => {
         </div>
       </div>
 
-      <footer className="Autoconhecimento-footer">
-        <div className="footer-columns">
-          <div className="footer-col">
+      {/* Footer */}
+      <footer
+  className="footer"
+  onClick={() => navigate("/em-construcao")}
+  style={{ cursor: "pointer" }}
+>
+        <div className="footer-grid">
+          <div>
             <h4>Faz Teu Nome</h4>
             <p>
               Plataforma pedagógica para protagonismo juvenil e construção de
               projeto de vida.
             </p>
           </div>
+<<<<<<< HEAD
 
           <div className="footer-col">
+=======
+          <div>
+>>>>>>> f36b5ed420d234882cb438c3895c52e99342abe7
             <h4>Plataforma</h4>
-            <ul>
-              <li>Trilha de Aprendizagem</li>
-              <li>Comunidade</li>
-              <li>Hackaton</li>
-            </ul>
+            <ul><li>Trilha de aprendizagem</li><li>Comunidade</li><li>Hackaton</li></ul>
           </div>
+<<<<<<< HEAD
 
           <div className="footer-col">
+=======
+          <div>
+>>>>>>> f36b5ed420d234882cb438c3895c52e99342abe7
             <h4>Recursos</h4>
-            <ul>
-              <li>Guia do Professor</li>
-              <li>FAQ</li>
-              <li>Contato</li>
-            </ul>
+            <ul><li>Guia do Professor</li><li>FAQ</li><li>Contato</li></ul>
           </div>
+<<<<<<< HEAD
 
           <div className="footer-col">
             <h4>Igarassu</h4>
@@ -206,19 +262,27 @@ const handleSalvar = () => {
               Desenvolvimento com escuta ativa e protagonismo juvenil para o
               município de Igarassu-PE.
             </p>
+=======
+          <div>
+            <h4>Igarassu</h4>
+            <p>Desenvolvimento com escuta ativa e protagonismo juvenil para o município de Igarassu - PE.</p>
+>>>>>>> f36b5ed420d234882cb438c3895c52e99342abe7
           </div>
         </div>
-
         <div className="footer-bottom">
+<<<<<<< HEAD
           <span>
             © {new Date().getFullYear()} Faz Teu Nome — Todos os direitos
             reservados.
           </span>
 
+=======
+          <span>© 2025 Faz Teu Nome. Todos os direitos reservados.</span>
+>>>>>>> f36b5ed420d234882cb438c3895c52e99342abe7
           <div className="footer-links">
-            <span>Privacidade</span>
-            <span>Termos</span>
-            <span>Suporte</span>
+            <a href="#">Privacidade</a>
+            <a href="#">Termos</a>
+            <a href="#">Acessibilidade</a>
           </div>
         </div>
       </footer>

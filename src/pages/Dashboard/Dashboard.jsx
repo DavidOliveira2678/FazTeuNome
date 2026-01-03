@@ -1,11 +1,33 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./Dashboard.css";
 
 export default function Dashboard({ nome }) {
   const navigate = useNavigate();
+  const [usuario, setUsuario] = useState(null);
+  const [erro, setErro] = useState("");
 
-  return (
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+    if (!token) {
+      navigate("/login");
+      return;
+    }
+
+    fetch("http://localhost:5000/api/usuarios/perfil", {
+      headers: { Authorization: "Bearer " + token },
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.erro) {
+          setErro(data.erro);
+        } else {
+          setUsuario(data);
+        }
+      })
+      .catch(() => setErro("Erro ao carregar perfil"));
+  }, [navigate]);
+    return (
     <>
       <nav className="dashboard-topbar">
         <div className="topbar-logo">
@@ -36,10 +58,17 @@ export default function Dashboard({ nome }) {
 
         <div className="topbar-user">
           👤
+          <span style={{marginLeft: "8px"}}>{usuario ? usuario.nome_completo : "Carregando..."}
+
+          </span>
           <span
             style={{ marginLeft: "8px", cursor: "pointer" }}
             title="Sair"
-            onClick={() => (window.location.href = "/login")}
+            onClick={() => {
+              localStorage.removeItem("token");
+              localStorage.removeItem("usuario");
+              navigate("/login");
+            }}
           >
             ⬅
           </span>
@@ -54,6 +83,7 @@ export default function Dashboard({ nome }) {
             a diferença e construir um futuro com impacto. O futuro começa agora,
             por isso Faz teu Nome!
           </p>
+          {erro && <p style={{ color: "red" }}>{erro}</p>}
 
           <div className="progress-info">
             <div className="progress-box adjusted">

@@ -5,19 +5,42 @@ import "./Login.css";
 export default function Login() {
   const navigate = useNavigate();
   const [form, setForm] = useState({ email: "", senha: "" });
+  const [erro, setErro] = useState("");
 
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  const irParaHome = (e) => {
+  const irParaHome = async (e) => {
     e.preventDefault();
+    setErro("");
+
     if (!form.email || !form.senha) {
       alert("Preencha todos os campos.");
       return;
     }
-    localStorage.setItem("email", form.email);
-    navigate("/dashboard");
+
+    try {
+      const response = await fetch("http://localhost:5000/api/usuarios/login", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      });
+
+      const data = await response.json();
+
+      if (response.status === 200) {
+        // ✅ Login OK → salvar token e dados
+        localStorage.setItem("token", data.token);
+        localStorage.setItem("usuario", JSON.stringify(data.usuario));
+        navigate("/dashboard");
+      } else {
+        // ❌ Erro → mostrar mensagem
+        setErro(data.erro || "Erro no login");
+      }
+    } catch (err) {
+      setErro("Erro ao conectar com o servidor");
+    }
   };
 
   return (
@@ -53,6 +76,8 @@ export default function Login() {
             Entrar
           </button>
         </form>
+
+        {erro && <p style={{ color: "red" }}>{erro}</p>}
 
         <div style={{ height: "20px" }}></div>
 

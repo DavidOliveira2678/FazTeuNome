@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./Comunidade.css";
 
 const Comunidade = () => {
   const navigate = useNavigate();
+  const [mensagem, setMensagem] = useState("");
+
   const posts = [
     {
       id: 1,
@@ -11,9 +13,10 @@ const Comunidade = () => {
       tempo: "há 2 horas",
       categoria: "Soft Skills",
       avatar: "👩‍🏫",
-      conteudo: "Acabei de terminar o módulo de Soft Skills, aprendi muito sobre inteligência emocional. Alguém mais já completou?",
+      conteudo:
+        "Acabei de terminar o módulo de Soft Skills, aprendi muito sobre inteligência emocional. Alguém mais já completou?",
       likes: 24,
-      comentarios: 8
+      comentarios: 8,
     },
     {
       id: 2,
@@ -21,9 +24,10 @@ const Comunidade = () => {
       tempo: "há 5 horas",
       categoria: "Oportunidades",
       avatar: "👨‍💻",
-      conteudo: "Dica: Assistam o webinário sobre carreiras em tecnologia amanhã às 14h. Vai ser incrível!",
+      conteudo:
+        "Dica: Assistam o webinário sobre carreiras em tecnologia amanhã às 14h. Vai ser incrível!",
       likes: 45,
-      comentarios: 12
+      comentarios: 12,
     },
     {
       id: 3,
@@ -31,10 +35,11 @@ const Comunidade = () => {
       tempo: "há 1 dia",
       categoria: "Projetos",
       avatar: "👩‍🎨",
-      conteudo: "Estou desenvolvendo um projeto de app para simplificar o acesso a informações sobre emprego. Alguém quer colaborar?",
+      conteudo:
+        "Estou desenvolvendo um projeto de app para simplificar o acesso a informações sobre emprego. Alguém quer colaborar?",
       likes: 67,
-      comentarios: 19
-    }
+      comentarios: 19,
+    },
   ];
 
   return (
@@ -42,26 +47,42 @@ const Comunidade = () => {
       {/* Navbar */}
       <nav className="navbar">
         <div className="logo">
-          <span className="rocket-icon">🚀</span> Faz Teu Nome
+          <span
+            className="topbar-logo"
+            onClick={() => navigate("/dashboard")}
+            style={{ cursor: "pointer" }}
+          >
+            🚀 Faz Teu Nome
+          </span>
         </div>
-        <div className="topbar-links">
-  <span style={{ cursor: "pointer" }} onClick={() => navigate("/dashboard")}>Início</span>
-  <span style={{ cursor: "pointer" }} onClick={() => navigate("/perfil")}>Meu Perfil</span>
-  <span style={{ cursor: "pointer", fontWeight: "bold" }} onClick={() => navigate("/comunidade")}>Comunidade</span>
-  <span style={{ cursor: "pointer" }} onClick={() => navigate("/ranking")}>Ranking</span>
-</div>
 
-<div className="topbar-user">
-  👤
-  <span
-    style={{ marginLeft: "8px", cursor: "pointer" }}
-    title="Sair"
-    onClick={() => navigate("/login")}
-  >
-    ⬅
-  </span>
-</div>
+        <div className="nav-links">
+          <span onClick={() => navigate("/dashboard")}>Início</span>
+          <span onClick={() => navigate("/profile")}>Meu Perfil</span>
+          <span
+            style={{ fontWeight: "bold" }}
+            onClick={() => navigate("/comunidade")}
+          >
+            Comunidade
+          </span>
+          <span onClick={() => navigate("/ranking")}>Ranking</span>
+        </div>
 
+        <div className="topbar-user">
+          <span 
+            onClick={() => navigate("/profile")} 
+            style={{ cursor: "pointer" }}
+          >
+            👤
+          </span>
+          <span
+            style={{ marginLeft: "15px", cursor: "pointer" }}
+            title="Sair"
+            onClick={() => navigate("/login")}
+          >
+            ⬅
+          </span>
+        </div>
       </nav>
 
       <div className="container main-layout">
@@ -70,21 +91,29 @@ const Comunidade = () => {
           <header className="comunidade-header">
             <h1>Comunidade</h1>
             <p>Conecte-se com colegas, compartilhe experiências e inspire outros</p>
-          <button
-  className="btn-voltar"
-  onClick={() => navigate("/dashboard")}
->
-  Voltar
-</button>
-
+            <button
+              className="btn-voltar"
+              onClick={() => navigate("/dashboard")}
+            >
+              Voltar
+            </button>
           </header>
 
           {/* Área de Novo Post */}
           <div className="novo-post-card">
-            <div className="avatar-post">👦</div>
-            <div className="input-placeholder">
-              Compartilhe suas experiências, dúvidas ou inspirações...
-            </div>
+            <div className="avatar-post">😊</div>
+            <textarea
+              className="input-placeholder"
+              placeholder="Compartilhe suas experiências, dúvidas ou inspirações..."
+              value={mensagem}
+              onChange={(e) => setMensagem(e.target.value)}
+            />
+          </div>
+
+          {/* Barra de Pesquisa */}
+          <div className="search-bar">
+            <input type="text" placeholder="Pesquisar na comunidade..." />
+            <span className="search-icon">🔍</span>
           </div>
 
           {/* Lista de Posts */}
@@ -109,7 +138,7 @@ const Comunidade = () => {
                     <span>❤️ {post.likes}</span>
                     <span>💬 {post.comentarios}</span>
                   </div>
-                  <div className="share-icon">🔗</div>
+                  <div className="share-icon" style={{ cursor: "pointer" }}>🔗</div>
                 </div>
               </div>
             ))}
@@ -118,15 +147,10 @@ const Comunidade = () => {
 
         {/* Coluna Lateral (Sidebar) */}
         <aside className="sidebar-column">
-          <div className="search-bar">
-            <input type="text" placeholder="Pesquisar comunidade" />
-            <span className="search-icon">🔍</span>
-          </div>
-
           <div className="sidebar-card">
             <h3>Estatísticas</h3>
             <div className="stat-item">
-              <div className="stat-label">👥 Membros salvos</div>
+              <div className="stat-label">👥 Membros</div>
               <div className="stat-value">248</div>
             </div>
             <div className="stat-item">
@@ -148,11 +172,15 @@ const Comunidade = () => {
       </div>
 
       {/* Footer */}
-      <footer className="footer">
+      <footer
+        className="footer"
+        onClick={() => navigate("/em-construcao")}
+        style={{ cursor: "pointer" }}
+      >
         <div className="footer-grid">
           <div>
             <h4>Faz Teu Nome</h4>
-            <p>Plataforma pedagógica para protagonismo juvenil e construção de projeto de vida.</p>
+            <p>Plataforma pedagógica para protagonismo juvenil e projeto de vida.</p>
           </div>
           <div>
             <h4>Plataforma</h4>
@@ -172,11 +200,11 @@ const Comunidade = () => {
           </div>
           <div>
             <h4>Igarassu</h4>
-            <p>Desenvolvimento com escuta ativa e protagonismo juvenil para o município de Igarassu - PE.</p>
+            <p>Desenvolvimento para o município de Igarassu - PE.</p>
           </div>
         </div>
         <div className="footer-bottom">
-          <p>© 2025 Faz Teu Nome. Todos os direitos reservados.</p>
+          <span>© 2026 Faz Teu Nome. Todos os direitos reservados.</span>
           <div className="footer-links">
             <span>Privacidade</span>
             <span>Termos</span>

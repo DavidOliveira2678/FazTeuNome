@@ -6,49 +6,43 @@ export default function VocabulariodeNegocios({ nome }) {
   const navigate = useNavigate();
 
   const handleVoltar = () => {
-    navigate("/HardSkills");
+    navigate("/hardskills");
   };
-const handleSalvar = () => {
-  console.log("Respostas do usuário"); 
-  navigate("/HardSkills"); 
-};
+
+  const handleSalvar = () => {
+    console.log("Respostas do usuário salvas");
+    navigate("/hardskills");
+  };
 
   return (
     <>
-      <nav className="VocabulariodeNegocios-topbar">
-        <div className="topbar-logo">🚀 <span>FAZ TEU NOME</span></div>
-
-        <div className="topbar-links">
-          <span style={{ cursor: "pointer" }} onClick={() => navigate("/dashboard")}>
-            Início
-          </span>
-
-          <span style={{ cursor: "pointer" }} onClick={() => navigate("/profile")}>
-            Meu Perfil
-          </span>
-
-          <span style={{ cursor: "pointer" }} onClick={() => navigate("/comunidade")}>
-            Comunidade
-          </span>
-
-          <span style={{ cursor: "pointer" }} onClick={() => navigate("/ranking")}>
-            Ranking
-          </span>
-        </div>
-
-        <div className="topbar-user">
-          👤
-          <span
-            style={{ marginLeft: "8px", cursor: "pointer" }}
-            title="Sair"
-            onClick={() => (window.location.href = "/login")}
-          >
-            ⬅
-          </span>
-        </div>
-      </nav>
-
       <div className="VocabulariodeNegocios-container">
+        {/* TOPBAR */}
+        <nav className="VocabulariodeNegocios-topbar">
+          <div className="topbar-logo" onClick={() => navigate("/dashboard")} style={{ cursor: "pointer" }}>
+            🚀 Faz Teu Nome
+          </div>
+
+          <div className="topbar-links">
+            <span onClick={() => navigate("/dashboard")}>Início</span>
+            <span onClick={() => navigate("/profile")}>Meu Perfil</span>
+            <span onClick={() => navigate("/comunidade")}>Comunidade</span>
+            <span onClick={() => navigate("/ranking")}>Ranking</span>
+          </div>
+
+          <div className="topbar-user">
+            <span onClick={() => navigate("/profile")} style={{ cursor: "pointer" }}>👤</span>
+            <span
+              style={{ marginLeft: "8px", cursor: "pointer" }}
+              title="Sair"
+              onClick={() => (window.location.href = "/login")}
+            >
+              ⬅
+            </span>
+          </div>
+        </nav>
+
+        {/* HEADER */}
         <div className="VocabulariodeNegocios-header">
           <div className="header-top">
             <div className="header-left">
@@ -58,7 +52,9 @@ const handleSalvar = () => {
               <p>Progresso do Módulo</p>
 
               <div style={{ marginTop: "14px" }}>
-                <div className="progress-bar gray" style={{ width: "250%" }} />
+                <div className="progress-bar-container" style={{ width: "250px", background: "#e0e0e0", borderRadius: "8px" }}>
+                   <div className="progress-bar-fill" style={{ width: "0%", height: "10px", background: "#4caf50", borderRadius: "8px" }} />
+                </div>
               </div>
             </div>
 
@@ -71,6 +67,7 @@ const handleSalvar = () => {
           </div>
         </div>
 
+        {/* CONTEÚDO PRINCIPAL */}
         <div className="main-row">
           <div className="learning-path">
             <button className="btn-voltar" onClick={handleVoltar}>
@@ -81,8 +78,7 @@ const handleSalvar = () => {
             <p>
               O vocabulário de negócios é essencial para uma comunicação efetiva no ambiente corporativo.
               <br />
-              Conhecer os termos corretos demonstra profissionalismo e facilita o entendimento entre equipes,
-              departamentos e empresas.
+              Conhecer os termos corretos demonstra profissionalismo e facilita o entendimento entre equipes.
             </p>
 
             <div className="content-row">
@@ -91,16 +87,16 @@ const handleSalvar = () => {
                   <h3>Termos Essenciais</h3>
 
                   <label>Stakeholder</label>
-                  <textarea placeholder="Qualquer pessoa ou grupo que tem interesse no sucesso de uma empresa" />
+                  <div className="termo-texto">Qualquer pessoa ou grupo que tem interesse no sucesso de uma empresa</div>
 
                   <label>ROI (Return on Investment)</label>
-                  <textarea placeholder="Retorno sobre investimento - métrica que calcula a eficiência de um investimento" />
+                  <div className="termo-texto">Retorno sobre investimento - métrica que calcula a eficiência de um investimento</div>
 
                   <label>KPI (Key Performance Indicator)</label>
-                  <textarea placeholder="Indicador-chave de desempenho usado para medir o sucesso de uma atividade" />
+                  <div className="termo-texto">Indicador-chave de desempenho usado para medir o sucesso de uma atividade</div>
 
                   <label>Deadline</label>
-                  <textarea placeholder="Prazo final para conclusão de uma tarefa ou projeto" />
+                  <div className="termo-texto">Prazo final para conclusão de uma tarefa ou projeto</div>
                 </div>
 
                 <div className="exercicio-pratico">
@@ -117,20 +113,15 @@ const handleSalvar = () => {
                   <textarea placeholder="Digite sua resposta" />
                 </div>
 
-                <div className="Aplicação-container aplicacao-real">
+                <div className="aplicacao-real">
                   <h3>Aplicação Real</h3>
-                  <p className="Aplicação-descricao">
-                    Escreva um parágrafo curto descrevendo uma situação profissional
-                    usando pelo menos 3 termos que você aprendeu hoje:
-                  </p>
-
+                  <p>Escreva um parágrafo curto usando pelo menos 3 termos aprendidos:</p>
                   <textarea placeholder="Exemplo: Na última reunião, discutimos os KPIs do trimestre com todos os stakeholders." />
                 </div>
 
-                 <button className="btn-continuar" onClick={handleSalvar}>
-                   Salvar e Continuar
-                 </button>
-
+                <button className="btn-continuar" onClick={handleSalvar}>
+                  Salvar e Continuar
+                </button>
               </div>
 
               <div className="content-right">
@@ -139,42 +130,37 @@ const handleSalvar = () => {
                     <h4>✅ Agora é sua vez</h4>
                     <div className="jogo-papeis">Jogo dos Papéis</div>
                     <p>
-                      Chegou a hora de sair da teoria e entrar no jogo. Reúna-se com
-                      seus colegas, forme uma equipe e enfrente desafios inspirados
-                      em situações reais do mundo do trabalho.
+                      Reúna-se com seus colegas e enfrente desafios inspirados em situações reais do mundo do trabalho.
                     </p>
                   </div>
 
                   <div className="action-buttons">
-                    <button className="btn-secondary">Visualizar meu papel</button>
-                    <button className="btn-secondary">Visualizar minha missão</button>
-                    <button className="btn-primary">Começar</button>
+                    <button className="btn-secondary" onClick={() => navigate("/em-construcao")}>Visualizar meu papel</button>
+                    <button className="btn-secondary" onClick={() => navigate("/em-construcao")}>Visualizar minha missão</button>
+                    <button className="btn-primary" onClick={() => navigate("/em-construcao")}>Começar</button>
                   </div>
 
-                  <button
-                    className="btn-duvidas"
-                    onClick={() => navigate("/PaginaEmConstrucao")}
-                  >
-                    Dúvidas
+                  <button className="btn-duvidas" onClick={() => navigate("/em-construcao")}>
+                    <span className="icone-duvida">?</span> Dúvidas
                   </button>
-                </div>              </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
-     </div>
-      <footer className="VocabulariodeNegocios-footer">
+      </div>
+
+      {/* FOOTER */}
+      <footer className="footer-container">
         <div className="footer-columns">
           <div className="footer-col">
             <h4>Faz Teu Nome</h4>
-            <p>
-              Plataforma pedagógica para protagonismo juvenil e construção de
-              projeto de vida.
-            </p>
+            <p>Plataforma pedagógica para protagonismo juvenil e projeto de vida.</p>
           </div>
           <div className="footer-col">
             <h4>Plataforma</h4>
             <ul>
-              <li>Trilha de Aprendizagem</li>
+              <li onClick={() => navigate("/trilha")}>Trilha de Aprendizagem</li>
               <li>Comunidade</li>
               <li>Hackaton</li>
             </ul>
@@ -189,17 +175,12 @@ const handleSalvar = () => {
           </div>
           <div className="footer-col">
             <h4>Igarassu</h4>
-            <p>
-              Desenvolvimento com escuta ativa e protagonismo juvenil para o
-              município de Igarassu-PE.
-            </p>
+            <p>Desenvolvimento com escuta ativa para o município de Igarassu-PE.</p>
           </div>
         </div>
 
         <div className="footer-bottom">
-          <span>
-            © {new Date().getFullYear()} Faz Teu Nome — Todos os direitos reservados.
-          </span>
+          <span>© {new Date().getFullYear()} Faz Teu Nome — Todos os direitos reservados.</span>
           <div className="footer-links">
             <span>Privacidade</span>
             <span>Termos</span>

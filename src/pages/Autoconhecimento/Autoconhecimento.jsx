@@ -4,27 +4,29 @@ import "./Autoconhecimento.css";
 
 export default function Autoconhecimento({ nome }) {
   const navigate = useNavigate();
-  const [respostas, setRespostas] = useState({}); 
+  const [respostas, setRespostas] = useState({});
 
   const handleVoltar = () => {
-    navigate("/SoftSkills");
+    navigate("/softskills");
   };
-const handleSalvar = () => {
-  console.log(respostas); 
-  navigate("/SoftSkills"); 
-};
+
+  const handleSalvar = () => {
+    console.log("Respostas salvas:", respostas);
+    navigate("/softskills");
+  };
 
   const handleClick = (item, valor) => {
-  setRespostas((prev) => ({
-    ...prev,
-    [item]: prev[item] === valor ? null : valor, 
-  }));
-};
+    setRespostas((prev) => ({
+      ...prev,
+      [item]: prev[item] === valor ? null : valor,
+    }));
+  };
 
   return (
-    <>
+    <div className="Autoconhecimento-page-wrapper">
+      {/* NAVBAR */}
       <nav className="Autoconhecimento-topbar">
-        <div className="topbar-logo">
+        <div className="topbar-logo" onClick={() => navigate("/dashboard")} style={{ cursor: "pointer" }}>
           🚀 <span>FAZ TEU NOME</span>
         </div>
 
@@ -36,7 +38,7 @@ const handleSalvar = () => {
         </div>
 
         <div className="topbar-user">
-          👤
+          <span onClick={() => navigate("/profile")} style={{ cursor: "pointer" }}>👤</span>
           <span
             style={{ marginLeft: "8px", cursor: "pointer" }}
             title="Sair"
@@ -48,6 +50,7 @@ const handleSalvar = () => {
       </nav>
 
       <div className="Autoconhecimento-container">
+        {/* HEADER */}
         <div className="Autoconhecimento-header">
           <div className="header-top">
             <div className="header-left">
@@ -57,8 +60,8 @@ const handleSalvar = () => {
               <p>Progresso do Módulo</p>
 
               <div style={{ marginTop: "14px" }}>
-                <div className="progress-bar gray" style={{ width: "250%" }}>
-                  <div className="progress-bar white" style={{ width: "30%" }} />
+                <div className="progress-bar-container" style={{ width: "250px", background: "#ccc", borderRadius: "8px" }}>
+                  <div className="progress-bar-fill" style={{ width: "33%", height: "10px", background: "#fff", borderRadius: "8px" }} />
                 </div>
               </div>
             </div>
@@ -72,6 +75,7 @@ const handleSalvar = () => {
           </div>
         </div>
 
+        {/* CONTEÚDO */}
         <div className="main-row">
           <div className="learning-path">
             <button className="btn-voltar" onClick={handleVoltar}>
@@ -79,15 +83,12 @@ const handleSalvar = () => {
             </button>
 
             <div className="content-row">
+              {/* COLUNA ESQUERDA */}
               <div className="content-left quem-voce-e">
                 <h3>Quem você é?</h3>
                 <p>
-                  O autoconhecimento é a base para todas as escolhas que você fará
-                  ao longo da sua vida pessoal e profissional.
-                  <br />
-                  Quando você conhece suas forças, seus valores e suas áreas de
-                  desenvolvimento, você consegue tomar decisões mais conscientes
-                  e alinhadas com quem você realmente é.
+                  O autoconhecimento é a base para todas as escolhas que você fará ao longo da sua vida pessoal e profissional.
+                  Quando você conhece suas forças, seus valores e suas áreas de desenvolvimento, toma decisões mais conscientes.
                 </p>
 
                 <div className="reflexao-container">
@@ -105,8 +106,7 @@ const handleSalvar = () => {
                 <div className="escala-container">
                   <h3>Escala de Autopercepção</h3>
                   <p className="escala-descricao">
-                    Em uma escala de 1 a 5, como você avalia as seguintes
-                    características em você?
+                    Em uma escala de 1 a 5, como você avalia as seguintes características em você?
                   </p>
 
                   {[
@@ -118,51 +118,37 @@ const handleSalvar = () => {
                   ].map((texto, index) => (
                     <div className="escala-item" key={index}>
                       <span className="texto">{texto}</span>
-<div className="escala-numeros">
-  {[1, 2, 3, 4, 5].map((num) => (
-    <span
-      key={num}
-      className={`escala-numero ${respostas[texto] === num ? "ativo" : ""}`}
-      onClick={() => handleClick(texto, num)}
-    >
-      {num}
-    </span>
-  ))}
-</div>
-
-
+                      <div className="escala-numbers">
+                        {[1, 2, 3, 4, 5].map((num) => (
+                          <span
+                            key={num}
+                            className={`escala-numero ${respostas[texto] === num ? "ativo" : ""}`}
+                            onClick={() => handleClick(texto, num)}
+                          >
+                            {num}
+                          </span>
+                        ))}
+                      </div>
                     </div>
                   ))}
                 </div>
 
                 <button className="btn-salvar" onClick={handleSalvar}>
-                 Salvar e Continuar
+                  Salvar e Continuar
                 </button>
-
               </div>
 
+              {/* COLUNA DIREITA */}
               <div className="content-right">
                 <div className="dica-container">
                   <h4>💡 Dica</h4>
-
                   <div className="dica-card">
-                    <p>
-                      Respire fundo e pense em situações em que você se sentiu
-                      orgulhoso de si.
-                    </p>
+                    <p>Respire fundo e pense em situações em que você se sentiu orgulhoso de si.</p>
                   </div>
-
                   <div className="dica-card">
-                    <p>
-                      Aquilo que você gostaria de mudar ou melhorar em si mesmo
-                      pode indicar áreas importantes para o seu desenvolvimento.
-                    </p>
+                    <p>Aquilo que você gostaria de melhorar pode indicar áreas importantes para o seu desenvolvimento.</p>
                   </div>
-
-                  <button
-                    className="btn-duvidas"
-                    onClick={() => navigate("/PaginaEmConstrucao")}
-                  >
+                  <button className="btn-duvidas" onClick={() => navigate("/em-construcao")}>
                     Dúvidas
                   </button>
                 </div>
@@ -172,56 +158,35 @@ const handleSalvar = () => {
         </div>
       </div>
 
-      <footer className="Autoconhecimento-footer">
-        <div className="footer-columns">
-          <div className="footer-col">
+      {/* FOOTER */}
+      <footer className="footer" onClick={() => navigate("/em-construcao")} style={{ cursor: "pointer" }}>
+        <div className="footer-grid">
+          <div>
             <h4>Faz Teu Nome</h4>
-            <p>
-              Plataforma pedagógica para protagonismo juvenil e construção de
-              projeto de vida.
-            </p>
+            <p>Plataforma pedagógica para protagonismo juvenil e construção de projeto de vida.</p>
           </div>
-
-          <div className="footer-col">
+          <div>
             <h4>Plataforma</h4>
-            <ul>
-              <li>Trilha de Aprendizagem</li>
-              <li>Comunidade</li>
-              <li>Hackaton</li>
-            </ul>
+            <ul><li>Trilha de aprendizagem</li><li>Comunidade</li><li>Hackaton</li></ul>
           </div>
-
-          <div className="footer-col">
+          <div>
             <h4>Recursos</h4>
-            <ul>
-              <li>Guia do Professor</li>
-              <li>FAQ</li>
-              <li>Contato</li>
-            </ul>
+            <ul><li>Guia do Professor</li><li>FAQ</li><li>Contato</li></ul>
           </div>
-
-          <div className="footer-col">
+          <div>
             <h4>Igarassu</h4>
-            <p>
-              Desenvolvimento com escuta ativa e protagonismo juvenil para o
-              município de Igarassu-PE.
-            </p>
+            <p>Desenvolvimento com escuta ativa e protagonismo juvenil para o município de Igarassu-PE.</p>
           </div>
         </div>
-
         <div className="footer-bottom">
-          <span>
-            © {new Date().getFullYear()} Faz Teu Nome — Todos os direitos
-            reservados.
-          </span>
-
+          <span>© {new Date().getFullYear()} Faz Teu Nome — Todos os direitos reservados.</span>
           <div className="footer-links">
             <span>Privacidade</span>
             <span>Termos</span>
-            <span>Suporte</span>
+            <span>Acessibilidade</span>
           </div>
         </div>
       </footer>
-    </>
+    </div>
   );
 }

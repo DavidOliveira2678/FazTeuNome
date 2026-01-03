@@ -32,6 +32,40 @@ const Profile = () => {
 
   return (
     <div className="profile-page">
+      {/* Navbar */}
+      <nav className="navbar">
+        <div className="logo">
+          <div 
+            className="topbar-logo" 
+            onClick={() => navigate("/dashboard")} 
+            style={{ cursor: "pointer" }}
+          >
+            🚀 Faz Teu Nome
+          </div>
+        </div>
+
+        <div className="nav-links">
+          <span onClick={() => navigate("/dashboard")}>Início</span>
+          <span onClick={() => navigate("/profile")} style={{ fontWeight: "bold" }}>Meu Perfil</span>
+          <span onClick={() => navigate("/comunidade")}>Comunidade</span>
+          <span onClick={() => navigate("/ranking")}>Ranking</span>
+        </div>
+
+        <div className="topbar-user" onClick={() => navigate("/profile")} style={{ marginLeft: "8px", cursor: "pointer" }}>
+          👤
+          <span
+            style={{ marginLeft: "15px", cursor: "pointer" }}
+            title="Sair"
+            onClick={(e) => {
+              e.stopPropagation(); // Impede de navegar para o perfil ao clicar em sair
+              navigate("/login");
+            }}
+          >
+            ⬅
+          </span>
+        </div>
+      </nav>
+
       <div className="container">
         {/* Banner do Usuário */}
         <header className="profile-banner">
@@ -89,7 +123,7 @@ const Profile = () => {
                 <span className="tag">Arte</span>
                 <span className="tag">Tecnologia</span>
                 <span className="tag">Fotografia</span>
-                <span className="tag">Musica</span>
+                <span className="tag">Música</span>
                 <span className="tag">Programação</span>
               </div>
             </section>

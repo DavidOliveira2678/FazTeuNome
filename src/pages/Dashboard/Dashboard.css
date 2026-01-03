@@ -53,9 +53,16 @@
 .dashboard-header {
   background: #0f6fa1;
   color: white;
-  padding: 22px;
-  border-radius: 12px;
-  margin-top: 18px;
+  padding: 30px;
+  border-radius: 20px;
+  margin-top: 12px;
+}
+
+.dashboard-header h2 {
+  color: #ffffff;         
+  font-weight: bold;     
+  margin-bottom: 10px;    
+  text-transform: uppercase;
 }
 
 .progress-info {
@@ -353,103 +360,3 @@
   flex-wrap: wrap;
 }
 
-@media (max-width: 1024px) {
-  .main-row {
-    gap: 18px;
-  }
-
-  .footer-columns {
-    padding: 0 30px;
-  }
-}
-@media (max-width: 768px) {
-
-  .dashboard-topbar {
-    flex-direction: row; 
-    gap: 12px;          
-    text-align: left;    
-    justify-content: space-between; 
-    align-items: center; 
-  }
-
-  .topbar-links {
-    gap: 18px;
-    flex-wrap: wrap;      
-    justify-content: flex-end; 
-  }
-
-  .dashboard-header {
-    padding: 18px;
-  }
-
-  .progress-info {
-    flex-direction: column;
-  }
-
-  .main-row {
-    flex-direction: column;
-  }
-
-  .learning-path,
-  .side-column {
-    width: 100%;
-  }
-
-  .path-card {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .footer-columns {
-    flex-direction: column;
-    padding: 0;
-    gap: 30px;
-  }
-
-  .footer-col,
-  .footer-col:nth-child(4) {
-    max-width: 100%;
-    margin-left: 0;
-  }
-
-  .footer-bottom {
-    flex-direction: column;
-    gap: 12px;
-    text-align: center;
-  }
-}
-
-@media (max-width: 480px) {
-
-  .topbar-logo {
-    font-size: 14px;
-  }
-
-  .topbar-links {
-    font-size: 14px;
-  }
-
-  .dashboard-header h2 {
-    font-size: 18px;
-  }
-
-  .progress-box span:last-child {
-    font-size: 18px;
-  }
-
-  .path-card h4 {
-    font-size: 16px;
-  }
-
-  .path-card p {
-    font-size: 13px;
-  }
-
-  .side-box {
-    padding: 16px;
-  }
-
-  .dashboard-footer {
-    padding: 22px 16px;
-  }
-}

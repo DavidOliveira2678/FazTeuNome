@@ -13,6 +13,7 @@ const EditProfile = () => {
   });
   const [erro, setErro] = useState("");
   const [sucesso, setSucesso] = useState("");
+  const [loading, setLoading] = useState(false);
 
   // Carregar dados atuais do usuário
   useEffect(() => {
@@ -22,18 +23,30 @@ const EditProfile = () => {
       return;
     }
 
+    setLoading(true);
     fetch("http://localhost:5000/api/usuarios/perfil", {
       headers: { Authorization: "Bearer " + token },
     })
-      .then((res) => res.json())
+      .then((res) => {
+        if (!res.ok) throw new Error("Não autorizado");
+        return res.json();
+      })
       .then((data) => {
+        setUsuario({
+          nome_completo: data.nome_completo || "",
+          email: data.email || "",
+          escola: data.escola || "",
+          telefone: data.telefone || "",
+          bio: data.bio || "",
+        })
         if (data.erro) {
           setErro(data.erro);
         } else {
           setUsuario(data);
         }
       })
-      .catch(() => setErro("Erro ao carregar perfil"));
+      .catch(() => setErro("Erro ao carregar perfil"))
+      navigate("/login");
   }, [navigate]);
 
   // Atualizar valores dos inputs
@@ -43,8 +56,25 @@ const EditProfile = () => {
 
   // Enviar alterações para o backend
   const handleSubmit = (e) => {
+    fetch("http://localhost:5000/api/usuarios/editar", {
+  method: "PUT",
+  headers: {
+    "Content-Type": "application/json",
+    Authorization: "Bearer " + token,
+  },
+  body: JSON.stringify(usuario),
+})
     e.preventDefault();
+    setErro("");
+    setSucesso("");
+
+    if (!usuario.nome_completo || !usuario.escola) {
+      setErro("Preencha os campos obrigatórios.");
+      return;
+    }
+
     const token = localStorage.getItem("token");
+    setLoading(true);
 
     fetch("http://localhost:5000/api/usuarios/editar", {
       method: "PUT",
@@ -54,7 +84,10 @@ const EditProfile = () => {
       },
       body: JSON.stringify(usuario),
     })
-      .then((res) => res.json())
+      .then((res) => {
+        if (!res.ok) throw new Error("Erro na atualização");
+        return res.json();
+      })
       .then((data) => {
         if (data.erro) {
           setErro(data.erro);
@@ -63,7 +96,8 @@ const EditProfile = () => {
           setTimeout(() => navigate("/profile"), 1500);
         }
       })
-      .catch(() => setErro("Erro ao atualizar perfil"));
+      .catch(() => setErro("Erro ao atualizar perfil"))
+      .finally(() => setLoading(false));
   };
 
   return (
@@ -75,11 +109,13 @@ const EditProfile = () => {
       <main className="main-content">
         <div className="content-wrapper">
           <h1>Editar Perfil</h1>
-          {erro && <p style={{ color: "red" }}>{erro}</p>}
-          {sucesso && <p style={{ color: "green" }}>{sucesso}</p>}
+
+          {loading && <p>Carregando...</p>}
+          {erro && <div className="erro-box">{erro}</div>}
+          {sucesso && <div className="sucesso-box">{sucesso}</div>}
 
           <form onSubmit={handleSubmit} className="editar-form">
-            <label>Nome Completo</label>
+            <label>Nome Completo *</label>
             <input
               type="text"
               name="nome_completo"
@@ -92,10 +128,10 @@ const EditProfile = () => {
               type="email"
               name="email"
               value={usuario.email}
-              onChange={handleChange}
+              disabled // email não editável
             />
 
-            <label>Escola</label>
+            <label>Escola *</label>
             <input
               type="text"
               name="escola"
@@ -119,13 +155,14 @@ const EditProfile = () => {
               maxLength={300}
             />
 
-            <button type="submit" className="btn-save">
-              Salvar Alterações
+            <button type="submit" className="btn-save" disabled={loading}>
+              {loading ? "Salvando..." : "Salvar Alterações"}
             </button>
             <button
               type="button"
               className="btn-cancelar"
               onClick={() => navigate("/profile")}
+              disabled={loading}
             >
               Cancelar
             </button>

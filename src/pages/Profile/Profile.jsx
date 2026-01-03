@@ -96,6 +96,7 @@ const Profile = () => {
         </header>
 
         {/* resto do layout igual ao seu original */}
+        {erro && <p className="mensagem-erro">{erro}</p>}
         <div className="profile-grid">
           <main className="profile-main">
             {/* Sobre Mim */}

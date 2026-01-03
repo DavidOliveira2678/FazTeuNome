@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const usuariosController = require('../controllers/usuariosController');
-const autenticarToken = require('../middleware/auth'); // 🔑 middleware de autenticação
+const autenticarToken = require('../middleware/auth'); // middleware de autenticação
 
 // 📌 Listar todos os usuários (rota protegida)
 router.get('/', autenticarToken, usuariosController.getUsuarios);

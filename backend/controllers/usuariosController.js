@@ -137,34 +137,39 @@ exports.verificarEmail = (req, res) => {
   });
 };
 exports.getPerfil = (req, res) => {
-  const { id } = req.usuario; // vem do token decodificado
+  const { id } = req.usuario;
+  console.log("getPerfil → id do token:", id);
 
   db.query(
-    'SELECT id, nome_completo, email, escola, tipo_usuario, telefone FROM usuarios WHERE id = ?',
+    "SELECT id, nome_completo, email, escola, tipo_usuario, telefone FROM usuarios WHERE id = ?",
     [id],
     (err, results) => {
       if (err) return res.status(500).json(err);
-      if (results.length === 0) return res.status(404).json({ erro: 'Usuário não encontrado' });
-
+      if (results.length === 0) return res.status(404).json({ erro: "Usuário não encontrado" });
       res.json(results[0]);
     }
   );
 };
+
 exports.updatePerfil = (req, res) => {
-  const { id } = req.usuario; // vem do token
+  const { id } = req.usuario; // NÃO usar req.params
   const { nome_completo, email, escola, tipo_usuario, telefone, bio } = req.body;
 
+  console.log("updatePerfil → id do token:", id);
+  console.log("updatePerfil → body:", { nome_completo, email, escola, tipo_usuario, telefone, bio });
+
   db.query(
-    'UPDATE usuarios SET nome_completo = ?, email = ?, escola = ?, tipo_usuario = ?, telefone = ?, bio = ? WHERE id = ?',
+    "UPDATE usuarios SET nome_completo = ?, email = ?, escola = ?, tipo_usuario = ?, telefone = ?, bio = ? WHERE id = ?",
     [nome_completo, email, escola, tipo_usuario, telefone, bio, id],
     (err, results) => {
-      if (err) return res.status(500).json(err);
-
-      if (results.affectedRows === 0) {
-        return res.status(404).json({ erro: 'Usuário não encontrado' });
+      if (err) {
+        console.error("Erro SQL:", err);
+        return res.status(500).json(err);
       }
-
-      res.json({ mensagem: 'Perfil atualizado com sucesso!' });
+      if (results.affectedRows === 0) {
+        return res.status(404).json({ erro: "Usuário não encontrado" });
+      }
+      res.json({ mensagem: "Perfil atualizado com sucesso!" });
     }
   );
 };

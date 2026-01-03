@@ -28,6 +28,7 @@ export default function Login() {
       });
 
       const data = await response.json();
+      console.log("Resposta do login:", data);
 
       if (response.status === 200) {
         // ✅ Login OK → salvar token e dados

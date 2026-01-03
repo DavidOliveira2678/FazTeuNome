@@ -38,15 +38,13 @@ const EditProfile = () => {
           escola: data.escola || "",
           telefone: data.telefone || "",
           bio: data.bio || "",
-        })
-        if (data.erro) {
-          setErro(data.erro);
-        } else {
-          setUsuario(data);
-        }
+        });
       })
-      .catch(() => setErro("Erro ao carregar perfil"))
-      navigate("/login");
+      .catch(() => {
+        setErro("Erro ao carregar perfil");
+        navigate("/login");
+      })
+      .finally(() => setLoading(false));
   }, [navigate]);
 
   // Atualizar valores dos inputs
@@ -56,14 +54,6 @@ const EditProfile = () => {
 
   // Enviar alterações para o backend
   const handleSubmit = (e) => {
-    fetch("http://localhost:5000/api/usuarios/editar", {
-  method: "PUT",
-  headers: {
-    "Content-Type": "application/json",
-    Authorization: "Bearer " + token,
-  },
-  body: JSON.stringify(usuario),
-})
     e.preventDefault();
     setErro("");
     setSucesso("");
@@ -74,8 +64,13 @@ const EditProfile = () => {
     }
 
     const token = localStorage.getItem("token");
-    setLoading(true);
+    if (!token) {
+      setErro("Token não encontrado. Faça login novamente.");
+      navigate("/login");
+      return;
+    }
 
+    setLoading(true);
     fetch("http://localhost:5000/api/usuarios/editar", {
       method: "PUT",
       headers: {

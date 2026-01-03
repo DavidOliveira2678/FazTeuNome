@@ -5,7 +5,7 @@ const jwt = require('jsonwebtoken');
 // 📌 Listar todos os usuários
 exports.getUsuarios = (req, res) => {
   db.query(
-    'SELECT id, nome_completo, email, escola, tipo_usuario, telefone,',
+    'SELECT id, nome_completo, email, escola, tipo_usuario, telefone FROM usuarios',
     (err, results) => {
       if (err) return res.status(500).json(err);
       res.json(results);
@@ -25,20 +25,20 @@ exports.createUsuario = async (req, res) => {
     const senha_hash = await bcrypt.hash(senha, 10);
 
     db.query(
-     'INSERT INTO usuarios (nome_completo, email, escola, tipo_usuario, senha_hash, telefone) VALUES (?, ?, ?, ?, ?, ?)',
-  [nome_completo, email, escola, tipo_usuario, senha_hash, telefone],
-  (err, results) => {
-    if (err) return res.status(500).json(err);
-    res.status(201).json({
-      id: results.insertId,
-      nome_completo,
-      email,
-      escola,
-      tipo_usuario,
-      telefone,
-    });
-  }
-);  
+      'INSERT INTO usuarios (nome_completo, email, escola, tipo_usuario, senha_hash, telefone) VALUES (?, ?, ?, ?, ?, ?)',
+      [nome_completo, email, escola, tipo_usuario, senha_hash, telefone],
+      (err, results) => {
+        if (err) return res.status(500).json(err);
+        res.status(201).json({
+          id: results.insertId,
+          nome_completo,
+          email,
+          escola,
+          tipo_usuario,
+          telefone,
+        });
+      }
+    );
   } catch (err) {
     res.status(500).json({ erro: err.message });
   }
@@ -109,10 +109,10 @@ exports.deleteUsuario = (req, res) => {
 // 📌 Atualizar usuário pelo ID
 exports.updateUsuario = (req, res) => {
   const { id } = req.params;
-  const { nome_completo, email, escola, tipo_usuario, telefone,} = req.body;
+  const { nome_completo, email, escola, tipo_usuario, telefone } = req.body;
 
   db.query(
-    'UPDATE usuarios SET nome_completo = ?, email = ?, escola = ?, tipo_usuario = ?, telefone = ?, WHERE id = ?',
+    'UPDATE usuarios SET nome_completo = ?, email = ?, escola = ?, tipo_usuario = ?, telefone = ? WHERE id = ?',
     [nome_completo, email, escola, tipo_usuario, telefone, id],
     (err, results) => {
       if (err) return res.status(500).json(err);
@@ -135,4 +135,36 @@ exports.verificarEmail = (req, res) => {
 
     res.json({ existe: results.length > 0 });
   });
+};
+exports.getPerfil = (req, res) => {
+  const { id } = req.usuario; // vem do token decodificado
+
+  db.query(
+    'SELECT id, nome_completo, email, escola, tipo_usuario, telefone FROM usuarios WHERE id = ?',
+    [id],
+    (err, results) => {
+      if (err) return res.status(500).json(err);
+      if (results.length === 0) return res.status(404).json({ erro: 'Usuário não encontrado' });
+
+      res.json(results[0]);
+    }
+  );
+};
+exports.updatePerfil = (req, res) => {
+  const { id } = req.usuario; // vem do token
+  const { nome_completo, email, escola, tipo_usuario, telefone, bio } = req.body;
+
+  db.query(
+    'UPDATE usuarios SET nome_completo = ?, email = ?, escola = ?, tipo_usuario = ?, telefone = ?, bio = ? WHERE id = ?',
+    [nome_completo, email, escola, tipo_usuario, telefone, bio, id],
+    (err, results) => {
+      if (err) return res.status(500).json(err);
+
+      if (results.affectedRows === 0) {
+        return res.status(404).json({ erro: 'Usuário não encontrado' });
+      }
+
+      res.json({ mensagem: 'Perfil atualizado com sucesso!' });
+    }
+  );
 };

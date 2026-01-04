@@ -27,6 +27,8 @@ import Oportunidades from "./pages/Oportunidades/Oportunidades";
 import PaginaEmConstrucao from "./pages/PaginaEmConstrucao/PaginaEmConstrucao";
 
 // Se houver uma página de edição ou portal do professor, importe-as aqui:
+import EditProfile from "./pages/Editar/Editar"
+
 // import Editar from "./pages/Editar/Editar";
 // import PortalProfessor from "./pages/PortalProfessor/PortalProfessor";
 
@@ -102,6 +104,11 @@ function App() {
         <Route
           path="/em-construcao"
           element={usuarioLogado ? <PaginaEmConstrucao /> : <Navigate to="/login" />}
+        />
+
+        <Route
+          path="/editar-perfil"
+          element={usuarioLogado ? <EditProfile /> : <Navigate to="/login" />}
         />
 
         {/* Fallback: Redireciona qualquer rota não encontrada para a Home */}

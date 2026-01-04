@@ -141,7 +141,7 @@ exports.getPerfil = (req, res) => {
   console.log("getPerfil → id do token:", id);
 
   db.query(
-    "SELECT id, nome_completo, email, escola, tipo_usuario, telefone FROM usuarios WHERE id = ?",
+    "SELECT id, nome_completo, email, escola, tipo_usuario, telefone, bio, serie FROM usuarios WHERE id = ?",
     [id],
     (err, results) => {
       if (err) return res.status(500).json(err);
@@ -153,14 +153,14 @@ exports.getPerfil = (req, res) => {
 
 exports.updatePerfil = (req, res) => {
   const { id } = req.usuario; // NÃO usar req.params
-  const { nome_completo, email, escola, tipo_usuario, telefone, bio } = req.body;
+  const { nome_completo, email, escola, telefone, bio } = req.body;
 
   console.log("updatePerfil → id do token:", id);
-  console.log("updatePerfil → body:", { nome_completo, email, escola, tipo_usuario, telefone, bio });
+  console.log("updatePerfil → body:", { nome_completo, email, escola, telefone, bio });
 
   db.query(
-    "UPDATE usuarios SET nome_completo = ?, email = ?, escola = ?, tipo_usuario = ?, telefone = ?, bio = ? WHERE id = ?",
-    [nome_completo, email, escola, tipo_usuario, telefone, bio, id],
+    "UPDATE usuarios SET nome_completo = ?, email = ?, escola = ?, telefone = ?, bio = ? WHERE id = ?",
+    [nome_completo, email, escola, telefone, bio, id],
     (err, results) => {
       if (err) {
         console.error("Erro SQL:", err);

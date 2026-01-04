@@ -78,7 +78,7 @@ const Profile = () => {
             </div>
             <div className="user-details">
               <h1>{usuario.nome_completo}</h1>
-              <p>{usuario.serie || "Série não informada"}</p>
+              <p>{usuario.serie + "° ano do Ensino Médio" || "Série não informada"}</p>
               <small>{usuario.escola || "Escola não informada"}</small>
               <p><strong>Email:</strong> {usuario.email}</p>
               <p><strong>Tipo:</strong> {usuario.tipo_usuario}</p>
@@ -105,12 +105,7 @@ const Profile = () => {
                 <h3>Sobre mim</h3>
                 <span>❯</span>
               </div>
-              <p>
-                Sou uma pessoa curiosa e criativa, apaixonada por tecnologia, mas
-                também por arte, dança e fotografia. Gosto de explorar novas
-                ferramentas e entender como as coisas funcionam, sempre buscando
-                unir o lado técnico com o lado artístico.
-              </p>
+              <p className='about-paragraph'> {usuario.bio} </p>
             </section>
 
             {/* Meus Interesses */}

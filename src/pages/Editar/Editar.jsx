@@ -71,7 +71,7 @@ const EditProfile = () => {
     }
 
     setLoading(true);
-    fetch("http://localhost:5000/api/usuarios/editar", {
+    fetch("http://localhost:5000/api/usuarios/editar-perfil", {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
@@ -92,7 +92,7 @@ const EditProfile = () => {
         }
       })
       .catch(() => setErro("Erro ao atualizar perfil"))
-      .finally(() => setLoading(false));
+      .finally(() => setLoading(false));   
   };
 
   return (
@@ -147,7 +147,7 @@ const EditProfile = () => {
               name="bio"
               value={usuario.bio}
               onChange={handleChange}
-              maxLength={300}
+              maxLength={255}
             />
 
             <button type="submit" className="btn-save" disabled={loading}>

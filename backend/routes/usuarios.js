@@ -22,10 +22,10 @@ router.get('/teste', usuariosController.testarConexao);
 router.delete('/:id', autenticarToken, usuariosController.deleteUsuario);
 
 // 📌 Atualizar usuário (rota protegida)
+router.put('/editar-perfil', autenticarToken, usuariosController.updatePerfil);
+
 router.put('/:id', autenticarToken, usuariosController.updateUsuario);
 
 router.get('/perfil', autenticarToken, usuariosController.getPerfil);
-
-router.put('/editar', autenticarToken, usuariosController.updatePerfil);
 
 module.exports = router;

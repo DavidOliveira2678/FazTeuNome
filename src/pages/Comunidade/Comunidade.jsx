@@ -1,46 +1,52 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./Comunidade.css";
+
+function ListaPostagens() {
+  const [postagens, setPostagens] = useState([]);
+  const usuario = JSON.parse(localStorage.getItem("usuario"));
+  console.log('USUARIO LOGADO:  ', usuario);
+
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+
+    fetch("http://localhost:5000/api/comunidade", {
+      headers: {
+        Authorization: "Bearer " + token
+      }
+    })
+      .then(res => res.json())
+      .then(data => {
+        setPostagens(data); console.log('POSTAGEM: ', data);
+      })
+      .catch(err => console.error(err));
+  }, []);
+
+  return (
+    <div className="posts-list">
+      {postagens.length === 0 && <p>Nenhuma postagem ainda.</p>}
+
+      {postagens.map((postagem) => (
+        <div key={postagem.id} className="post-card">
+          <h4>{postagem.nome_completo}</h4>
+          <span>{new Date(postagem.data_atual).toLocaleDateString()}</span>
+          <p>{postagem.postagem}</p>
+
+
+          {Number(usuario.id) === Number(postagem.usuario_id) && (
+            <button>Excluir</button>
+          )}
+        </div>
+      ))}
+    </div>
+  );
+}
+
+
 
 const Comunidade = () => {
   const navigate = useNavigate();
   const [mensagem, setMensagem] = useState("");
-
-  const posts = [
-    {
-      id: 1,
-      autor: "Maria Santos",
-      tempo: "há 2 horas",
-      categoria: "Soft Skills",
-      avatar: "👩‍🏫",
-      conteudo:
-        "Acabei de terminar o módulo de Soft Skills, aprendi muito sobre inteligência emocional. Alguém mais já completou?",
-      likes: 24,
-      comentarios: 8,
-    },
-    {
-      id: 2,
-      autor: "Carlos Lima",
-      tempo: "há 5 horas",
-      categoria: "Oportunidades",
-      avatar: "👨‍💻",
-      conteudo:
-        "Dica: Assistam o webinário sobre carreiras em tecnologia amanhã às 14h. Vai ser incrível!",
-      likes: 45,
-      comentarios: 12,
-    },
-    {
-      id: 3,
-      autor: "Ana Costa",
-      tempo: "há 1 dia",
-      categoria: "Projetos",
-      avatar: "👩‍🎨",
-      conteudo:
-        "Estou desenvolvendo um projeto de app para simplificar o acesso a informações sobre emprego. Alguém quer colaborar?",
-      likes: 67,
-      comentarios: 19,
-    },
-  ];
 
   return (
     <div className="pagina-comunidade">
@@ -117,32 +123,7 @@ const Comunidade = () => {
           </div>
 
           {/* Lista de Posts */}
-          <div className="posts-list">
-            {posts.map((post) => (
-              <div key={post.id} className="post-card">
-                <div className="post-header">
-                  <div className="user-info">
-                    <div className="avatar-post">{post.avatar}</div>
-                    <div>
-                      <h4>{post.autor}</h4>
-                      <span>{post.tempo}</span>
-                    </div>
-                  </div>
-                  <span className="post-category">{post.categoria}</span>
-                </div>
-                <div className="post-body">
-                  <p>{post.conteudo}</p>
-                </div>
-                <div className="post-footer">
-                  <div className="interaction">
-                    <span>❤️ {post.likes}</span>
-                    <span>💬 {post.comentarios}</span>
-                  </div>
-                  <div className="share-icon" style={{ cursor: "pointer" }}>🔗</div>
-                </div>
-              </div>
-            ))}
-          </div>
+          <ListaPostagens />
         </main>
 
         {/* Coluna Lateral (Sidebar) */}

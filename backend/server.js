@@ -3,6 +3,7 @@ const cors = require('cors');
 require('dotenv').config();
 
 const usuariosRoutes = require('./routes/usuarios');
+const comunidadeRoutes = require('./routes/comunidade');
 
 const app = express();
 
@@ -12,6 +13,7 @@ app.use(express.json());
 
 // Rotas
 app.use('/api/usuarios', usuariosRoutes);
+app.use('/api/comunidade', comunidadeRoutes);
 
 // Porta configurável via .env (fallback para 5000)
 const PORT = process.env.PORT || 5000;

@@ -3,11 +3,18 @@
   user-select: none;
 }
 
+
+
+.Autoconhecimento-page-wrapper {
+  background-color: rgb(255, 255, 255);
+} 
+
+
 .Autoconhecimento-topbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 14px 22px;
+  padding: 10px 22px;
   border-bottom: 2px solid #dcdcdc;
   background: #ffffff;
 }
@@ -82,7 +89,7 @@
 .Autoconhecimento-container .progress-box {
   background: rgba(197, 106, 106, 0.216);
   border: 3px solid rgba(242, 18, 18, 0.103);
-  padding: 10px 16px;
+  padding: 16px 16px;
   border-radius: 14px;
   margin-top: 50px;
   display: flex;
@@ -254,7 +261,7 @@ textarea {
 }
 .Autoconhecimento-container {
   width: 100%;
-  max-width: 1500px;
+  max-width: 1100px;
   min-height: 100vh;
   margin: 0 auto;
   padding: 0 20px;

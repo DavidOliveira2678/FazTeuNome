@@ -52,37 +52,6 @@ const SoftSkills = () => {
             ⬅
           </span>
         </div>
-        <div className="topbar-links">
-  <span style={{ cursor: "pointer" }} onClick={() => navigate("/dashboard")}>
-    Início
-  </span>
-
-  <span style={{ cursor: "pointer" }} onClick={() => navigate("/profile")}>
-    Meu Perfil
-  </span>
-
-  <span style={{ cursor: "pointer" }} onClick={() => navigate("/comunidade")}>
-    Comunidade
-  </span>
-
-  <span style={{ cursor: "pointer" }} onClick={() => navigate("/ranking")}>
-    Ranking
-  </span>
-</div>
-
-
-<div className="topbar-user">
-  👤
-  <span
-    style={{ marginLeft: "8px", cursor: "pointer" }}
-    title="Sair"
-    onClick={() => navigate("/login")}
-  >
-    ⬅
-  </span>
-</div>
-
-
       </nav>
 
 
@@ -133,6 +102,8 @@ const SoftSkills = () => {
                 <span className="chevron">❯</span>
               </div>
             </div>
+
+            
 
             <div className="card-licao locked">
               <div className="circle-indicator"></div>
@@ -201,7 +172,7 @@ const SoftSkills = () => {
           <div>
             <h4>Recursos</h4>
             <ul><li>Guia do Professor</li><li>FAQ</li><li>Contato</li></ul>
-          </div>
+          </div> 
           <div>
             <h4>Igarassu</h4>
             <p>Desenvolvimento com escuta ativa e protagonismo juvenil para o município de Igarassu - PE.</p>

@@ -1,3 +1,4 @@
+
 /* Reset e base */
 * {
   margin: 0;
@@ -8,7 +9,7 @@
 html, body {
   height: 100%;
   font-family: 'Inter', sans-serif;
-  background-color: white;
+  background-color: rgb(255, 255, 255);
   overflow-x: hidden;
   overflow-y: auto;
 }
@@ -22,5 +23,11 @@ html, body {
   --orange: #ff7e33;
   --green: #5ca84b;
   --text-dark: #333;
-  --bg-light: #f8f9fa;
+  --bg-light: #ffffff;
+}
+
+/* Garante que qualquer wrapper de app fique branco */
+#root,
+.App {
+  background: #ffffff !important;
 }

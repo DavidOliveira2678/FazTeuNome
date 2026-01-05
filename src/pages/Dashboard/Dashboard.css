@@ -12,6 +12,7 @@
   display: flex;
   flex-direction: column;
   font-family: Arial, sans-serif;
+  background-color: #ffffff;
 }
 
 
@@ -153,12 +154,12 @@
 .progress-bar {
   height: 6px;
   border-radius: 4px;
-  background: gray;
+  background: rgb(232, 64, 229);
 }
 
 .progress-bar.green { background: #3bb54a; }
 .progress-bar.red { background: #e53935; }
-.progress-bar.gray { background: #bfbfbf; }
+.progress-bar.gray { background: #e747e7; }
 .progress-bar.yellow { background: #f8c12c; }
 
 .path-icon {
@@ -232,7 +233,7 @@
 }
 
 .conquista-item.desbloqueado {
-  background: #f8d6c8;
+  background: #e3f1b2;
   border: 1px solid #f4b9a3;
 }
 
@@ -250,6 +251,11 @@
   margin: 0;
   font-size: 13px;
   color: #555;
+}
+
+.conquista-item.desbloqueado:hover {
+  background-color:#c1de58; /* azul mais escuro */
+  color: white; /* muda o texto para branco para contraste */
 }
 
 .icon {
@@ -273,6 +279,11 @@
   margin: 0;
   font-size: 13px;
   color: #555;
+}
+
+.evento-item:hover {
+  background-color: #9aa5ee; /* azul mais escuro */
+  color: white; /* muda o texto para branco para contraste */
 }
 
 .sugestão-container {
@@ -360,3 +371,44 @@
   flex-wrap: wrap;
 }
 
+/* Hover para todos os cards */
+.path-card,
+.side-box,
+.conquista-item,
+.evento-item,
+.sugestão-container {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.path-card:hover,
+.side-box:hover,
+.conquista-item:hover,
+.evento-item:hover,
+.sugestão-container:hover {
+  transform: scale(1.05); /* aumenta 5% do tamanho */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* sombra mais intensa */
+  cursor: pointer; /* muda o cursor para indicar interatividade */
+}
+
+/* Transição para todos os cards */
+.card-soft,
+.card-hard,
+.card-projetovida {
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+/* Hover específico por tipo */
+.card-soft:hover {
+  background-color: #ffb561; /* laranja */
+  transform: scale(1.05);
+}
+
+.card-hard:hover {
+  background-color: #b4f4bb; /* verde */
+  transform: scale(1.05);
+}
+
+.card-projetovida:hover {
+  background-color: #d59aee; /* roxo */
+  transform: scale(1.05);
+}

@@ -29,35 +29,6 @@ const navigate = useNavigate();
             ⬅
           </span>
         </div>
-        <div className="topbar-links">
-  <span style={{ cursor: "pointer" }} onClick={() => navigate("/dashboard")}>
-    Início
-  </span>
-
-  <span style={{ cursor: "pointer" }} onClick={() => navigate("/profile")}>
-    Meu Perfil
-  </span>
-
-  <span style={{ cursor: "pointer" }} onClick={() => navigate("/comunidade")}>
-    Comunidade
-  </span>
-
-  <span style={{ cursor: "pointer" }} onClick={() => navigate("/ranking")}>
-    Ranking
-  </span>
-</div>
-
-          
-          <div className="topbar-user">
-            👤
-            <span
-              style={{ marginLeft: "8px", cursor: "pointer" }}
-              title="Sair"
-              onClick={() => (window.location.href = "/login")}
-            >
-              ⬅
-            </span>
-          </div>
       </nav>
 
       <div className="content-wrapper">

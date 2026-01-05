@@ -16,32 +16,33 @@ export default function VocabulariodeNegocios({ nome }) {
 
   return (
     <>
+      {/* TOPBAR full width */}
+      <nav className="VocabulariodeNegocios-topbar">
+        <div className="topbar-logo" onClick={() => navigate("/dashboard")} style={{ cursor: "pointer" }}>
+          🚀 Faz Teu Nome
+        </div>
+
+        <div className="topbar-links">
+          <span onClick={() => navigate("/dashboard")}>Início</span>
+          <span onClick={() => navigate("/profile")}>Meu Perfil</span>
+          <span onClick={() => navigate("/comunidade")}>Comunidade</span>
+          <span onClick={() => navigate("/ranking")}>Ranking</span>
+        </div>
+
+        <div className="topbar-user">
+          <span onClick={() => navigate("/profile")} style={{ cursor: "pointer" }}>👤</span>
+          <span
+            style={{ marginLeft: "8px", cursor: "pointer" }}
+            title="Sair"
+            onClick={() => (window.location.href = "/login")}
+          >
+            ⬅
+          </span>
+        </div>
+      </nav>
+
+      {/* CONTAINER CENTRAL */}
       <div className="VocabulariodeNegocios-container">
-        {/* TOPBAR */}
-        <nav className="VocabulariodeNegocios-topbar">
-          <div className="topbar-logo" onClick={() => navigate("/dashboard")} style={{ cursor: "pointer" }}>
-            🚀 Faz Teu Nome
-          </div>
-
-          <div className="topbar-links">
-            <span onClick={() => navigate("/dashboard")}>Início</span>
-            <span onClick={() => navigate("/profile")}>Meu Perfil</span>
-            <span onClick={() => navigate("/comunidade")}>Comunidade</span>
-            <span onClick={() => navigate("/ranking")}>Ranking</span>
-          </div>
-
-          <div className="topbar-user">
-            <span onClick={() => navigate("/profile")} style={{ cursor: "pointer" }}>👤</span>
-            <span
-              style={{ marginLeft: "8px", cursor: "pointer" }}
-              title="Sair"
-              onClick={() => (window.location.href = "/login")}
-            >
-              ⬅
-            </span>
-          </div>
-        </nav>
-
         {/* HEADER */}
         <div className="VocabulariodeNegocios-header">
           <div className="header-top">
@@ -53,7 +54,7 @@ export default function VocabulariodeNegocios({ nome }) {
 
               <div style={{ marginTop: "14px" }}>
                 <div className="progress-bar-container" style={{ width: "250px", background: "#e0e0e0", borderRadius: "8px" }}>
-                   <div className="progress-bar-fill" style={{ width: "0%", height: "10px", background: "#4caf50", borderRadius: "8px" }} />
+                  <div className="progress-bar-fill" style={{ width: "0%", height: "10px", background: "#4caf50", borderRadius: "8px" }} />
                 </div>
               </div>
             </div>
@@ -150,41 +151,32 @@ export default function VocabulariodeNegocios({ nome }) {
         </div>
       </div>
 
-      {/* FOOTER */}
-      <footer className="footer-container">
-        <div className="footer-columns">
-          <div className="footer-col">
+      {/* FOOTER full width */}
+       <footer className="footer" onClick={() => navigate("/em-construcao")} style={{ cursor: "pointer" }}>
+        <div className="footer-grid">
+          <div>
             <h4>Faz Teu Nome</h4>
-            <p>Plataforma pedagógica para protagonismo juvenil e projeto de vida.</p>
+            <p>Plataforma pedagógica para protagonismo juvenil e construção de projeto de vida.</p>
           </div>
-          <div className="footer-col">
+          <div>
             <h4>Plataforma</h4>
-            <ul>
-              <li onClick={() => navigate("/trilha")}>Trilha de Aprendizagem</li>
-              <li>Comunidade</li>
-              <li>Hackaton</li>
-            </ul>
+            <ul><li>Trilha de aprendizagem</li><li>Comunidade</li><li>Hackaton</li></ul>
           </div>
-          <div className="footer-col">
+          <div>
             <h4>Recursos</h4>
-            <ul>
-              <li>Guia do Professor</li>
-              <li>FAQ</li>
-              <li>Contato</li>
-            </ul>
+            <ul><li>Guia do Professor</li><li>FAQ</li><li>Contato</li></ul>
           </div>
-          <div className="footer-col">
+          <div>
             <h4>Igarassu</h4>
-            <p>Desenvolvimento com escuta ativa para o município de Igarassu-PE.</p>
+            <p>Desenvolvimento com escuta ativa e protagonismo juvenil para o município de Igarassu-PE.</p>
           </div>
         </div>
-
         <div className="footer-bottom">
           <span>© {new Date().getFullYear()} Faz Teu Nome — Todos os direitos reservados.</span>
           <div className="footer-links">
             <span>Privacidade</span>
             <span>Termos</span>
-            <span>Suporte</span>
+            <span>Acessibilidade</span>
           </div>
         </div>
       </footer>

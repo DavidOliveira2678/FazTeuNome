@@ -23,7 +23,7 @@ export default function Dashboard({ nome }) {
           setErro(data.erro);
         } else {
           setUsuario(data);
-        }
+        } 
       })
       .catch(() => setErro("Erro ao carregar perfil"));
   }, [navigate]);
@@ -35,7 +35,7 @@ export default function Dashboard({ nome }) {
           onClick={() => navigate("/dashboard")} 
           style={{ cursor: "pointer" }}
         >
-          🚀 <span>FAZ TEU NOME</span>
+          🚀 <span>Faz Teu Nome</span>
         </div>
 
         <div className="nav-links">
@@ -94,51 +94,50 @@ export default function Dashboard({ nome }) {
           {/* TRILHA DE APRENDIZAGEM */}
           <section className="learning-path">
             <h3>Trilha de Aprendizagem</h3>
-
             <div
-              className="path-card"
-              onClick={() => navigate("/softskills")}
-              style={{ cursor: "pointer" }}
-            >
-              <span className="icon">🧠</span>
-              <div className="path-content">
-                <h4>Soft Skills</h4>
-                <p>Desenvolva inteligência emocional, liderança e empatia.</p>
-                <div className="progress-container">
-                    <div className="progress-bar green" style={{ width: "60%" }} />
-                </div>
-              </div>
-            </div>
+  className="path-card card-soft"
+  onClick={() => navigate("/softskills")}
+  style={{ cursor: "pointer" }}
+>
+  <span className="icon">🧠</span>
+  <div className="path-content">
+    <h4>Soft Skills</h4>
+    <p>Desenvolva inteligência emocional, liderança e empatia.</p>
+    <div className="progress-container">
+      <div className="progress-bar green" style={{ width: "60%" }} />
+    </div>
+  </div>
+</div>
 
-            <div
-              className="path-card"
-              onClick={() => navigate("/hardskills")}
-              style={{ cursor: "pointer" }}
-            >
-              <span className="icon">⚡</span>
-              <div className="path-content">
-                <h4>Hard Skills</h4>
-                <p>Domine ferramentas digitais, processos e inglês profissional.</p>
-                <div className="progress-container">
-                    <div className="progress-bar red" style={{ width: "15%" }} />
-                </div>
-              </div>
-            </div>
+<div
+  className="path-card card-hard"
+  onClick={() => navigate("/hardskills")}
+  style={{ cursor: "pointer" }}
+>
+  <span className="icon">⚡</span>
+  <div className="path-content">
+    <h4>Hard Skills</h4>
+    <p>Desenvolva habilidades tecnicas essenciais para o mundo profissional.</p>
+    <div className="progress-container">
+      <div className="progress-bar red" style={{ width: "15%" }} />
+    </div>
+  </div>
+</div>
 
-            <div
-              className="path-card"
-              onClick={() => navigate("/projetodevida")}
-              style={{ cursor: "pointer" }}
-            >
-              <span className="icon">🗺️</span>
-              <div className="path-content">
-                <h4>Projeto de Vida</h4>
-                <p>Construa seu projeto de vida com reflexão crítica.</p>
-                <div className="progress-container">
-                    <div className="progress-bar gray" style={{ width: "5%" }} />
-                </div>
-              </div>
-            </div>
+<div
+  className="path-card card-projetovida"
+  onClick={() => navigate("/projetodevida")}
+  style={{ cursor: "pointer" }}
+>
+  <span className="icon">🗺️</span>
+  <div className="path-content">
+    <h4>Projeto de Vida</h4>
+    <p>Construa seu projeto de vida com reflexão crítica.</p>
+    <div className="progress-container">
+      <div className="progress-bar gray" style={{ width: "5%" }} />
+    </div>
+  </div>
+</div>
           </section>
 
           {/* COLUNA LATERAL */}

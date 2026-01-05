@@ -51,7 +51,6 @@ function HardSkills() {
           </span>
         </div>
       </nav>
-
       <div className="content-wrapper">
         {/* Banner de Progresso Verde */}
         <section className="hero-card-hard">

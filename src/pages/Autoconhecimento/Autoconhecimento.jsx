@@ -27,8 +27,8 @@ export default function Autoconhecimento({ nome }) {
       {/* NAVBAR */}
       <nav className="Autoconhecimento-topbar">
         <div className="topbar-logo" onClick={() => navigate("/dashboard")} style={{ cursor: "pointer" }}>
-          🚀 <span>FAZ TEU NOME</span>
-        </div>
+          🚀 <span>Faz Teu Nome</span>
+        </div> 
 
         <div className="topbar-links">
           <span onClick={() => navigate("/dashboard")}>Início</span>

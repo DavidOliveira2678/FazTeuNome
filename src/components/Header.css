@@ -1,0 +1,85 @@
+* {
+  user-select: none;
+  box-sizing: border-box;
+}
+
+.header {
+  width: 100%;
+  background: #ffffff;
+  border-bottom: 2px solid #dcdcdc;
+  padding: 12px 22px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header-logo {
+  font-size: 16px;
+  font-weight: bold;
+  color: #0f6fa1;
+  transition: 200ms;
+}
+
+.header-logo:hover{
+    font-size: 1.1rem;
+    transition: 200ms;
+    font-weight: 1000;
+}
+
+.nav-links {
+  display: flex;
+  gap: 35px;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.nav-links-clickable-inicio,
+.nav-links-clickable-perfil,
+.nav-links-clickable-comunidade,
+.nav-links-clickable-ranking{
+    transition: 200ms;
+}
+
+.nav-links-clickable-inicio:hover,
+.nav-links-clickable-perfil:hover,
+.nav-links-clickable-comunidade:hover,
+.nav-links-clickable-ranking:hover{
+    font-size: 1.2rem;
+    color: #0f6fa1;
+    transition: 200ms;
+    font-weight: 1000;
+}
+
+.header-user {
+    font-size: 22px;
+    display: flex;
+    gap: 2px;
+}
+
+.header-user-name{
+    transition: 100ms;
+}
+
+.header-user-name:hover{
+    text-decoration: underline;
+    font-weight: 800;
+    transition: 100ms;
+}
+
+.header-user-leave{
+    text-align: center;
+    width: auto;
+    border-radius: 10px;
+    width: 30px;
+    transition: 200ms;
+}
+
+.header-user-leave:hover{
+    background-color: rgb(240, 198, 195);
+    transition: 200ms;
+}
+
+.link-ativo{
+    text-decoration: underline;
+    font-weight: bold;
+}

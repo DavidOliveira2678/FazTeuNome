@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import Header from '../../components/Header';
 import "./Dashboard.css";
 
-export default function Dashboard({ nome }) {
+export default function Dashboard() {
   const navigate = useNavigate();
   const [usuario, setUsuario] = useState(null);
   const [erro, setErro] = useState("");
@@ -23,51 +24,19 @@ export default function Dashboard({ nome }) {
           setErro(data.erro);
         } else {
           setUsuario(data);
+          console.log(data)
         } 
       })
       .catch(() => setErro("Erro ao carregar perfil"));
   }, [navigate]);
     return (
     <>
-      <nav className="dashboard-topbar">
-        <div 
-          className="topbar-logo" 
-          onClick={() => navigate("/dashboard")} 
-          style={{ cursor: "pointer" }}
-        >
-          🚀 <span>Faz Teu Nome</span>
-        </div>
-
-        <div className="nav-links">
-          <span onClick={() => navigate("/dashboard")}>Início</span>
-          <span onClick={() => navigate("/profile")}>Meu Perfil</span>
-          <span onClick={() => navigate("/comunidade")}>Comunidade</span>
-          <span onClick={() => navigate("/ranking")}>Ranking</span>
-        </div>
-
-        <div className="topbar-user">
-          👤
-          <span style={{marginLeft: "8px"}}>{usuario ? usuario.nome_completo : "Carregando..."}
-
-          </span>
-          <span
-            style={{ marginLeft: "12px", cursor: "pointer" }}
-            title="Sair"
-            onClick={() => {
-              localStorage.removeItem("token");
-              localStorage.removeItem("usuario");
-              navigate("/login");
-            }}
-          >
-            ⬅
-          </span>
-        </div>
-      </nav>
+      <Header />
 
       {/* CONTEÚDO PRINCIPAL */}
       <div className="dashboard-container">
         <header className="dashboard-header">
-          <h2>Bem-vindo à sua jornada, {nome || "estudante"}!</h2>
+          <h2>Bem-vindo à sua jornada, {usuario?.nome_completo || "estudante"}!</h2>
           <p>
             Chegou a hora de descobrir talentos, desenvolver habilidades que fazem
             a diferença e construir um futuro com impacto.

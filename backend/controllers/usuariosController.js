@@ -2,7 +2,6 @@ const db = require('../config/db');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 
-// 📌 Listar todos os usuários
 exports.getUsuarios = (req, res) => {
   db.query(
     'SELECT id, nome_completo, email, escola, tipo_usuario, telefone FROM usuarios',
@@ -13,7 +12,6 @@ exports.getUsuarios = (req, res) => {
   );
 };
 
-// 📌 Criar novo usuário (com hash de senha)
 exports.createUsuario = async (req, res) => {
   try {
     const { nome_completo, email, escola, tipo_usuario, senha, telefone } = req.body;
@@ -44,7 +42,6 @@ exports.createUsuario = async (req, res) => {
   }
 };
 
-// 📌 Login do usuário (com JWT)
 exports.loginUsuario = (req, res) => {
   const { email, senha } = req.body;
 
@@ -80,7 +77,6 @@ exports.loginUsuario = (req, res) => {
   });
 };
 
-// 📌 Testar conexão
 exports.testarConexao = (req, res) => {
   db.query('SELECT 1 + 1 AS resultado', (err, results) => {
     if (err) {
@@ -91,7 +87,6 @@ exports.testarConexao = (req, res) => {
   });
 };
 
-// 📌 Apagar usuário pelo ID
 exports.deleteUsuario = (req, res) => {
   const { id } = req.params;
 
@@ -106,7 +101,6 @@ exports.deleteUsuario = (req, res) => {
   });
 };
 
-// 📌 Atualizar usuário pelo ID
 exports.updateUsuario = (req, res) => {
   const { id } = req.params;
   const { nome_completo, email, escola, tipo_usuario, telefone } = req.body;
@@ -126,7 +120,6 @@ exports.updateUsuario = (req, res) => {
   );
 };
 
-// 📌 Verificar se email já existe
 exports.verificarEmail = (req, res) => {
   const { email } = req.query;
 

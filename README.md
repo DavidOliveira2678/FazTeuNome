@@ -33,9 +33,23 @@ Integrar uma trilha pedagógica prática e atrativa ao componente Projeto de Vid
 - Fortalecimento do protagonismo juvenil e da empregabilidade.
 
 
+## ⚙️ Como rodar o projeto?
+### 1 - Clone o repositório
+Para clonar o repositório local, você deve executar o comando `git clone https://github.com/DavidOliveira2678/FazTeuNome.git` no git bash e executar, também, o comando `cd FazTeuNome` para trocar o diretório.
 
----
+### 2 - Troque a branch
+Após clonar o repositório, execute o comando `git checkout develop` para acessar a branch mais avançada do projeto.
 
-# 🚀 **Vai lá e Faz Teu Nome!**
+### 3 - Baixe os arquivos do Node
+Depois disso, abra um novo terminal _(recomenda-se o terminal do CMD na sua IDE)_ e execute o comando `npm i`, ou `npm install` na tanto dentro da **pasta raiz (FazTeuNome)** quando dentro da **pasta do backend (FazTeuNome/backend)**
+
+### 4 - Configure o .env
+Coloque os valores da sua máquina local dentro do `.env` para que ele tenha acesso especialmente ao banco de dados.
+
+### 5 - Execute o projeto
+Para executar o projeto, abra dois terminais separados, um na pasta raiz e outro na pasta de backend. Dentro desses terminais separados execute o comando `npm start`, isso iniciará o projeto nas duas stacks e fará com que o backend esteja integrado ao frontend e aplicação execute sem falhas.
+
+
+# 🚀 **Agora vai lá e Faz Teu Nome!**
 
 

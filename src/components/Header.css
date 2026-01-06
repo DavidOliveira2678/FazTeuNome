@@ -5,7 +5,7 @@
 
 .header {
   width: 100%;
-background: #0f6fa1;
+  background: #0f6fa1;
   border-bottom: 2px solid #dcdcdc;
   padding: 20px 22px;
   display: flex;
@@ -14,7 +14,7 @@ background: #0f6fa1;
 }
 
 .header-logo {
-  font-size: 26px;
+  font-size: 1rem;
   font-weight: bold;
   color: #ffffff;
   transition: 200ms;
@@ -60,7 +60,7 @@ background: #0f6fa1;
     font-size: 18px;
     display: flex;
     gap: 2px;
-     color: #bfdae8;
+    color: #bfdae8;
 }
 
 .header-user-name{
@@ -89,4 +89,68 @@ background: #0f6fa1;
 .link-ativo{
     text-decoration: underline;
     font-weight: bold;
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+
+  background: rgba(0, 0, 0, 0.5);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  z-index: 9999;
+}
+
+.modal-div {
+  background: #fff;
+  padding: 28px;
+  border-radius: 10px;
+  min-width: 250px;
+  max-width: 500px;
+  min-height: 200px;
+  max-height: 400px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-div-buttons{
+  display:flex;
+  justify-content: space-around;
+  padding: 10px;
+  margin-top: 10px;
+}
+
+.modal-button-leave,
+.modal-button-stay{
+  border-radius: 34px;
+  gap: 10px;
+  height: 40px;
+  width: 100px;
+  font-size: 20px;
+  transition: 200ms;
+}
+
+.modal-button-leave:hover,
+.modal-button-stay:hover{
+  height: 60px;
+  width: 120px;
+  font-size: 24px;
+  transition: 200ms;
+}
+
+.modal-button-leave{
+  background-color: rgb(241, 167, 167);
+  border: solid 3px #923e49;
+}
+
+.modal-button-stay{
+  background-color: rgb(120, 168, 207);
+  border: solid 3px #3e5c92;
 }

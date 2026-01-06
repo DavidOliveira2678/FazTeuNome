@@ -1,12 +1,29 @@
 import React, { useEffect, useState } from "react";
+import ReactDOM from 'react-dom';
 import { useNavigate, useLocation } from "react-router-dom";
 import "./Header.css";
+
+function LeaveDialog({ onClose, navigate, children }){
+  return ReactDOM.createPortal(
+    <div className="modal-overlay">
+      <div className="modal-div">
+        { children }
+        <div className="modal-div-buttons">
+          <button className="modal-button-stay" style={{ cursor: "pointer" }} type="button" onClick={onClose}>Ficar</button>
+          <button className="modal-button-leave" style={{ cursor: "pointer" }} type="button" onClick={() => { localStorage.clear(); navigate("/login"); }}>Sair</button>
+          </div>
+      </div>
+    </div>,
+    document.getElementById('modal-root')
+  );
+}
 
 export default function Header() {
   const navigate = useNavigate();
   const location = useLocation();
   const [usuario, setUsuario] = useState(null);
   const ativo = (caminho) => location.pathname === caminho ? "link-ativo" : "";
+  const [modalAberto, setModalAberto] = useState(false);
 
   useEffect(() => {
     const token = localStorage.getItem("token");
@@ -22,7 +39,6 @@ export default function Header() {
   }, []);
 
   return (
-    <>
     <header className="header">
       <div
         className="header-logo"
@@ -49,15 +65,17 @@ export default function Header() {
           className="header-user-leave"
           style={{ marginLeft: "12px", cursor: "pointer" }}
           title="Sair"
-          onClick={() => {
-            localStorage.clear();
-            navigate("/login");
-          }}
+          onClick={() => setModalAberto(true)}
         >
           ⬅
         </span>
+        {modalAberto && (
+          <LeaveDialog onClose={() => setModalAberto(false)} navigate={navigate}>
+            <h2>Você está saindo da sua conta</h2>
+            <p>Tem certeza que deseja sair, {usuario?.nome_completo || "estudante" }?</p>
+          </LeaveDialog>
+        )}
       </div>
     </header>
-    </>
-  );
+  )
 }

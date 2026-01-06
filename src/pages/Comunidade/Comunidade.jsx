@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./Comunidade.css";
+import Header from "../../components/Header"
 
 function ListaPostagens() {
   const [postagens, setPostagens] = useState([]);
@@ -50,47 +51,8 @@ const Comunidade = () => {
 
   return (
     <div className="pagina-comunidade">
-      {/* Navbar */}
-      <nav className="navbar">
-        <div className="logo">
-          <span
-            className="topbar-logo"
-            onClick={() => navigate("/dashboard")}
-            style={{ cursor: "pointer" }}
-          >
-            🚀 Faz Teu Nome
-          </span>
-        </div>
-
-        <div className="nav-links">
-          <span onClick={() => navigate("/dashboard")}>Início</span>
-          <span onClick={() => navigate("/profile")}>Meu Perfil</span>
-          <span
-            style={{ fontWeight: "bold" }}
-            onClick={() => navigate("/comunidade")}
-          >
-            Comunidade
-          </span>
-          <span onClick={() => navigate("/ranking")}>Ranking</span>
-        </div>
-
-        <div className="topbar-user">
-          <span 
-            onClick={() => navigate("/profile")} 
-            style={{ cursor: "pointer" }}
-          >
-            👤
-          </span>
-          <span
-            style={{ marginLeft: "15px", cursor: "pointer" }}
-            title="Sair"
-            onClick={() => navigate("/login")}
-          >
-            ⬅
-          </span>
-        </div>
-      </nav>
-
+      
+     <Header/>
       <div className="container main-layout">
         {/* Coluna Principal (Feed) */}
         <main className="feed-column">
@@ -153,43 +115,46 @@ const Comunidade = () => {
       </div>
 
       {/* Footer */}
-      <footer
+       <footer
         className="footer"
         onClick={() => navigate("/em-construcao")}
         style={{ cursor: "pointer" }}
       >
-        <div className="footer-grid">
-          <div>
+        <div className="footer-columns">
+          <div className="footer-col">
             <h4>Faz Teu Nome</h4>
-            <p>Plataforma pedagógica para protagonismo juvenil e projeto de vida.</p>
+            <p>Plataforma pedagógica para protagonismo juvenil.</p>
           </div>
-          <div>
+          <div className="footer-col">
             <h4>Plataforma</h4>
             <ul>
-              <li>Trilha de aprendizagem</li>
+              <li>Trilha</li>
               <li>Comunidade</li>
               <li>Hackaton</li>
             </ul>
           </div>
-          <div>
+          <div className="footer-col">
             <h4>Recursos</h4>
             <ul>
-              <li>Guia do Professor</li>
+              <li>Guia</li>
               <li>FAQ</li>
               <li>Contato</li>
             </ul>
           </div>
-          <div>
+          <div className="footer-col">
             <h4>Igarassu</h4>
-            <p>Desenvolvimento para o município de Igarassu - PE.</p>
+            <p>Desenvolvimento para o município de Igarassu-PE.</p>
           </div>
         </div>
+
         <div className="footer-bottom">
-          <span>© 2026 Faz Teu Nome. Todos os direitos reservados.</span>
+          <span>
+            © {new Date().getFullYear()} Faz Teu Nome — Todos os direitos reservados.
+          </span>
           <div className="footer-links">
             <span>Privacidade</span>
             <span>Termos</span>
-            <span>Acessibilidade</span>
+            <span>Suporte</span>
           </div>
         </div>
       </footer>

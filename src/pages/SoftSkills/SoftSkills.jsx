@@ -1,6 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import "./SoftSkills.css";
+import Header from "../../components/Header"
 
 const SoftSkills = () => {
   const navigate = useNavigate();
@@ -28,31 +29,7 @@ const SoftSkills = () => {
 
   return (
     <div className="pagina-container">
-      {/* Navbar */}
-      <nav className="navbar">
-        <div className="logo">
-          <Icons.Rocket />
-          <div className="topbar-logo" onClick={() => navigate("/dashboard")}> 🚀 Faz Teu Nome</div>
-        </div>
-
-        <div className="nav-links">
-          <a onClick={() => navigate("/dashboard")}>Início</a>
-          <a onClick={() => navigate("/profile")}>Meu Perfil</a>
-          <a onClick={() => navigate("/comunidade")}>Comunidade</a>
-          <a onClick={() => navigate("/ranking")}>Ranking</a>
-        </div>
-
-        <div className="topbar-user" onClick={() => navigate("/profile")} style={{ marginLeft: "8px", cursor: "pointer" }}>
-          👤
-          <span
-            style={{ marginLeft: "8px", cursor: "pointer" }}
-            title="Sair"
-            onClick={() => (window.location.href = "/login")}
-          >
-            ⬅
-          </span>
-        </div>
-      </nav>
+     <Header/>
 
 
 

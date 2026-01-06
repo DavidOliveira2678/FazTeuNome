@@ -2,6 +2,7 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 
 import "./Ranking.css";
+import Header from "../../components/Header"
 
 const Ranking = () => {
     const navigate = useNavigate();
@@ -16,29 +17,7 @@ const Ranking = () => {
 
   return (
     <div className="ranking-page">
-      {/* Navbar */}
-      <nav className="navbar">
-        <div className="logo">
-          <div className="topbar-logo" onClick={() => navigate("/dashboard")}> 🚀 Faz Teu Nome</div>
-        </div>
-        <div className="nav-links">
-          <a onClick={() => navigate("/dashboard")}>Início</a>
-          <a onClick={() => navigate("/profile")}>Meu Perfil</a>
-          <a onClick={() => navigate("/comunidade")}>Comunidade</a>
-          <a onClick={() => navigate("/ranking")}>Ranking</a>
-        </div>
-
-       <div className="topbar-user" onClick={() => navigate("/profile")} style={{ marginLeft: "8px", cursor: "pointer" }}>
-          👤
-          <span
-            style={{ marginLeft: "8px", cursor: "pointer" }}
-            title="Sair"
-            onClick={() => (window.location.href = "/login")}
-          >
-            ⬅
-          </span>
-        </div>
-      </nav>
+      <Header/>
 
       <div className="container">
         <header className="ranking-header">
@@ -120,35 +99,46 @@ const Ranking = () => {
       </div>
 
       {/* Footer */}
-         <footer
+       <footer
         className="footer"
         onClick={() => navigate("/em-construcao")}
         style={{ cursor: "pointer" }}
       >
-        <div className="footer-grid">
-          <div>
+        <div className="footer-columns">
+          <div className="footer-col">
             <h4>Faz Teu Nome</h4>
-            <p>Plataforma pedagógica para protagonismo juvenil e construção de projeto de vida.</p>
+            <p>Plataforma pedagógica para protagonismo juvenil.</p>
           </div>
-          <div>
+          <div className="footer-col">
             <h4>Plataforma</h4>
-            <ul><li>Trilha de aprendizagem</li><li>Comunidade</li><li>Hackaton</li></ul>
+            <ul>
+              <li>Trilha</li>
+              <li>Comunidade</li>
+              <li>Hackaton</li>
+            </ul>
           </div>
-          <div>
+          <div className="footer-col">
             <h4>Recursos</h4>
-            <ul><li>Guia do Professor</li><li>FAQ</li><li>Contato</li></ul>
+            <ul>
+              <li>Guia</li>
+              <li>FAQ</li>
+              <li>Contato</li>
+            </ul>
           </div>
-          <div>
+          <div className="footer-col">
             <h4>Igarassu</h4>
-            <p>Desenvolvimento com escuta ativa e protagonismo juvenil para o município de Igarassu - PE.</p>
+            <p>Desenvolvimento para o município de Igarassu-PE.</p>
           </div>
         </div>
+
         <div className="footer-bottom">
-          <span>© 2025 Faz Teu Nome. Todos os direitos reservados.</span>
+          <span>
+            © {new Date().getFullYear()} Faz Teu Nome — Todos os direitos reservados.
+          </span>
           <div className="footer-links">
-            <a href="#">Privacidade</a>
-            <a href="#">Termos</a>
-            <a href="#">Acessibilidade</a>
+            <span>Privacidade</span>
+            <span>Termos</span>
+            <span>Suporte</span>
           </div>
         </div>
       </footer>

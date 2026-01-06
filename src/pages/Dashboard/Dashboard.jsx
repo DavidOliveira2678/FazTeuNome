@@ -106,7 +106,7 @@ export default function Dashboard() {
       <div className="progress-bar gray" style={{ width: "5%" }} />
     </div>
   </div>
-</div>
+</div> 
           </section>
 
           {/* COLUNA LATERAL */}
@@ -161,7 +161,7 @@ export default function Dashboard() {
                 Complete todas as lições para desbloquear a área de criação do
                 seu projeto vocacional.
               </p>
-            </div>
+            </div> 
           </aside>
         </div>
       </div>

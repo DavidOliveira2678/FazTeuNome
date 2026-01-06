@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./Autoconhecimento.css";
+import Header from "../../components/Header"
 
 export default function Autoconhecimento({ nome }) {
   const navigate = useNavigate();
@@ -24,30 +25,7 @@ export default function Autoconhecimento({ nome }) {
 
   return (
     <div className="Autoconhecimento-page-wrapper">
-      {/* NAVBAR */}
-      <nav className="Autoconhecimento-topbar">
-        <div className="topbar-logo" onClick={() => navigate("/dashboard")} style={{ cursor: "pointer" }}>
-          🚀 <span>Faz Teu Nome</span>
-        </div> 
-
-        <div className="topbar-links">
-          <span onClick={() => navigate("/dashboard")}>Início</span>
-          <span onClick={() => navigate("/profile")}>Meu Perfil</span>
-          <span onClick={() => navigate("/comunidade")}>Comunidade</span>
-          <span onClick={() => navigate("/ranking")}>Ranking</span>
-        </div>
-
-        <div className="topbar-user">
-          <span onClick={() => navigate("/profile")} style={{ cursor: "pointer" }}>👤</span>
-          <span
-            style={{ marginLeft: "8px", cursor: "pointer" }}
-            title="Sair"
-            onClick={() => (window.location.href = "/login")}
-          >
-            ⬅
-          </span>
-        </div>
-      </nav>
+      <Header/>
 
       <div className="Autoconhecimento-container">
         {/* HEADER */}

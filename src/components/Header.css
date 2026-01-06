@@ -5,32 +5,38 @@
 
 .header {
   width: 100%;
-  background: #ffffff;
+background: #0f6fa1;
   border-bottom: 2px solid #dcdcdc;
-  padding: 12px 22px;
+  padding: 20px 22px;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
 .header-logo {
-  font-size: 16px;
+  font-size: 26px;
   font-weight: bold;
-  color: #0f6fa1;
+  color: #ffffff;
   transition: 200ms;
 }
 
 .header-logo:hover{
     font-size: 1.1rem;
-    transition: 200ms;
-    font-weight: 1000;
+    transition: 100ms;
+    font-weight: 1000;  
 }
 
 .nav-links {
   display: flex;
-  gap: 35px;
-  font-size: 16px;
+  gap: 250px;
+  font-size: 18px;
   font-weight: 500;
+   color: #ffffff;
+}
+
+.nav-links:hover{
+  color: #ffffff;
+
 }
 
 .nav-links-clickable-inicio,
@@ -45,15 +51,16 @@
 .nav-links-clickable-comunidade:hover,
 .nav-links-clickable-ranking:hover{
     font-size: 1.2rem;
-    color: #0f6fa1;
+    color: #0a067d;
     transition: 200ms;
     font-weight: 1000;
 }
 
 .header-user {
-    font-size: 22px;
+    font-size: 18px;
     display: flex;
     gap: 2px;
+     color: #bfdae8;
 }
 
 .header-user-name{

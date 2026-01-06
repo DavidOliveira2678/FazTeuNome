@@ -5,7 +5,7 @@
 
 .dashboard-container {
   width: 100%;
-  max-width: 1500px;
+  max-width: 2500px;
   min-height: 100vh;
   margin: 0 auto;
   padding: 0 20px;
@@ -43,16 +43,21 @@
 .dashboard-header {
   background: #0f6fa1;
   color: white;
-  padding: 30px;
-  border-radius: 20px;
-  margin-top: 12px;
+  padding: 80px;           /* aumenta o espaço interno */
+  border-radius: 24px;
+  margin-top: 30px;
+  min-height: 280px;       /* força o card a crescer */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .dashboard-header h2 {
   color: #ffffff;         
   font-weight: bold;     
-  margin-bottom: 10px;    
+  margin-bottom: 12px;    
   text-transform: uppercase;
+    font-size: 44px;
 }
 
 .progress-info {
@@ -63,6 +68,8 @@
 .dashboard-header h2 {
   color: white;
 }
+
+
 .progress-box {
   background: rgba(255, 255, 255, 0.25);
   padding: 10px 16px;
@@ -107,19 +114,21 @@
 
 .path-card {
   background: white;
-  padding: 12px 16px;
-  border-radius: 10px;
-  margin-bottom: 12px;
+  padding: 28px 32px;        /* MAIS espaço interno */
+  border-radius: 18px;
+  margin-bottom: 20px;
   display: flex;
-  gap: 12px;
+  gap: 20px;
   align-items: center;
   border: 1px solid #e7e7e7;
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+  min-height: 140px;         /* AQUI ele cresce de verdade */
 }
 
-.path-card .icon {
-  font-size: 28px;
-  flex-shrink: 0;
+
+.progress-container {
+    width: 100%;
+
 }
 
 .path-card .path-content {
@@ -132,18 +141,28 @@
   font-size: 18px;
   font-weight: bold;
   margin: 0 0 4px;
+  color: #0f6fa1;
+  font-size: 22px;
+  font-weight: bold;
+  margin: 0 0 8px;
 }
 
 .path-card p {
   font-size: 14px;
   color: #333;
   margin: 0 0 6px;
+  font-size: 16px;
+  color: #333;
+  margin: 0 0 12px;
+  line-height: 1.4;
 }
 
 .progress-bar {
   height: 6px;
   border-radius: 4px;
   background: rgb(232, 64, 229);
+    height: 10px;          /* antes era 6px */
+  border-radius: 6px;
 }
 
 .progress-bar.green { background: #3bb54a; }
@@ -155,6 +174,8 @@
   position: relative;
   width: 40px;
   height: 30px;
+  flex-shrink: 0;
+   font-size: 42px;
   flex-shrink: 0;
 }
 

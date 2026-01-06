@@ -288,48 +288,57 @@ h2 {
 }
 
 /* FOOTER */
-.footer {
-  background: #1a5382;
+.dashboard-footer {
+  width: 100%;
+  background: #0f6fa1;
   color: white;
-  padding: 60px 8% 30px;
-  margin-top: 80px;
+  padding: 28px 20px;
+  margin-top: 40px;
 }
 
-.footer-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
+.footer-columns {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 0 60px;
   gap: 40px;
-  border-bottom: 1px solid rgba(255,255,255,0.1);
-  padding-bottom: 40px;
 }
 
-.footer h4 {
-  margin-bottom: 20px;
-  font-size: 1.1rem;
+.footer-col {
+  max-width: 250px;
 }
 
-.footer p, .footer li {
-  font-size: 0.85rem;
-  opacity: 0.8;
-  line-height: 1.6;
+@media (min-width: 769px) {
+  .footer-col:nth-child(4) {
+    margin-left: -40px;
+  }
 }
 
-.footer ul {
+.footer-col ul {
   list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
-.footer li {
-  margin-bottom: 10px;
+.footer-col h4 {
+  font-size: 18px;
+  font-weight: bold;
+  margin-top: -10px;
+  margin-bottom: 14px;
 }
 
-/* Linha de Copyright */
-.footer::after {
-  content: "© 2025 Faz Teu Nome. Todos os direitos reservados.  Privacidade | Termos | Acessibilidade";
-  display: block;
-  text-align: left;
-  padding-top: 20px;
-  font-size: 0.75rem;
-  opacity: 0.7;
+.footer-links {
+  display: flex;
+  gap: 20px;
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+  margin-top: 30px;
+  padding-top: 15px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
 }
 
 /* Responsividade Básica */

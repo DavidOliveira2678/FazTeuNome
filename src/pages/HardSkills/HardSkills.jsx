@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import "./HardSkills.css";
+import Header from "../../components/Header"
 
 function HardSkills() {
   const navigate = useNavigate();
@@ -22,35 +23,7 @@ function HardSkills() {
 
   return (
     <div className="pagina-container">
-      {/* Navbar Superior */}
-      <nav className="navbar">
-        <div
-          className="topbar-logo"
-          onClick={() => navigate("/dashboard")}
-        >
-          🚀 Faz Teu Nome
-        </div>
-        <div className="nav-links">
-          <a onClick={() => navigate("/dashboard")}>Início</a>
-          <a onClick={() => navigate("/profile")}>Meu Perfil</a>
-          <a onClick={() => navigate("/comunidade")}>Comunidade</a>
-          <a onClick={() => navigate("/ranking")}>Ranking</a>
-        </div>
-        <div
-          className="topbar-user"
-          onClick={() => navigate("/profile")}
-          style={{ marginLeft: "8px", cursor: "pointer" }}
-        >
-          👤
-          <span
-            style={{ marginLeft: "8px", cursor: "pointer" }}
-            title="Sair"
-            onClick={() => (window.location.href = "/login")}
-          >
-            ⬅
-          </span>
-        </div>
-      </nav>
+      <Header/>
       <div className="content-wrapper">
         {/* Banner de Progresso Verde */}
         <section className="hero-card-hard">

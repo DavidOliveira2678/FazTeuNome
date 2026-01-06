@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./Profile.css";
+import Header from "../../components/Header"
 
 const Profile = () => {
   const navigate = useNavigate();
@@ -32,40 +33,7 @@ const Profile = () => {
 
   return (
     <div className="profile-page">
-      {/* Navbar */}
-      <nav className="navbar">
-        <div className="logo">
-          <div 
-            className="topbar-logo" 
-            onClick={() => navigate("/dashboard")} 
-            style={{ cursor: "pointer" }}
-          >
-            🚀 Faz Teu Nome
-          </div>
-        </div>
-
-        <div className="nav-links">
-          <span onClick={() => navigate("/dashboard")}>Início</span>
-          <span onClick={() => navigate("/profile")} style={{ fontWeight: "bold" }}>Meu Perfil</span>
-          <span onClick={() => navigate("/comunidade")}>Comunidade</span>
-          <span onClick={() => navigate("/ranking")}>Ranking</span>
-        </div>
-
-        <div className="topbar-user" onClick={() => navigate("/profile")} style={{ marginLeft: "8px", cursor: "pointer" }}>
-          👤
-          <span
-            style={{ marginLeft: "15px", cursor: "pointer" }}
-            title="Sair"
-            onClick={(e) => {
-              e.stopPropagation(); // Impede de navegar para o perfil ao clicar em sair
-              navigate("/login");
-            }}
-          >
-            ⬅
-          </span>
-        </div>
-      </nav>
-
+      <Header/>
       <div className="container">
         {/* Banner do Usuário */}
         <header className="profile-banner">
@@ -171,17 +139,98 @@ const Profile = () => {
             </button>
           </main>
 
-          {/* Sidebar igual ao seu original */}
-          <aside className="profile-sidebar">
-            {/* ... */}
+         
+           {/* COLUNA LATERAL */}
+          <aside className="side-column">
+            <div className="side-box">
+              <h3>Conquistas</h3>
+              <div className="conquista-item desbloqueado">
+                <span className="icon">🚀</span>
+                <div>
+                  <strong>Primeiro Passo</strong>
+                  <p>Desbloqueado</p>
+                </div>
+              </div>
+              <div className="conquista-item desbloqueado">
+                <span className="icon">⭐</span>
+                <div>
+                  <strong>Modelo de Caminho</strong>
+                  <p>Desbloqueado</p>
+                </div>
+              </div>
+              <div className="conquista-item bloqueado">
+                <span className="icon">👑</span>
+                <div>
+                  <strong>Protagonista</strong>
+                  <p>Bloqueada</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="side-box">
+              <h3>Próximos eventos</h3>
+              <div className="evento-item">
+                <strong>Roda de Conversa</strong>
+                <p>Quinta, 14h</p>
+              </div>
+              <div className="evento-item">
+                <strong>Workshop de Design</strong>
+                <p>Sábado, 10h</p>
+              </div>
+              <div className="evento-item">
+                <strong>Hackathon Pedagógico</strong>
+                <p>15 de Novembro</p>
+              </div>
+            </div>
+
           </aside>
         </div>
       </div>
 
-      {/* Footer igual ao seu original */}
-      <footer className="footer">
-        {/* ... */}
+      <footer
+        className="footer"
+        onClick={() => navigate("/em-construcao")}
+        style={{ cursor: "pointer" }}
+      >
+        <div className="footer-columns">
+          <div className="footer-col">
+            <h4>Faz Teu Nome</h4>
+            <p>Plataforma pedagógica para protagonismo juvenil.</p>
+          </div>
+          <div className="footer-col">
+            <h4>Plataforma</h4>
+            <ul>
+              <li>Trilha</li>
+              <li>Comunidade</li>
+              <li>Hackaton</li>
+            </ul>
+          </div>
+          <div className="footer-col">
+            <h4>Recursos</h4>
+            <ul>
+              <li>Guia</li>
+              <li>FAQ</li>
+              <li>Contato</li>
+            </ul>
+          </div>
+          <div className="footer-col">
+            <h4>Igarassu</h4>
+            <p>Desenvolvimento para o município de Igarassu-PE.</p>
+          </div>
+        </div>
+
+        <div className="footer-bottom">
+          <span>
+            © {new Date().getFullYear()} Faz Teu Nome — Todos os direitos reservados.
+          </span>
+          <div className="footer-links">
+            <span>Privacidade</span>
+            <span>Termos</span>
+            <span>Suporte</span>
+          </div>
+        </div>
       </footer>
+      
     </div>
   );
 };

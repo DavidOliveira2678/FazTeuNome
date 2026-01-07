@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./Autoconhecimento.css";
-import Header from "../../components/Header"
+import Header from "../../components/Header/Header"
 
 export default function Autoconhecimento({ nome }) {
   const navigate = useNavigate();

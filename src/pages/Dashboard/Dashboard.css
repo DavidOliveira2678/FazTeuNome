@@ -15,31 +15,6 @@
   background-color: #ffffff;
 }
 
-.topbar-logo {
-  font-size: 16px;
-  font-weight: bold;
-  color: #0f6fa1;
-}
-
-.topbar-links {
-  display: flex;
-  gap: 35px;
-  font-size: 16px;
-  font-weight: 500;
-}
-
-.topbar-links span {
-  cursor: pointer;
-}
-
-.topbar-links span:hover {
-  color: #0f6fa1;
-}
-
-.topbar-user {
-  font-size: 24px;
-}
-
 .dashboard-header {
   background: #0f6fa1;
   color: white;
@@ -308,10 +283,6 @@
   align-items: center;
   gap: 8px;
   margin-bottom: 8px;
-}
-
-.icone-lampada {
-  font-size: 20px;
 }
 
 .dica-container h3 {

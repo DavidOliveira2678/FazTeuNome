@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./Comunidade.css";
-import Header from "../../components/Header"
+import Header from "../../components/Header/Header"
 
 function ListaPostagens() {
   const [postagens, setPostagens] = useState([]);

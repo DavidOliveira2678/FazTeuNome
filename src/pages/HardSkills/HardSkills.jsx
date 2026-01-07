@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import "./HardSkills.css";
-import Header from "../../components/Header"
+import Header from "../../components/Header/Header"
 
 function HardSkills() {
   const navigate = useNavigate();

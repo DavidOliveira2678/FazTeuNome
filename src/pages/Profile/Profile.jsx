@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./Profile.css";
-import Header from "../../components/Header"
+import Header from "../../components/Header/Header"
 
 const Profile = () => {
   const navigate = useNavigate();

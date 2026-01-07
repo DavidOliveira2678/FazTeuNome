@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import Header from '../../components/Header';
+import Header from '../../components/Header/Header';
 import "./Dashboard.css";
 
 export default function Dashboard() {
@@ -154,8 +154,7 @@ export default function Dashboard() {
 
             <div className="side-box sugestao-container">
               <div className="sugestao-titulo">
-                <span className="icone-lampada">💡</span>
-                <h3>Dica</h3>
+                <h3>💡 Dica</h3>
               </div>
               <p className="dica-texto">
                 Complete todas as lições para desbloquear a área de criação do

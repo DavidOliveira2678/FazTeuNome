@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import "./HardSkills.css";
-import Header from "../../components/Header/Header"
+import Header from "../../components/Header/Header";
+import Footer from "../../components/Footer/Footer";
 
 function HardSkills() {
   const navigate = useNavigate();
@@ -148,54 +149,7 @@ function HardSkills() {
           </aside>
         </main>
       </div>
-
-      {/* Footer */}
-      <footer
-        className="footer"
-        onClick={() => navigate("/em-construcao")}
-        style={{ cursor: "pointer" }}
-      >
-        <div className="footer-grid">
-          <div>
-            <h4>Faz Teu Nome</h4>
-            <p>
-              Plataforma pedagógica para protagonismo juvenil e construção
-              de projeto de vida.
-            </p>
-          </div>
-          <div>
-            <h4>Plataforma</h4>
-            <ul>
-              <li>Trilha de aprendizagem</li>
-              <li>Comunidade</li>
-              <li>Hackaton</li>
-            </ul>
-          </div>
-          <div>
-            <h4>Recursos</h4>
-            <ul>
-              <li>Guia do Professor</li>
-              <li>FAQ</li>
-              <li>Contato</li>
-            </ul>
-          </div>
-          <div>
-            <h4>Igarassu</h4>
-            <p>
-              Desenvolvimento com escuta ativa e protagonismo juvenil para
-              o município de Igarassu - PE.
-            </p>
-          </div>
-        </div>
-        <div className="footer-bottom">
-          <span>© 2025 Faz Teu Nome. Todos os direitos reservados.</span>
-          <div className="footer-links">
-            <a href="#">Privacidade</a>
-            <a href="#">Termos</a>
-            <a href="#">Acessibilidade</a>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 }

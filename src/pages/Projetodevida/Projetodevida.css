@@ -20,48 +20,6 @@
   min-height: 100vh;
 }
 
-/* NAVBAR */
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 15px 8%;
-  background: white;
-  border-bottom: 1px solid #eee;
-}
-
-.logo {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  font-weight: 700;
-  color: var(--dark-blue);
-}
-
-.nav-links a {
-  text-decoration: none;
-  color: #333;
-  margin: 0 15px;
-  font-size: 0.9rem;
-  font-weight: 600;
-}
-
-.user-nav {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-}
-
-.avatar {
-  width: 35px;
-  height: 35px;
-  background: #eee;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
 /* HERO CARD (PURPLE) */
 .content-wrapper {
   max-width: 1100px;
@@ -257,51 +215,6 @@ h2 {
   gap: 8px;
 }
 
-/* FOOTER */
-.footer {
-  background: var(--dark-blue);
-  color: white;
-  padding: 60px 8% 20px;
-  margin-top: 100px;
-}
-
-.footer-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 40px;
-  padding-bottom: 40px;
-}
-
-.footer h4 {
-  margin-bottom: 20px;
-  font-size: 1.1rem;
-}
-
-.footer p, .footer li {
-  font-size: 0.85rem;
-  opacity: 0.8;
-  line-height: 1.6;
-}
-
-.footer ul { list-style: none; }
-.footer li { margin-bottom: 10px; }
-
-.footer-bottom {
-  border-top: 1px solid rgba(255,255,255,0.1);
-  padding-top: 20px;
-  display: flex;
-  justify-content: space-between;
-  font-size: 0.75rem;
-  opacity: 0.7;
-}
-
-.footer-links a {
-  color: white;
-  text-decoration: none;
-  margin-left: 15px;
-}
-
 @media (max-width: 768px) {
   .main-layout { grid-template-columns: 1fr; }
-  .footer-grid { grid-template-columns: 1fr 1fr; }
 }

@@ -1,9 +1,7 @@
 import React from "react";
-<<<<<<< HEAD:src/pages/PortalProfessor/PortalProfessor.jsx
 import "./PortalProfessor.css";
-=======
-import "../styles1/PortalProfessor.css";
->>>>>>> f36b5ed420d234882cb438c3895c52e99342abe7:src/pages1/PortalProfessor.jsx
+import Header from "../../components/Header/Header";
+import Footer from "../../components/Footer/Footer";
 
 const PortalProfessor = () => {
   const alunos = [
@@ -16,22 +14,7 @@ const PortalProfessor = () => {
 
   return (
     <div className="pagina-container">
-      {/* Navbar */}
-      <nav className="navbar">
-        <div className="logo">
-          <span className="rocket-icon">🚀</span> Faz Teu Nome
-        </div>
-        <div className="nav-links">
-          <a href="#">Início</a>
-          <a href="#">Meu Perfil</a>
-          <a href="#">Comunidade</a>
-          <a href="#">Ranking</a>
-        </div>
-        <div className="user-nav">
-          <div className="avatar-small">👤</div>
-          <span className="logout-icon">🚪</span>
-        </div>
-      </nav>
+      <Header />
 
       <div className="content-wrapper">
         {/* Banner do Professor */}
@@ -108,43 +91,7 @@ const PortalProfessor = () => {
         <div className="empty-content-box"></div>
       </div>
 
-      {/* Footer Padrão */}
-      <footer className="footer">
-        <div className="footer-grid">
-          <div>
-            <h4>Faz Teu Nome</h4>
-            <p>Plataforma pedagógica para protagonismo juvenil e construção de projeto de vida.</p>
-          </div>
-          <div>
-            <h4>Plataforma</h4>
-            <ul>
-              <li>Trilha de aprendizagem</li>
-              <li>Comunidade</li>
-              <li>Hackaton</li>
-            </ul>
-          </div>
-          <div>
-            <h4>Recursos</h4>
-            <ul>
-              <li>Guia do Professor</li>
-              <li>FAQ</li>
-              <li>Contato</li>
-            </ul>
-          </div>
-          <div>
-            <h4>Igarassu</h4>
-            <p>Desenvolvimento com escuta ativa e protagonismo juvenil para o município de igarassu - PE.</p>
-          </div>
-        </div>
-        <div className="footer-bottom">
-          <p>© 2025 Faz Teu Nome. Todos os direitos reservados.</p>
-          <div className="footer-links">
-            <a href="#">Privacidade</a>
-            <a href="#">Termos</a>
-            <a href="#">Acessibilidade</a>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 };

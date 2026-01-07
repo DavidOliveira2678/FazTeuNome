@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./Profile.css";
-import Header from "../../components/Header/Header"
+import Header from "../../components/Header/Header";
+import Footer from "../../components/Footer/Footer";
 
 const Profile = () => {
   const navigate = useNavigate();
@@ -187,50 +188,7 @@ const Profile = () => {
         </div>
       </div>
 
-      <footer
-        className="footer"
-        onClick={() => navigate("/em-construcao")}
-        style={{ cursor: "pointer" }}
-      >
-        <div className="footer-columns">
-          <div className="footer-col">
-            <h4>Faz Teu Nome</h4>
-            <p>Plataforma pedagógica para protagonismo juvenil.</p>
-          </div>
-          <div className="footer-col">
-            <h4>Plataforma</h4>
-            <ul>
-              <li>Trilha</li>
-              <li>Comunidade</li>
-              <li>Hackaton</li>
-            </ul>
-          </div>
-          <div className="footer-col">
-            <h4>Recursos</h4>
-            <ul>
-              <li>Guia</li>
-              <li>FAQ</li>
-              <li>Contato</li>
-            </ul>
-          </div>
-          <div className="footer-col">
-            <h4>Igarassu</h4>
-            <p>Desenvolvimento para o município de Igarassu-PE.</p>
-          </div>
-        </div>
-
-        <div className="footer-bottom">
-          <span>
-            © {new Date().getFullYear()} Faz Teu Nome — Todos os direitos reservados.
-          </span>
-          <div className="footer-links">
-            <span>Privacidade</span>
-            <span>Termos</span>
-            <span>Suporte</span>
-          </div>
-        </div>
-      </footer>
-      
+      <Footer />
     </div>
   );
 };

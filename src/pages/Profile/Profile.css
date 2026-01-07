@@ -22,14 +22,11 @@
   background-color: white;
 }
 
-
-
 * {
   margin: 0;
   padding: 0;
   font-family: 'Inter', sans-serif;
 }
-
 
 .container {
   width: 100%;
@@ -53,7 +50,6 @@
   align-items: center;
   color: white;
   margin-bottom: 30px;
-
 }
 
 .banner-info {
@@ -261,9 +257,6 @@
   align-items: center;
   justify-content: center;
 }
-
-/* FOOTER */
-
 
 .badge-item {
   display: flex;

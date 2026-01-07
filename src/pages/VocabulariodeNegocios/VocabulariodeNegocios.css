@@ -15,41 +15,6 @@
    background: #ffffff;
 }
 
-
-.VocabulariodeNegocios-topbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 14px 22px;
-  border-bottom: 2px solid #dcdcdc;
-  background: #ffffff;
-}
-
-.topbar-logo {
-  font-size: 16px;
-  font-weight: bold;
-  color: #0f6fa1;
-}
-
-.topbar-links {
-  display: flex;
-  gap: 35px;
-  font-size: 16px;
-  font-weight: 500;
-}
-
-.topbar-links span {
-  cursor: pointer;
-}
-
-.topbar-links span:hover {
-  color: #0f6fa1;
-}
-
-.topbar-user {
-  font-size: 22px;
-}
-
 .VocabulariodeNegocios-header {
   background: #96A93F;
   color: #ffffff;
@@ -293,68 +258,6 @@ textarea {
   font-weight: bold;
 }
 
-.VocabulariodeNegocios-footer {
-  width: 100%;
-  background: #0f6fa1;
-  color: #ffffff;
-  padding: 28px 24px;
-  margin-top: 40px;
-  box-sizing: border-box;
-  flex-shrink: 0; 
-}
-
-.dashboard-footer {
-  width: 100%;
-  background: #0f6fa1;
-  color: white;
-  padding: 28px 20px;
-  margin-top: 40px;
-}
-
-.footer-columns {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  padding: 0 60px;
-  gap: 40px;
-}
-
-.footer-col {
-  max-width: 250px;
-}
-
-@media (min-width: 769px) {
-  .footer-col:nth-child(4) {
-    margin-left: -40px;
-  }
-}
-
-.footer-col ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.footer-col h4 {
-  font-size: 18px;
-  font-weight: bold;
-  margin-top: -10px;
-  margin-bottom: 14px;
-}
-
-.footer-links {
-  display: flex;
-  gap: 20px;
-}
-
-.footer-bottom {
-  border-top: 1px solid rgba(255, 255, 255, 0.3);
-  margin-top: 30px;
-  padding-top: 15px;
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-}
 .exercicio-pratico {
   border: none; 
   border-radius: 14px;

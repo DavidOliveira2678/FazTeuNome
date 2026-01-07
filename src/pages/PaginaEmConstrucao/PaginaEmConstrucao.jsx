@@ -1,38 +1,15 @@
 import React from "react"; 
-import { useNavigate, Link } from "react-router-dom"; 
-import "./PaginaEmConstrucao.css";
+import { useNavigate } from "react-router-dom"; 
+import Header from "../../components/Header/Header";
 import imagemConstrucao from "../../assets/imagemconstrucao.png";
+import "./PaginaEmConstrucao.css";
 
 function PaginaEmConstrucao() {
   const navigate = useNavigate(); 
 
   return (
     <>
-      <header className="navbar">
-        <div className="logo">
-          <span>Faz Teu Nome</span>
-        </div>
-
-        <nav className="nav-links">
-          <Link to="/dashboard">Início</Link>
-          <Link to="/perfil">Meu Perfil</Link>
-          <Link to="/comunidade">Comunidade</Link>
-          <Link to="/ranking">Ranking</Link>
-        </nav>
-        <div className="img-icons">
-  <span style={{ cursor: "pointer" }} title="Perfil">
-    👤
-  </span>
-  <span
-    style={{ marginLeft: "8px", cursor: "pointer" }}
-    title="Sair"
-    onClick={() => navigate("/login")}
-  >
-    ⬅
-  </span>
-</div>
-
-      </header>
+      <Header />
 
       <main>
         <div className="container">
@@ -62,5 +39,4 @@ function PaginaEmConstrucao() {
     </>
   );
 }
-
 export default PaginaEmConstrucao;

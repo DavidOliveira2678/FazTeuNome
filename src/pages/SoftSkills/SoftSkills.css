@@ -20,48 +20,6 @@
   background-color: rgb(255, 255, 255);
 }
 
-/* NAVBAR */
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 15px 8%;
-  background: white;
-  border-bottom: 1px solid #eee;
-}
-
-.logo {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  font-weight: 700;
-  color: var(--dark-blue);
-}
-
-.nav-links a {
-  text-decoration: none;
-  color: #333;
-  margin: 0 15px;
-  font-size: 0.9rem;
-  font-weight: 600;
-}
-
-.user-nav {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-}
-
-.avatar {
-  width: 35px;
-  height: 35px;
-  background: #ddd;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
 /* HERO CARD (ORANGE) */
 .content-wrapper {
   max-width: 1800px;  /* aumentei de 1500px para 1800px */

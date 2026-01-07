@@ -1,6 +1,8 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import "./VocabulariodeNegocios.css";
+import Header from "../../components/Header/Header";
+import Footer from "../../components/Footer/Footer";
 
 export default function VocabulariodeNegocios({ nome }) {
   const navigate = useNavigate();
@@ -16,30 +18,7 @@ export default function VocabulariodeNegocios({ nome }) {
 
   return (
     <>
-      {/* TOPBAR full width */}
-      <nav className="VocabulariodeNegocios-topbar">
-        <div className="topbar-logo" onClick={() => navigate("/dashboard")} style={{ cursor: "pointer" }}>
-          🚀 Faz Teu Nome
-        </div>
-
-        <div className="topbar-links">
-          <span onClick={() => navigate("/dashboard")}>Início</span>
-          <span onClick={() => navigate("/profile")}>Meu Perfil</span>
-          <span onClick={() => navigate("/comunidade")}>Comunidade</span>
-          <span onClick={() => navigate("/ranking")}>Ranking</span>
-        </div>
-
-        <div className="topbar-user">
-          <span onClick={() => navigate("/profile")} style={{ cursor: "pointer" }}>👤</span>
-          <span
-            style={{ marginLeft: "8px", cursor: "pointer" }}
-            title="Sair"
-            onClick={() => (window.location.href = "/login")}
-          >
-            ⬅
-          </span>
-        </div>
-      </nav>
+      <Header />
 
       {/* CONTAINER CENTRAL */}
       <div className="VocabulariodeNegocios-container">
@@ -151,35 +130,7 @@ export default function VocabulariodeNegocios({ nome }) {
         </div>
       </div>
 
-      {/* FOOTER full width */}
-       <footer className="footer" onClick={() => navigate("/em-construcao")} style={{ cursor: "pointer" }}>
-        <div className="footer-grid">
-          <div>
-            <h4>Faz Teu Nome</h4>
-            <p>Plataforma pedagógica para protagonismo juvenil e construção de projeto de vida.</p>
-          </div>
-          <div>
-            <h4>Plataforma</h4>
-            <ul><li>Trilha de aprendizagem</li><li>Comunidade</li><li>Hackaton</li></ul>
-          </div>
-          <div>
-            <h4>Recursos</h4>
-            <ul><li>Guia do Professor</li><li>FAQ</li><li>Contato</li></ul>
-          </div>
-          <div>
-            <h4>Igarassu</h4>
-            <p>Desenvolvimento com escuta ativa e protagonismo juvenil para o município de Igarassu-PE.</p>
-          </div>
-        </div>
-        <div className="footer-bottom">
-          <span>© {new Date().getFullYear()} Faz Teu Nome — Todos os direitos reservados.</span>
-          <div className="footer-links">
-            <span>Privacidade</span>
-            <span>Termos</span>
-            <span>Acessibilidade</span>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </>
   );
 }

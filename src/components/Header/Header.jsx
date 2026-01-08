@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import ReactDOM from 'react-dom';
 import { useNavigate, useLocation } from "react-router-dom";
+import imgIconHeader from '../../assets/icon-header.png';
 import "./Header.css";
 
 function LeaveDialog({ onClose, navigate, children }){
@@ -45,14 +46,15 @@ export default function Header() {
         onClick={() => navigate("/dashboard")}
         style={{ cursor: "pointer" }}
       >
-        🚀 <span>Faz Teu Nome</span>
+        <img src={imgIconHeader} alt="logo_faz_teu_nome" />
+        <span>Faz Teu Nome</span>
       </div>
 
-      <nav className="nav-links">
-        <span className={`nav-links-clickable-inicio ${ativo("/dashboard")}`} onClick={() => navigate("/dashboard")} style={{ cursor: "pointer" }}>Início</span>
-        <span className={`nav-links-clickable-perfil ${ativo("/profile")}`} onClick={() => navigate("/profile") } style={{ cursor: "pointer" }}>Meu Perfil</span>
-        <span className={`nav-links-clickable-comunidade ${ativo("/comunidade")}`} onClick={() => navigate("/comunidade")} style={{ cursor: "pointer" }}>Comunidade</span>
-        <span className={`nav-links-clickable-ranking ${ativo("/ranking")}`} onClick={() => navigate("/ranking")} style={{ cursor: "pointer" }}>Ranking</span>
+      <nav className="header-nav-links">
+        <span className={`header-nav-links-clickable-inicio ${ativo("/dashboard")}`} onClick={() => navigate("/dashboard")} style={{ cursor: "pointer" }}>Início</span>
+        <span className={`header-nav-links-clickable-perfil ${ativo("/profile")}`} onClick={() => navigate("/profile") } style={{ cursor: "pointer" }}>Meu Perfil</span>
+        <span className={`header-nav-links-clickable-comunidade ${ativo("/comunidade")}`} onClick={() => navigate("/comunidade")} style={{ cursor: "pointer" }}>Comunidade</span>
+        <span className={`header-nav-links-clickable-ranking ${ativo("/ranking")}`} onClick={() => navigate("/ranking")} style={{ cursor: "pointer" }}>Ranking</span>
       </nav>
 
       <div className="header-user">

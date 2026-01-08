@@ -7,10 +7,12 @@
   width: 100%;
   background: #0f6fa1;
   border-bottom: 2px solid #dcdcdc;
-  padding: 20px 22px;
+  padding: 20px 20px;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  flex-wrap: wrap;
+  flex-direction: row;
 }
 
 .header-logo {
@@ -18,49 +20,70 @@
   font-weight: bold;
   color: #ffffff;
   transition: 200ms;
+  display: flex;
+  align-items: center;
+  gap: 2px
 }
 
 .header-logo:hover{
-    font-size: 1.1rem;
-    transition: 100ms;
-    font-weight: 1000;  
+  color: #4FC3F7;
+  font-size: 1.05rem;
+  transition: 100ms;
+  font-weight: 1000; 
 }
 
-.nav-links {
+.header-logo img{
+  width: 48px;
+  height: 52px;
+  transition: 100ms;
+}
+
+.header-logo:hover img{
+width: 50px;
+height: 54px;
+transition: 100ms;
+} 
+
+.header-nav-links {
   display: flex;
-  gap: 250px;
+  gap: 90px;
   font-size: 18px;
   font-weight: 500;
-   color: #ffffff;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
-.nav-links:hover{
+.header-nav-links:hover{
   color: #ffffff;
 
 }
 
-.nav-links-clickable-inicio,
-.nav-links-clickable-perfil,
-.nav-links-clickable-comunidade,
-.nav-links-clickable-ranking{
-    transition: 200ms;
+.header-nav-links-clickable-inicio,
+.header-nav-links-clickable-perfil,
+.header-nav-links-clickable-comunidade,
+.header-nav-links-clickable-ranking{
+  transition: color 150ms ease, transform 150ms ease;
+  transition: 150ms;
 }
 
-.nav-links-clickable-inicio:hover,
-.nav-links-clickable-perfil:hover,
-.nav-links-clickable-comunidade:hover,
-.nav-links-clickable-ranking:hover{
-    font-size: 1.2rem;
-    color: #0a067d;
-    transition: 200ms;
-    font-weight: 1000;
+.header-nav-links-clickable-inicio:hover,
+.header-nav-links-clickable-perfil:hover,
+.header-nav-links-clickable-comunidade:hover,
+.header-nav-links-clickable-ranking:hover{
+  font-size: 1.2rem;
+  color: #4FC3F7;
+  font-weight: 1000;
+  transform: translateY(-1px);
+  transition: 150ms;
 }
 
 .header-user {
-    font-size: 18px;
-    display: flex;
-    gap: 2px;
-    color: #bfdae8;
+  font-size: 18px;
+  display: flex;
+  gap: 2px;
+  color: #bfdae8;
 }
 
 .header-user-name{
@@ -82,28 +105,52 @@
 }
 
 .header-user-leave:hover{
-    background-color: rgb(240, 198, 195);
+  color:black;
+    background-color: rgb(235, 141, 134);
     transition: 200ms;
 }
 
 .link-ativo{
-    text-decoration: underline;
-    font-weight: bold;
+  color:#a5ecf8;
+  transition: 150ms;
+  text-decoration: underline;
+  font-weight: bold;
+  filter: drop-shadow(0 2px 4px rgba(79, 195, 247, 0.45));
+  transition: 150ms;
 }
 
+@media (max-width: 768px) {
+  .header-nav-links {
+    gap: 45px;
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 600px) {
+  .header {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+  }
+
+  .header-nav-links {
+    flex-direction: column;
+    gap: 12px;
+  }
+}
+
+/* ------ MODAL --------- */
 .modal-overlay {
   position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
   height: 100vh;
-
   background: rgba(0, 0, 0, 0.5);
-
   display: flex;
   align-items: center;
   justify-content: center;
-
   z-index: 9999;
 }
 
@@ -111,20 +158,21 @@
   background: #fff;
   padding: 28px;
   border-radius: 10px;
-  min-width: 250px;
-  max-width: 500px;
-  min-height: 200px;
-  max-height: 400px;
+  width: 400px;
+  height: 250px;
+  overflow: hidden;
+  justify-content: center;
   text-align: center;
   display: flex;
   flex-direction: column;
+  overflow-y: auto;
 }
 
 .modal-div-buttons{
   display:flex;
   justify-content: space-around;
   padding: 10px;
-  margin-top: 10px;
+  margin-top: 15px;
 }
 
 .modal-button-leave,
@@ -134,15 +182,15 @@
   height: 40px;
   width: 100px;
   font-size: 20px;
-  transition: 200ms;
+  transition: transform 200ms, background-color 200ms;
+  font-weight: 800;
 }
 
 .modal-button-leave:hover,
 .modal-button-stay:hover{
-  height: 60px;
-  width: 120px;
-  font-size: 24px;
+  transform: scale(1.1);
   transition: 200ms;
+  color:white;
 }
 
 .modal-button-leave{

@@ -31,7 +31,7 @@ function ListaPostagens() {
       {postagens.map((postagem) => (
         <div key={postagem.id} className="post-card">
           <h4>{postagem.nome_completo}</h4>
-          <span>{new Date(postagem.data_atual).toLocaleDateString()}</span>
+          <span>{new Date(postagem.data_postagem).toLocaleDateString()}</span>
           <p>{postagem.postagem}</p>
 
 
@@ -77,6 +77,7 @@ const Comunidade = () => {
               value={mensagem}
               onChange={(e) => setMensagem(e.target.value)}
             />
+            <button type="submit" className="novo-post-button">Postar</button>
           </div>
 
           {/* Barra de Pesquisa */}

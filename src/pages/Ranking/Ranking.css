@@ -57,7 +57,7 @@ body {
   cursor: pointer;
   font-size: 0.8rem;
   text-align: left;
-  align-self: flex-start;
+  justify-content: flex-start;
 
 }
 

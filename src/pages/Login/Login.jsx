@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./Login.css";
+import ilustracao from "../../assets/img.login.png";
+import logo from "../../assets/logo.png"; 
 
 export default function Login() {
   const navigate = useNavigate();
@@ -31,12 +33,10 @@ export default function Login() {
       console.log("Resposta do login:", data);
 
       if (response.status === 200) {
-        // ✅ Login OK → salvar token e dados
         localStorage.setItem("token", data.token);
         localStorage.setItem("usuario", JSON.stringify(data.usuario));
         navigate("/dashboard");
       } else {
-        // ❌ Erro → mostrar mensagem
         setErro(data.erro || "Erro no login");
       }
     } catch (err) {
@@ -46,54 +46,76 @@ export default function Login() {
 
   return (
     <div className="login-container">
-      <div className="login-card">
-        <h1 className="titulo-login">Bem-vindo</h1>
-        <p className="subtitulo-login">Acesse sua jornada de desenvolvimento</p>
+      <div className="login-left">
+        <img
+          src={ilustracao}
+          alt="Ilustração motivacional"
+          className="login-image"
+        />
+      </div>
 
-        <form onSubmit={irParaHome}>
-          <div className="input-group">
-            <label>Email</label>
-            <input
-              type="email"
-              name="email"
-              placeholder="Digite seu email"
-              value={form.email}
-              onChange={handleChange}
-            />
+      <div className="login-right">
+        {/* Card branco */}
+        <div className="login-card">
+          {/* Logo acima do título */}
+          <img src={logo} alt="Faz Teu Nome" className="logo-login" />
+
+          <h1 className="titulo-login">Bem-vindo</h1>
+          <p className="subtitulo-login">Acesse sua jornada de desenvolvimento</p>
+
+          <form onSubmit={irParaHome}>
+            <div className="input-group">
+              <label>Email</label>
+              <input
+                type="email"
+                name="email"
+                placeholder="Digite seu email"
+                value={form.email}
+                onChange={handleChange}
+              />
+            </div>
+
+            <div className="input-group">
+              <label>Senha</label>
+              <input
+                type="password"
+                name="senha"
+                placeholder="Digite sua senha"
+                value={form.senha}
+                onChange={handleChange}
+              />
+            </div>
+
+            <button className="entrar-btn" type="submit">
+              Entrar
+            </button>
+          </form>
+
+          {erro && <p style={{ color: "red" }}>{erro}</p>}
+
+          <div className="forgot-password-text">
+            <span onClick={() => navigate("/recuperarsenha")}>
+              Esqueci minha senha
+            </span>
           </div>
 
-          <div className="input-group">
-            <label>Senha</label>
-            <input
-              type="password"
-              name="senha"
-              placeholder="Digite sua senha"
-              value={form.senha}
-              onChange={handleChange}
-            />
-          </div>
-
-          <button className="entrar-btn" type="submit">
-            Entrar
-          </button>
-        </form>
-
-        {erro && <p style={{ color: "red" }}>{erro}</p>}
-
-        <div style={{ height: "20px" }}></div>
-
-        <div className="forgot-password-text">
-          <span onClick={() => navigate("/recuperarsenha")}>
-            Esqueci minha senha
-          </span>
+          <p className="cadastro-text">
+            Não tem conta?
+            <span
+              className="cadastro-link"
+              onClick={() => navigate("/cadastro")}
+            >
+              Cadastre-se
+            </span>
+          </p>
         </div>
 
-        <p className="cadastro-text">
-          Não tem conta?
-          <span className="cadastro-link" onClick={() => navigate("/cadastro")}>
-            Cadastre-se
-          </span>
-        </p>
+        {/* 🔽 Texto motivacional abaixo do card */}
+        <div className="login-footer">
+          <p className="slogan-text">
+            Já somos milhares de estudantes construindo o futuro.
+          </p>
+        </div>
       </div>
     </div>
   );

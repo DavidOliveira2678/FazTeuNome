@@ -1,133 +1,166 @@
+/* Container Principal */
 .cadastro-container {
-  min-height: 100vh;
-  width: 100%;
-  background: #0b4870;
+  height: 100vh;
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  background: linear-gradient(to right, #5091BE, #0b4870);
+  box-sizing: border-box;
+  overflow: hidden; /* Evita scroll na tela principal */
+}
+
+/* Lado esquerdo com foguete */
+.cadastro-left {
+  flex: 1.2; /* Dá um pouco mais de destaque à imagem */
+  display: flex;
+  justify-content: flex-end;
   align-items: center;
-  padding-top: 30px;
+  padding: 20px;
 }
 
-.cadastro-logo {
-  margin-bottom: 10px;
-  text-align: center;
+.cadastro-image {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  max-width: 700px;
 }
 
-.cadastro-logo h1 {
-  color: #fff;
-  font-size: 26px;
-  font-weight: bold;
+/* Lado direito: Onde o card e o footer ficam empilhados */
+.cadastro-right {
+  flex: 1;
+  display: flex;
+  flex-direction: column; /* COLOCA O TEXTO ABAIXO DO CARD */
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
 }
 
+/* Card branco compacto */
 .cadastro-card {
   background: #fff;
-  width: 340px;
-  padding: 22px;
-  border-radius: 20px;
-  box-shadow: 0 4px 14px rgba(0,0,0,0.18);
-  text-align: center;
-}
-.cadastro-title {
-  font-size: 22px;
-  color: #0b4870;
-  margin-bottom: 4px;
-  font-weight: bold;
-  text-align: left;
-}
-
-.cadastro-subtitle {
-  font-size: 12px;
-  color: #444;
-  text-align: left;
-  margin-bottom: 18px;
-}
-
-.input-group {
   width: 100%;
+  max-width: 380px; /* Largura ideal para login/cadastro */
+  height: auto;
+  max-height: 90vh; /* Garante que não ultrapasse a altura da tela */
+  padding: 20px 25px;
+  border-radius: 25px;
+  box-shadow: 0 4px 18px rgba(0,0,0,0.2);
+  margin-bottom: 20px; /* Espaço para o rodapé abaixo */
+  text-align: center;
+  box-sizing: border-box;
+  overflow-y: auto; /* Scroll interno caso a tela seja muito pequena */
+}
+
+/* Logo dentro do card */
+.logo-cadastro {
+  display: block;
+  margin: 0 auto 5px auto;
+  width: 100%;
+  max-width: 127px; /* Reduzido para economizar espaço */
+  height: auto;
+  object-fit: contain;
+}
+
+/* Títulos */
+.titulo-cadastro {
+  font-size: 20px; /* Ajustado para um tamanho equilibrado */
+  font-weight: bold;
+  color: #0b4870;
+  margin-bottom: 5px;
+  margin-top: 0;
+}
+
+.subtitulo-cadastro {
+  font-size: 13px;
+  color: #666;
+  margin-bottom: 15px;
+}
+
+/* Inputs e Agrupamentos */
+.input-group {
+  margin-bottom: 8px; /* Espaço reduzido entre campos */
   text-align: left;
-  margin-bottom: 10px;
 }
 
 .input-group label {
-  font-weight: 600;
-  color: #314578;
+  display: block;
+  margin-bottom: 4px;
+  color: #333;
   font-size: 13px;
+  font-weight: 600;
 }
 
 .input-group input,
-.select-wrapper select {
+.input-group select {
   width: 100%;
-  padding: 6px 8px;   
-  height: 30px;        
+  padding: 8px 12px; /* Input mais fino */
   border-radius: 8px;
-  border: 1px solid #b6b6b6;
-  font-size: 13px;
+  border: 1px solid #ccc;
   box-sizing: border-box;
-  margin-top: 4px;
-}
-
-
-.select-wrapper {
-  position: relative;
-  width: 100%;
-  margin-top: 4px;
-}
-
-.select-wrapper select {
-  width: 100%;
-  padding: 7px 10px;
-  padding-right: 40px;
-  border: 1px solid #b6b6b6;
-  border-radius: 8px;
-  appearance: none;
-  background: #fff;
-  font-size: 13px;
-}
-
-.select-wrapper::after {
-  content: "▾";
-  position: absolute;
-  right: 14px;
-  top: 50%;
-  transform: translateY(-50%);
   font-size: 14px;
-  color: #555;
-  pointer-events: none;
+  outline: none;
 }
 
-.btn-criar-conta {
+/* Botão de Ação */
+.entrar-btn {
   width: 100%;
   background: #ff7a00;
-  color: #fff;
-  padding: 11px;
-  border-radius: 10px;
+  color: white;
+  margin-top: 10px;
+  padding: 12px;
   border: none;
-  cursor: pointer;
+  border-radius: 8px;
   font-size: 15px;
   font-weight: bold;
-  margin-top: 16px;
-}
-
-.btn-criar-conta:hover {
-  opacity: 0.9;
-}
-
-.login-link {
-  margin-top: 12px;
-  font-size: 13px;
-  color: #000;
-}
-
-.login-link span {
-  color: #ff7a00;
   cursor: pointer;
-  font-weight: bold;
+  transition: background 0.3s ease;
 }
 
-.cadastro-footer {
-  margin-top: 10px;
-  color: #fff;
+.entrar-btn:hover {
+  background: #e56a00;
+}
+
+/* Links de navegação */
+.cadastro-text {
   font-size: 13px;
+  margin-top: 12px;
+}
+
+.cadastro-link {
+  color: #ff7a00;
+  margin-left: 4px;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+/* Rodapé motivacional ABAIXO do card */
+.cadastro-footer {
+  color: #fff;
   text-align: center;
+  max-width: 320px;
+}
+
+.slogan-text {
+  font-size: 14px;
+  line-height: 1.4;
+  margin: 0;
+}
+
+/* 📱 Responsividade para Celulares */
+@media (max-width: 768px) {
+  .cadastro-container {
+    flex-direction: column;
+    overflow-y: auto;
+  }
+
+  .cadastro-left {
+    display: none; /* Esconde a imagem no celular para focar no formulário */
+  }
+
+  .cadastro-right {
+    width: 100%;
+    padding: 20px;
+  }
+
+  .cadastro-card {
+    max-width: 100%;
+  }
 }

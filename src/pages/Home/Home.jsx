@@ -1,16 +1,17 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import { FaRoute } from "react-icons/fa";
+import logo from '../../assets/logo.png';
+import home from '../../assets/home.png'; // Certifique-se de que este caminho está correto
 import "./Home.css";
 
 export default function Home() {
   const navigate = useNavigate();
 
   return (
-  <div className="home-bg">
-    <div className="home-container">
+    <div className="home-bg">
       <header className="home-header">
-        <h2 className="brand-orange">Faz Teu Nome</h2>
+        <img src={logo} alt="Faz Teu Nome" className="logo" />
+
         <div className="header-buttons">
           <button onClick={() => navigate("/login")}>Login</button>
           <button onClick={() => navigate("/cadastro")}>Cadastro</button>
@@ -19,27 +20,21 @@ export default function Home() {
 
       <main className="home-main">
         <h1>Decole rumo ao seu próprio futuro</h1>
-        <p className="home-subtitle">
-          Construa seu próprio Projeto de Vida, desenvolva habilidades essenciais
-          e conheça oportunidades reais através de um lugar feito pra você
-        </p>
 
         <div className="trilhas-container">
           <div className="trilha-card">
-            <div className="trilha-icon">⏰</div>
+            <div className="trilha-icon">🧭</div>
             <h2>Descubra seu propósito</h2>
           </div>
 
-          <div className="trilha-card middle-card">
-            <div className="trilha-icon">
-              <FaRoute size={72} color="#ff7f00" />
-            </div>
+          <div className="trilha-card">
+            <div className="trilha-icon">📍</div>
             <h2>Construa seu caminho</h2>
           </div>
 
           <div className="trilha-card">
             <div className="trilha-icon">🏆</div>
-            <h2>Faz Teu Nome</h2>
+            <h2>Faz teu nome</h2>
           </div>
         </div>
 
@@ -49,8 +44,13 @@ export default function Home() {
         >
           Comece sua jornada agora
         </button>
+
+        <img
+          src={home}
+          alt="Jovens Escalando"
+          className="hero-image"
+        />
       </main>
     </div>
-  </div>
-);
+  );
 }

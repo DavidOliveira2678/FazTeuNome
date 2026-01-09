@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./Login.css";
 import ilustracao from "../../assets/img.login.png";
-import logo from "../../assets/logo.png"; 
+import logo from "../../assets/logo.png";
 
 export default function Login() {
   const navigate = useNavigate();
@@ -32,14 +32,29 @@ export default function Login() {
       const data = await response.json();
       console.log("Resposta do login:", data);
 
-      if (response.status === 200) {
-        localStorage.setItem("token", data.token);
-        localStorage.setItem("usuario", JSON.stringify(data.usuario));
+      if (!response.ok) {
+        setErro(data?.erro || "Erro no login");
+        return;
+      }
+
+      if (!data?.token || !data?.usuario) {
+        setErro("Resposta inválida do servidor");
+        return;
+      }
+
+      localStorage.setItem("token", data.token);
+      localStorage.setItem("usuario", JSON.stringify(data.usuario));
+
+      const tipo = data.usuario?.tipo_usuario;
+      if (tipo === "professor") {
+        navigate("/portalprofessor"); // rota em minúsculas
+      } else if (tipo === "aluno") {
         navigate("/dashboard");
       } else {
-        setErro(data.erro || "Erro no login");
+        setErro("Tipo de usuário desconhecido");
       }
     } catch (err) {
+      console.error("Erro de rede:", err);
       setErro("Erro ao conectar com o servidor");
     }
   };
@@ -47,19 +62,12 @@ export default function Login() {
   return (
     <div className="login-container">
       <div className="login-left">
-        <img
-          src={ilustracao}
-          alt="Ilustração motivacional"
-          className="login-image"
-        />
+        <img src={ilustracao} alt="Ilustração motivacional" className="login-image" />
       </div>
 
       <div className="login-right">
-        {/* Card branco */}
         <div className="login-card">
-          {/* Logo acima do título */}
           <img src={logo} alt="Faz Teu Nome" className="logo-login" />
-
           <h1 className="titulo-login">Bem-vindo</h1>
           <p className="subtitulo-login">Acesse sua jornada de desenvolvimento</p>
 
@@ -86,35 +94,25 @@ export default function Login() {
               />
             </div>
 
-            <button className="entrar-btn" type="submit">
-              Entrar
-            </button>
+            <button className="entrar-btn" type="submit">Entrar</button>
           </form>
 
           {erro && <p style={{ color: "red" }}>{erro}</p>}
 
           <div className="forgot-password-text">
-            <span onClick={() => navigate("/recuperarsenha")}>
-              Esqueci minha senha
-            </span>
+            <span onClick={() => navigate("/recuperarsenha")}>Esqueci minha senha</span>
           </div>
 
           <p className="cadastro-text">
             Não tem conta?
-            <span
-              className="cadastro-link"
-              onClick={() => navigate("/cadastro")}
-            >
+            <span className="cadastro-link" onClick={() => navigate("/cadastro")}>
               Cadastre-se
             </span>
           </p>
         </div>
 
-        {/* 🔽 Texto motivacional abaixo do card */}
         <div className="login-footer">
-          <p className="slogan-text">
-            Já somos milhares de estudantes construindo o futuro.
-          </p>
+          <p className="slogan-text">Já somos milhares de estudantes construindo o futuro.</p>
         </div>
       </div>
     </div>

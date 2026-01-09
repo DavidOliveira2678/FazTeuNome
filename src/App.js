@@ -15,6 +15,7 @@ import RecuperarSenha from "./pages/Recuperarsenha/Recuperarsenha";
 import Autoconhecimento from "./pages/Autoconhecimento/Autoconhecimento";
 import VocabulariodeNegocios from "./pages/VocabulariodeNegocios/VocabulariodeNegocios";
 
+
 // IMPORT DAS PÁGINAS DE SKILLS E CONTEÚDO
 import SoftSkills from "./pages/SoftSkills/SoftSkills";
 import HardSkills from "./pages/HardSkills/HardSkills";
@@ -28,6 +29,7 @@ import PaginaEmConstrucao from "./pages/PaginaEmConstrucao/PaginaEmConstrucao";
 
 // Se houver uma página de edição ou portal do professor, importe-as aqui:
 import EditProfile from "./pages/Editar/Editar"
+import PortalProfessor from "./pages/PortalProfessor/PortalProfessor";
 
 // import Editar from "./pages/Editar/Editar";
 // import PortalProfessor from "./pages/PortalProfessor/PortalProfessor";
@@ -49,6 +51,10 @@ function App() {
         <Route
           path="/dashboard"
           element={usuarioLogado ? <Dashboard nome="Faz Teu Nome" /> : <Navigate to="/login" />}
+        />
+        <Route
+          path="/portalprofessor"
+          element={usuarioLogado ? <PortalProfessor /> : <Navigate to="/login" />}
         />
 
         <Route

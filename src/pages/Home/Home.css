@@ -30,21 +30,22 @@
 ========================= */
 .home-header {
   width: 100%;
-  max-width: 1200px;
-  padding: 20px 40px;
+  max-width: 2500px;
+  padding: 0px 40px;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
 .logo {
-  height: 45px;
+  height: 280px;
 }
 
 /* BOTÕES HEADER */
 .header-buttons {
   display: flex;
-  gap: 10px;
+  gap: 20px;
+
 }
 
 .header-buttons button {
@@ -54,7 +55,7 @@
   padding: 8px 18px;
   border-radius: 10px;
   cursor: pointer;
-  font-size: 14px;
+  font-size: 24px;
   transition: opacity 0.2s ease;
 }
 
@@ -69,22 +70,20 @@
   flex: 1;
   width: 100%;
   max-width: 1200px;
-  margin: 0 auto;
 
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
-
   padding: 40px 0 0;
 }
 
 /* TÍTULO */
 .home-main h1 {
   color: var(--white);
-  font-size: 3rem;
-  max-width: 720px;
-  margin-bottom: 40px;
+  font-size: 6rem;
+  max-width: 1020px;
+  margin-bottom: 90px;
 }
 
 /* =========================
@@ -92,20 +91,21 @@
 ========================= */
 .trilhas-container {
   display: flex;
-  gap: 24px;
+  gap: 50px;
   justify-content: center;
-  flex-wrap: wrap;
-  margin-bottom: 40px;
+  flex-wrap: nowrap;
+  margin-bottom: 60px;
+  
 }
 
 .trilha-card {
-  width: 190px;
-  height: 160px;
+  width: 480px;
+  height: 400px;
 
   background: var(--glass-bg);
   backdrop-filter: var(--glass-blur);
 
-  border-radius: 16px;
+  border-radius: 30px;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 
   display: flex;
@@ -118,24 +118,24 @@
 
 /* ÍCONE */
 .trilha-icon {
-  font-size: 44px;
-  margin-bottom: 10px;
+  font-size: 150px;
+  margin-bottom: 60px;
   color: var(--orange);
 }
 
 /* TEXTO CARD */
 .trilha-card h2 {
-  font-size: 15px;
+  font-size: 24px;
   font-weight: 500;
-  margin: 0;
+  color: var(--white);
 }
 
 /* =========================
    BOTÃO CTA
 ========================= */
 .start-journey-btn {
-  margin-bottom: 35px;
-  padding: 14px 36px;
+  margin-bottom: 5px;
+  padding: 20px 36px;
 
   background: var(--orange);
   color: var(--white);
@@ -143,7 +143,7 @@
   border: none;
   border-radius: 30px;
 
-  font-size: 16px;
+  font-size: 22px;
   font-weight: 600;
   cursor: pointer;
 
@@ -158,9 +158,9 @@
    IMAGEM HERO
 ========================= */
 .hero-image {
-  width: 650px;
-  max-width: 90%;
-  margin-bottom: 20px;
+width: 90vw;
+  max-width: 1500px;
+  margin-bottom: 10px;
 }
 
 /* =========================
@@ -177,14 +177,39 @@
   }
 
   .hero-image {
+  .hero-image {
+    width: 100%;
+    max-width: 600px;
+  }
     width: 520px;
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 768px) {
+   .trilhas-container {
+    flex-wrap: wrap;
+  }
   .home-header {
     flex-direction: column;
     gap: 12px;
+  }
+
+   .start-journey-btn:hover {
+    transform: none;
+    box-shadow: none;
+  }
+
+   .home-title {
+    font-size: 2.6rem;
+  }
+
+  .home-subtitle {
+    font-size: 1.5rem;
+  }
+
+   .trilha-card:hover {
+    transform: none;
+    opacity: 1;
   }
 
   .header-buttons {
@@ -197,8 +222,8 @@
   }
 
   .trilha-card {
-    width: 100%;
-    max-width: 300px;
+    width: 220px;
+    height: 180px;
   }
 
   .start-journey-btn {
@@ -207,6 +232,78 @@
   }
 
   .hero-image {
-    width: 100%;
+    width: 1050px;
+  max-width: 100%;
+  margin-bottom: 20px;
+    width: 70vw;         /* escala com a tela */
+  max-width: 1100px;   /* limite máximo */
+  }
+
+  
+  .trilha-icon {
+    font-size: 110px;
+  }
+}
+
+
+.trilha-card {
+  transition: transform 0.25s ease, opacity 0.25s ease, box-shadow 0.25s ease;
+}
+
+.trilha-card:hover {
+  transform: scale(1.06);      /* aumenta levemente */
+  opacity: 0.9;                /* leve transparência */
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.25);
+}
+
+.trilha-card:hover {
+  transform: scale(1.03);
+  opacity: 0.92;
+}
+
+.start-journey-btn {
+  transition: transform 0.25s ease, box-shadow 0.25s ease, opacity 0.25s ease;
+}
+
+.start-journey-btn:hover {
+  transform: scale(1.08);   /* cresce */
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+  opacity: 0.95;
+}
+
+.home-title {
+  font-size: 4.8rem;
+  font-weight: 700;
+  color: #ffffff;
+  max-width: 900px;
+  margin-bottom: 16px;
+  line-height: 1.1;
+}
+
+.home-subtitle {
+  font-size: 2.2rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.85);
+  margin-bottom: 50px;
+}
+
+.home-title span,
+.home-subtitle span {
+  color: #ff7a00;
+}
+
+.home-title,
+.home-subtitle {
+  animation: fadeUp 0.8s ease forwards;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }

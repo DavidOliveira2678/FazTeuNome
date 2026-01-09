@@ -44,13 +44,6 @@
   font-size: 22px;
 }
 
-.Autoconhecimento-header {
-  background: #ff8d67;
-  color: #ffffff;
-  padding: 28px;
-  border-radius: 14px;
-  margin-top: 30px;
-}
 .Autoconhecimento-header h2 {
   color: white;
 }
@@ -70,12 +63,14 @@
   opacity: 0.9;
 }
 
-.header-left h2 {
+.header-left h1 {
   font-size: 2.5rem;
   font-weight: 700;
   margin-bottom: 10px;
   color: #fcfcfc; 
 }
+
+
 
 .header-left p {
   margin: 1;
@@ -87,9 +82,9 @@
 }
 
 .Autoconhecimento-container .progress-box {
-  background: rgba(197, 106, 106, 0.216);
-  border: 3px solid rgba(242, 18, 18, 0.103);
-  padding: 16px 16px;
+  background: rgba(165, 96, 96, 0.183);
+  border: 3px solid rgba(216, 118, 118, 0.221);
+  padding: 10px 16px;
   border-radius: 14px;
   margin-top: 50px;
   display: flex;
@@ -259,16 +254,7 @@ textarea {
   border-radius: 20px;
   cursor: pointer;
 }
-.Autoconhecimento-container {
-  width: 100%;
-  max-width: 1100px;
-  min-height: 100vh;
-  margin: 0 auto;
-  padding: 0 20px;
-  display: flex;
-  flex-direction: column;
-  font-family: Arial, sans-serif;
-}
+
 
 .main-row {
   flex: 1; 

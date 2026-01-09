@@ -3,71 +3,18 @@
   user-select: none;
 }
 
-.VocabulariodeNegocios-container {
-  width: 100%;
-  max-width: 1100px;
-  min-height: 100vh;
-  margin: 0 auto;
-  padding: 0 20px;
-  display: flex;
-  flex-direction: column;
-  font-family: Arial, sans-serif;
-   background: #ffffff;
-}
 
-.VocabulariodeNegocios-header {
-  background: #96A93F;
-  color: #ffffff;
-  padding: 28px;
-  border-radius: 14px;
-  margin-top: 30px;
-}
-.VocabulariodeNegocios-header h2 {
-  color: white;
-}
 
-.header-top {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-}
 
-.header-left {
-  max-width: 70%;
-}
 
-.softskills-label {
-  font-size: 13px;
+.softskills-label h2 {
+  font-size: 24px;
   opacity: 0.9;
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: #ffffff; 
 }
-
-.header-left h2 {
-  margin: 4px 0 6px;
-  font-size: 26px;
-}
-
-.header-left p {
-  margin: 1;
-  font-size: 15px;
-}
-
-.progress-info {
-  display: flex;
-}
-
-.VocabulariodeNegocios-container .progress-box {
-  background: rgba(165, 96, 96, 0.183);
-  border: 3px solid rgba(216, 118, 118, 0.221);
-  padding: 10px 16px;
-  border-radius: 14px;
-  margin-top: 50px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  color: #ffffff;
-}
-
-
 
 
 .progress-box span:first-child {
@@ -98,6 +45,9 @@
   border-radius: 4px;
 }
 
+
+
+
 .main-row {
   margin-top: 30px;
   flex: 1;
@@ -127,6 +77,10 @@
 .content-left h3 {
   margin-top: 6px;
 }
+
+
+
+
 
 .Termos-container {
   border: 2px solid hsla(141, 61%, 15%, 0.855);
@@ -239,8 +193,8 @@ textarea {
   border-radius: 20px;
   cursor: pointer;
   display: block;
-
-  transform: translateX(400px); 
+  align-self: flex-start;
+  
 }
 
 .btn-duvidas {

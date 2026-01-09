@@ -3,9 +3,11 @@ import { useNavigate } from "react-router-dom";
 import "./Ranking.css";
 import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
+import Banner from "../../components/Banner/Banner";
+
 
 const Ranking = () => {
-    const navigate = useNavigate();
+  const navigate = useNavigate();
   const rankingData = [
     { pos: "1º", nome: "Pedro Oliveira", pontos: "8.540", seq: 15, conquistas: 8, medal: "🥇" },
     { pos: "2º", nome: "Marina Silva", pontos: "7.920", seq: 12, conquistas: 7, medal: "🥈" },
@@ -17,14 +19,25 @@ const Ranking = () => {
 
   return (
     <div className="ranking-page">
-      <Header/>
+      <Header />
 
-      <div className="container">
-        <header className="ranking-header">
-          <h1><span>🏆</span> Ranking de Protagonismo</h1>
-          <p>Veja como você está se comparando aos seus colegas</p>
-        </header>
-<button
+      {/* BANNER COMO COMPONENTE */}
+      <Banner
+        variant="banner-ranking"
+        align="left"
+        direction="column"
+      >
+        <div className="banner-content">
+          <h2>Ranking</h2>
+          <p>
+            Veja sua posição, acompanhe seu desempenho e dispute o topo.
+          </p>
+        </div>
+      </Banner>
+
+      {/* CONTEÚDO */}
+      <div className="container ranking-layout">
+        <button
           type="button"
           className="btn-voltar"
           onClick={() => navigate("/dashboard")}

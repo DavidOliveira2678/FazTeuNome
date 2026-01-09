@@ -3,8 +3,9 @@ import { useNavigate } from "react-router-dom";
 import "./Autoconhecimento.css";
 import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
+import Banner from "../../components/Banner/Banner";
 
-export default function Autoconhecimento({ nome }) {
+export default function Autoconhecimento() {
   const navigate = useNavigate();
   const [respostas, setRespostas] = useState({});
 
@@ -26,35 +27,44 @@ export default function Autoconhecimento({ nome }) {
 
   return (
     <div className="Autoconhecimento-page-wrapper">
-      <Header/>
+      <Header />
 
-      <div className="Autoconhecimento-container">
-        {/* HEADER */}
-        <div className="Autoconhecimento-header">
-          <div className="header-top">
-            <div className="header-left">
-              <span className="softskills-label">Soft Skills</span>
-              <h2>Autoconhecimento</h2>
-              <p>Explore suas habilidades e valores que sustentam suas escolhas</p>
-              <p>Progresso do Módulo</p>
+      {/* BANNER */}
+      <Banner
+        variant="banner-autoconhecimento"
+        align="left"
+        direction="column"
+      >
+        <div className="Autoconhecimento-container">
+          <div className="Autoconhecimento-header">
+            <div className="header-top">
+              <div className="header-left">
+                <span className="softskills-label">Soft Skills</span>
+                <h1>Autoconhecimento</h1>
+                <p>
+                  Explore suas habilidades e valores que sustentam suas escolhas
+                </p>
 
-              <div style={{ marginTop: "14px" }}>
-                <div className="progress-bar-container" style={{ width: "250px", background: "#ccc", borderRadius: "8px" }}>
-                  <div className="progress-bar-fill" style={{ width: "33%", height: "10px", background: "#fff", borderRadius: "8px" }} />
+                <p className="progress-title">Progresso do Módulo</p>
+
+                <div className="progress-bar-container">
+                  <div className="progress-bar-fill" />
                 </div>
               </div>
-            </div>
 
-            <div className="progress-info">
-              <div className="progress-box adjusted">
-                <span>Concluído</span>
-                <span>33%</span>
+              <div className="progress-info">
+                <div className="progress-box adjusted">
+                  <span>Concluído</span>
+                  <span>33%</span>
+                </div>
               </div>
             </div>
           </div>
         </div>
+      </Banner>
 
-        {/* CONTEÚDO */}
+      {/* CONTEÚDO */}
+      <div className="Autoconhecimento-container">
         <div className="main-row">
           <div className="learning-path">
             <button className="btn-voltar" onClick={handleVoltar}>
@@ -66,12 +76,15 @@ export default function Autoconhecimento({ nome }) {
               <div className="content-left quem-voce-e">
                 <h3>Quem você é?</h3>
                 <p>
-                  O autoconhecimento é a base para todas as escolhas que você fará ao longo da sua vida pessoal e profissional.
-                  Quando você conhece suas forças, seus valores e suas áreas de desenvolvimento, toma decisões mais conscientes.
+                  O autoconhecimento é a base para todas as escolhas que você fará
+                  ao longo da sua vida pessoal e profissional. Quando você
+                  conhece suas forças, valores e áreas de desenvolvimento, toma
+                  decisões mais conscientes.
                 </p>
 
                 <div className="reflexao-container">
                   <h3>Reflexão Guiada</h3>
+
                   <label>Quais são suas principais fortalezas?</label>
                   <textarea placeholder="Pense nas coisas que você faz bem..." />
 
@@ -85,7 +98,8 @@ export default function Autoconhecimento({ nome }) {
                 <div className="escala-container">
                   <h3>Escala de Autopercepção</h3>
                   <p className="escala-descricao">
-                    Em uma escala de 1 a 5, como você avalia as seguintes características em você?
+                    Em uma escala de 1 a 5, como você avalia as seguintes
+                    características em você?
                   </p>
 
                   {[
@@ -101,7 +115,9 @@ export default function Autoconhecimento({ nome }) {
                         {[1, 2, 3, 4, 5].map((num) => (
                           <span
                             key={num}
-                            className={`escala-numero ${respostas[texto] === num ? "ativo" : ""}`}
+                            className={`escala-numero ${
+                              respostas[texto] === num ? "ativo" : ""
+                            }`}
                             onClick={() => handleClick(texto, num)}
                           >
                             {num}
@@ -121,13 +137,25 @@ export default function Autoconhecimento({ nome }) {
               <div className="content-right">
                 <div className="dica-container">
                   <h4>💡 Dica</h4>
+
                   <div className="dica-card">
-                    <p>Respire fundo e pense em situações em que você se sentiu orgulhoso de si.</p>
+                    <p>
+                      Respire fundo e pense em situações em que você se sentiu
+                      orgulhoso de si.
+                    </p>
                   </div>
+
                   <div className="dica-card">
-                    <p>Aquilo que você gostaria de melhorar pode indicar áreas importantes para o seu desenvolvimento.</p>
+                    <p>
+                      Aquilo que você gostaria de melhorar pode indicar áreas
+                      importantes para o seu desenvolvimento.
+                    </p>
                   </div>
-                  <button className="btn-duvidas" onClick={() => navigate("/em-construcao")}>
+
+                  <button
+                    className="btn-duvidas"
+                    onClick={() => navigate("/em-construcao")}
+                  >
                     Dúvidas
                   </button>
                 </div>

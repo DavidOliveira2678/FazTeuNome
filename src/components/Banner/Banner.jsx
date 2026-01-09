@@ -1,9 +1,20 @@
-import './banner.css';
+import "./banner.css";
 
-export default function Banner({color, align, direction, children}){
-    return(
-        <div style={{background: color, textAlign: align, flexDirection: direction}} className='banner-container'>
-            { children }
-        </div>
-    )
+export default function Banner({
+  variant = "",
+  align = "left",
+  direction = "row",
+  children
+}) {
+  return (
+    <div
+      className={`banner-container ${variant}`}
+      style={{
+        textAlign: align,
+        flexDirection: direction
+      }}
+    >
+      {children}
+    </div>
+  );
 }

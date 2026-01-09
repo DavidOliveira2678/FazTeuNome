@@ -19,7 +19,12 @@ export default function Home() {
       </header>
 
       <main className="home-main">
-        <h1>Decole rumo ao seu próprio futuro</h1>
+       <h1 className="home-title">
+  Toda jornada começa com uma escolha.
+</h1>
+<h2 className="home-subtitle">
+  Decole rumo ao seu próprio futuro!
+</h2>
 
         <div className="trilhas-container">
           <div className="trilha-card">
@@ -34,7 +39,7 @@ export default function Home() {
 
           <div className="trilha-card">
             <div className="trilha-icon">🏆</div>
-            <h2>Faz teu nome</h2>
+            <h2> e FAZ TEU NOME!</h2>
           </div>
         </div>
 

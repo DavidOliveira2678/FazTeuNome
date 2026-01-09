@@ -3,6 +3,8 @@ import { useNavigate } from "react-router-dom";
 import "./Profile.css";
 import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
+import Banner from "../../components/Banner/Banner";
+
 
 const Profile = () => {
   const navigate = useNavigate();
@@ -34,36 +36,46 @@ const Profile = () => {
 
   return (
     <div className="profile-page">
-      <Header/>
-      <div className="container">
-        {/* Banner do Usuário */}
-        <header className="profile-banner">
-          <div className="banner-info">
-            <div className="avatar-large">
-              <img
-                src="https://api.dicebear.com/7.x/avataaars/svg?seed=Felix"
-                alt="User"
-              />
-            </div>
-            <div className="user-details">
-              <h1>{usuario.nome_completo}</h1>
-              <p>{usuario.serie + "° ano do Ensino Médio" || "Série não informada"}</p>
-              <small>{usuario.escola || "Escola não informada"}</small>
-              <p><strong>Email:</strong> {usuario.email}</p>
-              <p><strong>Tipo:</strong> {usuario.tipo_usuario}</p>
-              <p><strong>Telefone:</strong> {usuario.telefone || "Não informado"}</p>
-            </div>
-          </div>
-          <div className="banner-actions">
-            <button
-              className="btn-white"
-              onClick={() => navigate("/editar-perfil")}
-            >
-              Editar
-            </button>
-          </div>
-        </header>
+      <Header />
 
+    
+
+        <Banner
+          variant="banner-profile"
+          align="left"
+          direction="row"
+        >
+          <div className="profile-banner-content">
+            <div className="banner-info">
+              <div className="avatar-large">
+                <img
+                  src="https://api.dicebear.com/7.x/avataaars/svg?seed=Felix"
+                  alt="User"
+                />
+              </div>
+
+              <div className="user-details">
+                <h1>{usuario.nome_completo}</h1>
+                <p>{usuario.serie ? `${usuario.serie}° ano do Ensino Médio` : "Série não informada"}</p>
+                <small>{usuario.escola || "Escola não informada"}</small>
+                <p><strong>Email:</strong> {usuario.email}</p>
+                <p><strong>Tipo:</strong> {usuario.tipo_usuario}</p>
+                <p><strong>Telefone:</strong> {usuario.telefone || "Não informado"}</p>
+              </div>
+            </div>
+
+            <div className="banner-actions">
+              <button
+                className="btn-white"
+                onClick={() => navigate("/editar-perfil")}
+              >
+                Editar
+              </button>
+            </div>
+          </div>
+        </Banner>
+
+  <div className="container">
         {/* resto do layout igual ao seu original */}
         {erro && <p className="mensagem-erro">{erro}</p>}
         <div className="profile-grid">
@@ -140,8 +152,8 @@ const Profile = () => {
             </button>
           </main>
 
-         
-           {/* COLUNA LATERAL */}
+
+          {/* COLUNA LATERAL */}
           <aside className="side-column">
             <div className="side-box">
               <h3>Conquistas</h3>

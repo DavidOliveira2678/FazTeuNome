@@ -3,6 +3,8 @@ import { useNavigate } from "react-router-dom";
 import "./SoftSkills.css";
 import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
+import Banner from "../../components/Banner/Banner";
+
 
 const SoftSkills = () => {
   const navigate = useNavigate();
@@ -32,27 +34,17 @@ const SoftSkills = () => {
     <div className="pagina-container">
      <Header/>
 
-
-
-      <div className="content-wrapper">
-        {/* Banner Hero Laranja */}
-        <section className="hero-card-soft">
-          <div className="hero-content">
-            <h1>Soft Skills</h1>
-            <p>Desenvolva habilidades comportamentais essenciais para o mundo profissional.</p>
-            <div className="progresso-container">
-              <span>Progresso do Módulo</span>
-              <div className="barra-fundo">
-                {/* Aqui você define a porcentagem da barra */}
-                <div className="barra-preenchimento" style={{ width: "33%" }}></div>
-              </div>
-            </div>
-          </div>
-          <div className="badge-concluido-soft">
-            <strong>33%</strong>
-            <small>Concluído</small>
-          </div>
-        </section>
+<Banner
+  variant="banner-softskills"
+  align="left"
+  direction="column"
+>
+  <h2>Soft Skills</h2>
+  <p>
+    Desenvolva habilidades humanas essenciais para o mercado de trabalho,
+    como comunicação, empatia e liderança.
+  </p>
+</Banner>
 
         <button
           type="button"
@@ -130,7 +122,7 @@ const SoftSkills = () => {
               style={{ cursor: "pointer" }}>❓ Dúvidas</button>
           </aside>
         </main>
-      </div>
+      
 
       <Footer />
     </div>

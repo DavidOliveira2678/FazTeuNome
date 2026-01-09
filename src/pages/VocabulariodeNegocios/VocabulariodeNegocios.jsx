@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import "./VocabulariodeNegocios.css";
 import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
+import Banner from "../../components/Banner/Banner";
 
 export default function VocabulariodeNegocios({ nome }) {
   const navigate = useNavigate();
@@ -18,34 +19,37 @@ export default function VocabulariodeNegocios({ nome }) {
 
   return (
     <>
-      <Header />
+    <Header />
 
-      {/* CONTAINER CENTRAL */}
       <div className="VocabulariodeNegocios-container">
-        {/* HEADER */}
-        <div className="VocabulariodeNegocios-header">
-          <div className="header-top">
-            <div className="header-left">
-              <span className="softskills-label">Hard Skills</span>
-              <h2>Vocabulário de Negócios</h2>
-              <p>Domine os termos essenciais do mundo corporativo e profissional</p>
-              <p>Progresso do Módulo</p>
+        {/* BANNER */}
+        <Banner
+          variant="banner-vocabulario"
+          align="left"
+          direction="column"
+        >
+          <span className="softskills-label">Hard Skills</span>
+          <h2>Vocabulário de Negócios</h2>
+          <p>
+            Domine os termos essenciais do mundo corporativo e profissional
+          </p>
 
-              <div style={{ marginTop: "14px" }}>
-                <div className="progress-bar-container" style={{ width: "250px", background: "#e0e0e0", borderRadius: "8px" }}>
-                  <div className="progress-bar-fill" style={{ width: "0%", height: "10px", background: "#4caf50", borderRadius: "8px" }} />
-                </div>
-              </div>
-            </div>
+          <p style={{ marginTop: "12px" }}>Progresso do Módulo</p>
 
-            <div className="progress-info">
-              <div className="progress-box adjusted">
-                <span>Concluído</span>
-                <span>0%</span>
-              </div>
+          <div className="progress-bar-container" style={{ width: "250px" }}>
+            <div
+              className="progress-bar-fill"
+              style={{ width: "0%" }}
+            />
+          </div>
+
+          <div className="progress-info">
+            <div className="progress-box adjusted">
+              <span>Concluído</span>
+              <span>0%</span>
             </div>
           </div>
-        </div>
+        </Banner>
 
         {/* CONTEÚDO PRINCIPAL */}
         <div className="main-row">

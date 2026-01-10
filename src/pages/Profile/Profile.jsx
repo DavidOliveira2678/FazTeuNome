@@ -35,15 +35,15 @@ const Profile = () => {
   if (!usuario) return <p>Carregando perfil...</p>;
 
   return (
-    <div className="profile-page">
-      <Header />
+    <>
+    <Header />
 
-    
+    <div className="profile-page">
 
         <Banner
           variant="banner-profile"
           align="left"
-          direction="row"
+          direction="column"
         >
           <div className="profile-banner-content">
             <div className="banner-info">
@@ -63,7 +63,6 @@ const Profile = () => {
                 <p><strong>Telefone:</strong> {usuario.telefone || "Não informado"}</p>
               </div>
             </div>
-
             <div className="banner-actions">
               <button
                 className="btn-white"
@@ -71,11 +70,12 @@ const Profile = () => {
               >
                 Editar
               </button>
+
             </div>
           </div>
         </Banner>
 
-  <div className="container">
+      <div className="profile-container">
         {/* resto do layout igual ao seu original */}
         {erro && <p className="mensagem-erro">{erro}</p>}
         <div className="profile-grid">
@@ -200,8 +200,9 @@ const Profile = () => {
         </div>
       </div>
 
-      <Footer />
     </div>
+    <Footer />
+    </>
   );
 };
 

@@ -2,7 +2,6 @@ import React from "react";
 import { useNavigate } from "react-router-dom"; 
 import Header from "../../components/Header/Header";
 import imagemConstrucao from "../../assets/imagemconstrucao.png";
-import "./PaginaEmConstrucao.css";
 import Banner from "../../components/Banner/Banner";
 
 function PaginaEmConstrucao() {

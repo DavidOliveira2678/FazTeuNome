@@ -24,20 +24,21 @@
 .container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 40px;
 }
 
 /* GRID */
-.main-layout {
-  display: grid;
-  grid-template-columns: 2fr 1fr;
-  gap: 32px;
-  margin-top: 30px;
+.comunidade-main-layout {
+  display: flex;
+  flex-direction: column;
+  padding: 0 60px;
+  max-width: 2100px;
+  margin: 0 auto;
 }
 
 /* ===== NOVO POST ===== */
 .novo-post-card {
   display: flex;
+  flex-direction: column;
   gap: 15px;
   padding: 20px;
   border: 1px solid var(--border-color);
@@ -185,4 +186,10 @@
   font-weight: 600;
   margin-bottom: 10px;
   cursor: pointer;
+}
+
+.comunidade-sidebar-e-posts{
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 32px;
 }

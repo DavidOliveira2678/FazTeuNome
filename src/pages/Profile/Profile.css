@@ -28,6 +28,9 @@
   display: flex;
   flex-direction: column;
   background-color: white;
+  padding: 0 60px;
+  max-width: 2100px;
+  margin: 0 auto;
 }
 
 
@@ -35,6 +38,10 @@
    BANNER (conteúdo interno)
 ========================= */
 
+.profile-banner-content{
+  display: flex;
+  justify-content: space-between;
+}
 
 
 .banner-info {
@@ -44,10 +51,10 @@
   text-align: left;
 }
 
-
 .user-details {
   text-align: left;
 }
+
 .banner-actions {
   display: flex;
   align-items: center;

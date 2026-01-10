@@ -18,8 +18,9 @@ const Ranking = () => {
   ];
 
   return (
+    <>
+    <Header />
     <div className="ranking-page">
-      <Header />
 
       {/* BANNER COMO COMPONENTE */}
       <Banner
@@ -36,7 +37,7 @@ const Ranking = () => {
       </Banner>
 
       {/* CONTEÚDO */}
-      <div className="container ranking-layout">
+      <div className="ranking-layout">
         <button
           type="button"
           className="btn-voltar"
@@ -111,8 +112,9 @@ const Ranking = () => {
         </div>
       </div>
 
-      <Footer />
     </div>
+    <Footer />
+    </>
   );
 };
 

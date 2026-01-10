@@ -25,30 +25,28 @@ function HardSkills() {
   }, []);
 
   return (
-    <div className="pagina-container">
-      <Header />
+    <>
+    <Header />
+    <div className="hardskills-container">
 
       {/* BANNER FULL WIDTH */}
       <Banner
         variant="banner-hardskills"
         align="left"
-        direction="row"
+        direction="column"
       >
         <section className="hero-card-hard">
           <div className="hero-content">
-            <h1>Hard Skills</h1>
+            <h2>Hard Skills</h2>
             <p>
               Desenvolva habilidades técnicas essenciais para o mundo
               profissional
             </p>
 
-            <div className="progresso-container">
+            <div className="hardskills-progresso-container">
               <span>Progresso do Módulo</span>
-              <div className="barra-fundo">
-                <div
-                  className="barra-preenchimento"
-                  style={{ width: `${progresso}%` }}
-                />
+              <div className="hardskills-barra-fundo">
+                <div className="hardskills-barra-preenchimento" style={{ width: `${progresso}%` }} />
               </div>
             </div>
           </div>
@@ -61,7 +59,7 @@ function HardSkills() {
       </Banner>
 
       {/* CONTEÚDO COM LARGURA CONTROLADA */}
-      <div className="content-wrapper">
+      <div className="hardskills-content-wrapper">
         <button
           className="btn-voltar"
           onClick={() => navigate("/dashboard")}
@@ -160,8 +158,9 @@ function HardSkills() {
           </aside>
         </main>
       </div>
-      <Footer />
     </div>
+    <Footer />
+    </>
   );
 }
 

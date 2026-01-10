@@ -31,34 +31,32 @@ const SoftSkills = () => {
   };
 
   return (
-    <div className="pagina-container">
-     <Header/>
+    <>
+    <Header/>
+    <div className="softskills-container">
 
-<Banner
-  variant="banner-softskills"
-  align="left"
-  direction="column"
->
-  <h2>Soft Skills</h2>
-  <p>
-    Desenvolva habilidades humanas essenciais para o mercado de trabalho,
-    como comunicação, empatia e liderança.
-  </p> 
+    <Banner
+      variant="banner-softskills"
+      align="left"
+      direction="column"
+    >
+      <h2>Soft Skills</h2>
+      <p>
+        Desenvolva habilidades humanas essenciais para o mercado de trabalho,
+        como comunicação, empatia e liderança.
+      </p> 
 
-  <div className="progresso-container">
-          <span>Progresso do Módulo</span> </div> 
-
-<div className="barra-fundo">
-            <div
-              className="barra-preenchimento"
-              style={{ width: "35%" }}
-            />
-       </div>
-<div className="badge-concluido-hard">
-        <strong>35%</strong>
-        <small>Concluído</small>
-      </div>
-</Banner>
+          <div className="softskills-progresso-container">
+              <span>Progresso do Módulo</span>
+            <div className="softskills-barra-fundo">
+              <div className="softskills-barra-preenchimento" style={{ width: "35%" }} />
+            </div>
+            <div className="badge-concluido-soft">
+              <strong>35%</strong>
+              <small>Concluído</small>
+            </div>
+          </div>
+    </Banner>
 
         <button
           type="button"
@@ -85,9 +83,7 @@ const SoftSkills = () => {
               <div className="status-icons">
                 <span className="chevron">❯</span>
               </div>
-            </div>
-
-            
+            </div>        
 
             <div className="card-licao locked">
               <div className="circle-indicator"></div>
@@ -136,10 +132,9 @@ const SoftSkills = () => {
               style={{ cursor: "pointer" }}>❓ Dúvidas</button>
           </aside>
         </main>
-      
-
-      <Footer />
     </div>
+    <Footer />
+    </>
   );
 };
 

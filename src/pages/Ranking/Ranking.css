@@ -20,7 +20,11 @@ body {
   background-color: white;
 }
 
-
+.ranking-page{
+  padding: 0 60px;
+  max-width: 2100px;
+  margin: 0 auto;
+}
 
 .ranking-header h1 {
   color: var(--primary-blue);

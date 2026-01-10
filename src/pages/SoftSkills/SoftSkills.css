@@ -16,8 +16,11 @@
   
 }
 
-.pagina-container {
+.softskills-container {
   background-color: rgb(255, 255, 255);
+  padding: 0 60px;
+  max-width: 2100px;
+  margin: 0 auto;
 }
 
 /* HERO CARD (ORANGE) */
@@ -63,26 +66,25 @@
   opacity: 0.95;
 }
 
-.progresso-container {
+.softskills-progresso-container {
   width: 100%;
-  max-width: 400px;
   margin-top: 12px;
 }
 
-.barra-fundo {
+.softskills-barra-fundo {
   background: rgba(255,255,255,0.25);
   height: 8px;
   border-radius: 10px;
 }
 
-.barra-preenchimento {
+.softskills-barra-preenchimento {
   background: white;
   height: 100%;
   border-radius: 10px;
 }
 
 .badge-concluido-soft {
-  background-color: #b34700; /* laranja mais escuro */
+  background-color: #b33300;
   padding: 16px;
   border-radius: 15px;
   text-align: center;

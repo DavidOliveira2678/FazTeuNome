@@ -15,8 +15,11 @@
   font-family: 'Inter', sans-serif;
 }
 
-.pagina-container {
+.oportunidades-pagina-container {
   background-color: #ffffff;
+  padding: 0 60px;
+  max-width: 2100px;
+  margin: 0 auto;
 }
 
 

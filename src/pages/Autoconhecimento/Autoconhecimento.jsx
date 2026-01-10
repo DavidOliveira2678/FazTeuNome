@@ -26,8 +26,9 @@ export default function Autoconhecimento() {
   };
 
   return (
+    <>
+    <Header />
     <div className="Autoconhecimento-page-wrapper">
-      <Header />
 
       {/* BANNER */}
       <Banner
@@ -40,7 +41,7 @@ export default function Autoconhecimento() {
             <div className="header-top">
               <div className="header-left">
                 <span className="softskills-label">Soft Skills</span>
-                <h1>Autoconhecimento</h1>
+                <h2>Autoconhecimento</h2>
                 <p>
                   Explore suas habilidades e valores que sustentam suas escolhas
                 </p>
@@ -165,7 +166,8 @@ export default function Autoconhecimento() {
         </div>
       </div>
 
-      <Footer />
     </div>
+    <Footer />
+    </>
   );
 }

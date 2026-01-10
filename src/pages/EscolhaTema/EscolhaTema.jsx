@@ -9,8 +9,9 @@ import Banner from "../../components/Banner/Banner";
 const EscolhaTema = () => {
   const navigate = useNavigate();
   return (
-    <div className="pagina-container">
-      <Header />
+    <>
+    <Header />
+    <div className="escolha-tema-pagina-container">
       <Banner variant="banner-escolhatema"
         align="left"
         direction="column">
@@ -28,7 +29,7 @@ const EscolhaTema = () => {
       </Banner>
 
       {/* 📦 CONTEÚDO NORMAL */}
-      <div className="content-wrapper">
+      <div className="escolha-tema-content-wrapper">
         <button
           type="button"
           className="btn-voltar"
@@ -130,8 +131,9 @@ const EscolhaTema = () => {
         </section>
       </div>
 
-      <Footer />
     </div>
+    <Footer />
+    </>
   );
 };
 

@@ -11,16 +11,15 @@ const ProjetoVida = () => {
 
 
   return (
-    <div className="pagina-container">
-      <Header />
-
-      
+    <>
+    <Header />
+    <div className="projeto-de-vida-container">
 
         {/* Banner de Progresso Roxo/Rosa */}
         <Banner
           variant="banner-projetovida"
           align="left"
-          direction="row"
+          direction="column"
         >
           <div className="hero-content">
             <h2>Projeto Vida</h2>
@@ -28,23 +27,22 @@ const ProjetoVida = () => {
               Construa seu projeto de vida com reflexão, propósito e planejamento.
             </p>
 
-            <div className="progresso-container">
+            <div className="projeto-de-vida-progresso-container">
               <span>Progresso do Módulo</span>
-              <div className="barra-fundo">
-                <div
-                  className="barra-preenchimento"
-                  style={{ width: "40%" }}
+              <div className="projeto-de-vida-barra-fundo">
+                <div className="projeto-de-vida-barra-preenchimento" style={{ width: "40%" }}
                 />
               </div>
-            </div>
-          </div>
 
           <div className="badge-concluido-vida">
             <strong>40%</strong>
             <small>Concluído</small>
           </div>
+            </div>
+          </div>
         </Banner>
-<div className="content-wrapper">
+
+        <div className="projeto-de-vida-content-wrapper">
         <button
           type="button"
           className="btn-voltar"
@@ -113,8 +111,9 @@ const ProjetoVida = () => {
         </main>
       </div>
 
-      <Footer />
     </div>
+    <Footer />
+    </>
   );
 };
 

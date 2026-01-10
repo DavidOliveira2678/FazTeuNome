@@ -3,40 +3,24 @@ import { useNavigate } from "react-router-dom";
 import "./Comunidade.css";
 import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
+import Banner from "../../components/Banner/Banner";
 
-function ListaPostagens() {
-  const [postagens, setPostagens] = useState([]);
-  const usuario = JSON.parse(localStorage.getItem("usuario"));
-  console.log('USUARIO LOGADO:  ', usuario);
-
-  useEffect(() => {
-    const token = localStorage.getItem("token");
-
-    fetch("http://localhost:5000/api/comunidade", {
-      headers: {
-        Authorization: "Bearer " + token
-      }
-    })
-      .then(res => res.json())
-      .then(data => {
-        setPostagens(data); console.log('POSTAGEM: ', data);
-      })
-      .catch(err => console.error(err));
-  }, []);
-
+function ListaPostagens({ postagens, handleApagar }) {
+const usuario = JSON.parse(localStorage.getItem("usuario"));
   return (
     <div className="posts-list">
       {postagens.length === 0 && <p>Nenhuma postagem ainda.</p>}
 
-      {postagens.map((postagem) => (
+      {postagens.map(postagem => (
         <div key={postagem.id} className="post-card">
           <h4>{postagem.nome_completo}</h4>
           <span>{new Date(postagem.data_postagem).toLocaleDateString()}</span>
           <p>{postagem.postagem}</p>
 
-
           {Number(usuario.id) === Number(postagem.usuario_id) && (
-            <button>Excluir</button>
+            <button onClick={() => handleApagar(postagem.id)}>
+              Excluir
+            </button>
           )}
         </div>
       ))}
@@ -45,28 +29,93 @@ function ListaPostagens() {
 }
 
 
-
 const Comunidade = () => {
   const navigate = useNavigate();
-  const [mensagem, setMensagem] = useState("");
+  const [postagem, setPostagem] = useState("");
+  const [postagens, setPostagens] = useState([]);
+  const usuario = JSON.parse(localStorage.getItem("usuario"));
+  const token = localStorage.getItem("token");
+
+  async function carregarPostagens() {
+    try {
+      const response = await fetch("http://localhost:5000/api/comunidade", {
+        headers: {
+          Authorization: "Bearer " + token
+        }
+      });
+
+      const data = await response.json();
+      setPostagens(data);
+    } catch (error) {
+      console.error("Erro ao carregar postagens:", error);
+    }
+  }
+
+  useEffect(() => {
+    carregarPostagens();
+  }, []);
+
+  async function handlePostar(e) {
+    e.preventDefault();
+
+    try {
+      const response = await fetch("http://localhost:5000/api/comunidade", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: "Bearer " + token
+        },
+        body: JSON.stringify({
+          postagem,
+          usuario_id: usuario.id
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error("Erro ao realizar a postagem.")
+      };
+
+      setPostagem("");
+      await carregarPostagens(); 
+
+    } catch (error) {
+      console.error(error);
+      alert("Erro ao realizar postagem.");
+    }
+  }
+
+  async function handleApagar(id) {
+    try {
+      await fetch(`http://localhost:5000/api/comunidade/${id}`, {
+        method: "DELETE",
+        headers: {
+          Authorization: "Bearer " + token
+        }
+      });
+
+      await carregarPostagens();
+    } catch (error) {
+      console.error("ERRO: ", error);
+    }
+  }
 
   return (
     <div className="pagina-comunidade">
       
      <Header/>
-      <div className="container main-layout">
+      <div className="comunidade-main-layout">
         {/* Coluna Principal (Feed) */}
         <main className="feed-column">
-          <header className="comunidade-header">
-            <h1>Comunidade</h1>
+          <Banner align="left" direction="column" variant="banner-comunidade">
+            <h2>Comunidade</h2>
             <p>Conecte-se com colegas, compartilhe experiências e inspire outros</p>
+          </Banner>
             <button
               className="btn-voltar"
               onClick={() => navigate("/dashboard")}
             >
               Voltar
             </button>
-          </header>
 
           {/* Área de Novo Post */}
           <div className="novo-post-card">
@@ -74,10 +123,10 @@ const Comunidade = () => {
             <textarea
               className="input-placeholder"
               placeholder="Compartilhe suas experiências, dúvidas ou inspirações..."
-              value={mensagem}
-              onChange={(e) => setMensagem(e.target.value)}
+              value={postagem}
+              onChange={(e) => setPostagem(e.target.value)}
             />
-            <button type="submit" className="novo-post-button">Postar</button>
+            <button type="submit" className="novo-post-button" onClick={handlePostar}>Postar</button>
           </div>
 
           {/* Barra de Pesquisa */}
@@ -86,34 +135,36 @@ const Comunidade = () => {
             <span className="search-icon">🔍</span>
           </div>
 
-          {/* Lista de Posts */}
-          <ListaPostagens />
+          <div className="comunidade-sidebar-e-posts">
+            {/* Lista de Posts */}
+            <ListaPostagens postagens={postagens} handleApagar={handleApagar} />
+            
+            {/* Coluna Lateral (Sidebar) */}
+            <aside className="sidebar-column">
+              <div className="sidebar-card">
+                <h3>Estatísticas</h3>
+                <div className="stat-item">
+                  <div className="stat-label">👥 Membros</div>
+                  <div className="stat-value">248</div>
+                </div>
+                <div className="stat-item">
+                  <div className="stat-label">✨ Posts hoje</div>
+                  <div className="stat-value">34</div>
+                </div>
+              </div>
+              <div className="sidebar-card">
+                <h3>Tendências</h3>
+                <ul className="trends-list">
+                  <li>#ProjetoDeVida</li>
+                  <li>#Emprego</li>
+                  <li>#SoftSkills</li>
+                  <li>#Tecnologia</li>
+                </ul>
+              </div>
+            </aside>
+          </div>
         </main>
 
-        {/* Coluna Lateral (Sidebar) */}
-        <aside className="sidebar-column">
-          <div className="sidebar-card">
-            <h3>Estatísticas</h3>
-            <div className="stat-item">
-              <div className="stat-label">👥 Membros</div>
-              <div className="stat-value">248</div>
-            </div>
-            <div className="stat-item">
-              <div className="stat-label">✨ Posts hoje</div>
-              <div className="stat-value">34</div>
-            </div>
-          </div>
-
-          <div className="sidebar-card">
-            <h3>Tendências</h3>
-            <ul className="trends-list">
-              <li>#ProjetoDeVida</li>
-              <li>#Emprego</li>
-              <li>#SoftSkills</li>
-              <li>#Tecnologia</li>
-            </ul>
-          </div>
-        </aside>
       </div>
 
       <Footer />

@@ -15,36 +15,55 @@
   font-family: 'Inter', sans-serif;
 }
 
-.pagina-container {
+.projeto-de-vida-container {
   background-color: white;
   min-height: 100vh;
+  padding: 0 60px;
 }
 
 /* TAMANHO DO RESTO DA PAGINA */
-.content-wrapper {
+.projeto-de-vida-content-wrapper {
   max-width: 2200px;
   margin: 20px auto;
-  padding: 0 20px;
 }
 
-
-
-.progresso-container {
+.projeto-de-vida-progresso-container {
   width: 100%;
-  max-width: 700px;
 }
 
-.barra-fundo {
+.projeto-de-vida-barra-fundo {
   background: rgba(255, 255, 255, 0.3);
   height: 8px;
   border-radius: 10px;
   margin-top: 10px;
 }
 
-.barra-preenchimento {
+.projeto-de-vida-barra-preenchimento {
   background: white;
   height: 100%;
   border-radius: 10px;
+}
+
+.badge-concluido-vida {
+  background-color: #6d0786;
+  padding: 16px;
+  border-radius: 15px;
+  text-align: center;
+  min-width: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.badge-concluido-vida strong {
+  font-size: 2rem;
+}
+
+.badge-concluido-vida small {
+  font-size: 0.8rem;
+  opacity: 0.9;
 }
 
 

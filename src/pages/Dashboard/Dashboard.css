@@ -3,7 +3,11 @@
   box-sizing: border-box;
 }
 
-
+.dashboard-fullpage{
+  max-width: 2100px;
+  margin: 0 auto;
+  padding: 0 60px;
+}
 
 .banner-wrapper {
   width: 100%;
@@ -61,7 +65,7 @@
 
 .path-card {
   background: white;
-  padding: 28px 32px;        /* MAIS espaço interno */
+  padding: 28px 32px;
   border-radius: 18px;
   margin-bottom: 20px;
   display: flex;
@@ -69,7 +73,7 @@
   align-items: center;
   border: 1px solid #e7e7e7;
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
-  min-height: 140px;         /* AQUI ele cresce de verdade */
+  min-height: 140px;
 }
 
 

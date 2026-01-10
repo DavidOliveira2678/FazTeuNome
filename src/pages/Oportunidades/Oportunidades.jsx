@@ -17,8 +17,9 @@ const Oportunidades = () => {
   ];
 
   return (
-    <div className="pagina-container">
-      <Header />
+    <>
+    <Header />
+    <div className="oportunidades-pagina-container">
 
       <Banner
         variant="banner-oportunidades"
@@ -38,7 +39,7 @@ const Oportunidades = () => {
       </Banner>
 
 
-      <main className="content-wrapper">
+      <main className="oportunidades-content-wrapper">
         <div className="filter-section">
           <h3>Oportunidades para você</h3>
           <div className="filters">
@@ -74,8 +75,9 @@ const Oportunidades = () => {
         </div>
       </main>
 
-      <Footer />
     </div>
+    <Footer />
+    </>
   );
 };
 

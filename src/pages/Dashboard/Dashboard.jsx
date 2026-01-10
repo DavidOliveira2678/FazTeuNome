@@ -118,7 +118,7 @@ export default function Dashboard() {
           >
             <span className="icon">🗺️</span>
             <div className="path-content">
-              <h4>Projeto de Vida</h4>
+              <h4>Projeto Vida</h4>
               <p>Construa seu projeto de vida com reflexão crítica.</p>
               <div className="progress-container">
                 <div className="progress-bar gray" style={{ width: "5%" }} />

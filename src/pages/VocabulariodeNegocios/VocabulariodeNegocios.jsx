@@ -34,21 +34,6 @@ export default function VocabulariodeNegocios({ nome }) {
             Domine os termos essenciais do mundo corporativo e profissional
           </p>
 
-          <p style={{ marginTop: "12px" }}>Progresso do Módulo</p>
-
-          <div className="progress-bar-container" style={{ width: "250px" }}>
-            <div
-              className="progress-bar-fill"
-              style={{ width: "0%" }}
-            />
-          </div>
-
-          <div className="progress-info">
-            <div className="progress-box adjusted">
-              <span>Concluído</span>
-              <span>0%</span>
-            </div>
-          </div>
         </Banner>
 
         {/* CONTEÚDO PRINCIPAL */}

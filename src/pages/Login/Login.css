@@ -3,6 +3,7 @@
   display: flex;
   background: linear-gradient(to right, #5091BE, #0b4870);
   box-sizing: border-box;
+   gap: 90px; 
 }
 
 /* Lado esquerdo com imagem ilustrativa */

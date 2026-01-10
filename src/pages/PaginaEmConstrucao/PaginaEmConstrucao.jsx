@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import Header from "../../components/Header/Header";
 import imagemConstrucao from "../../assets/imagemconstrucao.png";
 import "./PaginaEmConstrucao.css";
+import Banner from "../../components/Banner/Banner";
 
 function PaginaEmConstrucao() {
   const navigate = useNavigate(); 
@@ -10,8 +11,12 @@ function PaginaEmConstrucao() {
   return (
     <>
       <Header />
-
-      <main>
+<Banner
+        variant="banner-paginaemconstrucao"
+        align="center"
+        direction="column"
+      >
+   
         <div className="container">
           <div className="banner">PÁGINA EM CONSTRUÇÃO</div>
           <p className="texto">
@@ -25,7 +30,7 @@ function PaginaEmConstrucao() {
   <img src={imagemConstrucao} alt="Página em construção" />
 </div>
 
-
+</Banner>   
 
         <div className="container-botao">
           <button 
@@ -35,7 +40,7 @@ function PaginaEmConstrucao() {
             Retornar
           </button>
         </div>
-      </main>
+      
     </>
   );
 }

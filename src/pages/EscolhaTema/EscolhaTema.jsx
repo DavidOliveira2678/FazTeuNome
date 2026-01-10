@@ -3,29 +3,41 @@ import { useNavigate } from "react-router-dom";
 import "./EscolhaTema.css";
 import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
+import Banner from "../../components/Banner/Banner";
+
 
 const EscolhaTema = () => {
   const navigate = useNavigate();
   return (
     <div className="pagina-container">
-     <Header/>
-
-      <div className="content-wrapper">
+      <Header />
+      <Banner variant="banner-escolhatema"
+        align="left"
+        direction="column">
+        {/* 🔥 BANNER FORA DO CONTAINER */}
         <section className="hero-card-tema">
           <div className="hero-content">
             <small>Projeto Vida</small>
             <h1>Escolha seu tema</h1>
-            <p>Este é um momento importante da sua jornada. Escolha um tema que mais se conecta com seus interesses, curiosidades e objetivos atuais.</p>
-            </div>
+            <p>
+              Este é um momento importante da sua jornada. Escolha um tema que mais
+              se conecta com seus interesses, curiosidades e objetivos atuais.
+            </p>
+          </div>
         </section>
+      </Banner>
 
+      {/* 📦 CONTEÚDO NORMAL */}
+      <div className="content-wrapper">
         <button
           type="button"
           className="btn-voltar"
           onClick={() => navigate("/projetodevida")}
           style={{ cursor: "pointer" }}
-        >Voltar
+        >
+          Voltar
         </button>
+
 
         <div className="introducao-selecao">
           <h2>Qual desses temas mais se conecta com quem você é hoje?</h2>
@@ -54,7 +66,7 @@ const EscolhaTema = () => {
                 <strong>Para quem:</strong> Ideal para quem tem interesse em processos, organização e quer fazer parte da transformação da indústria.
               </div>
               <button className="btn-select" onClick={() => navigate("/oportunidades")}
-          style={{ cursor: "pointer" }}>Escolher Indústria</button>
+                style={{ cursor: "pointer" }}>Escolher Indústria</button>
             </div>
           </article>
 
@@ -79,7 +91,7 @@ const EscolhaTema = () => {
                 <strong>Para quem:</strong> Perfeito para quem gosta de resolver problemas de forma criativa e quer criar soluções que impactam o mundo.
               </div>
               <button className="btn-select" onClick={() => navigate("/oportunidades")}
-          style={{ cursor: "pointer" }}>Escolher Tecnologia</button>
+                style={{ cursor: "pointer" }}>Escolher Tecnologia</button>
             </div>
           </article>
 
@@ -104,7 +116,7 @@ const EscolhaTema = () => {
                 <strong>Para quem:</strong> Indicado para quem pretende ingressar no ensino superior e busca orientação para organizar os estudos e fazer escolhas conscientes.
               </div>
               <button className="btn-select" onClick={() => navigate("/oportunidades")}
-          style={{ cursor: "pointer" }}>Escolher Vestibular</button>
+                style={{ cursor: "pointer" }}>Escolher Vestibular</button>
             </div>
           </article>
         </main>
@@ -118,7 +130,7 @@ const EscolhaTema = () => {
         </section>
       </div>
 
-     <Footer />
+      <Footer />
     </div>
   );
 };

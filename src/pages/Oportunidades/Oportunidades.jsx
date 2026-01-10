@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import "./Oportunidades.css";
 import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
+import Banner from "../../components/Banner/Banner";
 
 const Oportunidades = () => {
   const navigate = useNavigate();
@@ -17,17 +18,25 @@ const Oportunidades = () => {
 
   return (
     <div className="pagina-container">
-      <Header/>
+      <Header />
 
-      {/* Hero Banner Celeste */}
-      <header className="hero-banner">
+      <Banner
+        variant="banner-oportunidades"
+        align="center"
+        direction="column"
+      >
         <div className="badge-conquista">
           <span className="lock-icon">🔒</span> Conquista Desbloqueada
         </div>
-        <h1>PARABENS!</h1>
-        <h2>Você chegou até aqui.</h2>
-        <p>Agora é a hora de transformar sua trajetoria em oportunidade.</p>
-      </header>
+
+        <h2>PARABÉNS!</h2>
+        <h3>Você chegou até aqui.</h3> 
+
+        <p>
+          Agora é a hora de transformar sua trajetória em oportunidade.
+        </p>
+      </Banner>
+
 
       <main className="content-wrapper">
         <div className="filter-section">
@@ -39,12 +48,12 @@ const Oportunidades = () => {
           </div>
         </div>
 
-       <button
+        <button
           type="button"
           className="btn-voltar"
           onClick={() => navigate("/projetodevida")}
         >Voltar
-        </button> 
+        </button>
 
         {/* Grid de Cards */}
         <div className="opportunities-grid">
@@ -52,7 +61,7 @@ const Oportunidades = () => {
             <div key={index} className="opportunity-card">
               <div className="card-badge">Alinhado com seu perfil</div>
               <h4>{card.title}</h4>
-              
+
               <div className="card-info">
                 <span className="info-item">🏢 {card.company}</span>
                 <div className="card-tags">

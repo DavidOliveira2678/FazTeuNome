@@ -7,47 +7,6 @@
 
 
 
-.softskills-label h2 {
-  font-size: 24px;
-  opacity: 0.9;
-  font-size: 2.5rem;
-  font-weight: 700;
-  margin-bottom: 10px;
-  color: #ffffff; 
-}
-
-
-.progress-box span:first-child {
-  font-size: 14px;
-  opacity: 0.9;
-}
-
-.progress-box span:last-child {
-  font-size: 20px;
-  font-weight: bold;
-  margin-top: 6px;
-}
-
-.progress-bar {
-  height: 6px;
-  border-radius: 4px;
-}
-
-.progress-bar.gray {
-  background-color: #9ca3af;
-  width: 100%;
-  overflow: hidden;
-}
-
-.progress-bar.white {
-  background-color: #ffffff;
-  height: 100%;
-  border-radius: 4px;
-}
-
-
-
-
 .main-row {
   margin-top: 30px;
   flex: 1;

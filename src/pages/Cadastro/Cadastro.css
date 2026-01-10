@@ -5,6 +5,7 @@
   background: linear-gradient(to right, #5091BE, #0b4870);
   box-sizing: border-box;
   overflow: hidden; /* Evita scroll na tela principal */
+ gap: 200px; 
 }
 
 /* Lado esquerdo com foguete */
@@ -20,8 +21,7 @@
   width: 100%;
   height: auto;
   object-fit: contain;
-  max-width: 600px;
-   transform: translateX(-200px); /* empurra um pouco pra esquerda */
+  max-width: 680px;
 }
 
 /* Lado direito: Onde o card e o footer ficam empilhados */
@@ -30,9 +30,8 @@
   display: flex;
   flex-direction: column; /* COLOCA O TEXTO ABAIXO DO CARD */
   justify-content: center;
-  align-items: center;
+  gap: 30px;
   padding: 20px;
-   transform: translateX(-226px);/* empurra um pouco pra esquerda */
 }
 
 /* Card branco compacto */
@@ -75,6 +74,7 @@
   font-size: 13px;
   color: #666;
   margin-bottom: 15px;
+  
 }
 
 /* Inputs e Agrupamentos */
@@ -142,9 +142,11 @@
 }
 
 .slogan-text {
-  font-size: 14px;
+  font-size: 15px;
+  color: #fff;
   line-height: 1.4;
   margin: 0;
+  
 }
 
 /* 📱 Responsividade para Celulares */

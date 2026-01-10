@@ -20,34 +20,14 @@
   min-height: 100vh;
 }
 
-/* HERO CARD (PURPLE) */
+/* TAMANHO DO RESTO DA PAGINA */
 .content-wrapper {
-  max-width: 1100px;
+  max-width: 2200px;
   margin: 20px auto;
   padding: 0 20px;
 }
 
-.hero-card-vida {
-  background: linear-gradient(90deg, #b84c9c 0%, #e67bbd 100%);
-  border-radius: 20px;
-  padding: 40px;
-  color: white;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
 
-.hero-card-vida h1 {
-  color: white; 
-  font-size: 2.2rem;
-  margin-bottom: 8px;
-}
-
-.hero-content p {
-  font-size: 1rem;
-  opacity: 0.95;
-  margin-bottom: 30px;
-}
 
 .progresso-container {
   width: 100%;
@@ -67,19 +47,6 @@
   border-radius: 10px;
 }
 
-.badge-concluido-vida {
-  background: #f9c4ea;
-  color: #b84c9c;
-  padding: 20px;
-  border-radius: 15px;
-  text-align: center;
-  min-width: 120px;
-}
-
-.badge-concluido-vida strong {
-  display: block;
-  font-size: 1.8rem;
-}
 
 /* UI ELEMENTS */
 .btn-voltar {

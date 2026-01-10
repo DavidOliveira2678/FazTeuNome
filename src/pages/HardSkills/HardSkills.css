@@ -10,6 +10,7 @@
   --text-gray: #666;
 }
 
+
 * {
   margin: 0;
   padding: 0;
@@ -22,78 +23,14 @@
   min-height: 100vh;
 }
 
-/* LAYOUT PRINCIPAL */
-.content-wrapper {
-  max-width: 1100px;
-  margin: 20px auto;
-  padding: 0 20px;
-}
-
-/* HERO CARD (BANNER VERDE) */
-
-/* Banner Principal Verde */
-.hero-card-hard {
-  background-color: #00b341; /* Verde vibrante da imagem */
-  border-radius: 20px;
-  padding: 40px;
-  color: white;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  position: relative;
-}
-
-.hero-card-hard h1 {
-  color: white; 
-  font-size: 2.5rem;
-  font-weight: 700;
-  margin-bottom: 10px;
-}
-
-.hero-content p {
-  font-size: 1.1rem;
-  margin-bottom: 30px;
-  opacity: 0.95;
-}
-
-/* Barra de Progresso */
-.barra-fundo {
-  background: rgba(255, 255, 255, 0.2); /* Fundo da barra semi-transparente */
-  height: 8px;
-  border-radius: 10px;
-  margin-top: 10px;
-  width: 100%;
-}
-
-.barra-preenchimento {
-  background: white;
-  height: 100%;
-  border-radius: 10px;
-}
-
-/* Badge Lateral (Mudado de Roxo para Verde Escuro para combinar) */
-.badge-concluido-hard {
-  background-color: #009637; /* Um tom de verde um pouco mais escuro para dar contraste */
-  padding: 20px;
-  border-radius: 15px;
-  text-align: center;
-  min-width: 110px;
-  color: white;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.badge-concluido-hard strong {
-  font-size: 2rem;
-  display: block;
-}
 
 .badge-concluido-hard small {
   font-size: 0.8rem;
   opacity: 0.9;
 }
+
+
+
 /* BOTÃO VOLTAR */
 .btn-voltar {
   background: #245a8d;

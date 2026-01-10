@@ -43,7 +43,21 @@ const SoftSkills = () => {
   <p>
     Desenvolva habilidades humanas essenciais para o mercado de trabalho,
     como comunicação, empatia e liderança.
-  </p>
+  </p> 
+
+  <div className="progresso-container">
+          <span>Progresso do Módulo</span> </div> 
+
+<div className="barra-fundo">
+            <div
+              className="barra-preenchimento"
+              style={{ width: "35%" }}
+            />
+       </div>
+<div className="badge-concluido-hard">
+        <strong>35%</strong>
+        <small>Concluído</small>
+      </div>
 </Banner>
 
         <button

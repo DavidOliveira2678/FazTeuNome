@@ -3,6 +3,8 @@ import { useNavigate } from "react-router-dom";
 import "./HardSkills.css";
 import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
+import Banner from "../../components/Banner/Banner";
+
 
 function HardSkills() {
   const navigate = useNavigate();
@@ -24,9 +26,14 @@ function HardSkills() {
 
   return (
     <div className="pagina-container">
-      <Header/>
-      <div className="content-wrapper">
-        {/* Banner de Progresso Verde */}
+      <Header />
+
+      {/* BANNER FULL WIDTH */}
+      <Banner
+        variant="banner-hardskills"
+        align="left"
+        direction="row"
+      >
         <section className="hero-card-hard">
           <div className="hero-content">
             <h1>Hard Skills</h1>
@@ -34,29 +41,33 @@ function HardSkills() {
               Desenvolva habilidades técnicas essenciais para o mundo
               profissional
             </p>
+
             <div className="progresso-container">
               <span>Progresso do Módulo</span>
               <div className="barra-fundo">
                 <div
                   className="barra-preenchimento"
                   style={{ width: `${progresso}%` }}
-                ></div>
+                />
               </div>
             </div>
           </div>
+
           <div className="badge-concluido-hard">
             <strong>{Math.round(progresso)}%</strong>
             <small>Concluído</small>
           </div>
         </section>
+      </Banner>
 
+      {/* CONTEÚDO COM LARGURA CONTROLADA */}
+      <div className="content-wrapper">
         <button
           className="btn-voltar"
           onClick={() => navigate("/dashboard")}
         >
           Voltar
         </button>
-
         <main className="main-layout">
           {/* Seção de Lições */}
           <section className="coluna-licoes">

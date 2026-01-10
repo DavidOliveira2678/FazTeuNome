@@ -4,7 +4,7 @@
   border-radius: 24px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   max-width: 2100px;
   min-height: 280px;
   width: 100%;
@@ -13,6 +13,15 @@
   margin: 30px auto 0;
   font-family: Arial, sans-serif;
   
+  margin: clamp(16px, 4vw, 40px) auto;
+  padding: clamp(20px, 6vw, 80px);
+  
+}
+
+@media (max-width: 480px) {
+  .banner-container {
+    border-radius: 18px;
+  }
 }
 
 
@@ -25,50 +34,63 @@
 }
 
 .banner-dashboard {
-  background: linear-gradient(135deg, #0b6fa4, #0a5c88);
+  background-color: #3C6B90;
 }
 
 /* PAGINA PROFILE */
 .banner-profile {
-  background: linear-gradient(135deg, #2d66c9, #6c757d);
+  background-color: #3C6B90;
 }
 
 
 
 .banner-ranking {
-  background: linear-gradient(135deg, #f4a261, #e76f51);
+  background: #F6C525;
   min-height: 337px;
 }
 
 .banner-softskills {
-  background: linear-gradient(135deg, #ff7a00, #e66a00);
+  background-color: #D34719;
   min-height: 337px;
 }
 
 .banner-autoconhecimento {
-  background: linear-gradient(135deg, #9b5de5, #7b2cbf);
+  background-color: #FF8D67;
    min-height: 337px;
 }
 
 .banner-hardskills {
-  background: linear-gradient(135deg, #e63946, #c92a2a);
+  background-color: #00A63B;
+   min-height: 337px;
+
 }
 
 .banner-vocabulario {
-  background: linear-gradient(135deg, #9b5de5, #7b2cbf);
+  background-color: #96A93F;
+  min-height: 337px;
 }
 
 .banner-projetovida {
-  background: linear-gradient(135deg, #2a9d8f, #21867a);
+  background-color: #9410b9;
+  min-height: 337px;
 }
 
 .banner-escolhatema {
-  background: linear-gradient(135deg, #2a9d8f, #21867a);
+  background-color: #b27cc1;
+  min-height: 337px;
+
 }
 
 .banner-oportunidades {
-  background: linear-gradient(135deg, #457b9d, #1d3557);
+  background-color: #40CDDD;
 }
+
+.banner-paginaemconstrucao {
+    background-color: #ffffff;
+     min-height: 337px;
+}
+
+
 
 
 

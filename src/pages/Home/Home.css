@@ -91,20 +91,19 @@
 ========================= */
 .trilhas-container {
   display: flex;
-  gap: 50px;
+  gap: 40px;
   justify-content: center;
-  flex-wrap: nowrap;
+  flex-wrap: nowrap; /* deixa quebrar linha */
   margin-bottom: 60px;
   
 }
 
 .trilha-card {
-  width: 480px;
-  height: 400px;
+  width: clamp(220px, 28vw, 480px);
+  height: clamp(180px, 24vw, 400px);
 
   background: var(--glass-bg);
   backdrop-filter: var(--glass-blur);
-
   border-radius: 30px;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 
@@ -114,21 +113,24 @@
   justify-content: center;
 
   color: var(--white);
+  transition: transform 0.25s ease, opacity 0.25s ease, box-shadow 0.25s ease;
 }
+
 
 /* ÍCONE */
 .trilha-icon {
-  font-size: 150px;
-  margin-bottom: 60px;
+  font-size: clamp(80px, 10vw, 150px);
+  margin-bottom: 40px;
   color: var(--orange);
 }
 
+
 /* TEXTO CARD */
 .trilha-card h2 {
-  font-size: 24px;
+  font-size: clamp(18px, 2.2vw, 24px);
   font-weight: 500;
-  color: var(--white);
 }
+
 
 /* =========================
    BOTÃO CTA
@@ -168,7 +170,7 @@ width: 90vw;
 ========================= */
 @media (max-width: 768px) {
   .home-main h1 {
-    font-size: 2.2rem;
+    font-size: 2rem;
   }
 
   .trilha-card {

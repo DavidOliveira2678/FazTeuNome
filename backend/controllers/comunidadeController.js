@@ -9,7 +9,6 @@ exports.getPostagens = (req, res) => {
         return res.status(500).json({ erro: "Erro ao buscar postagens" });
       }
       res.json(results);
-      console.log(results);
     }
   );
 };
@@ -17,7 +16,6 @@ exports.getPostagens = (req, res) => {
 exports.addPostagem = (req, res) => {
   const { id } = req.usuario;
   const { postagem } = req.body;
-  console.log(id);
 
   if (!postagem || postagem.length < 1) {
     return res.status(400).json({ erro: 'Postagem vazia.' });

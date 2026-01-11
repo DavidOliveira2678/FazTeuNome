@@ -68,6 +68,13 @@
   background: #fff;
 }
 
+.novo-post-card-tamanho{
+  transition:
+  font-size 150ms,
+  color 150ms,
+  font-weight 150ms;
+}
+
 .novo-post-button {
   align-self: flex-end;
   background: var(--primary-blue);
@@ -113,11 +120,45 @@
   padding: 18px 22px;
   margin-bottom: 18px;
   transition: box-shadow 0.2s ease, transform 0.2s ease;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  width: 100%;
 }
 
 .post-card:hover {
   box-shadow: 0 6px 20px rgba(0,0,0,0.08);
   transform: translateY(-2px);
+}
+
+.post-card-content p {
+  overflow-wrap: break-word;
+  word-break: break-word;
+  white-space: normal;
+}
+
+.post-card-actions{
+  margin-left: auto;
+}
+
+.post-card-actions button{
+  border-radius: 8px;
+  height: 32px;
+  width: 32px;
+  transform: scale(1);
+  background-color: #ee2b2b21;
+  border: 1px solid #333;
+  font-size: 15px;
+
+  transition:
+  transform 150ms,
+  background-color 150ms,
+  font-size 150ms;
+}
+
+.post-card-actions button:hover{
+  transform: scale(1.2);
+  background-color: #f35454c2;
 }
 
 .post-card h4 {
@@ -192,4 +233,94 @@
   display: grid;
   grid-template-columns: 2fr 1fr;
   gap: 32px;
+}
+
+.delete-post-modal{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  opacity: 0;
+  transition: opacity 100ms;
+}
+
+.delete-post-modal.show{
+  opacity: 1;
+}
+
+.delete-post-modal-content{
+  background: #ffff;
+  width: 440px;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 20px;
+  border-radius: 20px;
+}
+
+.delete-post-modal-content h2{
+  font-size: 28px;
+  padding: 0 60px;
+}
+
+
+.delete-post-modal-content-buttons{
+  display: flex;
+  gap: 60px;
+}
+
+.delete-post-modal-content-buttons button{
+  width: 115px;
+  height: 60px;
+  border-radius: 20px;
+  font-size: 24px;
+  font-weight: 600;
+  transform: scale(1);
+  opacity: 0.8;
+
+  transition:
+  transform 100ms,
+  opacity 100ms,
+  box-shadow 100ms,
+  color 100ms,
+  border 100ms;
+}
+
+.delete-post-modal-content-buttons button:hover{
+  transform: scale(1.08);
+  opacity: 1;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+.delete-post-modal-yes{
+  background-color:#32da72;
+  color:#cef7be;
+  border: 2px solid #173123;
+}
+
+.delete-post-modal-yes:hover{
+  background-color:#46e941;
+  color:#fff;
+  border: 2.5px solid #0f3822;
+}
+
+.delete-post-modal-no{
+  background-color:#da324e;
+  color:#f0ac8c;
+  border: 2px solid #3b1925;
+}
+
+.delete-post-modal-no:hover{
+  background-color:#e23629;
+  color:#fff;
+  border: 2.5px solid #350e1b;
 }

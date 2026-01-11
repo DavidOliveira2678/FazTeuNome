@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import ReactDOM from 'react-dom';
 import "./Comunidade.css";
 import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
 import Banner from "../../components/Banner/Banner";
 
-function ListaPostagens({ postagens, handleApagar }) {
+function ListaPostagens({ postagens, setModal, setPostagemSelecionada }) {
 const usuario = JSON.parse(localStorage.getItem("usuario"));
   return (
     <div className="posts-list">
@@ -13,14 +14,22 @@ const usuario = JSON.parse(localStorage.getItem("usuario"));
 
       {postagens.map(postagem => (
         <div key={postagem.id} className="post-card">
-          <h4>{postagem.nome_completo}</h4>
-          <span>{new Date(postagem.data_postagem).toLocaleDateString()}</span>
-          <p>{postagem.postagem}</p>
+          <div className="post-card-content">
+            <h4>{postagem.nome_completo}</h4>
+            <span>{new Date(postagem.data_postagem).toLocaleDateString()}</span>
+            <p>{postagem.postagem}</p>
+          </div>
 
           {Number(usuario.id) === Number(postagem.usuario_id) && (
-            <button onClick={() => handleApagar(postagem.id)}>
-              Excluir
-            </button>
+            <div className="post-card-actions">
+              <button style={{ cursor: 'pointer' }}
+              onClick={() => {
+                setPostagemSelecionada(postagem);
+                setModal(true)}}
+                >
+                🗑️
+              </button>
+            </div>
           )}
         </div>
       ))}
@@ -28,11 +37,50 @@ const usuario = JSON.parse(localStorage.getItem("usuario"));
   );
 }
 
+function DeletePostDialog({ onClose, handleApagar, postagem }){
+  const [visibilidade, setVisibilidade] = useState(false);
+
+  function animacaoFechar(){
+    setVisibilidade(false);
+
+    setTimeout(() => {
+      onClose();
+    }, 100);
+  }
+
+  useEffect(() => {
+    setVisibilidade(true);
+  }, []);
+
+  return ReactDOM.createPortal(
+    <div className={`delete-post-modal ${visibilidade ? "show" : ""}`}>
+      <div className="delete-post-modal-content">
+        <h2>Você <b>realmente</b> deseja apagar este post?</h2>
+        <div className="delete-post-modal-content-buttons">
+          <button style={{ cursor: 'pointer' }} className="delete-post-modal-yes" onClick={async () => {
+            try{
+            await handleApagar(postagem.id);
+            animacaoFechar();
+            } catch(error){
+              alert("Erro ao deletar postagem.");
+            }
+          }}
+          >
+          Sim</button>
+          <button style={{ cursor: 'pointer' }} className="delete-post-modal-no" onClick={animacaoFechar}>Não</button>
+        </div>
+      </div>
+    </div>,
+    document.getElementById('modal-post-root')
+  )
+}
 
 const Comunidade = () => {
   const navigate = useNavigate();
   const [postagem, setPostagem] = useState("");
   const [postagens, setPostagens] = useState([]);
+  const [postagemSelecionada, setPostagemSelecionada] = useState(null);
+  const [modalAberto, setModalAberto] = useState(false);
   const usuario = JSON.parse(localStorage.getItem("usuario"));
   const token = localStorage.getItem("token");
 
@@ -126,6 +174,7 @@ const Comunidade = () => {
               value={postagem}
               onChange={(e) => setPostagem(e.target.value)}
             />
+            <p className="novo-post-card-tamanho" style={ postagem.length > 255 ?  { color: 'red', fontSize: '18px', fontWeight: '500' } : { color: '', fontSize: '', fontWeight: '' }}>{`${postagem.length}/255`}</p>
             <button type="submit" className="novo-post-button" onClick={handlePostar}>Postar</button>
           </div>
 
@@ -137,7 +186,7 @@ const Comunidade = () => {
 
           <div className="comunidade-sidebar-e-posts">
             {/* Lista de Posts */}
-            <ListaPostagens postagens={postagens} handleApagar={handleApagar} />
+            <ListaPostagens postagens={postagens} setModal={setModalAberto} setPostagemSelecionada={setPostagemSelecionada}/>
             
             {/* Coluna Lateral (Sidebar) */}
             <aside className="sidebar-column">
@@ -168,6 +217,12 @@ const Comunidade = () => {
       </div>
 
       <Footer />
+      {modalAberto && (
+        <DeletePostDialog postagem={postagemSelecionada} handleApagar={handleApagar} onClose={() => {
+        setModalAberto(false);
+        setPostagemSelecionada(null);
+      }}/>
+      )}
     </div>
   );
 };

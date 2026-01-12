@@ -38,24 +38,27 @@ const SoftSkills = () => {
     <Banner
       variant="banner-softskills"
       align="left"
-      direction="column"
+      direction="row"
     >
-      <h2>Soft Skills</h2>
-      <p>
-        Desenvolva habilidades humanas essenciais para o mercado de trabalho,
-        como comunicação, empatia e liderança.
-      </p> 
-
-          <div className="softskills-progresso-container">
-              <span>Progresso do Módulo</span>
-            <div className="softskills-barra-fundo">
-              <div className="softskills-barra-preenchimento" style={{ width: "35%" }} />
-            </div>
-            <div className="badge-concluido-soft">
-              <strong>35%</strong>
-              <small>Concluído</small>
-            </div>
+      <div className="banner-info-area">
+        <h2>Soft Skills</h2>
+        <p>
+          Desenvolva habilidades humanas essenciais para o mercado de trabalho,
+          como comunicação, empatia e liderança.
+        </p>
+        <div className="banner-info-area-progress">
+          <span>Progresso do Módulo</span>
+          <div className="softskills-barra-fundo">
+            <div className="softskills-barra-preenchimento" style={{ width: "35%" }} />
           </div>
+        </div>
+      </div>
+      <div className="banner-badge-area">
+        <div className="badge-concluido-soft">
+          <strong>35%</strong>
+          <small>Concluído</small>
+        </div>
+      </div>
     </Banner>
 
         <button

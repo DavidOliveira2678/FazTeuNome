@@ -38,7 +38,7 @@
 }
 
 .logo {
-  height: 280px;
+  height: 280px; /* aqui */
 }
 
 /* BOTÕES HEADER */
@@ -162,7 +162,6 @@
 .hero-image {
 width: 90vw;
   max-width: 1500px;
-  margin-bottom: 10px;
 }
 
 /* =========================
@@ -179,11 +178,16 @@ width: 90vw;
   }
 
   .hero-image {
-  .hero-image {
-    width: 100%;
-    max-width: 600px;
-  }
+    .hero-image {
+      width: 100%;
+      max-width: 600px;
+    }
     width: 520px;
+  }
+
+  .logo{
+    width: 75%;
+    height: 75%;
   }
 }
 

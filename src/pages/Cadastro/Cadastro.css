@@ -4,13 +4,13 @@
   display: flex;
   background: linear-gradient(to right, #5091BE, #0b4870);
   box-sizing: border-box;
-  overflow: hidden; /* Evita scroll na tela principal */
+  overflow: hidden;
  gap: 200px; 
 }
 
 /* Lado esquerdo com foguete */
 .cadastro-left {
-  flex: 1.2; /* Dá um pouco mais de destaque à imagem */
+  flex: 1.2; 
   display: flex;
   justify-content: flex-end;
   align-items: center;
@@ -28,26 +28,27 @@
 .cadastro-right {
   flex: 1;
   display: flex;
-  flex-direction: column; /* COLOCA O TEXTO ABAIXO DO CARD */
+  flex-direction: column;
   justify-content: center;
-  gap: 30px;
+  gap: 15px;
   padding: 20px;
+  align-items: center;
 }
 
 /* Card branco compacto */
 .cadastro-card {
   background: #fff;
   width: 100%;
-  max-width: 460px; /* Largura ideal para login/cadastro */
+  max-width: 460px;
   height: auto;
-  max-height: 90vh; /* Garante que não ultrapasse a altura da tela */
+  max-height: 90vh;
   padding: 20px 25px;
   border-radius: 25px;
   box-shadow: 0 4px 18px rgba(0,0,0,0.2);
-  margin-bottom: 20px; /* Espaço para o rodapé abaixo */
+  margin-bottom: 20px;
   text-align: center;
   box-sizing: border-box;
-  overflow-y: auto; /* Scroll interno caso a tela seja muito pequena */
+  overflow-y: auto; 
 
 }
 
@@ -56,14 +57,14 @@
   display: block;
   margin: 0 auto 5px auto;
   width: 100%;
-  max-width: 127px; /* Reduzido para economizar espaço */
+  max-width: 127px; 
   height: auto;
   object-fit: contain;
 }
 
 /* Títulos */
 .titulo-cadastro {
-  font-size: 20px; /* Ajustado para um tamanho equilibrado */
+  font-size: 20px; 
   font-weight: bold;
   color: #0b4870;
   margin-bottom: 5px;
@@ -79,7 +80,7 @@
 
 /* Inputs e Agrupamentos */
 .input-group {
-  margin-bottom: 8px; /* Espaço reduzido entre campos */
+  margin-bottom: 8px; 
   text-align: left;
 }
 
@@ -94,7 +95,7 @@
 .input-group input,
 .input-group select {
   width: 100%;
-  padding: 8px 12px; /* Input mais fino */
+  padding: 8px 12px;
   border-radius: 8px;
   border: 1px solid #ccc;
   box-sizing: border-box;
@@ -137,8 +138,6 @@
 /* Rodapé motivacional ABAIXO do card */
 .cadastro-footer {
   color: #fff;
-  text-align: center;
-  max-width: 320px;
 }
 
 .slogan-text {
@@ -146,10 +145,8 @@
   color: #fff;
   line-height: 1.4;
   margin: 0;
-  
 }
 
-/* 📱 Responsividade para Celulares */
 @media (max-width: 768px) {
   .cadastro-container {
     flex-direction: column;

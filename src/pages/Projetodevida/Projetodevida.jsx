@@ -19,9 +19,9 @@ const ProjetoVida = () => {
         <Banner
           variant="banner-projetovida"
           align="left"
-          direction="column"
+          direction="row"
         >
-          <div className="hero-content">
+          <div className="projeto-de-vida-hero-content">
             <h2>Projeto Vida</h2>
             <p>
               Construa seu projeto de vida com reflexão, propósito e planejamento.
@@ -33,11 +33,14 @@ const ProjetoVida = () => {
                 <div className="projeto-de-vida-barra-preenchimento" style={{ width: "40%" }}
                 />
               </div>
-
-          <div className="badge-concluido-vida">
-            <strong>40%</strong>
-            <small>Concluído</small>
+            </div>
           </div>
+
+
+          <div className="projeto-de-vida-badge-area">
+            <div className="badge-concluido-vida">
+              <strong>40%</strong>
+              <small>Concluído</small>
             </div>
           </div>
         </Banner>

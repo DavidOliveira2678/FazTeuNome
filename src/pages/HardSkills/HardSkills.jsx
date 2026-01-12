@@ -33,32 +33,32 @@ function HardSkills() {
       <Banner
         variant="banner-hardskills"
         align="left"
-        direction="column"
+        direction="row"
       >
-        <section className="hero-card-hard">
-          <div className="hero-content">
-            <h2>Hard Skills</h2>
-            <p>
-              Desenvolva habilidades técnicas essenciais para o mundo
-              profissional
-            </p>
+        <div className="hardskills-banner-info-area">
+          <h2>Hard Skills</h2>
+          <p>
+            Desenvolva habilidades técnicas essenciais para o mundo
+            profissional
+          </p>
 
-            <div className="hardskills-progresso-container">
-              <span>Progresso do Módulo</span>
-              <div className="hardskills-barra-fundo">
-                <div className="hardskills-barra-preenchimento" style={{ width: `${progresso}%` }} />
-              </div>
+          <div className="hardskills-progresso-container">
+            <span>Progresso do Módulo</span>
+            <div className="hardskills-barra-fundo">
+              <div className="hardskills-barra-preenchimento" style={{ width: `${progresso}%` }} />
             </div>
           </div>
+        </div>
 
+        <div className="hardskills-badge-concluido-area">
           <div className="badge-concluido-hard">
             <strong>{Math.round(progresso)}%</strong>
             <small>Concluído</small>
           </div>
-        </section>
+        </div>
       </Banner>
 
-      {/* CONTEÚDO COM LARGURA CONTROLADA */}
+      {/* CONdiEÚDO COM LARGURA CONTROLADA */}
       <div className="hardskills-content-wrapper">
         <button
           className="btn-voltar"

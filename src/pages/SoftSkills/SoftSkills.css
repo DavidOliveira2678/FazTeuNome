@@ -23,52 +23,17 @@
   margin: 0 auto;
 }
 
-/* HERO CARD (ORANGE) */
-.content-wrapper {
-  max-width: 1800px;  /* aumentei de 1500px para 1800px */
-  width: 95%;          /* ocupa quase toda a largura da tela */
-  margin: 20px auto;
-  padding: 0 20px;
-  background-color: rgb(255, 255, 255);
-  border-radius: 12px; /* opcional, deixa os cantos arredondados */
-}
-
-
-.hero-card-soft {
-  width: 100%;
-  max-width: none;
-}
-
-.hero-card-soft {
-  background-color: #d35400; 
-  border-radius: 12px; 
-  padding: 22px;
-  color: white;
+.banner-info-area {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: 18px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  flex-direction: column;
+  width: 85%;
 }
 
-
-.hero-content h1 {
-  font-size: 2.5rem;
-  font-weight: 700;
-  margin-bottom: 10px;
-  color: #fcfcfc; /* Escolha a cor desejada (exemplo: tom coral) */
-}
-
-
-.hero-content p {
-   font-size: 1rem;
-  margin-bottom: 30px;
-  opacity: 0.95;
-}
-
-.softskills-progresso-container {
-  width: 100%;
-  margin-top: 12px;
+.banner-info-area-progress {
+  display: flex;
+  flex-direction: column;
+  margin-top: auto;
+  gap: 10px;
 }
 
 .softskills-barra-fundo {
@@ -83,12 +48,17 @@
   border-radius: 10px;
 }
 
+.banner-badge-area {
+  align-self: flex-end;
+  margin-top: auto;
+}
+
 .badge-concluido-soft {
   background-color: #b33300;
   padding: 16px;
   border-radius: 15px;
   text-align: center;
-  min-width: 100px;
+  min-width: 140px;
   display: flex;
   flex-direction: column;
   justify-content: center;

@@ -3,42 +3,17 @@
   user-select: none;
 }
 
-
-
 .Autoconhecimento-page-wrapper {
   background-color: rgb(255, 255, 255);
   padding: 0 60px;
   max-width: 2100px;
   margin: 0 auto;
-} 
-
-
-.Autoconhecimento-topbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px 22px;
-  border-bottom: 2px solid #dcdcdc;
-  background: #ffffff;
-}
-
-
-.topbar-user {
-  font-size: 22px;
-}
-
-.Autoconhecimento-header h2 {
-  color: white;
-}
-
-.header-top {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
 }
 
 .header-left {
-  max-width: 70%;
+  display: flex;
+  flex-direction: column;
+  width: 85%;
 }
 
 .softskills-label {
@@ -58,19 +33,40 @@
   font-size: 15px;
 }
 
-.progress-info {
+.header-left-progress-info{
   display: flex;
+  flex-direction: column;
+  margin-top: auto;
+  gap: 10px;
 }
 
-.progress-box span:first-child {
-  font-size: 14px;
-  opacity: 0.9;
+.progress-info {
+  align-self: flex-end;
+  margin-top: auto;
 }
 
-.progress-box span:last-child {
-  font-size: 20px;
+.autoconhecimento-progress-box{
+  background-color: #fd9b7a;
+  padding: 16px;
+  border-radius: 15px;
+  text-align: center;
+  min-width: 140px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.autoconhecimento-progress-box span:first-child {
   font-weight: bold;
   margin-top: 6px;
+  font-size: 2rem;
+}
+
+.autoconhecimento-progress-box span:last-child {
+  font-size: 0.8rem;
+  opacity: 0.9;
 }
 
 .progress-bar {
@@ -78,16 +74,16 @@
   border-radius: 4px;
 }
 
-.progress-bar.gray {
-  background-color: #9ca3af;
-  width: 100%;
-  overflow: hidden;
+.progress-bar-container {
+  background: rgba(255,255,255,0.25);
+  height: 8px;
+  border-radius: 10px;
 }
 
-.progress-bar.white {
-  background-color: #ffffff;
+.progress-bar-fill {
+  background: white;
   height: 100%;
-  border-radius: 4px;
+  border-radius: 10px;
 }
 
 .main-row {

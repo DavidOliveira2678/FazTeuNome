@@ -34,32 +34,27 @@ export default function Autoconhecimento() {
       <Banner
         variant="banner-autoconhecimento"
         align="left"
-        direction="column"
+        direction="row"
       >
-        <div className="Autoconhecimento-container">
-          <div className="Autoconhecimento-header">
-            <div className="header-top">
-              <div className="header-left">
-                <span className="softskills-label">Soft Skills</span>
-                <h2>Autoconhecimento</h2>
-                <p>
-                  Explore suas habilidades e valores que sustentam suas escolhas
-                </p>
+        <div className="header-left">
+          <span className="softskills-label">Soft Skills</span>
+          <h2>Autoconhecimento</h2>
+          <p>
+            Explore suas habilidades e valores que sustentam suas escolhas
+          </p>
 
-                <p className="progress-title">Progresso do Módulo</p>
-
-                <div className="progress-bar-container">
-                  <div className="progress-bar-fill" />
-                </div>
-              </div>
-
-              <div className="progress-info">
-                <div className="progress-box adjusted">
-                  <span>Concluído</span>
-                  <span>33%</span>
-                </div>
-              </div>
+          <div className="header-left-progress-info">
+            <span className="progress-title">Progresso do Módulo</span>
+            <div className="progress-bar-container">
+              <div className="progress-bar-fill" style={{ width: '33%' }}/>
             </div>
+          </div>
+        </div>
+        
+        <div className="progress-info">
+          <div className="autoconhecimento-progress-box">
+            <span>33%</span>
+            <span>Concluído</span>
           </div>
         </div>
       </Banner>

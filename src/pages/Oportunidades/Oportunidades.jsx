@@ -26,7 +26,7 @@ const Oportunidades = () => {
         align="center"
         direction="column"
       >
-        <div className="badge-conquista">
+        <div className="oportunidade-badge-conquista">
           <span className="lock-icon">🔒</span> Conquista Desbloqueada
         </div>
 

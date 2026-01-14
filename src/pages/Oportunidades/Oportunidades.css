@@ -150,6 +150,17 @@
   border: 1px solid #e9ecef;
 }
 
+.oportunidades-pagina-container > * {
+  opacity: 0;
+  animation: fadeUp 0.6s ease forwards;
+}
+
+.oportunidades-pagina-container > *:nth-child(1) { animation-delay: 0.1s; }
+.oportunidades-pagina-container > *:nth-child(2) { animation-delay: 0.2s; }
+.oportunidades-pagina-container > *:nth-child(3) { animation-delay: 0.3s; }
+.oportunidades-pagina-container > *:nth-child(4) { animation-delay: 0.4s; }
+.oportunidades-pagina-container > *:nth-child(5) { animation-delay: 0.5s; }
+
 @media (max-width: 900px) {
   .opportunities-grid { grid-template-columns: 1fr 1fr; }
   .filter-section { flex-direction: column; align-items: flex-start; gap: 15px; }

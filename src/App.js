@@ -31,15 +31,14 @@ import PaginaEmConstrucao from "./pages/PaginaEmConstrucao/PaginaEmConstrucao";
 import EditProfile from "./pages/Editar/Editar"
 import PortalProfessor from "./pages/PortalProfessor/PortalProfessor";
 
-// import Editar from "./pages/Editar/Editar";
-// import PortalProfessor from "./pages/PortalProfessor/PortalProfessor";
+import PagScroller from "./components/PagScroller/PagScroller";
 
 function App() {
-  // Nota: Em uma aplicação real, você usaria um estado ou Context API para verificar o login
   const usuarioLogado = true;
 
   return (
     <Router>
+      <PagScroller />
       <Routes>
         {/* Rotas Públicas */}
         <Route path="/" element={<Home />} />

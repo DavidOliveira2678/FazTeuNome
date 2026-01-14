@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css2?family=Jockey+One&display=swap');
+
+.pagina-em-construcao-container {
+  background-color: #ffffff;
+  min-height: 100vh;
+  padding: 0 60px;
+  max-width: 2100px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.pagina-em-construcao-main{
+  text-align: center;
+  gap: 120px;
+  display: flex;
+  flex-direction: column;
+  padding: 10% 0;
+}
+
+.pagina-em-construcao-main h1{
+  background-color: #195D8C; 
+  color: #ffffff;
+  font-size: 64px;
+  font-weight: 400;
+  width: 873px;
+  height: 92px;
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  justify-content: space-around;
+  border-radius: 36px;
+  font-family: 'Jockey One', sans-serif;
+}
+
+.pagina-em-construcao-main p{
+  width: 980px;
+  height: 100px;
+  font-size: 36px;
+  font-family: 'Jockey One', sans-serif;
+  font-weight: 400;
+}
+
+.pagina-em-construcao-container-botao{
+    padding: 10% 0 0 0;
+}
+
+.pagina-em-construcao-container-botao button{
+  background-color: #195d8C;
+  width: 168px;
+  height: 34px;
+  border-radius: 36px;
+  font-family: 'Jockey One', sans-serif;
+  font-weight: 400;
+  color: #ffffff;
+  border: none;
+  font-size: 24px;
+  transform: scale(1);
+
+  transition:
+  background-color 150ms,
+  transform 150ms;
+}
+
+.pagina-em-construcao-container-botao button:hover{
+  background-color: #193e83;
+  transform: scale(1.1);
+}
+
+.pagina-em-construcao-main,
+.pagina-em-construcao-main h1,
+.pagina-em-construcao-main p,
+.pagina-em-construcao-images,
+.pagina-em-construcao-container-botao{
+   animation: fadeUp 0.8s ease forwards;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .pagina-em-construcao-container {
+    padding: 0 20px;
+  }
+
+  .pagina-em-construcao-main {
+    gap: 48px;
+    padding: 20% 0;
+  }
+
+  .pagina-em-construcao-main h1 {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    font-size: 36px;
+    padding: 16px 20px;
+    border-radius: 20px;
+    justify-content: center;
+  }
+
+  .pagina-em-construcao-main p {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    font-size: 20px;
+    line-height: 1.4;
+  }
+
+  .pagina-em-construcao-container-botao {
+    padding-top: 48px;
+  }
+
+  .pagina-em-construcao-container-botao button {
+    width: 120%;
+    max-width: 260px;
+    height: 44px;
+    font-size: 18px;
+  }
+}

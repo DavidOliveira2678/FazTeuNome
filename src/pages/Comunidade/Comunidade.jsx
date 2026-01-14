@@ -148,9 +148,10 @@ const Comunidade = () => {
   }
 
   return (
+    <>
+     <Header/>
     <div className="pagina-comunidade">
       
-     <Header/>
       <div className="comunidade-main-layout">
         {/* Coluna Principal (Feed) */}
         <main className="feed-column">
@@ -216,14 +217,15 @@ const Comunidade = () => {
 
       </div>
 
-      <Footer />
       {modalAberto && (
         <DeletePostDialog postagem={postagemSelecionada} handleApagar={handleApagar} onClose={() => {
-        setModalAberto(false);
-        setPostagemSelecionada(null);
-      }}/>
+          setModalAberto(false);
+          setPostagemSelecionada(null);
+        }}/>
       )}
     </div>
+      <Footer />
+    </>
   );
 };
 

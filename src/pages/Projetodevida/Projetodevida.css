@@ -60,7 +60,7 @@
 }
 
 .badge-concluido-vida {
-  background-color: #6d0786;
+  background-color: #6c078673;
   padding: 16px;
   border-radius: 15px;
   text-align: center;
@@ -215,6 +215,17 @@ h2 {
   justify-content: center;
   gap: 8px;
 }
+
+.projeto-de-vida-container > * {
+  opacity: 0;
+  animation: fadeUp 0.6s ease forwards;
+}
+
+.projeto-de-vida-container > *:nth-child(1) { animation-delay: 0.1s; }
+.projeto-de-vida-container > *:nth-child(2) { animation-delay: 0.2s; }
+.projeto-de-vida-container > *:nth-child(3) { animation-delay: 0.3s; }
+.projeto-de-vida-container > *:nth-child(4) { animation-delay: 0.4s; }
+.projeto-de-vida-container > *:nth-child(5) { animation-delay: 0.5s; }
 
 @media (max-width: 768px) {
   .main-layout { grid-template-columns: 1fr; }

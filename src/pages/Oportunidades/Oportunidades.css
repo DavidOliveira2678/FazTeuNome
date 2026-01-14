@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
-
 :root {
   --hero-blue: #58bef6;
   --footer-blue: #1b5382;
@@ -69,7 +68,6 @@
   margin-bottom: 30px;
 }
 
-/* GRID DE CARDS */
 .opportunities-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);

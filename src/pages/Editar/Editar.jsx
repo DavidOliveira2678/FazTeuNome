@@ -16,7 +16,6 @@ const EditProfile = () => {
   const [sucesso, setSucesso] = useState("");
   const [loading, setLoading] = useState(false);
 
-  // Carregar dados atuais do usuário
   useEffect(() => {
     const token = localStorage.getItem("token");
     if (!token) {
@@ -48,12 +47,10 @@ const EditProfile = () => {
       .finally(() => setLoading(false));
   }, [navigate]);
 
-  // Atualizar valores dos inputs
   const handleChange = (e) => {
     setUsuario({ ...usuario, [e.target.name]: e.target.value });
   };
 
-  // Enviar alterações para o backend
   const handleSubmit = (e) => {
     e.preventDefault();
     setErro("");

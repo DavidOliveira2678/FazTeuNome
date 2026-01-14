@@ -23,7 +23,6 @@
   margin: 0 auto;
 }
 
-/* TAMANHO DO RESTO DA PAGINA */
 .projeto-de-vida-content-wrapper {
   max-width: 2200px;
 }
@@ -81,8 +80,6 @@
   opacity: 0.9;
 }
 
-
-/* UI ELEMENTS */
 .btn-voltar {
   background: var(--dark-blue);
   color: white;
@@ -106,7 +103,6 @@ h2 {
   margin-bottom: 20px;
 }
 
-/* LISTA DE LIÇÕES */
 .card-licao {
   background: white;
   border: 1px solid #eee;
@@ -156,7 +152,6 @@ h2 {
   font-weight: bold;
 }
 
-/* SIDEBAR DETALHES */
 .detalhes-card {
   background: white;
   border-radius: 15px;

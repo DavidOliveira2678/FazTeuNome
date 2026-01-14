@@ -10,7 +10,6 @@
   margin: 0 auto;
 }
 
-
 .main-row {
   margin-top: 30px;
   flex: 1;
@@ -40,10 +39,6 @@
 .content-left h3 {
   margin-top: 6px;
 }
-
-
-
-
 
 .Termos-container {
   border: 2px solid hsla(141, 61%, 15%, 0.855);

@@ -145,7 +145,6 @@
   }
 }
 
-
 .dica-card {
   margin-top: 0;
   background-color: #FFC2AE; 
@@ -220,11 +219,9 @@ textarea {
   cursor: pointer;
 }
 
-
 .main-row {
   flex: 1; 
 }
-
 
 .escala-container {
   border: 2px solid #eeecea;

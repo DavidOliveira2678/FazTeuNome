@@ -13,7 +13,6 @@ export default function VocabulariodeNegocios({ nome }) {
   };
 
   const handleSalvar = () => {
-    console.log("Respostas do usuário salvas");
     navigate("/hardskills");
   };
 

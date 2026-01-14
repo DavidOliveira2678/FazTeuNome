@@ -1,7 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import logo from '../../assets/logo.png';
-import home from '../../assets/home.png'; // Certifique-se de que este caminho está correto
+import home from '../../assets/home.png';
 import "./Home.css";
 
 export default function Home() {

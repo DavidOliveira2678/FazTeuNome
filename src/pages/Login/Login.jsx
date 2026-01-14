@@ -30,7 +30,6 @@ export default function Login() {
       });
 
       const data = await response.json();
-      console.log("Resposta do login:", data);
 
       if (!response.ok) {
         setErro(data?.erro || "Erro no login");
@@ -47,7 +46,7 @@ export default function Login() {
 
       const tipo = data.usuario?.tipo_usuario;
       if (tipo === "professor") {
-        navigate("/portalprofessor"); // rota em minúsculas
+        navigate("/portalprofessor");
       } else if (tipo === "aluno") {
         navigate("/dashboard");
       } else {

@@ -14,7 +14,6 @@ export default function Autoconhecimento() {
   };
 
   const handleSalvar = () => {
-    console.log("Respostas salvas:", respostas);
     navigate("/softskills");
   };
 

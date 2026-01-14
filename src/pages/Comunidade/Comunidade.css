@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
-
 :root {
   --primary-blue: #1b5382;
   --primary-light: #eaf2f8;
@@ -8,7 +7,6 @@
   --border-color: #e3e7ee;
 }
 
-/* RESET */
 * {
   margin: 0;
   padding: 0;
@@ -20,13 +18,11 @@
   background-color: #fff;
 }
 
-/* CONTAINER */
 .container {
   max-width: 1200px;
   margin: 0 auto;
 }
 
-/* GRID */
 .comunidade-main-layout {
   display: flex;
   flex-direction: column;
@@ -35,7 +31,6 @@
   margin: 0 auto;
 }
 
-/* ===== NOVO POST ===== */
 .novo-post-card {
   display: flex;
   flex-direction: column;
@@ -92,7 +87,6 @@
   transform: scale(1.05);
 }
 
-/* ===== SEARCH ===== */
 .search-bar {
   position: relative;
   margin-bottom: 25px;
@@ -112,7 +106,6 @@
   transform: translateY(-50%);
 }
 
-/* ===== POSTS ===== */
 .post-card {
   background: #fff;
   border: 1px solid var(--border-color);
@@ -179,7 +172,6 @@
   color: #333;
 }
 
-/* ===== BOTÃO VOLTAR ===== */
 .btn-voltar {
   background: var(--primary-blue);
   color: white;
@@ -190,7 +182,6 @@
   cursor: pointer;
 }
 
-/* ===== SIDEBAR ===== */
 .sidebar-column {
   display: flex;
   flex-direction: column;

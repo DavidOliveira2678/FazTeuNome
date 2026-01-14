@@ -77,12 +77,11 @@ body {
 
 .main-content {
   display: grid;
-  grid-template-columns: 1fr 320px; /* sidebar um pouco maior */
+  grid-template-columns: 1fr 320px;
   gap: 24px;
   align-items: start;
 }
 
-/* Podium */
 .podium {
   display: grid;
   grid-template-columns:  repeat(3, 1fr);
@@ -109,12 +108,11 @@ body {
 .podium-card .pts { font-weight: bold; font-size: 1.1rem; margin-bottom: 10px; }
 .podium-card .stats { font-size: 0.8rem; opacity: 0.9; }
 
-/* Table */
 .ranking-table-container {
    width: 100%;
   border: 1px solid #eee;
   border-radius: 12px;
-  overflow: hidden; /* ISSO resolve o canto a canto */
+  overflow: hidden;
 }
 
 .table-header,
@@ -156,26 +154,23 @@ body {
   cursor: pointer;
 }
 
-/* HOVER */
 .table-row:hover {
-  background-color: #f0f7ff; /* azul clarinho */
+  background-color: #f0f7ff;
   transform: scale(1.02);
   box-shadow: 0 6px 15px rgba(26, 83, 130, 0.15);
   z-index: 2;
 }
 
-/* HOVER */
 .table-row:hover {
-  background-color: #f0f7ff; /* azul clarinho */
+  background-color: #f0f7ff;
   transform: scale(1.02);
   box-shadow: 0 6px 15px rgba(26, 83, 130, 0.15);
   z-index: 2;
 }
 
-.table-row:nth-child(2):hover { background-color: #fff6db; } /* ouro */
-.table-row:nth-child(3):hover { background-color: #f1f3f6; } /* prata */
-.table-row:nth-child(4):hover { background-color: #fff0e8; } /* bronze */
-
+.table-row:nth-child(2):hover { background-color: #fff6db; }
+.table-row:nth-child(3):hover { background-color: #f1f3f6; }
+.table-row:nth-child(4):hover { background-color: #fff0e8; }
 
 .table-row:last-child {
   border-bottom: none;
@@ -193,8 +188,6 @@ body {
   gap: 8px;
 }
 
-
-/* Sidebar */
 .stats-sidebar {
   background: white;
   border: 1px solid #eee;

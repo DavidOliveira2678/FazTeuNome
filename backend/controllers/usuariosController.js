@@ -58,7 +58,7 @@ exports.loginUsuario = (req, res) => {
 
     const token = jwt.sign(
       { id: usuario.id, email: usuario.email,
-        tipo_usuario:usuario.tipo_usuario,// informações úteis no token
+        tipo_usuario:usuario.tipo_usuario,
       },
       process.env.JWT_SECRET,
       { expiresIn: '1h' }
@@ -147,7 +147,7 @@ exports.getPerfil = (req, res) => {
 };
 
 exports.updatePerfil = (req, res) => {
-  const { id } = req.usuario; // NÃO usar req.params
+  const { id } = req.usuario;
   const { nome_completo, email, escola, telefone, bio } = req.body;
 
   console.log("updatePerfil → id do token:", id);

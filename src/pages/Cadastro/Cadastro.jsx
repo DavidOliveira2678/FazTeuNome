@@ -58,7 +58,6 @@ export default function Cadastro() {
       }
 
       const data = await response.json();
-      console.log("Usuário cadastrado:", data);
 
       alert("Conta criada com sucesso!");
       navigate("/login");

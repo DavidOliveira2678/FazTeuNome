@@ -28,7 +28,6 @@ export default function Dashboard() {
           setErro(data.erro);
         } else {
           setUsuario(data);
-          console.log(data)
         }
       })
       .catch(() => setErro("Erro ao carregar perfil"));

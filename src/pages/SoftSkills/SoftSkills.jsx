@@ -8,7 +8,6 @@ import Banner from "../../components/Banner/Banner";
 
 const SoftSkills = () => {
   const navigate = useNavigate();
-  // Ícones SVG Inline para substituir o Lucide
   const Icons = {
     Rocket: () => (
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ff7e33" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.71.79-1.81.79-1.81l-1.98-1.98s-1.1.08-1.81.79z" /><path d="M15 8s-4 4-7 1c-1-1-4-1-4-1s2-4 2-5c3-3 7-1 7-1z" /><path d="M12 12l9 9" /><path d="M18.5 5.5s-4 4-7 1c-1-1-4-1-4-1s2-4 2-5c3-3 7-1 7-1z" /></svg>

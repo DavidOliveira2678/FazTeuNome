@@ -23,7 +23,6 @@
   padding: 48px 24px;
 }
 
-/* Card principal */
 .edit-profile-card {
   width: 100%;
   max-width: 880px;
@@ -33,7 +32,6 @@
   border: 1px solid #0f1013;
 }
 
-/* Título */
 .edit-profile-card h1 {
   font-size: 27px;
   font-weight: 600;
@@ -41,7 +39,6 @@
   margin-bottom: 32px;
 }
 
-/* Formulário */
 .edit-profile-form {
   display: flex;
   flex-direction: column;
@@ -49,14 +46,12 @@
   text-align:left ;
 }
 
-/* Labels */
 .edit-profile-form label {
   font-size: 16px;
   font-weight: 500;
   color: #ffffff;
 }
 
-/* Inputs */
 .edit-profile-form input,
 .edit-profile-form textarea {
   width: 100%;
@@ -74,13 +69,11 @@
   border-color: var(--primary, #2563eb);
 }
 
-/* Textarea */
 .edit-profile-form textarea {
   min-height: 96px;
   resize: vertical;
 }
 
-/* Mensagens */
 .edit-profile-erro {
   background-color: #fef2f2;
   color: #7f1d1d;
@@ -99,7 +92,6 @@
   font-size: 14px;
 }
 
-/* Botões */
 .edit-profile-form .btn-save {
   margin-top: 12px;
   background-color: var(--primary, #2a712f);
@@ -131,13 +123,11 @@
   background-color: rgba(37, 49, 73, 0.05);
 }
 
-/* Loading */
 .edit-profile-main p {
   font-size: 14px;
   color: #374151;
 }
 
-/* Responsivo */
 @media (max-width: 768px) {
   .edit-profile-card {
     padding: 24px;

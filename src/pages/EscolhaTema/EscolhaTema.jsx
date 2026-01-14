@@ -15,7 +15,7 @@ const EscolhaTema = () => {
       <Banner variant="banner-escolhatema"
         align="left"
         direction="column">
-        {/* 🔥 BANNER FORA DO CONTAINER */}
+        {/* BANNER FORA DO CONTAINER */}
         <section className="hero-card-tema">
           <div className="hero-content">
             <small>Projeto Vida</small>
@@ -28,7 +28,7 @@ const EscolhaTema = () => {
         </section>
       </Banner>
 
-      {/* 📦 CONTEÚDO NORMAL */}
+      {/* CONTEÚDO NORMAL */}
       <div className="escolha-tema-content-wrapper">
         <button
           type="button"

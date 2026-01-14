@@ -6,7 +6,7 @@ import {
   Navigate
 } from "react-router-dom";
 
-// IMPORT DAS PÁGINAS BÁSICAS
+// IMPORT DAS PÁGINAS BÁSICAS <-
 import Home from "./pages/Home/Home";
 import Login from "./pages/Login/Login";
 import Cadastro from "./pages/Cadastro/Cadastro";
@@ -16,7 +16,7 @@ import Autoconhecimento from "./pages/Autoconhecimento/Autoconhecimento";
 import VocabulariodeNegocios from "./pages/VocabulariodeNegocios/VocabulariodeNegocios";
 
 
-// IMPORT DAS PÁGINAS DE SKILLS E CONTEÚDO
+// IMPORT DAS PÁGINAS DE SKILLS E CONTEÚDO <-
 import SoftSkills from "./pages/SoftSkills/SoftSkills";
 import HardSkills from "./pages/HardSkills/HardSkills";
 import Projetodevida from "./pages/Projetodevida/Projetodevida";
@@ -27,7 +27,7 @@ import EscolhaTema from "./pages/EscolhaTema/EscolhaTema";
 import Oportunidades from "./pages/Oportunidades/Oportunidades";
 import PaginaEmConstrucao from "./pages/PaginaEmConstrucao/PaginaEmConstrucao";
 
-// Se houver uma página de edição ou portal do professor, importe-as aqui:
+// Se houver uma página de edição ou portal do professor, importe-as aqui: <-
 import EditProfile from "./pages/Editar/Editar"
 import PortalProfessor from "./pages/PortalProfessor/PortalProfessor";
 

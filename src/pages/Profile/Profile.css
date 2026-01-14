@@ -1,8 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap');
-
-/* =========================
-   VARIÁVEIS
-========================= */
 :root {
   --primary-blue: #1b5382;
   --orange: #ff7e33;
@@ -10,19 +6,12 @@
   --bg-light: #f8f9fa;
 }
 
-/* =========================
-   RESET
-========================= */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: 'Inter', sans-serif;
 }
-
-/* =========================
-   PAGE
-========================= */
 .profile-page {
   min-height: 100%;
   display: flex;
@@ -33,16 +22,10 @@
   margin: 0 auto;
 }
 
-
-/* =========================
-   BANNER (conteúdo interno)
-========================= */
-
 .profile-banner-content{
   display: flex;
   justify-content: space-between;
 }
-
 
 .banner-info {
   display: flex;
@@ -60,7 +43,6 @@
   align-items: center;
 }
 
-
 .user-details h1 {
   font-size: 2rem;
   font-weight: 800;
@@ -77,11 +59,8 @@
 
 .user-details small {
   opacity: 0.8;
-  
-
 }
 
-/* Avatar */
 .avatar-large {
   width: 150px;
   height: 150px;
@@ -98,7 +77,6 @@
   object-fit: cover;
 }
 
-/* Botão */
 .btn-white {
   background: white;
   border: none;
@@ -110,9 +88,6 @@
   cursor: pointer;
 }
 
-/* =========================
-   GRID PRINCIPAL
-========================= */
 .profile-grid {
   display: grid;
   grid-template-columns: 2fr 350px;
@@ -120,9 +95,6 @@
   margin-top: 40px;
 }
 
-/* =========================
-   CARDS
-========================= */
 .profile-card {
   background: white;
   border: 1px solid #eee;
@@ -152,12 +124,10 @@
   color: #999;
 }
 
-/* Sobre mim */
 .about-paragraph {
   text-align: left;
 }
 
-/* Tags */
 .tags {
   display: flex;
   flex-wrap: wrap;
@@ -173,7 +143,6 @@
   font-weight: 600;
 }
 
-/* Skills */
 .skills-bars {
   display: flex;
   flex-direction: column;
@@ -200,7 +169,6 @@
   background: #555;
 }
 
-/* Galeria */
 .gallery-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);

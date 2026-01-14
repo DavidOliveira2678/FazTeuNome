@@ -1,11 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
-
 :root {
-  --primary-purple: #b674c3; /* Cor do banner */
-  --dark-blue: #1b5382;      /* Cor do texto e footer */
-  --industry-color: #31d5ed; /* Ciano */
-  --tech-color: #a4a0e2;     /* Roxo claro */
-  --enem-color: #f49033;     /* Laranja */
+  --primary-purple: #b674c3;
+  --dark-blue: #1b5382;
+  --industry-color: #31d5ed;
+  --tech-color: #a4a0e2;
+  --enem-color: #f49033;
   --bg-gray: #f8f9fa;
 }
 
@@ -34,7 +33,6 @@
   font-weight: 600;
 }
 
-/* INTRODUÇÃO */
 .introducao-selecao {
   text-align: center;
   margin: 50px 0;
@@ -54,7 +52,6 @@
   line-height: 1.5;
 }
 
-/* GRID DE CARDS */
 .themes-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -86,7 +83,6 @@
   font-weight: 700;
 }
 
-/* Cores dos Headers */
 .industria .theme-header { background-color: var(--industry-color); }
 .tecnologia .theme-header { background-color: var(--tech-color); }
 .enem .theme-header { background-color: var(--enem-color); }
@@ -139,7 +135,6 @@
   margin-bottom: 30px;
 }
 
-/* Cores das caixas Para Quem */
 .industria .para-quem { background-color: #e5faff; color: #1b5382; }
 .tecnologia .para-quem { background-color: #f0effc; color: #1b5382; }
 .enem .para-quem { background-color: #fef4ea; color: #1b5382; }
@@ -155,12 +150,10 @@
   margin-top: auto;
 }
 
-/* Cores dos Botões */
 .industria .btn-select { background-color: var(--industry-color); }
 .tecnologia .btn-select { background-color: var(--tech-color); }
 .enem .btn-select { background-color: var(--enem-color); }
 
-/* SEÇÃO ATENÇÃO */
 .attention-section {
   text-align: center;
   padding: 60px 0;

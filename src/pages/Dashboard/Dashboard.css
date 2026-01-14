@@ -19,8 +19,6 @@
   padding-top: 20px;
 }
 
-
-
 .progress-box {
   background: rgba(255, 255, 255, 0.25);
   padding: 10px 16px;
@@ -76,10 +74,8 @@
   min-height: 140px;
 }
 
-
 .progress-container {
     width: 100%;
-
 }
 
 .path-card .path-content {
@@ -112,7 +108,7 @@
   height: 6px;
   border-radius: 4px;
   background: rgb(232, 64, 229);
-    height: 10px;          /* antes era 6px */
+    height: 10px;
   border-radius: 6px;
 }
 
@@ -215,8 +211,8 @@
 }
 
 .conquista-item.desbloqueado:hover {
-  background-color:#c1de58; /* azul mais escuro */
-  color: white; /* muda o texto para branco para contraste */
+  background-color:#c1de58;
+  color: white;
 }
 
 .icon {
@@ -243,8 +239,8 @@
 }
 
 .evento-item:hover {
-  background-color: #9aa5ee; /* azul mais escuro */
-  color: white; /* muda o texto para branco para contraste */
+  background-color: #9aa5ee;
+  color: white;
 }
 
 .sugestão-container {
@@ -275,7 +271,6 @@
   margin: 0;
 }
 
-/* Hover para todos os cards */
 .path-card,
 .side-box,
 .conquista-item,
@@ -289,31 +284,29 @@
 .conquista-item:hover,
 .evento-item:hover,
 .sugestão-container:hover {
-  transform: scale(1.05); /* aumenta 5% do tamanho */
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* sombra mais intensa */
-  cursor: pointer; /* muda o cursor para indicar interatividade */
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
 }
 
-/* Transição para todos os cards */
 .card-soft,
 .card-hard,
 .card-projetovida {
   transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
-/* Hover específico por tipo */
 .card-soft:hover {
-  background-color: #ffb561; /* laranja */
+  background-color: #ffb561;
   transform: scale(1.05);
 }
 
 .card-hard:hover {
-  background-color: #b4f4bb; /* verde */
+  background-color: #b4f4bb;
   transform: scale(1.05);
 }
 
 .card-projetovida:hover {
-  background-color: #d59aee; /* roxo */
+  background-color: #d59aee;
   transform: scale(1.05);
 }
 

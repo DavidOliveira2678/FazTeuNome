@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./Editar.css";
+import Banner from "../../components/Banner/Banner";
 
 const EditProfile = () => {
   const navigate = useNavigate();
@@ -92,79 +93,88 @@ const EditProfile = () => {
         }
       })
       .catch(() => setErro("Erro ao atualizar perfil"))
-      .finally(() => setLoading(false));   
+      .finally(() => setLoading(false));
   };
 
   return (
-    <div className="page-container">
-      <div className="top-bar">
-        <span>Editar e compartilhar</span>
-      </div>
-
-      <main className="main-content">
-        <div className="content-wrapper">
-          <h1>Editar Perfil</h1>
-
-          {loading && <p>Carregando...</p>}
-          {erro && <div className="erro-box">{erro}</div>}
-          {sucesso && <div className="sucesso-box">{sucesso}</div>}
-
-          <form onSubmit={handleSubmit} className="editar-form">
-            <label>Nome Completo *</label>
-            <input
-              type="text"
-              name="nome_completo"
-              value={usuario.nome_completo}
-              onChange={handleChange}
-            />
-
-            <label>Email</label>
-            <input
-              type="email"
-              name="email"
-              value={usuario.email}
-              disabled // email não editável
-            />
-
-            <label>Escola *</label>
-            <input
-              type="text"
-              name="escola"
-              value={usuario.escola}
-              onChange={handleChange}
-            />
-
-            <label>Telefone</label>
-            <input
-              type="text"
-              name="telefone"
-              value={usuario.telefone}
-              onChange={handleChange}
-            />
-
-            <label>Sobre Mim</label>
-            <textarea
-              name="bio"
-              value={usuario.bio}
-              onChange={handleChange}
-              maxLength={255}
-            />
-
-            <button type="submit" className="btn-save" disabled={loading}>
-              {loading ? "Salvando..." : "Salvar Alterações"}
-            </button>
-            <button
-              type="button"
-              className="btn-cancelar"
-              onClick={() => navigate("/profile")}
-              disabled={loading}
-            >
-              Cancelar
-            </button>
-          </form>
+    <Banner
+            variant="banner-editar"
+            align="center"
+            direction="center"
+          >
+      <div className="edit-profile-page">
+        <div className="edit-profile-top-bar">
+          <span>Editar e compartilhar</span>
         </div>
-      </main>
-    </div>
+
+        <main className="edit-profile-main">
+          <div className="edit-profile-card">
+            <h1>Editar Perfil</h1>
+
+            {loading && <p>Carregando...</p>}
+            {erro && <div className="edit-profile-erro">{erro}</div>}
+            {sucesso && (
+              <div className="edit-profile-sucesso">{sucesso}</div>
+            )}
+
+            <form onSubmit={handleSubmit} className="edit-profile-form">
+              <label>Nome Completo *</label>
+              <input
+                type="text"
+                name="nome_completo"
+                value={usuario.nome_completo}
+                onChange={handleChange}
+              />
+
+              <label>Email</label>
+              <input
+                type="email"
+                name="email"
+                value={usuario.email}
+                disabled
+              />
+
+              <label>Escola *</label>
+              <input
+                type="text"
+                name="escola"
+                value={usuario.escola}
+                onChange={handleChange}
+              />
+
+              <label>Telefone</label>
+              <input
+                type="text"
+                name="telefone"
+                value={usuario.telefone}
+                onChange={handleChange}
+              />
+
+              <label>Sobre Mim</label>
+              <textarea
+                name="bio"
+                value={usuario.bio}
+                onChange={handleChange}
+                maxLength={255}
+              />
+
+              <button type="submit" className="btn-save" disabled={loading}>
+                {loading ? "Salvando..." : "Salvar Alterações"}
+              </button>
+
+              <button
+                type="button"
+                className="btn-cancelar"
+                onClick={() => navigate("/profile")}
+                disabled={loading}
+              >
+                Cancelar
+              </button>
+            </form>
+          </div>
+        </main>
+      </div>
+    </Banner>
   );
 };
 
